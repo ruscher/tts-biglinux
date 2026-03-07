@@ -592,7 +592,7 @@ class MainView(Adw.NavigationPage):
     # ── Launcher toggle ────────────────────────────────────────────
 
     def _on_launcher_toggle(self, active: bool) -> None:
-        """Pin/unpin speak button in KDE Plasma taskbar (icontasks)."""
+        """Enable/disable system tray icon."""
         if self._updating_ui:
             return
 
@@ -601,23 +601,12 @@ class MainView(Adw.NavigationPage):
 
         # Toggle system tray icon
         app = self.get_root().get_application()
-        if active:
+        if hasattr(app, "enable_tray") and active:
             app.enable_tray()
-        else:
+            self._on_toast(_("Tray icon enabled"), 2)
+        elif hasattr(app, "disable_tray") and not active:
             app.disable_tray()
-
-        kde_key = DesktopIntegrationService.gtk_accel_to_kde(
-            self._settings.shortcut.keybinding
-        )
-        if DesktopIntegrationService.toggle_launcher_pin(active, kde_key):
-            self._on_toast(_("Launcher icon updated"), 2)
-        elif active:
-            self._on_toast(
-                _(
-                    "Launcher icon updated — you may need to log out and back in for it to appear"
-                ),
-                5,
-            )
+            self._on_toast(_("Tray icon disabled"), 2)
 
     # ── Voice Discovery Callback ─────────────────────────────────────
 
@@ -867,39 +856,9 @@ class MainView(Adw.NavigationPage):
 
         pkgs = ["piper-tts-bin"] + voice_pkgs
 
-        # Verify packages exist in repos before attempting install
-        try:
-            check = subprocess.run(
-                ["pacman", "-Si"] + pkgs,
-                capture_output=True,
-                text=True,
-                timeout=15,
-            )
-            if check.returncode != 0:
-                # Find which packages are missing
-                missing = []
-                for pkg in pkgs:
-                    r = subprocess.run(
-                        ["pacman", "-Si", pkg],
-                        capture_output=True,
-                        text=True,
-                        timeout=5,
-                    )
-                    if r.returncode != 0:
-                        missing.append(pkg)
-                if missing:
-                    logger.error(
-                        "Piper packages not found in repos: %s. "
-                        "Ensure biglinux-testing or biglinux-stable repos are enabled.",
-                        ", ".join(missing),
-                    )
-                    return False
-        except (FileNotFoundError, subprocess.TimeoutExpired):
-            pass
-
         try:
             result = subprocess.run(
-                ["pkexec", "pacman", "-S", "--noconfirm", "--needed"] + pkgs,
+                ["pkexec", "pacman", "-Sy", "--noconfirm", "--needed"] + pkgs,
                 capture_output=True,
                 text=True,
                 timeout=300,
