@@ -34,93 +34,96 @@ import json
 import signal
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QAction, QIcon
-from PySide6.QtWidgets import QApplication, QMenu, QSystemTrayIcon
-
-icon_name = sys.argv[1] if len(sys.argv) > 1 else "application-x-executable"
-title = sys.argv[2] if len(sys.argv) > 2 else "App"
-tooltip = sys.argv[3] if len(sys.argv) > 3 else title
-icon_path = sys.argv[4] if len(sys.argv) > 4 else ""
-
-sys.argv[0] = title
-app = QApplication(sys.argv)
-app.setApplicationName(title)
-app.setDesktopFileName("br.com.biglinux.tts")
-app.setQuitOnLastWindowClosed(False)
-
-# Prefer direct file path (Qt strips -symbolic suffix)
-if icon_path:
-    icon = QIcon(icon_path)
-else:
-    icon = QIcon.fromTheme(icon_name)
-
-tray = QSystemTrayIcon(icon, app)
-tray.setToolTip(tooltip)
-
-menu = QMenu()
-tray.setContextMenu(menu)
-
-action_map: dict[int, QAction] = {}
-
-
 def send(data: dict) -> None:
-    sys.stdout.write(json.dumps(data) + "\\n")
-    sys.stdout.flush()
+    try:
+        sys.stdout.write(json.dumps(data) + "\\n")
+        sys.stdout.flush()
+    except Exception:
+        pass
 
+try:
+    from PySide6.QtCore import Qt, QTimer
+    from PySide6.QtGui import QAction, QIcon
+    from PySide6.QtWidgets import QApplication, QMenu, QSystemTrayIcon
+except ImportError:
+    send({"event": "error", "message": "PySide6 not installed (python-pyside6). Tray icon is disabled."})
+    sys.exit(1)
 
-def on_activated(reason: QSystemTrayIcon.ActivationReason) -> None:
-    if reason == QSystemTrayIcon.ActivationReason.Trigger:
-        send({"event": "activate"})
+try:
+    icon_name = sys.argv[1] if len(sys.argv) > 1 else "application-x-executable"
+    title = sys.argv[2] if len(sys.argv) > 2 else "App"
+    tooltip = sys.argv[3] if len(sys.argv) > 3 else title
+    icon_path = sys.argv[4] if len(sys.argv) > 4 else ""
 
+    sys.argv[0] = title
+    app = QApplication(sys.argv)
+    app.setApplicationName(title)
+    app.setDesktopFileName("br.com.biglinux.tts")
+    app.setQuitOnLastWindowClosed(False)
 
-def on_menu_click(item_id: int) -> None:
-    send({"event": "menu", "id": item_id})
+    if icon_path:
+        icon = QIcon(icon_path)
+    else:
+        icon = QIcon.fromTheme(icon_name)
 
+    tray = QSystemTrayIcon(icon, app)
+    tray.setToolTip(tooltip)
 
-def handle_input() -> None:
-    import select
-    while select.select([sys.stdin], [], [], 0)[0]:
-        line = sys.stdin.readline()
-        if not line:
-            app.quit()
-            return
-        try:
-            msg = json.loads(line.strip())
-        except (json.JSONDecodeError, ValueError):
-            continue
-        cmd = msg.get("cmd")
-        if cmd == "quit":
-            app.quit()
-        elif cmd == "set_menu":
-            menu.clear()
-            action_map.clear()
-            for item in msg.get("items", []):
-                if item.get("separator"):
-                    menu.addSeparator()
-                else:
-                    item_id = item["id"]
-                    action = menu.addAction(item["label"])
-                    action.triggered.connect(lambda checked, iid=item_id: on_menu_click(iid))
-                    action_map[item_id] = action
-        elif cmd == "set_tooltip":
-            tray.setToolTip(msg.get("text", ""))
+    menu = QMenu()
+    tray.setContextMenu(menu)
 
+    action_map: dict[int, QAction] = {}
 
-tray.activated.connect(on_activated)
-tray.show()
-send({"event": "ready"})
+    def on_activated(reason: QSystemTrayIcon.ActivationReason) -> None:
+        if reason == QSystemTrayIcon.ActivationReason.Trigger:
+            send({"event": "activate"})
 
-# Poll stdin periodically
-from PySide6.QtCore import QTimer
-timer = QTimer()
-timer.timeout.connect(handle_input)
-timer.start(100)
+    def on_menu_click(item_id: int) -> None:
+        send({"event": "menu", "id": item_id})
 
-signal.signal(signal.SIGTERM, lambda *_: app.quit())
-signal.signal(signal.SIGINT, lambda *_: app.quit())
+    def handle_input() -> None:
+        import select
+        while select.select([sys.stdin], [], [], 0)[0]:
+            line = sys.stdin.readline()
+            if not line:
+                app.quit()
+                return
+            try:
+                msg = json.loads(line.strip())
+            except (json.JSONDecodeError, ValueError):
+                continue
+            cmd = msg.get("cmd")
+            if cmd == "quit":
+                app.quit()
+            elif cmd == "set_menu":
+                menu.clear()
+                action_map.clear()
+                for item in msg.get("items", []):
+                    if item.get("separator"):
+                        menu.addSeparator()
+                    else:
+                        item_id = item["id"]
+                        action = menu.addAction(item["label"])
+                        action.triggered.connect(lambda checked, iid=item_id: on_menu_click(iid))
+                        action_map[item_id] = action
+            elif cmd == "set_tooltip":
+                tray.setToolTip(msg.get("text", ""))
 
-sys.exit(app.exec())
+    tray.activated.connect(on_activated)
+    tray.show()
+    send({"event": "ready"})
+
+    timer = QTimer()
+    timer.timeout.connect(handle_input)
+    timer.start(100)
+
+    signal.signal(signal.SIGTERM, lambda *_: app.quit())
+    signal.signal(signal.SIGINT, lambda *_: app.quit())
+
+    sys.exit(app.exec())
+except Exception as e:
+    send({"event": "error", "message": f"Tray crashed: {e}"})
+    sys.exit(1)
 """)
 
 
@@ -183,7 +186,7 @@ class TrayIcon:
             cmd,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
+            stderr=subprocess.STDOUT,
             text=True,
         )
         # Watch stdout for events using GLib IO
@@ -205,22 +208,33 @@ class TrayIcon:
         if self._io_watch_id:
             GLib.source_remove(self._io_watch_id)
             self._io_watch_id = 0
+            
         if self._proc:
-            self._send({"cmd": "quit"})
+            if self._proc.poll() is None:
+                self._send({"cmd": "quit"})
+            
+            # Close stdin manually to avoid BrokenPipeError on garbage collection
+            if self._proc.stdin:
+                try:
+                    self._proc.stdin.close()
+                except Exception:
+                    pass
+                    
             try:
                 self._proc.wait(timeout=2)
             except subprocess.TimeoutExpired:
                 self._proc.kill()
+                self._proc.wait()
             self._proc = None
         logger.debug("Tray helper subprocess stopped")
 
     def _send(self, msg: dict) -> None:
         """Send a JSON message to the helper."""
-        if self._proc and self._proc.stdin:
+        if self._proc and self._proc.stdin and not self._proc.stdin.closed:
             try:
                 self._proc.stdin.write(json.dumps(msg) + "\n")
                 self._proc.stdin.flush()
-            except (OSError, BrokenPipeError):
+            except (OSError, BrokenPipeError, ValueError):
                 logger.warning("Failed to send to tray helper")
 
     def _send_menu(self) -> None:
@@ -239,6 +253,7 @@ class TrayIcon:
         """Handle output from the helper subprocess."""
         if condition & GLib.IOCondition.HUP:
             logger.warning("Tray helper subprocess ended")
+            self._io_watch_id = 0
             return False
 
         try:
@@ -252,6 +267,8 @@ class TrayIcon:
                 try:
                     msg = json.loads(line)
                 except (json.JSONDecodeError, ValueError):
+                    # Likely a raw stderr line from Qt/Python crashing
+                    logger.warning("Tray helper stderr: %s", line)
                     continue
 
                 event = msg.get("event")
@@ -267,6 +284,8 @@ class TrayIcon:
                 elif event == "ready":
                     logger.info("Tray icon is visible")
                     self._send_menu()
+                elif event == "error":
+                    logger.error("Tray helper error: %s", msg.get("message"))
         except Exception as e:
             logger.warning("Error reading tray helper: %s", e)
 

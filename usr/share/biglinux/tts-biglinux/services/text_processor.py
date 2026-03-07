@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 # ── Abbreviation Dictionaries ────────────────────────────────────────
 
 ABBREVIATIONS_PT: dict[str, str] = {
+    # ── Internet slang
     "tb": "também",
     "tbm": "também",
     "vc": "você",
@@ -71,6 +72,35 @@ ABBREVIATIONS_PT: dict[str, str] = {
     "tá": "está",
     "vdd": "verdade",
     "add": "adicionar",
+    
+    # ── Standard / Professional
+    "sr": "senhor",
+    "sra": "senhora",
+    "srta": "senhorita",
+    "dr": "doutor",
+    "dra": "doutora",
+    "prof": "professor",
+    "profa": "professora",
+    "eng": "engenheiro",
+    "enga": "engenheira",
+    "av": "avenida",
+    "cia": "companhia",
+    "ltda": "limitada",
+    "tel": "telefone",
+    "cel": "celular",
+    "att": "atenciosamente",
+    "obs": "observação",
+    "ex": "exemplo",
+    
+    # ── Documents / Academic
+    "art": "artigo",
+    "cap": "capítulo",
+    "ed": "edição",
+    "pag": "página",
+    "pág": "página",
+    "vol": "volume",
+    "num": "número",
+    "núm": "número",
     "ref": "referência",
     "info": "informação",
     "infos": "informações",
@@ -259,6 +289,10 @@ def process_text(
     # Expand abbreviations
     if expand_abbreviations:
         text = _expand_abbreviations(text, lang)
+    else:
+        # If disabled, prevent the TTS engine's internal phonemizer from
+        # auto-expanding it anyway (like RHVoice's Letícia does for 'vc').
+        text = _bypass_internal_abbreviations(text, lang)
 
     # Process special characters
     if process_special_chars:
@@ -300,6 +334,25 @@ def _expand_abbreviations(text: str, language: str) -> str:
         # Word-boundary matching, case-insensitive
         pattern = re.compile(r"\b" + re.escape(abbr) + r"\b", re.IGNORECASE)
         text = pattern.sub(expansion, text)
+
+    return text
+
+
+def _bypass_internal_abbreviations(text: str, language: str) -> str:
+    """
+    Prevent the TTS engine itself from doing unwanted internal abbreviation
+    expansion (common in RHVoice and Piper). Injects a zero-width space
+    between the abbreviation characters to force literal sequential reading.
+    """
+    abbrevs = _ABBREVIATIONS.get(language, {})
+    if not abbrevs:
+        return text
+
+    for abbr in abbrevs.keys():
+        # Word-boundary matching, case-insensitive
+        pattern = re.compile(r"\b" + re.escape(abbr) + r"\b", re.IGNORECASE)
+        # Keep original case by using a lambda to insert \u200b
+        text = pattern.sub(lambda m: "\u200b".join(m.group(0)), text)
 
     return text
 
