@@ -444,15 +444,13 @@ msgstr "Neue Tastenkombination drücken"
 msgid "Shortcut changed to {keys}"
 msgstr "Tastenkombination geändert zu {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Launcher-Symbol aktualisiert"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Tray-Symbol aktiviert"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Launcher-Icon aktualisiert – Sie müssen sich möglicherweise abmelden und wieder anmelden, damit er "
-"angezeigt wird."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Tray-Symbol deaktiviert"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73

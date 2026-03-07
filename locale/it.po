@@ -389,15 +389,13 @@ msgstr "Premi la nuova scorciatoia"
 msgid "Shortcut changed to {keys}"
 msgstr "Scorciatoia modificata in {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 748
-msgid "Launcher icon updated"
-msgstr "Icona del launcher aggiornata"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Icona della barra delle applicazioni abilitata"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Icona del launcher aggiornata - potrebbe essere necessario disconnettersi e riconnettersi affinché "
-"appaia."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Icona della barra delle applicazioni disabilitata"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 806
 msgid "No voices found — install rhvoice or espeak-ng"

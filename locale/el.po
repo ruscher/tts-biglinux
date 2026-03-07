@@ -387,15 +387,13 @@ msgstr "Πατήστε τη νέα συντόμευση"
 msgid "Shortcut changed to {keys}"
 msgstr "Η συντόμευση άλλαξε σε {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Ενημερώθηκε το εικονίδιο εκκίνησης"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Ενεργοποιημένο εικονίδιο δίσκου"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Η εικονίδιο του εκκινητή ενημερώθηκε — ίσως χρειαστεί να αποσυνδεθείτε και να συνδεθείτε ξανά για "
-"να εμφανιστεί."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Εικονίδιο δίσκου απενεργοποιημένο"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 806
 msgid "No voices found — install rhvoice or espeak-ng"

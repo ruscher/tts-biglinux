@@ -446,13 +446,13 @@ msgstr "Pritisnite novi prečac"
 msgid "Shortcut changed to {keys}"
 msgstr "Prečac promijenjen u {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Ikona pokretača ažurirana"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Ikona u sistemskoj traci omogućena"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr "Ikona pokretača ažurirana - možda ćete se morati odjaviti i ponovno prijaviti da bi se pojavila."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Ikona u sistemskoj traci onemogućena"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: src/biglinux_tts/services/voice_manager.py

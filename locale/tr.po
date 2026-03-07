@@ -448,13 +448,13 @@ msgstr "Yeni kısayola basın"
 msgid "Shortcut changed to {keys}"
 msgstr "Kısayol {keys} olarak değiştirildi"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Başlatıcı simgesi güncellendi"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Sistem tepsisi simgesi etkinleştirildi"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr "Başlatıcı simgesi güncellendi — görünmesi için çıkış yapıp tekrar giriş yapmanız gerekebilir."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Sistem tepsisi simgesi devre dışı bırakıldı."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73
@@ -646,3 +646,5 @@ msgstr ""
 "erişebilirsiniz."
 # 
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+msgid "OK"
+msgstr "Tamam"

@@ -444,15 +444,13 @@ msgstr "Stlačte novú skratku"
 msgid "Shortcut changed to {keys}"
 msgstr "Skratka zmenená na {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Ikona spúšťača bola aktualizovaná"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Ikona na paneli úloh je povolená"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Ikona spúšťača bola aktualizovaná — možno sa budete musieť odhlásiť a prihlásiť späť, aby sa "
-"zobrazila."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Ikona na paneli úloh je zakázaná"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73

@@ -387,15 +387,13 @@ msgstr "Naciśnij nowy skrót"
 msgid "Shortcut changed to {keys}"
 msgstr "Skrót zmieniony na {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Ikona uruchamiacza zaktualizowana"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Ikona w zasobniku włączona"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Ikona uruchamiacza została zaktualizowana — może być konieczne wylogowanie się i ponowne "
-"zalogowanie, aby się pojawiła."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Ikona w zasobniku wyłączona"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 806
 msgid "No voices found — install rhvoice or espeak-ng"

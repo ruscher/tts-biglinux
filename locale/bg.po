@@ -387,15 +387,13 @@ msgstr "Натиснете новата комбинация"
 msgid "Shortcut changed to {keys}"
 msgstr "Комбинацията е променена на {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Иконата на стартиране е актуализирана."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Икона в системния трей е активирана"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Иконата на стартиране е актуализирана - може да се наложи да излезете и да влезете отново, за да се "
-"появи."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Иконата в лентата е деактивирана"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 msgid "No voices found — install rhvoice or espeak-ng"

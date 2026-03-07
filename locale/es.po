@@ -446,15 +446,13 @@ msgstr "Presiona el nuevo atajo"
 msgid "Shortcut changed to {keys}"
 msgstr "Atajo cambiado a {keys}"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 866
-msgid "Launcher icon updated"
-msgstr "Icono del lanzador actualizado"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 606
+msgid "Tray icon enabled"
+msgstr "Icono de bandeja habilitado"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
-msgid "Launcher icon updated — you may need to log out and back in for it to appear"
-msgstr ""
-"Icono del lanzador actualizado: es posible que necesites cerrar sesión y volver a iniciar sesión "
-"para que aparezca."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 609
+msgid "Tray icon disabled"
+msgstr "Icono de bandeja deshabilitado"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73
