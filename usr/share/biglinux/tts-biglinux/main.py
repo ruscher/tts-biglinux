@@ -26,7 +26,7 @@ def main() -> None:
         version=f"%(prog)s {APP_VERSION}",
     )
 
-    args = parser.parse_args()
+    args, unknown = parser.parse_known_args()
 
     # Configure logging
     log_level = logging.DEBUG if args.debug else logging.WARNING
@@ -48,7 +48,10 @@ def main() -> None:
     from application import TTSApplication
 
     app = TTSApplication()
-    sys.exit(app.run(sys.argv[:1]))  # Pass only program name to GTK
+    
+    # Pass the program name and any unparsed arguments to GTK GApplication
+    gtk_args = [sys.argv[0]] + unknown
+    sys.exit(app.run(gtk_args))
 
 
 if __name__ == "__main__":

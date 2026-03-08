@@ -48,7 +48,7 @@ class TTSApplication(Adw.Application):
     def __init__(self) -> None:
         super().__init__(
             application_id=APP_ID,
-            flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
+            flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
 
         # Services (lazy)
@@ -67,6 +67,19 @@ class TTSApplication(Adw.Application):
         self.connect("shutdown", self._on_shutdown)
 
         logger.debug("Application initialized")
+
+    def do_command_line(self, command_line: Gio.ApplicationCommandLine) -> int:
+        """Handle command line arguments passed correctly by Gio.Application."""
+        args = command_line.get_arguments()
+        logger.debug("Received command line: %s", args)
+        
+        # If --speak was passed
+        if "--speak" in args:
+            self._on_tray_speak()
+            return 0
+            
+        self.activate()
+        return 0
 
     # ── Service Properties ───────────────────────────────────────────
 
