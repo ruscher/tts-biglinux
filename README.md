@@ -704,12 +704,12 @@ Os motores TTS (speech-dispatcher, espeak-ng, RHVoice, Piper) possuem suas próp
 
 - **Tales A. Mendonça** — Projeto BigLinux
 - **Bruno Gonçalves Araujo** — Projeto BigLinux
-- **Rafael Ruscher** — Desenvolvimento v3.0.6
+- **Rafael Ruscher** — Desenvolvimento v3.0.7
 
 ---
 
 <p align="center">
   <img src="usr/share/icons/hicolor/scalable/apps/biglinux-tts.svg" alt="BigLinux TTS" width="48">
   <br>
-  <em>BigLinux TTS v3.0.6 — Leitura de texto por voz para o desktop Linux</em>
+  <em>BigLinux TTS v3.0.7 — Leitura de texto por voz para o desktop Linux</em>
 </p>
