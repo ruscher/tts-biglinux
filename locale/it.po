@@ -559,4 +559,4 @@ msgstr ""
 "BigLinux TTS Speak è ancora in esecuzione in background. Puoi accedervi in qualsiasi momento "
 "dall'icona nella barra di sistema."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

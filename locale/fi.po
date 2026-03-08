@@ -645,4 +645,4 @@ msgstr ""
 "BigLinux TTS Speak toimii edelleen taustalla. Voit käyttää sitä milloin tahansa järjestelmäpalkin "
 "kuvakkeesta."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

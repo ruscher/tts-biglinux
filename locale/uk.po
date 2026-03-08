@@ -555,4 +555,4 @@ msgstr ""
 "BigLinux TTS Speak все ще працює у фоновому режимі. Ви можете отримати до нього доступ у будь-який "
 "час з іконки в системному треї."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

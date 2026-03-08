@@ -651,7 +651,7 @@ msgstr "About"
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 152
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 158
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 171
 msgid "Quit"
 msgstr "Quit"
 
@@ -677,22 +677,22 @@ msgid "Restore"
 msgstr "Restore"
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 150
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 163
 msgid "Text-to-speech assistant"
 msgstr "Text-to-speech assistant"
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 156
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 169
 msgid "Settings"
 msgstr "Settings"
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 179
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 192
 msgid "Minimized to System Tray"
 msgstr "Minimized to System Tray"
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 181
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 194
 msgid ""
 "BigLinux TTS Speak is still running in the background.\n"
 "You can access it anytime from the system tray icon."
@@ -701,6 +701,6 @@ msgstr ""
 "You can access it anytime from the system tray icon."
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
 msgid "OK"
 msgstr "OK"

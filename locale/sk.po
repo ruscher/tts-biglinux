@@ -641,4 +641,4 @@ msgstr ""
 "BigLinux TTS Speak stále beží na pozadí. Môžete k nemu pristupovať kedykoľvek z ikony v systémovej "
 "lište."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

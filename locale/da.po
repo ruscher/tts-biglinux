@@ -641,4 +641,4 @@ msgstr ""
 "BigLinux TTS Speak kører stadig i baggrunden.  \n"
 "Du kan tilgå det når som helst fra systembakkeikonet."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

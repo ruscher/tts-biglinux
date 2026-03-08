@@ -643,4 +643,4 @@ msgstr ""
 "BigLinux TTS Speak er ennþá að keyra í bakgrunni. Þú getur aðgang að því hvenær sem er frá "
 "kerfistray tákninu."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

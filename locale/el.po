@@ -555,4 +555,4 @@ msgstr ""
 "Το BigLinux TTS Speak εξακολουθεί να εκτελείται στο παρασκήνιο. Μπορείτε να το αποκτήσετε πρόσβαση "
 "οποιαδήποτε στιγμή από το εικονίδιο της γραμμής συστήματος."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

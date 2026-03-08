@@ -557,4 +557,4 @@ msgstr ""
 "BigLinux TTS Speak rulează în continuare în fundal. O poți accesa oricând din pictograma din zona "
 "de notificare a sistemului."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

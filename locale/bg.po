@@ -557,4 +557,4 @@ msgstr ""
 "BigLinux TTS Speak все още работи във фонов режим. Можете да получите достъп до него по всяко време "
 "от иконата в системната лента."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

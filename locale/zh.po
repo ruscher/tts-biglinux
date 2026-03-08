@@ -553,4 +553,4 @@ msgstr ""
 "BigLinux TTS Speak 仍在后台运行。  \n"
 "您可以随时从系统托盘图标访问它。"
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

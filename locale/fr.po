@@ -643,4 +643,4 @@ msgstr ""
 "BigLinux TTS Speak fonctionne toujours en arrière-plan. Vous pouvez y accéder à tout moment depuis "
 "l'icône de la zone de notification."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

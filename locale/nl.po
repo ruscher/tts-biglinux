@@ -643,4 +643,4 @@ msgstr ""
 "BigLinux TTS Speak draait nog steeds op de achtergrond. Je kunt er op elk moment toegang toe "
 "krijgen via het systeemvakpictogram."
 # 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
