@@ -892,8 +892,16 @@ class MainView(Adw.NavigationPage):
         """Called after Piper install completes."""
         if success:
             self._on_toast(_("Piper installed successfully! Discovering voices…"), 3)
+
+            def _on_done(catalog: VoiceCatalog) -> None:
+                self._on_voices_discovered(catalog)
+                # After discovery, force selecting the Piper backend index (2)
+                # to trigger the voice list filtering and default voice selection
+                self._backend_combo.set_selected(2)
+                self._on_backend_selected(2)
+
             # Re-discover voices
-            run_in_thread(discover_voices, on_done=self._on_voices_discovered)
+            run_in_thread(discover_voices, on_done=_on_done)
         else:
             self._on_toast(_("Failed to install Piper — check permissions"), 5)
             # Revert to speech-dispatcher
