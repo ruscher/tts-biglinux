@@ -140,10 +140,10 @@ msgstr  ""
 
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 185
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1042
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1044
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1054
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1056
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1050
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1052
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1062
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1064
 msgid   "Test voice"
 msgstr  ""
 
@@ -546,48 +546,48 @@ msgid   "Piper installed successfully! Discovering voices…"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 898
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 906
 msgid   "Failed to install Piper — check permissions"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 956
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 964
 msgid   "Type some text to test"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 970
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 978
 msgid   "Volume is at zero — increasing to minimum for test"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 998
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
 msgid   "Could not play test — check if a TTS engine is installed"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1015
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1023
 msgid   "Press Alt+V to stop"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1018
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1026
 msgid   "Could not play speech — check TTS engine"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1020
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1028
 msgid   "Select text and press Alt+V to read aloud"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1030
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1032
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1038
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1040
 msgid   "Stop"
 msgstr  ""
 
 #
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1076
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1084
 msgid   "Settings restored to defaults"
 msgstr  ""
 
