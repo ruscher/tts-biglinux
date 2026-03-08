@@ -20,6 +20,9 @@ from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
 
+# Global flag to avoid repeated hammering of a broken daemon in a single session
+_is_speechd_broken = False
+
 # ── Voice Metadata ───────────────────────────────────────────────────
 
 
@@ -179,7 +182,8 @@ def discover_voices() -> VoiceCatalog:
     Returns:
         VoiceCatalog with all discovered voices.
     """
-    catalog = VoiceCatalog()
+    global _is_speechd_broken
+    _is_speechd_broken = False  # Reset on each new full catalog refresh attempt
 
     # Discover speech-dispatcher voices (RHVoice, espeak-ng module, etc.)
     spd_voices = _discover_spd_voices(retrying=False)
@@ -209,20 +213,19 @@ def discover_voices() -> VoiceCatalog:
 
 
 def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
-    """
-    Discover voices available via speech-dispatcher.
-
-    Uses spd-say -L for each known output module (rhvoice, espeak-ng),
-    and also scans for installed RHVoice voice packages.
-    """
+    """Discover voices available via speech-dispatcher."""
+    global _is_speechd_broken
     voices: list[VoiceInfo] = []
 
     # 1. Scan for installed RHVoice voice packages
     rhvoice_voices = _discover_rhvoice_installed(retrying=retrying)
     voices.extend(rhvoice_voices)
 
-    # 2. Try spd-say -L for default module to find extra voices
-    #    Skip voices already found via RHVoice scan (case/accent insensitive)
+    if _is_speechd_broken:
+        logger.debug("Skipping main spd discovery as daemon is marked broken")
+        return voices
+
+    # 2. Try spd-say -L for default module
     import unicodedata
 
     def _normalize_id(s: str) -> str:
@@ -245,12 +248,11 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
             if len(lines) > 500:
                 logger.warning("Spd-say returned %d voices (suspected flooding) — restarting daemon", len(lines))
                 if not retrying and try_restart_speechd():
-                    # Retry once
                     return _discover_spd_voices(retrying=True)
 
-                # If still flooded, discard EVERYTHING from spd-say -L and keep only
-                # what we found via direct directory scans (which is more reliable)
-                logger.error("Speech-dispatcher still looks flooded. Discarding generic voices.")
+                # Still flooded after restart
+                _is_speechd_broken = True
+                logger.error("Speech-dispatcher still flooded after restart. Discarding main list.")
                 return voices
 
             sys_lang_full = get_system_language()
@@ -301,14 +303,12 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
 
 
 def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
-    """
-    Discover RHVoice voices by querying speech-dispatcher's SSIP voice list.
-
-    Uses the names reported by spd-say -o rhvoice -L as voice_id, since
-    speech-dispatcher's set_synthesis_voice requires the exact SSIP name
-    (which may include accented characters like Letícia-F123).
-    """
+    """Discover RHVoice voices by querying speech-dispatcher's SSIP voice list."""
+    global _is_speechd_broken
     voices: list[VoiceInfo] = []
+
+    if _is_speechd_broken:
+        return _discover_rhvoice_from_dirs()
 
     # Query speech-dispatcher for rhvoice voices
     try:
@@ -319,19 +319,19 @@ def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
             timeout=5,
         )
         if proc.returncode != 0:
-            return voices
+            return _discover_rhvoice_from_dirs()
         
         lines = proc.stdout.strip().splitlines()
         # Sanity check for rhvoice specific list too
         if len(lines) > 500:
             logger.warning("Spd-say -o rhvoice returned %d voices (loop detected) — restarting daemon", len(lines))
             if not retrying and try_restart_speechd():
-                # Retry once
                 return _discover_rhvoice_installed(retrying=True)
             
-            # Truncate to safety
-            logger.error("RHVoice list still flooded. Truncating.")
-            lines = lines[:500]
+            # Still flooded
+            _is_speechd_broken = True
+            logger.error("RHVoice list still flooded. Switching to directory scan fallback.")
+            return _discover_rhvoice_from_dirs()
             
     except (FileNotFoundError, subprocess.TimeoutExpired, Exception) as e:
         logger.error("Error calling spd-say for rhvoice: %s", e)
