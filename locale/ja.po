@@ -419,9 +419,9 @@ msgstr "先に{engine}の音声をインストールしてください"
 msgid "{count} voices available"
 msgstr "{count}個の音声が利用可能"
 # 
-# File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 978
-msgid "Restarting speech-dispatcher…"
-msgstr "スピーチディスパッチャーを再起動しています…"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
+msgid "Searching for voices..."
+msgstr "音声を検索中..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 954
 #, python-brace-format

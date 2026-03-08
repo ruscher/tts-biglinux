@@ -483,9 +483,9 @@ msgstr "Önce {engine} seslerini yükleyin"
 msgid "{count} voices available"
 msgstr "{count} ses kullanılabilir"
 # 
-# File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 978
-msgid "Restarting speech-dispatcher…"
-msgstr "Konuşma dağıtımcısı yeniden başlatılıyor…"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
+msgid "Searching for voices..."
+msgstr "Sesler aranıyor..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79

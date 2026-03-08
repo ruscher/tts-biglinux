@@ -479,9 +479,9 @@ msgstr "התקינו קודם קולות {engine}"
 msgid "{count} voices available"
 msgstr "{count} קולות זמינים"
 # 
-# File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 978
-msgid "Restarting speech-dispatcher…"
-msgstr "מחדש את שירות הדיבור..."
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
+msgid "Searching for voices..."
+msgstr "מחפש קולות..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79

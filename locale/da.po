@@ -479,9 +479,9 @@ msgstr "Installér {engine}-stemmer først"
 msgid "{count} voices available"
 msgstr "{count} stemmer tilgængelige"
 # 
-# File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 978
-msgid "Restarting speech-dispatcher…"
-msgstr "Genstarter tale-dispatcher…"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
+msgid "Searching for voices..."
+msgstr "Søger efter stemmer..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79

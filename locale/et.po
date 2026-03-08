@@ -481,9 +481,9 @@ msgstr "Paigaldage esmalt {engine} hääled"
 msgid "{count} voices available"
 msgstr "{count} häält saadaval"
 # 
-# File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 978
-msgid "Restarting speech-dispatcher…"
-msgstr "Taaskäivitamine kõneserver…"
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
+msgid "Searching for voices..."
+msgstr "Häälet otsimine..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79
