@@ -173,7 +173,7 @@ class TrayIcon:
     def register(self) -> None:
         """Start the Qt6 tray helper subprocess."""
         cmd = [
-            sys.executable,
+            "/usr/bin/python3",
             "-c",
             _HELPER_SCRIPT,
             self._icon_name,

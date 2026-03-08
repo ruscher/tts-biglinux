@@ -6,6 +6,8 @@ import argparse
 import logging
 import sys
 
+from config import APP_VERSION
+
 
 def main() -> None:
     """Application entry point with CLI argument parsing."""
@@ -21,7 +23,7 @@ def main() -> None:
     parser.add_argument(
         "--version",
         action="version",
-        version="%(prog)s 1.0.0",
+        version=f"%(prog)s {APP_VERSION}",
     )
 
     args = parser.parse_args()
