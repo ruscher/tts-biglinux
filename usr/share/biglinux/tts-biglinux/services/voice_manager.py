@@ -15,6 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from config import TTSBackend
+from services.text_processor import get_system_language
 from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
@@ -247,10 +248,14 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
                     # Retry once
                     return _discover_spd_voices(retrying=True)
 
-                # If still flooded, truncate and return
-                logger.error("Speech-dispatcher still looks flooded after restart. Truncating to avoid UI crash.")
-                lines = lines[:500]
+                # If still flooded, discard EVERYTHING from spd-say -L and keep only
+                # what we found via direct directory scans (which is more reliable)
+                logger.error("Speech-dispatcher still looks flooded. Discarding generic voices.")
+                return voices
 
+            sys_lang_full = get_system_language()
+            sys_lang = sys_lang_full.split("-")[0].split("_")[0]
+            
             for line in lines:
                 line = line.strip()
                 if not line or "NAME" in line or "dummy" in line:
@@ -260,12 +265,18 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
                     continue
                 voice_name = parts[0].strip()
                 lang_code = parts[1].strip()
-                if _normalize_id(voice_name) in known_ids:
+                
+                # Double normalize check
+                norm_id = _normalize_id(voice_name)
+                if norm_id in known_ids:
                     continue
                 
-                # Limit to avoid overloading
-                if len(voices) > 500:
-                    break
+                # Filter out generic voices that don't match system language or English
+                # This prevents showing hundreds of espeak variants for foreign languages
+                voice_lang_short = lang_code.split("-")[0].split("_")[0]
+                if voice_lang_short not in [sys_lang, "en"] and "rhvoice" not in voice_name.lower():
+                    continue
+
                 voices.append(
                     VoiceInfo(
                         voice_id=voice_name,
@@ -278,6 +289,11 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
                         quality="standard",
                     )
                 )
+                known_ids.add(norm_id)
+                
+                # Hard limit
+                if len(voices) > 200:
+                    break
     except (FileNotFoundError, subprocess.TimeoutExpired):
         logger.debug("spd-say not available")
 
