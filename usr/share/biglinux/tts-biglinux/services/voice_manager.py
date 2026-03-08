@@ -184,6 +184,7 @@ def discover_voices() -> VoiceCatalog:
     """
     global _is_speechd_broken
     _is_speechd_broken = False  # Reset on each new full catalog refresh attempt
+    catalog = VoiceCatalog()
 
     # Discover speech-dispatcher voices (RHVoice, espeak-ng module, etc.)
     spd_voices = _discover_spd_voices(retrying=False)
