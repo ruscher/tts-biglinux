@@ -318,6 +318,10 @@ def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
             text=True,
             timeout=5,
         )
+        if proc.returncode != 0:
+            return voices
+        
+        lines = proc.stdout.strip().splitlines()
         # Sanity check for rhvoice specific list too
         if len(lines) > 500:
             logger.warning("Spd-say -o rhvoice returned %d voices (loop detected) — restarting daemon", len(lines))
@@ -329,7 +333,8 @@ def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
             logger.error("RHVoice list still flooded. Truncating.")
             lines = lines[:500]
             
-    except (FileNotFoundError, subprocess.TimeoutExpired):
+    except (FileNotFoundError, subprocess.TimeoutExpired, Exception) as e:
+        logger.error("Error calling spd-say for rhvoice: %s", e)
         return voices
 
     # Known voice metadata: normalized_name → (language, gender, quality)
@@ -365,7 +370,7 @@ def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
         "zdenek": ("cs", "male"),
     }
 
-    for line in proc.stdout.strip().splitlines():
+    for line in lines:
         line = line.strip()
         if not line or "NAME" in line or "dummy" in line:
             continue

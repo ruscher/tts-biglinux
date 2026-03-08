@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 APP_ID = "br.com.biglinux.tts"
 APP_NAME = "BigLinux TTS"
-APP_VERSION = "3.0.5"
+APP_VERSION = "3.0.6"
 APP_DEVELOPERS = ["Tales A. Mendonça", "Bruno Gonçalves Araujo", "Rafael Ruscher"]
 APP_WEBSITE = "https://www.biglinux.com.br"
 APP_ISSUE_URL = "https://github.com/biglinux/tts-biglinux/issues"
