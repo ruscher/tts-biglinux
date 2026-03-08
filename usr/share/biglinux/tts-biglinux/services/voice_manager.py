@@ -15,6 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from config import TTSBackend
+from services.text_processor import get_system_language
 from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
@@ -181,7 +182,7 @@ def discover_voices() -> VoiceCatalog:
     catalog = VoiceCatalog()
 
     # Discover speech-dispatcher voices (RHVoice, espeak-ng module, etc.)
-    spd_voices = _discover_spd_voices()
+    spd_voices = _discover_spd_voices(retrying=False)
     catalog.voices.extend(spd_voices)
     if spd_voices:
         catalog.backends_available.append(TTSBackend.SPEECH_DISPATCHER.value)
@@ -207,7 +208,7 @@ def discover_voices() -> VoiceCatalog:
     return catalog
 
 
-def _discover_spd_voices() -> list[VoiceInfo]:
+def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
     """
     Discover voices available via speech-dispatcher.
 
@@ -217,7 +218,7 @@ def _discover_spd_voices() -> list[VoiceInfo]:
     voices: list[VoiceInfo] = []
 
     # 1. Scan for installed RHVoice voice packages
-    rhvoice_voices = _discover_rhvoice_installed()
+    rhvoice_voices = _discover_rhvoice_installed(retrying=retrying)
     voices.extend(rhvoice_voices)
 
     # 2. Try spd-say -L for default module to find extra voices
@@ -243,11 +244,18 @@ def _discover_spd_voices() -> list[VoiceInfo]:
             # If we get a ridiculous number of lines, the daemon is corrupted/flooded
             if len(lines) > 500:
                 logger.warning("Spd-say returned %d voices (suspected flooding) — restarting daemon", len(lines))
-                if try_restart_speechd():
+                if not retrying and try_restart_speechd():
                     # Retry once
-                    return _discover_spd_voices()
+                    return _discover_spd_voices(retrying=True)
+
+                # If still flooded, discard EVERYTHING from spd-say -L and keep only
+                # what we found via direct directory scans (which is more reliable)
+                logger.error("Speech-dispatcher still looks flooded. Discarding generic voices.")
                 return voices
 
+            sys_lang_full = get_system_language()
+            sys_lang = sys_lang_full.split("-")[0].split("_")[0]
+            
             for line in lines:
                 line = line.strip()
                 if not line or "NAME" in line or "dummy" in line:
@@ -257,8 +265,18 @@ def _discover_spd_voices() -> list[VoiceInfo]:
                     continue
                 voice_name = parts[0].strip()
                 lang_code = parts[1].strip()
-                if _normalize_id(voice_name) in known_ids:
+                
+                # Double normalize check
+                norm_id = _normalize_id(voice_name)
+                if norm_id in known_ids:
                     continue
+                
+                # Filter out generic voices that don't match system language or English
+                # This prevents showing hundreds of espeak variants for foreign languages
+                voice_lang_short = lang_code.split("-")[0].split("_")[0]
+                if voice_lang_short not in [sys_lang, "en"] and "rhvoice" not in voice_name.lower():
+                    continue
+
                 voices.append(
                     VoiceInfo(
                         voice_id=voice_name,
@@ -271,13 +289,18 @@ def _discover_spd_voices() -> list[VoiceInfo]:
                         quality="standard",
                     )
                 )
+                known_ids.add(norm_id)
+                
+                # Hard limit
+                if len(voices) > 200:
+                    break
     except (FileNotFoundError, subprocess.TimeoutExpired):
         logger.debug("spd-say not available")
 
     return voices
 
 
-def _discover_rhvoice_installed() -> list[VoiceInfo]:
+def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
     """
     Discover RHVoice voices by querying speech-dispatcher's SSIP voice list.
 
@@ -295,17 +318,16 @@ def _discover_rhvoice_installed() -> list[VoiceInfo]:
             text=True,
             timeout=5,
         )
-        if proc.returncode != 0:
-            return voices
-        
-        lines = proc.stdout.strip().splitlines()
         # Sanity check for rhvoice specific list too
         if len(lines) > 500:
             logger.warning("Spd-say -o rhvoice returned %d voices (loop detected) — restarting daemon", len(lines))
-            if try_restart_speechd():
+            if not retrying and try_restart_speechd():
                 # Retry once
-                return _discover_rhvoice_installed()
-            return voices
+                return _discover_rhvoice_installed(retrying=True)
+            
+            # Truncate to safety
+            logger.error("RHVoice list still flooded. Truncating.")
+            lines = lines[:500]
             
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return voices
