@@ -15,6 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from config import TTSBackend
+from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
 
@@ -238,7 +239,16 @@ def _discover_spd_voices() -> list[VoiceInfo]:
             timeout=5,
         )
         if proc.returncode == 0:
-            for line in proc.stdout.strip().splitlines():
+            lines = proc.stdout.strip().splitlines()
+            # If we get a ridiculous number of lines, the daemon is corrupted/flooded
+            if len(lines) > 500:
+                logger.warning("Spd-say returned %d voices (suspected flooding) — restarting daemon", len(lines))
+                if try_restart_speechd():
+                    # Retry once
+                    return _discover_spd_voices()
+                return voices
+
+            for line in lines:
                 line = line.strip()
                 if not line or "NAME" in line or "dummy" in line:
                     continue
@@ -287,6 +297,16 @@ def _discover_rhvoice_installed() -> list[VoiceInfo]:
         )
         if proc.returncode != 0:
             return voices
+        
+        lines = proc.stdout.strip().splitlines()
+        # Sanity check for rhvoice specific list too
+        if len(lines) > 500:
+            logger.warning("Spd-say -o rhvoice returned %d voices (loop detected) — restarting daemon", len(lines))
+            if try_restart_speechd():
+                # Retry once
+                return _discover_rhvoice_installed()
+            return voices
+            
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return voices
 

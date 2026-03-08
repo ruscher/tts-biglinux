@@ -11,12 +11,14 @@ import logging
 import os
 import signal
 import subprocess
+import threading
 from collections.abc import Callable
 from typing import Any
 
 from config import TTSBackend, TTSState
 from services.text_processor import process_text
 from services.voice_manager import VoiceInfo
+from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
 
@@ -344,37 +346,8 @@ class TTSService:
             )
 
     def _try_restart_speechd(self) -> bool:
-        """Try to restart the speech-dispatcher daemon."""
-        import time
-
-        # Try systemctl first
-        try:
-            subprocess.run(
-                ["systemctl", "--user", "restart", "speech-dispatcher"],
-                timeout=5,
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            time.sleep(1)
-            logger.info("Restarted speech-dispatcher via systemctl")
-            return True
-        except (OSError, subprocess.TimeoutExpired):
-            pass
-        # Fallback: kill existing and let socket activation restart
-        try:
-            subprocess.run(
-                ["pkill", "-f", "speech-dispatcher"],
-                timeout=3,
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            time.sleep(2)
-            logger.info("Killed speech-dispatcher for auto-restart")
-            return True
-        except (OSError, subprocess.TimeoutExpired):
-            return False
+        """Helper to call the shared restart utility."""
+        return try_restart_speechd()
 
     def _on_spd_finished(self) -> bool:
         """Called when speech-dispatcher finishes speaking (main thread)."""
