@@ -175,9 +175,11 @@ def _lang_name(code: str) -> str:
 # ── Voice Discovery ──────────────────────────────────────────────────
 
 
+from concurrent.futures import ThreadPoolExecutor
+
 def discover_voices() -> VoiceCatalog:
     """
-    Discover all available TTS voices from all installed backends.
+    Discover all available TTS voices from all installed backends in parallel.
 
     Returns:
         VoiceCatalog with all discovered voices.
@@ -186,23 +188,38 @@ def discover_voices() -> VoiceCatalog:
     _is_speechd_broken = False  # Reset on each new full catalog refresh attempt
     catalog = VoiceCatalog()
 
-    # Discover speech-dispatcher voices (RHVoice, espeak-ng module, etc.)
-    spd_voices = _discover_spd_voices(retrying=False)
-    catalog.voices.extend(spd_voices)
-    if spd_voices:
-        catalog.backends_available.append(TTSBackend.SPEECH_DISPATCHER.value)
+    # Parallelize discovery across backends
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        future_spd = executor.submit(_discover_spd_voices, retrying=False)
+        future_espeak = executor.submit(_discover_espeak_voices)
+        future_piper = executor.submit(_discover_piper_voices)
 
-    # Discover standalone espeak-ng voices
-    espeak_voices = _discover_espeak_voices()
-    catalog.voices.extend(espeak_voices)
-    if espeak_voices:
-        catalog.backends_available.append(TTSBackend.ESPEAK_NG.value)
+        # 1. Gather speech-dispatcher voices
+        try:
+            spd_voices = future_spd.result()
+            catalog.voices.extend(spd_voices)
+            if spd_voices:
+                catalog.backends_available.append(TTSBackend.SPEECH_DISPATCHER.value)
+        except Exception as e:
+            logger.error("Error in speech-dispatcher discovery: %s", e)
 
-    # Discover Piper voices
-    piper_voices = _discover_piper_voices()
-    catalog.voices.extend(piper_voices)
-    if piper_voices:
-        catalog.backends_available.append(TTSBackend.PIPER.value)
+        # 2. Gather espeak-ng voices
+        try:
+            espeak_voices = future_espeak.result()
+            catalog.voices.extend(espeak_voices)
+            if espeak_voices:
+                catalog.backends_available.append(TTSBackend.ESPEAK_NG.value)
+        except Exception as e:
+            logger.error("Error in espeak-ng discovery: %s", e)
+
+        # 3. Gather Piper voices
+        try:
+            piper_voices = future_piper.result()
+            catalog.voices.extend(piper_voices)
+            if piper_voices:
+                catalog.backends_available.append(TTSBackend.PIPER.value)
+        except Exception as e:
+            logger.error("Error in Piper discovery: %s", e)
 
     logger.info(
         "Discovered %d voices from %d backends",

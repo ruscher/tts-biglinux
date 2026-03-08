@@ -759,16 +759,18 @@ class MainView(Adw.NavigationPage):
         self._settings.speech.backend = backend
         self._settings_service.save(self._settings)
 
-        # When switching to speech-dispatcher, restart daemon and re-discover
+        # Use existing catalog for immediate update
+        if self._catalog:
+            filtered = self._catalog.get_by_backend(backend)
+            if filtered:
+                self._on_voices_discovered(self._catalog)
+                return
+
+        # If no voices in catalog, or switching to speech-dispatcher for first time
         if backend == TTSBackend.SPEECH_DISPATCHER.value:
-            self._voice_combo.set_subtitle(_("Restarting speech-dispatcher…"))
-
-            def _restart_and_rediscover() -> VoiceCatalog:
-                self._tts._try_restart_speechd()
-                return discover_voices()
-
+            self._voice_combo.set_subtitle(_("Searching for voices..."))
             run_in_thread(
-                _restart_and_rediscover,
+                discover_voices,
                 on_done=self._on_voices_discovered,
             )
             return
