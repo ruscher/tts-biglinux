@@ -1,6 +1,5 @@
 """
-Configuration, constants, enums and dataclasses for BigLinux TTS.
-
+Configuration, constants, enums and dataclasses for BigLinux TTS v3.1.2 — Leitura de texto por voz para o desktop Linux
 Single source of truth for all application settings and defaults.
 """
 
@@ -18,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 APP_ID = "br.com.biglinux.tts"
 APP_NAME = "BigLinux TTS"
-APP_VERSION = "3.1.1"
+APP_VERSION = "3.1.2"
 APP_DEVELOPERS = ["Tales A. Mendonça", "Bruno Gonçalves Araujo", "Rafael Ruscher"]
 APP_WEBSITE = "https://www.biglinux.com.br"
 APP_ISSUE_URL = "https://github.com/biglinux/tts-biglinux/issues"
@@ -84,6 +83,7 @@ class TTSBackend(str, Enum):
     """Available TTS backends."""
 
     SPEECH_DISPATCHER = "speech-dispatcher"
+    RHVOICE = "rhvoice"
     ESPEAK_NG = "espeak-ng"
     PIPER = "piper"
 

@@ -189,11 +189,10 @@ def discover_voices() -> VoiceCatalog:
     catalog = VoiceCatalog()
 
     # Parallelize discovery across backends
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=3) as executor:
         future_spd = executor.submit(_discover_spd_voices, retrying=False)
         future_espeak = executor.submit(_discover_espeak_voices)
         future_piper = executor.submit(_discover_piper_voices)
-        future_rhvoice = executor.submit(_discover_rhvoice_voices)
 
         # 1. Gather speech-dispatcher voices
         try:
@@ -222,15 +221,6 @@ def discover_voices() -> VoiceCatalog:
         except Exception as e:
             logger.error("Error in Piper discovery: %s", e)
 
-        # 4. Gather Native RHVoice voices
-        try:
-            rhvoice_voices = future_rhvoice.result()
-            catalog.voices.extend(rhvoice_voices)
-            if rhvoice_voices:
-                catalog.backends_available.append(TTSBackend.RHVOICE.value)
-        except Exception as e:
-            logger.error("Error in RHVoice discovery: %s", e)
-
     logger.info(
         "Discovered %d voices from %d backends",
         len(catalog.voices),
@@ -244,6 +234,10 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
     """Discover voices available via speech-dispatcher."""
     global _is_speechd_broken
     voices: list[VoiceInfo] = []
+
+    # 1. Scan for installed RHVoice voice packages
+    rhvoice_voices = _discover_rhvoice_installed(retrying=retrying)
+    voices.extend(rhvoice_voices)
 
     if _is_speechd_broken:
         logger.debug("Skipping main spd discovery as daemon is marked broken")
@@ -325,8 +319,120 @@ def _discover_spd_voices(retrying: bool = False) -> list[VoiceInfo]:
 
     return voices
 
-def _discover_rhvoice_voices() -> list[VoiceInfo]:
-    """Discover native RHVoice voices from directory scan."""
+
+def _discover_rhvoice_installed(retrying: bool = False) -> list[VoiceInfo]:
+    """Discover RHVoice voices by querying speech-dispatcher's SSIP voice list."""
+    global _is_speechd_broken
+    voices: list[VoiceInfo] = []
+
+    if _is_speechd_broken:
+        return _discover_rhvoice_from_dirs()
+
+    # Query speech-dispatcher for rhvoice voices
+    try:
+        proc = subprocess.run(
+            ["spd-say", "-o", "rhvoice", "-L"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if proc.returncode != 0:
+            return _discover_rhvoice_from_dirs()
+        
+        lines = proc.stdout.strip().splitlines()
+        # Sanity check for rhvoice specific list too
+        if len(lines) > 500:
+            logger.warning("Spd-say -o rhvoice returned %d voices (loop detected) — restarting daemon", len(lines))
+            if not retrying and try_restart_speechd():
+                return _discover_rhvoice_installed(retrying=True)
+            
+            # Still flooded
+            _is_speechd_broken = True
+            logger.error("RHVoice list still flooded. Switching to directory scan fallback.")
+            return _discover_rhvoice_from_dirs()
+            
+    except (FileNotFoundError, subprocess.TimeoutExpired, Exception) as e:
+        logger.error("Error calling spd-say for rhvoice: %s", e)
+        return voices
+
+    # Known voice metadata: normalized_name → (language, gender, quality)
+    import unicodedata
+
+    def _normalize(s: str) -> str:
+        s = unicodedata.normalize("NFD", s)
+        s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+        return s.lower()
+
+    known_meta: dict[str, tuple[str, str]] = {
+        "leticia-f123": ("pt-BR", "female"),
+        "evgeniy-eng": ("en", "male"),
+        "natalia": ("ru", "female"),
+        "alan": ("en", "male"),
+        "anna": ("ru", "female"),
+        "elena": ("ru", "female"),
+        "aleksandr": ("ru", "male"),
+        "artemiy": ("ru", "male"),
+        "irina": ("ru", "female"),
+        "lyubov": ("ru", "female"),
+        "hana": ("cs", "female"),
+        "volodymyr": ("uk", "male"),
+        "anatol": ("uk", "male"),
+        "natia": ("ka", "female"),
+        "spomenka": ("hr", "female"),
+        "kiko": ("mk", "male"),
+        "natan": ("pl", "male"),
+        "magda": ("pl", "female"),
+        "suze": ("nl", "female"),
+        "azamat": ("tt", "male"),
+        "talgat": ("ky", "male"),
+        "zdenek": ("cs", "male"),
+    }
+
+    for line in lines:
+        line = line.strip()
+        if not line or "NAME" in line or "dummy" in line:
+            continue
+        parts = re.split(r"\s{2,}", line)
+        if len(parts) < 2:
+            continue
+
+        # SSIP name is the exact voice_id that set_synthesis_voice needs
+        ssip_name = parts[0].strip()
+        lang_code = parts[1].strip()
+
+        normalized = _normalize(ssip_name)
+        meta = known_meta.get(normalized)
+        if meta:
+            lang, gender = meta
+        else:
+            lang = lang_code if lang_code != "none" else "en"
+            gender = _guess_gender(ssip_name)
+
+        display_name = ssip_name.replace("-", " ").replace("_", " ")
+
+        voices.append(
+            VoiceInfo(
+                voice_id=ssip_name,
+                name=display_name,
+                language=lang,
+                language_name=_lang_name(lang[:2]),
+                backend=TTSBackend.SPEECH_DISPATCHER.value,
+                output_module="rhvoice",
+                gender=gender,
+                quality="high",
+                description="RHVoice — high quality local synthesis",
+            )
+        )
+
+    # If spd-say returned no voices, fall back to directory scan
+    if not voices:
+        voices = _discover_rhvoice_from_dirs()
+
+    return voices
+
+
+def _discover_rhvoice_from_dirs() -> list[VoiceInfo]:
+    """Fallback: discover RHVoice voices from directory scan."""
     voices: list[VoiceInfo] = []
     voice_dirs = [
         Path("/usr/share/RHVoice/voices"),
@@ -362,8 +468,8 @@ def _discover_rhvoice_voices() -> list[VoiceInfo]:
                     name=display_name,
                     language=lang,
                     language_name=_lang_name(lang[:2]),
-                    backend=TTSBackend.RHVOICE.value,
-                    output_module="",
+                    backend=TTSBackend.SPEECH_DISPATCHER.value,
+                    output_module="rhvoice",
                     gender=gender,
                     quality="high",
                     description="RHVoice — high quality local synthesis",
@@ -420,8 +526,8 @@ def _discover_rhvoice_from_pacman() -> list[VoiceInfo]:
                     name=display,
                     language=lang,
                     language_name=_lang_name(lang[:2]),
-                    backend=TTSBackend.RHVOICE.value,
-                    output_module="",
+                    backend=TTSBackend.SPEECH_DISPATCHER.value,
+                    output_module="rhvoice",
                     gender=gender,
                     quality="high",
                     description="RHVoice — high quality local synthesis",
