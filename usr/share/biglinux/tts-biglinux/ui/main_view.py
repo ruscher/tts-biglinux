@@ -277,14 +277,16 @@ class MainView(Adw.NavigationPage):
 
         # Backend selection
         backends = [
-            "speech-dispatcher (RHVoice, espeak)",
+            "speech-dispatcher",
+            "RHVoice (Native)",
             "espeak-ng",
             "Piper (Neural TTS)",
         ]
         backend_map = {
             0: TTSBackend.SPEECH_DISPATCHER.value,
-            1: TTSBackend.ESPEAK_NG.value,
-            2: TTSBackend.PIPER.value,
+            1: TTSBackend.RHVOICE.value,
+            2: TTSBackend.ESPEAK_NG.value,
+            3: TTSBackend.PIPER.value,
         }
         # Find current index
         current_backend = self._settings.speech.backend
@@ -747,8 +749,9 @@ class MainView(Adw.NavigationPage):
             return
         backend_map = {
             0: TTSBackend.SPEECH_DISPATCHER.value,
-            1: TTSBackend.ESPEAK_NG.value,
-            2: TTSBackend.PIPER.value,
+            1: TTSBackend.RHVOICE.value,
+            2: TTSBackend.ESPEAK_NG.value,
+            3: TTSBackend.PIPER.value,
         }
         backend = backend_map.get(index, TTSBackend.SPEECH_DISPATCHER.value)
         logger.debug("Backend selected: index=%d → %s", index, backend)
@@ -897,10 +900,11 @@ class MainView(Adw.NavigationPage):
 
             def _on_done(catalog: VoiceCatalog) -> None:
                 self._on_voices_discovered(catalog)
-                # After discovery, force selecting the Piper backend index (2)
-                # to trigger the voice list filtering and default voice selection
-                self._backend_combo.set_selected(2)
-                self._on_backend_selected(2)
+                # After discovery, force selecting the Piper backend index (3)
+                self._updating_ui = True
+                self._backend_combo.set_selected(3)
+                self._on_backend_selected(3)
+                self._updating_ui = False
 
             # Re-discover voices
             run_in_thread(discover_voices, on_done=_on_done)
@@ -1110,8 +1114,9 @@ class MainView(Adw.NavigationPage):
         # Backend combo
         backend_map = {
             TTSBackend.SPEECH_DISPATCHER.value: 0,
-            TTSBackend.ESPEAK_NG.value: 1,
-            TTSBackend.PIPER.value: 2,
+            TTSBackend.RHVOICE.value: 1,
+            TTSBackend.ESPEAK_NG.value: 2,
+            TTSBackend.PIPER.value: 3,
         }
         backend_idx = backend_map.get(self._settings.speech.backend, 0)
         self._backend_combo.set_selected(backend_idx)

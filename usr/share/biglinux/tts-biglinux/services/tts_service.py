@@ -146,6 +146,8 @@ class TTSService:
             success = self._speak_spd(
                 processed, voice_id, output_module, rate, pitch, volume
             )
+        elif backend == TTSBackend.RHVOICE.value:
+            success = self._speak_rhvoice(processed, voice_id, rate, pitch, volume)
         elif backend == TTSBackend.ESPEAK_NG.value:
             success = self._speak_espeak(processed, voice_id, rate, pitch, volume)
         elif backend == TTSBackend.PIPER.value:
@@ -397,6 +399,37 @@ class TTSService:
 
         logger.debug("spd-say fallback cmd: %s", cmd)
         return self._start_process_no_stdin(cmd)
+
+    def _speak_rhvoice(
+        self,
+        text: str,
+        voice_id: str,
+        rate: int,
+        pitch: int,
+        volume: int,
+    ) -> bool:
+        """Speak via RHVoice-test directly, bypassing speech-dispatcher."""
+        cmd = ["RHVoice-test"]
+
+        if voice_id:
+            cmd.extend(["-p", voice_id])
+
+        # RHVoice rate and pitch are percentages where 100 is normal.
+        # Our variables are (-100 to 100), so 0 is normal.
+        # Translating: -100 -> 0% (in practice let's cap at 20%), 100 -> 200%
+        rh_rate = 100 + rate
+        rh_rate = max(20, min(300, rh_rate))
+        cmd.extend(["-r", str(rh_rate)])
+
+        rh_pitch = 100 + pitch
+        rh_pitch = max(20, min(200, rh_pitch))
+        cmd.extend(["-t", str(rh_pitch)])
+
+        # Volume is naturally a percentage in our config
+        cmd.extend(["-v", str(volume)])
+
+        logger.debug("RHVoice direct cmd: %s", cmd)
+        return self._start_process(cmd, text)
 
     def _speak_espeak(
         self,
@@ -658,11 +691,11 @@ class TTSService:
     def _kill_backends(self) -> None:
         """Kill any lingering TTS backend processes owned by us.
 
-        Only kills espeak-ng and piper processes (which we launch directly).
+        Only kills espeak-ng, piper processes and RHVoice, which we launch directly.
         Never kills speech-dispatcher components (sd_rhvoice, spd-say) as
         those are managed by the speech-dispatcher daemon.
         """
-        for proc_name in ["espeak-ng", "piper-tts"]:
+        for proc_name in ["espeak-ng", "piper-tts", "RHVoice-test"]:
             try:
                 subprocess.run(
                     ["pkill", "-f", proc_name],
