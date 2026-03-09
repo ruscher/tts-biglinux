@@ -370,9 +370,13 @@ class TTSApplication(Adw.Application):
         # ── Smart Path Detection ──────────────────────────────────────
         # Use script from Git repo if running from there, otherwise system path
         import sys
+        # application.py is in usr/share/biglinux/tts-biglinux/
         repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
         main_py = repo_root / "usr" / "share" / "biglinux" / "tts-biglinux" / "main.py"
         
+        logger.debug("Path detection: repo_root=%s, main_py=%s (exists=%s)", 
+                     repo_root, main_py, main_py.exists())
+
         if main_py.exists():
             # In development, launch via python main.py --speak
             exec_path = f"{sys.executable} {main_py} --speak"

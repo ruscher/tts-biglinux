@@ -327,8 +327,9 @@ Exec=IntegratedRender {exec_path}
 
         # 3. Synchronize Legacy KHotKeys (.khotkeys file)
         import sys
-        # Dynamic path detection for the executable script (sync with ensure_desktop_file)
-        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
+        # Dynamic path detection (DesktopIntegrationService.py is in services/ subdir)
+        # services/ -> tts-biglinux/ -> biglinux/ -> share/ -> usr/ -> (root)
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent.parent
         main_py = repo_root / "usr" / "share" / "biglinux" / "tts-biglinux" / "main.py"
         if main_py.exists():
             exec_path = f"{sys.executable} {main_py} --speak"
@@ -477,8 +478,10 @@ Exec=IntegratedRender {exec_path}
         """Update khotkeys configuration for backward compatibility.
         
         Writes to local user config and development file in the repository.
+        Uses atomic writing to prevent 0-byte files on interruption.
         """
         import os
+        import tempfile
         from pathlib import Path
         
         # Template adapted from user's legacy code
@@ -516,28 +519,65 @@ TriggersCount=1
 Key={kde_shortcut}
 Type=SHORTCUT
 """
-        # 1. Update dev file if reachable
-        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-        dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
-        if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
+
+        def _atomic_write(file_path: Path, content: str) -> bool:
+            """Write content to file atomically."""
             try:
-                dev_khotkeys.write_text(khotkeys_content, encoding="utf-8")
-                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
+                # Only write if content is different
+                if file_path.exists():
+                    try:
+                        if file_path.read_text(encoding="utf-8") == content:
+                            return False
+                    except Exception:
+                        pass
+
+                # Write to temp file first
+                fd, temp_path = tempfile.mkstemp(dir=str(file_path.parent), text=True)
+                try:
+                    with os.fdopen(fd, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    
+                    # Atomic rename
+                    os.replace(temp_path, str(file_path))
+                    # Ensure permissions are correct (0644)
+                    os.chmod(str(file_path), 0o644)
+                    return True
+                except Exception as e:
+                    if os.path.exists(temp_path):
+                        os.unlink(temp_path)
+                    raise e
             except Exception as e:
-                logger.debug("Failed to write dev khotkeys: %s", e)
+                logger.error("Atomic write failed for %s: %s", file_path, e)
+                return False
+
+        changed = False
+
+        # 1. Update dev file if reachable
+        # services/ -> tts-biglinux/ -> biglinux/ -> share/ -> usr/ -> (root)
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent.parent
+        dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
+        
+        logger.debug("KHotKeys Sync: dev_path=%s (exists=%s)", dev_khotkeys, dev_khotkeys.exists())
+        
+        if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
+            if _atomic_write(dev_khotkeys, khotkeys_content):
+                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
+                changed = True
 
         # 2. Update user local khotkeys
         local_khotkeys_dir = Path.home() / ".local" / "share" / "khotkeys"
         local_khotkeys = local_khotkeys_dir / "tts-biglinux.khotkeys"
         try:
             local_khotkeys_dir.mkdir(parents=True, exist_ok=True)
-            local_khotkeys.write_text(khotkeys_content, encoding="utf-8")
-            logger.debug("Updated local khotkeys: %s", local_khotkeys)
+            if _atomic_write(local_khotkeys, khotkeys_content):
+                logger.debug("Updated local khotkeys: %s", local_khotkeys)
+                changed = True
         except Exception as e:
             logger.debug("Failed to write local khotkeys: %s", e)
 
-        # 3. Handle kded reread
-        DesktopIntegrationService._trigger_khotkeys_reload()
+        # 3. Handle kded reread only if something actually changed
+        if changed:
+            DesktopIntegrationService._trigger_khotkeys_reload()
 
     @staticmethod
     def _trigger_khotkeys_reload() -> None:
