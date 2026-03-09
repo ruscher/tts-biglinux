@@ -200,6 +200,15 @@ class TTSService:
                     pass
             self._process = None
 
+        # Kill RHVoice sub-process if active
+        rh = getattr(self, "_rh_proc", None)
+        if rh:
+            try:
+                rh.kill()
+            except ProcessLookupError:
+                pass
+            self._rh_proc = None
+
         # Kill Piper sub-process if active
         piper = getattr(self, "_piper_proc", None)
         if piper:
@@ -428,8 +437,41 @@ class TTSService:
         # Volume is naturally a percentage in our config
         cmd.extend(["-v", str(volume)])
 
-        logger.debug("RHVoice direct cmd: %s", cmd)
-        return self._start_process(cmd, text)
+        # RHVoice-test does NOT play directly, it writes to a file or stdout.
+        # We pipe its stdout to aplay for immediate playback.
+        cmd.extend(["-o", "/dev/stdout"])
+
+        logger.debug("RHVoice direct cmd: %s | aplay", cmd)
+        
+        try:
+            # We chain the two commands: RHVoice-test | aplay
+            rh_proc = subprocess.Popen(
+                cmd,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+            )
+            
+            play_proc = subprocess.Popen(
+                ["aplay", "-q"],
+                stdin=rh_proc.stdout,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+
+            # Send text to RHVoice-test stdin
+            if rh_proc.stdin:
+                rh_proc.stdin.write(text.encode("utf-8"))
+                rh_proc.stdin.close()
+
+            # The standard process tracker will watch play_proc
+            self._process = play_proc
+            self._rh_proc = rh_proc # Keep ref to kill if needed
+            return True
+
+        except (FileNotFoundError, OSError) as e:
+            logger.error("Failed to start RHVoice native: %s", e)
+            return False
 
     def _speak_espeak(
         self,

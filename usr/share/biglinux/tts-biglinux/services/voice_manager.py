@@ -16,6 +16,7 @@ from pathlib import Path
 
 from config import TTSBackend
 from services.text_processor import get_system_language
+from utils.i18n import _
 from utils.speechd_utils import try_restart_speechd
 
 logger = logging.getLogger(__name__)
@@ -336,8 +337,25 @@ def _discover_rhvoice_voices() -> list[VoiceInfo]:
     # Map: normalized dir name → (ssip_name, language, gender, display_name)
     # ssip_name must match what speech-dispatcher uses in set_synthesis_voice
     known_voices: dict[str, tuple[str, str, str, str]] = {
-        "leticia-f123": ("Letícia-F123", "pt-BR", "female", "Letícia F123"),
+        "leticia-f123": ("Leticia-F123", "pt-BR", "female", "Letícia F123"),
         "evgeniy-eng": ("Evgeniy-Eng", "en", "male", "Evgeniy Eng"),
+    }
+
+    # Map language names in voice.info to ISO codes
+    lang_name_map = {
+        "portuguese": "pt-BR",
+        "brazilian-portuguese": "pt-BR",
+        "brazilian portuguese": "pt-BR",
+        "english": "en",
+        "spanish": "es",
+        "esperanto": "eo",
+        "russian": "ru",
+        "ukrainian": "uk",
+        "tatar": "tt",
+        "kyrgyz": "ky",
+        "georgian": "ka",
+        "czech": "cs",
+        "polish": "pl",
     }
 
     for vdir in voice_dirs:
@@ -347,14 +365,38 @@ def _discover_rhvoice_voices() -> list[VoiceInfo]:
             if not entry.is_dir():
                 continue
             dirname = entry.name
-            meta = known_voices.get(dirname.lower())
-            if meta:
-                ssip_name, lang, gender, display_name = meta
-            else:
-                ssip_name = dirname
-                lang = "en"
-                gender = _guess_gender(dirname)
-                display_name = dirname.replace("-", " ").replace("_", " ").title()
+            
+            # 1. Try metadata file first
+            info_file = entry / "voice.info"
+            ssip_name, lang, gender, display_name = None, None, None, None
+            
+            if info_file.exists():
+                try:
+                    info_text = info_file.read_text(encoding="utf-8")
+                    info_data = {}
+                    for line in info_text.splitlines():
+                        if "=" in line:
+                            key, val = line.split("=", 1)
+                            info_data[key.strip().lower()] = val.strip()
+                    
+                    display_name = info_data.get("name", dirname)
+                    ssip_name = display_name
+                    raw_lang = info_data.get("language", "").lower()
+                    lang = lang_name_map.get(raw_lang, raw_lang[:2] if raw_lang else "en")
+                    gender = info_data.get("gender", _guess_gender(dirname))
+                except Exception as e:
+                    logger.debug("Error parsing %s: %s", info_file, e)
+
+            # 2. Fallback to hardcoded knowledge
+            if not lang:
+                meta = known_voices.get(dirname.lower())
+                if meta:
+                    ssip_name, lang, gender, display_name = meta
+                else:
+                    ssip_name = dirname
+                    lang = "en"
+                    gender = _guess_gender(dirname)
+                    display_name = dirname.replace("-", " ").replace("_", " ").title()
 
             voices.append(
                 VoiceInfo(
@@ -398,9 +440,10 @@ def _discover_rhvoice_from_pacman() -> list[VoiceInfo]:
 
             # Map: pkg_name → (ssip_name, language, gender, display_name)
             pkg_meta: dict[str, tuple[str, str, str, str]] = {
-                "leticia-f123": ("Letícia-F123", "pt-BR", "female", "Letícia F123"),
+                "leticia-f123": ("Leticia-F123", "pt-BR", "female", "Letícia F123"),
                 "evgeniy-eng": ("Evgeniy-Eng", "en", "male", "Evgeniy"),
                 "alan": ("Alan", "en", "male", "Alan"),
+                "mateo": ("Mateo", "es", "male", "Mateo"),
                 "natalia": ("Natalia", "ru", "female", "Natalia"),
                 "anna": ("Anna", "ru", "female", "Anna"),
                 "elena": ("Elena", "ru", "female", "Elena"),
@@ -561,6 +604,7 @@ def _discover_piper_voices() -> list[VoiceInfo]:
 
 def _find_piper_binary() -> str | None:
     """Find the piper TTS binary on the system."""
+    # 1. Try PATH
     candidates = ["piper-tts", "piper"]
     for name in candidates:
         try:
@@ -575,8 +619,14 @@ def _find_piper_binary() -> str | None:
         except (FileNotFoundError, subprocess.TimeoutExpired):
             continue
 
-    # Check known install locations
-    for path in ["/usr/bin/piper-tts", "/opt/piper-tts/piper"]:
+    # 2. Check known install locations directly (useful if PATH is restricted in GUI)
+    for path in [
+        "/usr/bin/piper-tts",
+        "/usr/sbin/piper-tts",
+        "/usr/local/bin/piper-tts",
+        "/opt/piper-tts/piper",
+        "/usr/bin/piper",
+    ]:
         if os.path.isfile(path) and os.access(path, os.X_OK):
             return path
 
@@ -642,3 +692,90 @@ def get_default_voice_for_language(catalog: VoiceCatalog, lang: str) -> str:
     lang_voices.sort(key=lambda v: quality_order.get(v.quality, 99))
 
     return lang_voices[0].voice_id
+
+
+def get_installed_tts_packages() -> list[dict[str, str]]:
+    """
+    Get a list of installed TTS-related packages on the system.
+    Scans for rhvoice, espeak, and piper packages.
+    """
+    packages = []
+    try:
+        proc = subprocess.run(
+            ["pacman", "-Qs", "rhvoice|espeak|piper"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if proc.returncode == 0:
+            lines = proc.stdout.strip().splitlines()
+            # pacman -Qs output:
+            # local/name version (group)
+            #     description
+            current_pkg = None
+            for line in lines:
+                if line.startswith("local/"):
+                    parts = line.split()
+                    name = parts[0].removeprefix("local/")
+                    version = parts[1]
+                    current_pkg = {"name": name, "version": version}
+                elif line.startswith("    ") and current_pkg:
+                    current_pkg["description"] = line.strip()
+                    packages.append(current_pkg)
+                    current_pkg = None
+    except Exception as e:
+        logger.error("Failed to list installed TTS packages: %s", e)
+    
+    return packages
+def get_supported_but_missing_voices() -> list[dict[str, str]]:
+    """Detect languages that have RHVoice support installed but no voice packages."""
+    missing = []
+    lang_dir = Path("/usr/share/RHVoice/languages")
+    voice_dir = Path("/usr/share/RHVoice/voices")
+    
+    if not lang_dir.exists():
+        return []
+        
+    # Get names of installed voices (dirs)
+    installed_voices = []
+    if voice_dir.exists():
+        installed_voices = [d.name.lower() for d in voice_dir.iterdir() if d.is_dir()]
+        
+    # Map of language support package to expected voice packages
+    recommendations = {
+        "polish": ("rhvoice-voice-magda", "Magda"),
+        "russian": ("rhvoice-voice-anna", "Anna"),
+        "ukrainian": ("rhvoice-voice-anatoliy", "Anatoliy"),
+        "czech": ("rhvoice-voice-zdenek", "Zdenek"),
+        "esperanto": ("rhvoice-voice-spomenka", "Spomenka"),
+        "spanish": ("rhvoice-voice-mateo", "Mateo"),
+    }
+    
+    for entry in lang_dir.iterdir():
+        if not entry.is_dir():
+            continue
+        lang_name = entry.name.lower()
+        
+        # Check if any voice exists for this language
+        # We look for a voice.info inside current voices or just some directory
+        found = False
+        if voice_dir.exists():
+            for v_entry in voice_dir.iterdir():
+                info_file = v_entry / "voice.info"
+                if info_file.exists():
+                    try:
+                        content = info_file.read_text().lower()
+                        if f"language={lang_name}" in content or f"language={lang_name.replace('-', ' ')}" in content:
+                            found = True
+                            break
+                    except: pass
+        
+        if not found:
+            pkg, voice_name_rec = recommendations.get(lang_name, ("rhvoice-voice-*", "Any"))
+            missing.append({
+                "language": entry.name,
+                "pkg_needed": pkg,
+                "voice_example": voice_name_rec
+            })
+            
+    return missing

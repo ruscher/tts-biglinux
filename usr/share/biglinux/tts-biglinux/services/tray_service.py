@@ -66,6 +66,10 @@ try:
     else:
         icon = QIcon.fromTheme(icon_name)
 
+    if icon_name.endswith("-symbolic"):
+        # Tell Qt/Plasma this is a symbolic icon that should be recolored
+        icon.setIsMask(True)
+
     tray = QSystemTrayIcon(icon, app)
     tray.setToolTip(tooltip)
 
