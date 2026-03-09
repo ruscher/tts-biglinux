@@ -17,7 +17,7 @@ Type=COMMAND_SHORTCUT_ACTION_DATA
 ActionsCount=1
 
 [Data_1Actions0]
-Command=biglinux-tts --speak
+Command=/usr/sbin/python /home/ruscher/Documentos/Git/tts-biglinux/usr/share/biglinux/tts-biglinux/main.py --speak
 Type=COMMAND
 
 [Data_1Conditions]
@@ -29,5 +29,5 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1Triggers0]
-Key=Alt+V
+Key=Ctrl+Alt+V
 Type=SHORTCUT

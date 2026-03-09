@@ -7,6 +7,7 @@ Separates OS/DE specific DBus/X11/Wayland behavior from the UI layer.
 from __future__ import annotations
 
 import logging
+import os
 import subprocess
 import time
 from pathlib import Path
@@ -324,7 +325,19 @@ Exec=IntegratedRender {exec_path}
                 except Exception:
                     pass
 
-        # 3. Rebuild system caches
+        # 3. Synchronize Legacy KHotKeys (.khotkeys file)
+        import sys
+        # Dynamic path detection for the executable script (sync with ensure_desktop_file)
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
+        main_py = repo_root / "usr" / "share" / "biglinux" / "tts-biglinux" / "main.py"
+        if main_py.exists():
+            exec_path = f"{sys.executable} {main_py} --speak"
+        else:
+            exec_path = "/usr/bin/biglinux-tts-speak"
+        
+        cls.sync_khotkeys(kde_shortcut, exec_path)
+
+        # 4. Rebuild system caches
         cls.update_desktop_database()
 
         # 4. Force kglobalaccel to re-read
@@ -458,3 +471,97 @@ Exec=IntegratedRender {exec_path}
         except OSError as e:
             logger.warning("Could not update Plasma launchers: %s", e)
         return False
+
+    @staticmethod
+    def sync_khotkeys(kde_shortcut: str, exec_path: str) -> None:
+        """Update khotkeys configuration for backward compatibility.
+        
+        Writes to local user config and development file in the repository.
+        """
+        import os
+        from pathlib import Path
+        
+        # Template adapted from user's legacy code
+        khotkeys_content = f"""[Main]
+ImportId=biglinux-tts
+Version=2
+Autostart=true
+Disabled=false
+
+[Data]
+DataCount=1
+
+[Data_1]
+Comment=Global keyboard shortcut to speak selected text
+Enabled=true
+Name=BigLinux TTS Speak
+Type=COMMAND_SHORTCUT_ACTION_DATA
+
+[Data_1Actions]
+ActionsCount=1
+
+[Data_1Actions0]
+Command={exec_path}
+Type=COMMAND
+
+[Data_1Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1Triggers0]
+Key={kde_shortcut}
+Type=SHORTCUT
+"""
+        # 1. Update dev file if reachable
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
+        dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
+        if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
+            try:
+                dev_khotkeys.write_text(khotkeys_content, encoding="utf-8")
+                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
+            except Exception as e:
+                logger.debug("Failed to write dev khotkeys: %s", e)
+
+        # 2. Update user local khotkeys
+        local_khotkeys_dir = Path.home() / ".local" / "share" / "khotkeys"
+        local_khotkeys = local_khotkeys_dir / "tts-biglinux.khotkeys"
+        try:
+            local_khotkeys_dir.mkdir(parents=True, exist_ok=True)
+            local_khotkeys.write_text(khotkeys_content, encoding="utf-8")
+            logger.debug("Updated local khotkeys: %s", local_khotkeys)
+        except Exception as e:
+            logger.debug("Failed to write local khotkeys: %s", e)
+
+        # 3. Handle kded reread
+        DesktopIntegrationService._trigger_khotkeys_reload()
+
+    @staticmethod
+    def _trigger_khotkeys_reload() -> None:
+        """Tell khotkeys to reload if it exists."""
+        # Check if khotkeys module is loaded in kded (5 or 6)
+        modules = []
+        for kded in ["org.kde.kded6", "org.kde.kded5"]:
+            try:
+                res = subprocess.run(
+                    ["qdbus", kded, "/kded", "org.kde.kded6.loadedModules"],
+                    capture_output=True, text=True, timeout=2
+                )
+                if "khotkeys" in res.stdout:
+                    modules.append(kded)
+            except:
+                pass
+        
+        for kded in modules:
+            try:
+                subprocess.run(
+                    ["dbus-send", "--session", "--type=method_call",
+                     f"--dest={kded}", "/modules/khotkeys", 
+                     "org.kde.khotkeys.reread_configuration"],
+                    timeout=2, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+            except:
+                pass

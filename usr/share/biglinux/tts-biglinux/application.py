@@ -28,6 +28,7 @@ from config import (
 )
 from resources import load_css
 from services.settings_service import SettingsService
+from services.desktop_integration_service import DesktopIntegrationService
 from services.tray_service import MenuItem, TrayIcon
 from services.tts_service import TTSService
 from utils.i18n import _
@@ -52,6 +53,8 @@ class TTSApplication(Adw.Application):
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
 
+        # State flags
+        self._is_speaking_only: bool = False
         # Services (lazy)
         self._tts_service: TTSService | None = None
         self._settings_service: SettingsService | None = None
@@ -72,13 +75,19 @@ class TTSApplication(Adw.Application):
     def do_command_line(self, command_line: Gio.ApplicationCommandLine) -> int:
         """Handle command line arguments passed correctly by Gio.Application."""
         args = command_line.get_arguments()
-        logger.debug("Received command line: %s", args)
+        logger.debug("Received command line: %s (remote=%s)", args, command_line.get_is_remote())
         
         # If --speak was passed
         if "--speak" in args:
+            self._is_speaking_only = True
             self._on_tray_speak()
+            
+            # If this is the primary instance starting up, stay alive but hidden
+            if not command_line.get_is_remote():
+                self.activate()
             return 0
             
+        self._is_speaking_only = False
         self.activate()
         return 0
 
@@ -122,11 +131,19 @@ class TTSApplication(Adw.Application):
 
     def _on_activate(self, app: Adw.Application) -> None:
         """Application activate — create or present window."""
-        logger.debug("Application activated")
+        logger.debug("Application activated (speaking_only=%s)", self._is_speaking_only)
         if self._window is None:
             self._window = TTSWindow(application=app)
             self._window.connect("close-request", self._on_window_close_request)
-        self._window.present()
+        
+        # Only show window if not just speaking from shortcut
+        if not self._is_speaking_only:
+            self._window.present()
+        else:
+            # If speaking only, we MUST have a tray or we'll quit instantly
+            # Ensure tray is initialized even if the window is hidden
+            if self._tray is None:
+                self._setup_tray_icon()
 
     def _on_shutdown(self, app: Adw.Application) -> None:
         """Application shutdown — cleanup resources."""
@@ -352,17 +369,20 @@ class TTSApplication(Adw.Application):
 
         # ── Smart Path Detection ──────────────────────────────────────
         # Use script from Git repo if running from there, otherwise system path
+        import sys
         repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-        git_script = repo_root / "usr" / "bin" / "biglinux-tts-speak"
-        if git_script.exists():
-            exec_path = str(git_script)
-            logger.info("Using development script from Git: %s", exec_path)
+        main_py = repo_root / "usr" / "share" / "biglinux" / "tts-biglinux" / "main.py"
+        
+        if main_py.exists():
+            # In development, launch via python main.py --speak
+            exec_path = f"{sys.executable} {main_py} --speak"
+            logger.info("Using development path for shortcut: %s", exec_path)
         else:
             exec_path = "/usr/bin/biglinux-tts-speak"
 
-        # Ensure shortcut is synchronized across both modern (kglobalaccel)
-        # and legacy (khotkeys) systems.
-        self._sync_khotkeys(kde_shortcut, exec_path)
+        # Upgrade: Call the desktop integration service sync which handles
+        # both modern and legacy systems
+        DesktopIntegrationService.sync_khotkeys(kde_shortcut, exec_path)
 
         # ── Zombie Nuke ──────────────────────────────────────────────
         # These old files in ~/.local/share/applications/ often have Alt+V
@@ -832,103 +852,7 @@ Exec={exec_path}
                 except:
                     pass
 
-    def _sync_khotkeys(self, kde_shortcut: str, exec_path: str) -> None:
-        """Update khotkeys configuration for backward compatibility.
-        
-        Writes to local user config if possible, and also tries to update 
-        the development file in the repository if running from there.
-        """
-        import subprocess
-        from pathlib import Path
-        
-        # Template adapted from user's legacy code
-        khotkeys_content = f"""[Main]
-ImportId=biglinux-tts
-Version=2
-Autostart=true
-Disabled=false
-
-[Data]
-DataCount=1
-
-[Data_1]
-Comment=Global keyboard shortcut to speak selected text
-Enabled=true
-Name=BigLinux TTS Speak
-Type=COMMAND_SHORTCUT_ACTION_DATA
-
-[Data_1Actions]
-ActionsCount=1
-
-[Data_1Actions0]
-Command={exec_path}
-Type=COMMAND
-
-[Data_1Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1Triggers0]
-Key={kde_shortcut}
-Type=SHORTCUT
-"""
-        # 1. Update dev file if reachable
-        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-        dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
-        if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
-            try:
-                dev_khotkeys.write_text(khotkeys_content, encoding="utf-8")
-                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
-            except Exception as e:
-                logger.debug("Failed to write dev khotkeys: %s", e)
-
-        # 2. Update user local khotkeys if they exist
-        local_khotkeys_dir = Path.home() / ".local" / "share" / "khotkeys"
-        local_khotkeys = local_khotkeys_dir / "tts-biglinux.khotkeys"
-        try:
-            local_khotkeys_dir.mkdir(parents=True, exist_ok=True)
-            local_khotkeys.write_text(khotkeys_content, encoding="utf-8")
-            logger.debug("Updated local khotkeys: %s", local_khotkeys)
-        except Exception as e:
-            logger.debug("Failed to write local khotkeys: %s", e)
-
-        # 3. Handle kded reread
-        # On Plasma 6, khotkeys is usually gone, but we check anyway.
-        self._trigger_khotkeys_reload()
-
-    def _trigger_khotkeys_reload(self) -> None:
-        """Tell khotkeys to reload if it exists."""
-        import subprocess
-        
-        # Check if khotkeys module is loaded in kded (5 or 6)
-        modules = []
-        for kded in ["org.kde.kded6", "org.kde.kded5"]:
-            try:
-                res = subprocess.run(
-                    ["qdbus", kded, "/kded", "org.kde.kded6.loadedModules"],
-                    capture_output=True, text=True, timeout=2
-                )
-                if "khotkeys" in res.stdout:
-                    modules.append(kded)
-            except:
-                pass
-        
-        for kded in modules:
-            try:
-                subprocess.run(
-                    ["dbus-send", "--session", "--type=method_call",
-                     f"--dest={kded}", "/modules/khotkeys", 
-                     "org.kde.khotkeys.reread_configuration"],
-                    timeout=2, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-                )
-            except:
-                pass
-
     @staticmethod
     def _disable_legacy_khotkeys() -> None:
-        # Replaced by _sync_khotkeys but kept as empty for compatibility if called elsewhere
+        # Replaced by DesktopIntegrationService methods
         pass
