@@ -149,11 +149,18 @@ class TTSApplication(Adw.Application):
 
         # Resolve icon fallback path for when theme lookup fails
         icon_fallback = ""
-        for prefix in ["/usr/share", str(Path.home() / ".local/share")]:
+        # Priority: Git repo (for dev), then system paths
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent
+        prefixes = [str(repo_root), "/usr/share", str(Path.home() / ".local/share")]
+        
+        for prefix in prefixes:
+            # When looking in the repo root (dev), icon is in usr/share/icons
+            icon_subdir = "usr/share/icons" if prefix == str(repo_root) else "icons"
             candidate = (
-                f"{prefix}/icons/hicolor/scalable/status/tts-biglinux-symbolic.svg"
+                f"{prefix}/{icon_subdir}/hicolor/scalable/status/tts-biglinux-symbolic.svg"
             )
             if Path(candidate).exists():
+                logger.debug("Found tray icon at: %s", candidate)
                 icon_fallback = candidate
                 break
 
