@@ -147,28 +147,32 @@ class TTSApplication(Adw.Application):
         if not self.settings.shortcut.show_in_launcher:
             return
 
-        # Resolve icon fallback path for when theme lookup fails
-        icon_fallback = ""
-        # Priority: Git repo (for dev), then system paths
+        # Resolve icon paths for both themes.
+        # Priority: Git repo (dev) → /usr/share → ~/.local/share
         repo_root = Path(__file__).resolve().parent.parent.parent.parent
-        prefixes = [str(repo_root), "/usr/share", str(Path.home() / ".local/share")]
         
-        for prefix in prefixes:
-            # When looking in the repo root (dev), icon is in usr/share/icons
-            icon_subdir = "usr/share/icons" if prefix == str(repo_root) else "icons"
-            candidate = (
-                f"{prefix}/{icon_subdir}/hicolor/scalable/status/tts-biglinux-symbolic.svg"
-            )
-            if Path(candidate).exists():
-                logger.debug("Found tray icon at: %s", candidate)
-                icon_fallback = candidate
-                break
+        def _find_icon(filename: str) -> str:
+            for prefix, subdir in [
+                (str(repo_root), "usr/share/icons"),
+                ("/usr/share", "icons"),
+                (str(Path.home() / ".local/share"), "icons"),
+            ]:
+                candidate = f"{prefix}/{subdir}/hicolor/scalable/status/{filename}"
+                if Path(candidate).exists():
+                    logger.debug("Found tray icon: %s", candidate)
+                    return candidate
+            return ""
+
+        # tts-biglinux-dark.svg  = white paths → used when theme is dark
+        # tts-biglinux-light.svg = dark paths  → used when theme is light
+        icon_dark_path  = _find_icon("tts-biglinux-dark.svg")
+        icon_light_path = _find_icon("tts-biglinux-light.svg")
 
         self._tray = TrayIcon(
-            icon_name="tts-biglinux-symbolic",
             title=_(APP_NAME),
             tooltip=_("Text-to-speech assistant"),
-            icon_path=icon_fallback,
+            icon_dark_path=icon_dark_path,
+            icon_light_path=icon_light_path,
         )
         self._tray.on_activate = self._on_tray_speak
         self._tray.set_menu(
