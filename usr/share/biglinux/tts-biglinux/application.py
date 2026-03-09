@@ -335,9 +335,9 @@ class TTSApplication(Adw.Application):
         import subprocess
         from pathlib import Path
 
-        # Disable legacy khotkeys binding (it hardcodes Alt+V and conflicts
-        # with the new configurable shortcut mechanism)
-        self._disable_legacy_khotkeys()
+        # Ensure shortcut is synchronized across both modern (kglobalaccel)
+        # and legacy (khotkeys) systems.
+        self._sync_khotkeys(kde_shortcut, exec_path)
 
         rc_path = Path.home() / ".config" / "kglobalshortcutsrc"
         shortcut = self.settings.shortcut.keybinding
@@ -436,20 +436,14 @@ X-KDE-Shortcuts={kde_shortcut}
 Name=BigLinux TTS Speak
 GenericName=Speech or stop selected text
 GenericName[pt_BR]=Narrador de texto
+Keywords=tts;speak;voice;
+X-GNOME-Autostart-enabled=true
 
-Actions=SoftwareRender;AmdRender;IntegratedRender;
+Actions=Speak;
 
-[Desktop Action SoftwareRender]
-Name=Software Render
-Exec=SoftwareRender {exec_path}
-
-[Desktop Action AmdRender]
-Name=Amd Render
-Exec=AmdRender {exec_path}
-
-[Desktop Action IntegratedRender]
-Name=Integrated Render
-Exec=IntegratedRender {exec_path}
+[Desktop Action Speak]
+Name=Speak selected text
+Exec={exec_path}
 """
         try:
             desktop_dst.parent.mkdir(parents=True, exist_ok=True)
@@ -468,7 +462,7 @@ Exec=IntegratedRender {exec_path}
         import shutil
 
         nuke_targets = [
-            "khotkeys",
+            # "khotkeys",  # Handled by _sync_khotkeys
             "biglinux-tts-speak.desktop",
             "bigtts.desktop",
             "tts-speak.desktop",
@@ -788,8 +782,7 @@ Exec=IntegratedRender {exec_path}
         import subprocess
 
         zombies = [
-            ("khotkeys", "Launch tts-biglinux"),
-            ("khotkeys", "_launch"),
+            # ("khotkeys", "Launch tts-biglinux"),  # Managed by sync
             ("bigtts.desktop", "_launch"),
             ("tts-speak.desktop", "_launch"),
             ("biglinux-tts-speak.desktop", "_launch"),
@@ -839,52 +832,103 @@ Exec=IntegratedRender {exec_path}
                 except:
                     pass
 
-    @staticmethod
-    def _disable_legacy_khotkeys() -> None:
-        """Disable legacy khotkeys binding if still active.
-
-        On Plasma 6, the khotkeys module is typically not loaded. This method
-        checks if it is and, if so, asks kded to unload it to prevent the
-        hardcoded Alt+V from /usr/share/khotkeys/ttsbiglinux.khotkeys from
-        interfering with the configurable shortcut.
+    def _sync_khotkeys(self, kde_shortcut: str, exec_path: str) -> None:
+        """Update khotkeys configuration for backward compatibility.
+        
+        Writes to local user config if possible, and also tries to update 
+        the development file in the repository if running from there.
         """
         import subprocess
+        from pathlib import Path
+        
+        # Template adapted from user's legacy code
+        khotkeys_content = f"""[Main]
+ImportId=biglinux-tts
+Version=2
+Autostart=true
+Disabled=false
 
-        # Check if khotkeys module is loaded in kded6
-        try:
-            result = subprocess.run(
-                [
-                    "qdbus6",
-                    "org.kde.kded6",
-                    "/kded",
-                    "org.kde.kded6.loadedModules",
-                ],
-                capture_output=True,
-                text=True,
-                timeout=3,
-            )
-            if "khotkeys" not in result.stdout:
-                return  # module not loaded, nothing to do
-        except (OSError, subprocess.TimeoutExpired):
-            return
+[Data]
+DataCount=1
 
-        # khotkeys is loaded — try to tell it to reload so it picks up
-        # the disabled version of ttsbiglinux.khotkeys
-        logger.info("khotkeys module is loaded, requesting reload")
+[Data_1]
+Comment=Global keyboard shortcut to speak selected text
+Enabled=true
+Name=BigLinux TTS Speak
+Type=COMMAND_SHORTCUT_ACTION_DATA
+
+[Data_1Actions]
+ActionsCount=1
+
+[Data_1Actions0]
+Command={exec_path}
+Type=COMMAND
+
+[Data_1Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1Triggers0]
+Key={kde_shortcut}
+Type=SHORTCUT
+"""
+        # 1. Update dev file if reachable
+        repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
+        dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
+        if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
+            try:
+                dev_khotkeys.write_text(khotkeys_content, encoding="utf-8")
+                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
+            except Exception as e:
+                logger.debug("Failed to write dev khotkeys: %s", e)
+
+        # 2. Update user local khotkeys if they exist
+        local_khotkeys_dir = Path.home() / ".local" / "share" / "khotkeys"
+        local_khotkeys = local_khotkeys_dir / "tts-biglinux.khotkeys"
         try:
-            subprocess.run(
-                [
-                    "dbus-send",
-                    "--session",
-                    "--type=method_call",
-                    "--dest=org.kde.kded6",
-                    "/modules/khotkeys",
-                    "org.kde.khotkeys.reread_configuration",
-                ],
-                timeout=3,
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-        except (OSError, subprocess.TimeoutExpired):
-            pass
+            local_khotkeys_dir.mkdir(parents=True, exist_ok=True)
+            local_khotkeys.write_text(khotkeys_content, encoding="utf-8")
+            logger.debug("Updated local khotkeys: %s", local_khotkeys)
+        except Exception as e:
+            logger.debug("Failed to write local khotkeys: %s", e)
+
+        # 3. Handle kded reread
+        # On Plasma 6, khotkeys is usually gone, but we check anyway.
+        self._trigger_khotkeys_reload()
+
+    def _trigger_khotkeys_reload(self) -> None:
+        """Tell khotkeys to reload if it exists."""
+        import subprocess
+        
+        # Check if khotkeys module is loaded in kded (5 or 6)
+        modules = []
+        for kded in ["org.kde.kded6", "org.kde.kded5"]:
+            try:
+                res = subprocess.run(
+                    ["qdbus", kded, "/kded", "org.kde.kded6.loadedModules"],
+                    capture_output=True, text=True, timeout=2
+                )
+                if "khotkeys" in res.stdout:
+                    modules.append(kded)
+            except:
+                pass
+        
+        for kded in modules:
+            try:
+                subprocess.run(
+                    ["dbus-send", "--session", "--type=method_call",
+                     f"--dest={kded}", "/modules/khotkeys", 
+                     "org.kde.khotkeys.reread_configuration"],
+                    timeout=2, check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                )
+            except:
+                pass
+
+    @staticmethod
+    def _disable_legacy_khotkeys() -> None:
+        # Replaced by _sync_khotkeys but kept as empty for compatibility if called elsewhere
+        pass
