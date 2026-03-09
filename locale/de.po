@@ -12,28 +12,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 36
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 122
 msgid "Welcome to BigLinux TTS"
 msgstr "Willkommen bei BigLinux TTS"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 99
 msgid "Let's Start"
 msgstr "Lass uns anfangen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 129
 msgid "Your text-to-speech assistant"
 msgstr "Ihr Text-zu-Sprache-Assistent"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 156
 msgid "Multiple TTS Engines"
 msgstr "Mehrere TTS-Engines"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 158
 msgid ""
@@ -42,12 +37,10 @@ msgid ""
 msgstr ""
 "RHVoice, espeak-ng und Piper Neural TTS\n"
 "mit automatischer Spracherkennung"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 163
 msgid "Multilingual Support"
 msgstr "Mehrsprachige Unterstützung"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 164
 msgid ""
@@ -56,12 +49,10 @@ msgid ""
 msgstr ""
 "Stimmen in Dutzenden von Sprachen\n"
 "einschließlich Portugiesisch (Brasilien)"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 167
 msgid "Global Shortcut"
 msgstr "Globales Tastenkürzel"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 168
 msgid ""
@@ -70,12 +61,10 @@ msgid ""
 msgstr ""
 "Alt+V drücken, um markierten Text\n"
 "in jeder Anwendung vorzulesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 173
 msgid "Clipboard Reading"
 msgstr "Zwischenablage lesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 174
 msgid ""
@@ -84,12 +73,10 @@ msgid ""
 msgstr ""
 "Text direkt einfügen oder tippen\n"
 "und sofort anhören"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 187
 msgid "Fine-Tune Speech"
 msgstr "Sprach-Feineinstellung"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 188
 msgid ""
@@ -98,12 +85,10 @@ msgid ""
 msgstr ""
 "Geschwindigkeit, Tonhöhe und Lautstärke\n"
 "nach Wunsch anpassen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 191
 msgid "Neural Voices"
 msgstr "Neuronale Stimmen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 192
 msgid ""
@@ -112,12 +97,10 @@ msgid ""
 msgstr ""
 "Piper-Stimmen für natürliche,\n"
 "hochwertige Sprachsynthese"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 195
 msgid "Easy Installation"
 msgstr "Einfache Installation"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 196
 msgid ""
@@ -126,12 +109,10 @@ msgid ""
 msgstr ""
 "Neue Stimmen und Engines\n"
 "direkt über die Oberfläche installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 199
 msgid "Lightweight & Fast"
 msgstr "Leicht & Schnell"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 200
 msgid ""
@@ -140,27 +121,22 @@ msgid ""
 msgstr ""
 "Native GTK4/Adwaita-Oberfläche\n"
 "mit minimalem Ressourcenverbrauch"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py, line: 211
 msgid "Show this dialog on startup"
 msgstr "Diesen Dialog beim Start anzeigen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 77
 msgid "BigLinux TTS"
 msgstr "BigLinux TTS"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 174
 msgid "This is a test, welcome to BigLinux!"
 msgstr "Dies ist ein Test, willkommen bei BigLinux!"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 175
 msgid "Type text to test…"
 msgstr "Text zum Testen eingeben…"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 186
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1154
@@ -169,154 +145,124 @@ msgstr "Text zum Testen eingeben…"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1168
 msgid "Test voice"
 msgstr "Stimme testen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 189
 msgid "Test the selected voice"
 msgstr "Ausgewählte Stimme testen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 203
 msgid "Voice settings"
 msgstr "Spracheinstellungen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 204
 msgid "Choose voice and adjust speech parameters"
 msgstr "Stimme wählen und Parameter anpassen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 209
 msgid "Voice"
 msgstr "Stimme"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 210
 msgid "Loading voices..."
 msgstr "Stimmen werden geladen..."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 211
 msgid "Detecting installed voices..."
 msgstr "Installierte Stimmen werden gesucht..."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 213
 msgid "Select TTS voice"
 msgstr "TTS-Stimme wählen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
 msgid "Refresh voice list"
 msgstr "Sprachliste aktualisieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
 msgid "Manage voices for current engine"
 msgstr "Stimmen für aktuelle Engine verwalten"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 237
 msgid "Speed"
 msgstr "Tempo"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 238
 msgid "Speech rate"
 msgstr "Sprechtempo"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 245
 msgid "Slow"
 msgstr "Langsam"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 245
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 261
 msgid "Normal"
 msgstr "Normal"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 245
 msgid "Fast"
 msgstr "Schnell"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 246
 msgid "Speech speed"
 msgstr "Sprechgeschwindigkeit"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 253
 msgid "Pitch"
 msgstr "Tonhöhe"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 254
 msgid "Voice tone"
 msgstr "Stimmton"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 261
 msgid "Low"
 msgstr "Tief"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 261
 msgid "High"
 msgstr "Hoch"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 262
 msgid "Voice pitch"
 msgstr "Stimmtonhöhe"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 269
 msgid "Volume"
 msgstr "Lautstärke"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 270
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 278
 msgid "Speech volume"
 msgstr "Sprachlautstärke"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 277
 msgid "Mute"
 msgstr "Stumm"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 277
 msgid "Max"
 msgstr "Max"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 290
 msgid "TTS Engine"
 msgstr "TTS-Engine"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 291
 msgid "Choose which text-to-speech engine to use"
 msgstr "Engine für die Sprachsynthese wählen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 314
 msgid "TTS Backend"
 msgstr "TTS-Backend"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 315
 msgid "Engine used for speech synthesis"
 msgstr "Engine für die Sprachsynthese"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 319
 msgid "Select TTS engine"
 msgstr "TTS-Engine wählen"
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -324,132 +270,106 @@ msgstr "TTS-Engine wählen"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
 msgid "Voice Manager"
 msgstr "Sprach-Manager"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
 msgid "Install or remove voice packages"
 msgstr "Sprachpakete installieren oder entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 344
 msgid "Text Processing"
 msgstr "Textverarbeitung"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 345
 msgid "Configure how text is processed before reading"
 msgstr "Textverarbeitung vor dem Lesen anpassen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 349
 msgid "Processing options"
 msgstr "Verarbeitungsoptionen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 350
 msgid "Abbreviations, formatting, limits"
 msgstr "Abkürzungen, Formatierung, Limits"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 356
 msgid "Expand abbreviations"
 msgstr "Abkürzungen ausschreiben"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 357
 msgid "Replace common abbreviations with full words"
 msgstr "Gängige Abkürzungen durch volle Wörter ersetzen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 360
 msgid "Expand text abbreviations"
 msgstr "Textabkürzungen ausschreiben"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 366
 msgid "Read special characters"
 msgstr "Sonderzeichen lesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 367
 msgid "Speak symbols like # @ % by name"
 msgstr "Symbole wie # @ % mit Namen aussprechen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 370
 msgid "Read special characters aloud"
 msgstr "Sonderzeichen laut vorlesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 376
 msgid "Remove formatting"
 msgstr "Formatierung entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 377
 msgid "Strip Markdown and HTML before reading"
 msgstr "Markdown und HTML vor dem Lesen entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 380
 msgid "Remove text formatting"
 msgstr "Textformatierung entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 386
 msgid "Read URLs"
 msgstr "URLs lesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 387
 msgid "Read web addresses aloud instead of skipping them"
 msgstr "Webadressen laut vorlesen statt überspringen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 390
 msgid "Read URLs aloud"
 msgstr "URLs laut vorlesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 396
 msgid "Unlimited"
 msgstr "Unbegrenzt"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 413
 msgid "Character limit"
 msgstr "Zeichenlimit"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 414
 msgid "Maximum number of characters to read at once"
 msgstr "Maximale Zeichenanzahl pro Lesevorgang"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 418
 msgid "Maximum character limit"
 msgstr "Maximales Zeichenlimit"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 430
 msgid "Advanced"
 msgstr "Erweitert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 434
 msgid "Advanced options"
 msgstr "Erweiterte Optionen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 435
 msgid "Shortcut, behavior settings"
 msgstr "Shortcut, Verhaltens-Einstellungen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 441
 msgid "Keyboard shortcut"
 msgstr "Tastenkombination"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 444
 msgid ""
@@ -458,12 +378,10 @@ msgid ""
 msgstr ""
 "Text markieren und Shortcut drücken, um ihn vorzulesen. Erneut drücken, "
 "um zu stoppen."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 455
 msgid "Change"
 msgstr "Ändern"
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -471,22 +389,18 @@ msgstr "Ändern"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 143
 msgid "Tray icon"
 msgstr "Tray-Icon"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 470
 msgid "Fixes quick access and allows running in the background"
 msgstr "Aktiviert den Schnellzugriff und den Hintergrundbetrieb"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 473
 msgid "Show system tray icon"
 msgstr "System-Tray-Icon anzeigen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 493
 msgid "Set new shortcut"
 msgstr "Neues Tastenkürzel festlegen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 509
 msgid ""
@@ -499,86 +413,70 @@ msgstr ""
 "und eine Taste drücken.\n"
 "\n"
 "<small>Esc drücken zum Abbrechen</small>"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 518
 msgid "Press the new shortcut"
 msgstr "Neues Tastenkürzel drücken"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 612
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Tastenkürzel in {keys} geändert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 639
 msgid "Tray icon enabled"
 msgstr "Tray-Icon aktiviert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 642
 msgid "Tray icon disabled"
 msgstr "Tray-Icon deaktiviert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
 msgid "Refreshing voices..."
 msgstr "Stimmen werden aktualisiert..."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
 msgid "Refreshing voice list…"
 msgstr "Sprachliste wird aktualisiert…"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 689
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Keine Stimmen gefunden — rhvoice oder espeak-ng installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 691
 msgid "No voices available"
 msgstr "Keine Stimmen verfügbar"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 709
 msgid "No voices available for this engine"
 msgstr "Keine Stimmen für diese Engine verfügbar"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 712
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Zuerst {engine}-Stimmen installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 740
 #, python-brace-format
 msgid "{count} voices available"
 msgstr "{count} Stimmen verfügbar"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 845
 msgid "Searching for voices..."
 msgstr "Suche nach Stimmen..."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
 msgid "Checking for Piper voices..."
 msgstr "Prüfe Piper-Stimmen..."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 869
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "Keine Stimmen für {engine} gefunden — zuerst installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 879
 msgid "Install Piper Neural TTS?"
 msgstr "Piper Neural TTS installieren?"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 881
 msgid ""
@@ -599,7 +497,6 @@ msgstr ""
 "• piper-voices-pt-BR (portugiesische Stimmen)\n"
 "\n"
 "Administratorrechte sind erforderlich."
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -610,7 +507,6 @@ msgstr ""
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 188
 msgid "Cancel"
 msgstr "Abbrechen"
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -619,156 +515,127 @@ msgstr "Abbrechen"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 530
 msgid "Install"
 msgstr "Installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 915
 msgid "Installing Piper TTS — this may take a moment…"
 msgstr "Piper TTS wird installiert — das kann einen Moment dauern…"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 991
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper erfolgreich installiert! Stimmen werden gesucht…"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
 #, python-brace-format
 msgid "Failed to install: {error}"
 msgstr "Fehler beim Installieren: {error}"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1009
 msgid "Failed to install Piper — check permissions"
 msgstr "Piper-Installation fehlgeschlagen — Berechtigungen prüfen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1068
 msgid "Type some text to test"
 msgstr "Text zum Testen eingeben"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1082
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "Lautstärke ist auf Null — wird für den Test auf das Minimum erhöht"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1110
 msgid "Could not play test — check if a TTS engine is installed"
 msgstr "Test konnte nicht abgespielt werden — TTS-Engine prüfen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1127
 msgid "Press Alt+V to stop"
 msgstr "Alt+V drücken zum Stoppen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1130
 msgid "Could not play speech — check TTS engine"
 msgstr "Sprache konnte nicht abgespielt werden — TTS-Engine prüfen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1132
 msgid "Select text and press Alt+V to read aloud"
 msgstr "Text markieren und Alt+V drücken zum Vorlesen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1142
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1144
 msgid "Stop"
 msgstr "Stopp"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1188
 msgid "Settings restored to defaults"
 msgstr "Einstellungen auf Standardwerte zurückgesetzt"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
 msgid "Loading available voices…"
 msgstr "Verfügbare Stimmen werden geladen…"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
 msgid "No Voice Packages Found"
 msgstr "Keine Sprachpakete gefunden"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
 msgid "Could not find any TTS voice packages from pacman repositories."
 msgstr "Konnte keine TTS-Sprachpakete in den Pacman-Repos finden."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
 msgid "High quality offline voices"
 msgstr "Hochwertige Offline-Stimmen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
 msgid "Neural network voices — natural sounding"
 msgstr "Neuronale Stimmen — natürlicher Klang"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
 msgid "Lightweight multi-language synthesizer"
 msgstr "Leichter mehrsprachiger Synthesizer"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
 #, python-brace-format
 msgid "Add RHVoice — {count} available"
 msgstr "RHVoice hinzufügen — {count} verfügbar"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
 #, python-brace-format
 msgid "{langs} languages"
 msgstr "{langs} Sprachen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
 #, python-brace-format
 msgid "{count} voice(s)"
 msgstr "{count} Stimme(n)"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
 #, python-brace-format
 msgid "Add Piper voices — {count} available"
 msgstr "Piper-Stimmen hinzufügen — {count} verfügbar"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
 msgid "Neural TTS voice packs by language"
 msgstr "Neuronale TTS-Sprachpakete nach Sprache"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
 msgid "Installed"
 msgstr "Installiert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
 msgid "Remove"
 msgstr "Entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
 #, python-brace-format
 msgid "Remove {name}"
 msgstr "{name} entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
 #, python-brace-format
 msgid "Install {name}"
 msgstr "{name} installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
 msgid "Install Voice"
 msgstr "Sprache installieren"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
 #, python-brace-format
@@ -780,12 +647,10 @@ msgstr ""
 "<b>{name}</b> installieren?\n"
 "\n"
 "Dies erfordert Administratorrechte."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
 msgid "Remove Voice"
 msgstr "Sprache entfernen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
 #, python-brace-format
@@ -797,32 +662,26 @@ msgstr ""
 "<b>{name}</b> entfernen?\n"
 "\n"
 "Sie können sie später wieder installieren."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
 msgid "Operation timed out"
 msgstr "Zeitüberschreitung der Operation"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
 msgid "pkexec or pacman not found"
 msgstr "pkexec oder pacman nicht gefunden"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
 msgid "Failed"
 msgstr "Fehlgeschlagen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
 msgid "Removal Failed"
 msgstr "Entfernung fehlgeschlagen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
 msgid "Unknown error"
 msgstr "Unbekannter Fehler"
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -840,22 +699,18 @@ msgstr "Unbekannter Fehler"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 205
 msgid "OK"
 msgstr "OK"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 146
 msgid "Restore Defaults"
 msgstr "Standardwerte wiederherstellen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 150
 msgid "Welcome"
 msgstr "Willkommen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 151
 msgid "About"
 msgstr "Über"
-
 #
 # #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
 #
@@ -863,43 +718,35 @@ msgstr "Über"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 178
 msgid "Quit"
 msgstr "Beenden"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 158
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 159
 msgid "Main menu"
 msgstr "Hauptmenü"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 185
 msgid "Restore settings?"
 msgstr "Einstellungen zurücksetzen?"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 186
 msgid "This will return all adjustments to their original defaults."
 msgstr "Dies setzt alle Einstellungen auf die ursprünglichen Standardwerte zurück."
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/window.py, line: 189
 msgid "Restore"
 msgstr "Wiederherstellen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 170
 msgid "Text-to-speech assistant"
 msgstr "Text-zu-Sprache-Assistent"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 176
 msgid "Settings"
 msgstr "Einstellungen"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 199
 msgid "Minimized to System Tray"
 msgstr "In den System-Tray minimiert"
-
 #
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 201
 msgid ""
