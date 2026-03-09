@@ -73,6 +73,16 @@ try:
     tray = QSystemTrayIcon(icon, app)
     tray.setToolTip(tooltip)
 
+    def update_icon():
+        """Refresh icon when theme changes."""
+        new_icon = QIcon(icon_path) if icon_path else QIcon.fromTheme(icon_name)
+        if icon_name.endswith("-symbolic"):
+            new_icon.setIsMask(True)
+        tray.setIcon(new_icon)
+
+    # Listen for theme changes (Light/Dark mode toggle)
+    app.paletteChanged.connect(update_icon)
+
     menu = QMenu()
     tray.setContextMenu(menu)
 
