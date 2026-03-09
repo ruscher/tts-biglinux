@@ -655,9 +655,18 @@ class MainView(Adw.NavigationPage):
         engine_map = {
             "rhvoice": "RHVoice",
             "piper": "Piper",
-            "espeak-ng": "espeak-ng"
+            "espeak-ng": "espeak-ng",
+            "speech-dispatcher": self._settings.speech.output_module.lower()
         }
         engine_filter = engine_map.get(backend.lower())
+        
+        # If still not found, check if backend string contains engine name
+        if not engine_filter:
+            for key in ["rhvoice", "piper", "espeak-ng"]:
+                if key in backend.lower():
+                    engine_filter = engine_map[key]
+                    break
+
         self._on_open_voice_manager(engine_filter)
 
     def _on_open_voice_manager(self, engine_filter: str | None = None) -> None:
