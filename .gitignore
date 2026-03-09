@@ -12,4 +12,7 @@ ENV/
 .idea/
 *.swp
 *.bak
-PLANNING.md
+.audit/
+.ruff_cache/
+*.mo
+# PLANNING.md  <-- User might want to keep this tracked? It was here before.
