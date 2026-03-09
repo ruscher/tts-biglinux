@@ -46,7 +46,7 @@ _LANG_DISPLAY: dict[str, str] = {
     "uzbek": "🇺🇿  Uzbek",
     # Piper locale codes → display
     "ar-jo": "🇯🇴  Arabic",
-    "ca-es": "🚩  Catalan",
+    "ca-es": "🏴󠁥󠁳󠁣󠁴󠁿  Catalan",
     "cs-cz": "🇨🇿  Czech",
     "cy-gb": "🏴  Welsh",
     "da-dk": "🇩🇰  Danish",
@@ -401,7 +401,6 @@ class VoiceManagerDialog(Adw.Dialog):
                     expander.set_subtitle(
                         _("{langs} languages").format(langs=len(by_lang))
                     )
-                    expander.set_icon_name("list-add-symbolic")
 
                     for lang in sorted(by_lang.keys()):
                         lang_display = _LANG_DISPLAY.get(lang, lang.title())
@@ -425,7 +424,6 @@ class VoiceManagerDialog(Adw.Dialog):
                         _("Add Piper voices — {count} available").format(count=len(available))
                     )
                     expander.set_subtitle(_("Neural TTS voice packs by language"))
-                    expander.set_icon_name("list-add-symbolic")
 
                     for pkg in sorted(available, key=lambda p: p.get("display_name", "")):
                         row = self._make_row(pkg, is_installed=False)
@@ -497,7 +495,9 @@ class VoiceManagerDialog(Adw.Dialog):
             
             # Avoid duplicating title and subtitle if they are essentially the same (e.g. Piper voices)
             if lang_display and lang_display.strip().lower() != display.strip().lower():
-                row.set_subtitle(lang_display)
+                # Skip subtitle if mostly same or if Piper section
+                if pkg.get("engine") != "Piper":
+                    row.set_subtitle(lang_display)
 
             btn = Gtk.Button()
             btn_content = Adw.ButtonContent()

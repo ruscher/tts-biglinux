@@ -629,7 +629,7 @@ Exec=IntegratedRender {exec_path}
             logger.warning("Could not compute Qt key code for '%s'", kde_shortcut)
             return
 
-        comp = "biglinux-tts-speak.desktop"
+        comp = "br.com.biglinux.tts.desktop"
         action_id = (
             f"['{comp}', '_launch', "
             f"'BigLinux TTS Speak', 'Speech or stop selected text']"
