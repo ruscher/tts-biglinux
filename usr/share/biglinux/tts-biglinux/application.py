@@ -377,179 +377,24 @@ class TTSApplication(Adw.Application):
         logger.debug("Path detection: repo_root=%s, main_py=%s (exists=%s)", 
                      repo_root, main_py, main_py.exists())
 
-        if main_py.exists():
-            # In development, launch via python main.py --speak
-            exec_path = f"{sys.executable} {main_py} --speak"
-            logger.info("Using development path for shortcut: %s", exec_path)
-        else:
-            exec_path = "/usr/bin/biglinux-tts-speak"
-
-        # Upgrade: Call the desktop integration service sync which handles
-        # both modern and legacy systems
-        DesktopIntegrationService.sync_khotkeys(kde_shortcut, exec_path)
-
-        # ── Zombie Nuke ──────────────────────────────────────────────
-        # These old files in ~/.local/share/applications/ often have Alt+V
-        # hardcoded in X-KDE-Shortcuts and override everything.
+          # ── Zombie Nuke ──────────────────────────────────────────────
+        # Clean up old/conflicting desktop files in ~/.local/share/applications/
         local_apps = Path.home() / ".local" / "share" / "applications"
-        zombies = ["tts-speak.desktop", "bigtts.desktop"]
+        zombies = ["tts-speak.desktop", "bigtts.desktop", "biglinux-tts-speak.desktop"]
         for z in zombies:
             z_path = local_apps / z
             if z_path.exists():
                 try:
                     z_path.unlink()
                     logger.info("Deleted zombie desktop file: %s", z_path)
-                    # Also unregister from memory
-                    comp_name = z
-                    for dbus_cmd in [
-                        ["qdbus6"],
-                        ["qdbus"],
-                        ["dbus-send", "--session", "--dest=org.kde.kglobalaccel"],
-                    ]:
-                        if "dbus-send" in dbus_cmd:
-                            subprocess.run(
-                                dbus_cmd
-                                + [
-                                    "/kglobalaccel",
-                                    "org.kde.KGlobalAccel.unregister",
-                                    f"string:{comp_name}",
-                                    "string:_launch",
-                                ],
-                                timeout=1,
-                                stderr=subprocess.DEVNULL,
-                            )
-                        else:
-                            subprocess.run(
-                                dbus_cmd
-                                + [
-                                    "org.kde.kglobalaccel",
-                                    "/kglobalaccel",
-                                    "org.kde.KGlobalAccel.unregister",
-                                    comp_name,
-                                    "_launch",
-                                ],
-                                timeout=1,
-                                stderr=subprocess.DEVNULL,
-                            )
-                except:
-                    pass
+                except Exception as e:
+                    logger.warning("Could not delete zombie file %s: %s", z_path, e)
 
-        # ── Radical Cleanup ──────────────────────────────────────────
-        self._radical_dbus_cleanup()
-
-        # Groups to clean and register in
-        groups = [
-            ("services", "biglinux-tts-speak.desktop"),  # Plasma 6
-            ("", "biglinux-tts-speak.desktop"),  # Plasma 5
-            ("services", "br.com.biglinux.tts.desktop"),  # Potential UI conflict
-            ("", "bigtts.desktop"),  # Legacy
-        ]
-
-        # Ensure the desktop file exists unconditionally in local apps
-        local_apps = Path.home() / ".local" / "share" / "applications"
-        desktop_dst = local_apps / "biglinux-tts-speak.desktop"
-
-        content = f"""[Desktop Entry]
-Type=Application
-Exec={exec_path}
-Icon=tts-biglinux
-Categories=Utility;Accessibility;
-StartupNotify=false
-NoDisplay=true
-X-KDE-Shortcuts={kde_shortcut}
-Name=BigLinux TTS Speak
-GenericName=Speech or stop selected text
-GenericName[pt_BR]=Narrador de texto
-Keywords=tts;speak;voice;
-X-GNOME-Autostart-enabled=true
-
-Actions=Speak;
-
-[Desktop Action Speak]
-Name=Speak selected text
-Exec={exec_path}
-"""
-        try:
-            desktop_dst.parent.mkdir(parents=True, exist_ok=True)
-            desktop_dst.write_text(content, encoding="utf-8")
-            # Update database
-            subprocess.run(
-                ["update-desktop-database", str(local_apps)], timeout=2, check=False
-            )
-        except OSError as e:
-            logger.warning("Could not write desktop file: %s", e)
-
-        # Registry commands
-        registry_cmds = ["kwriteconfig6", "kwriteconfig5", "kwriteconfig"]
-
-        # NUKE 'Alt+V' specifically from anywhere it might be hiding
-        import shutil
-
-        nuke_targets = [
-            # "khotkeys",  # Handled by _sync_khotkeys
-            "biglinux-tts-speak.desktop",
-            "bigtts.desktop",
-            "tts-speak.desktop",
-            "tts_speak_desktop",
-            "plasmashell",
-        ]
-        for n_group in nuke_targets:
-            for kcmd in registry_cmds:
-                if shutil.which(kcmd):
-                    subprocess.run(
-                        [
-                            kcmd,
-                            "--file",
-                            "kglobalshortcutsrc",
-                            "--group",
-                            n_group,
-                            "--key",
-                            "_launch",
-                            "--delete",
-                        ],
-                        timeout=1,
-                        stderr=subprocess.DEVNULL,
-                    )
-                    subprocess.run(
-                        [
-                            kcmd,
-                            "--file",
-                            "kglobalshortcutsrc",
-                            "--group",
-                            n_group,
-                            "--key",
-                            "Launch tts-biglinux",
-                            "--delete",
-                        ],
-                        timeout=1,
-                        stderr=subprocess.DEVNULL,
-                    )
-
-        if kde_shortcut.lower() == "none":
-            logger.info("Shortcut is 'none', skipping registration.")
-            # Still reload to ensure old ones are gone
-            self._reload_kglobalaccel()
-            return
-
-        for group_prefix, group_name in groups:
-            for kcmd in registry_cmds:
-                if not shutil.which(kcmd):
-                    continue
-                try:
-                    cmd = [kcmd, "--file", "kglobalshortcutsrc"]
-                    if group_prefix:
-                        cmd.extend(["--group", group_prefix])
-                    cmd.extend(["--group", group_name, "--key", "_launch"])
-                    # If it's a cleanup target, delete it first
-                    if "bigtts" in group_name or "br.com.biglinux.tts" in group_name:
-                        subprocess.run(cmd + ["--delete"], timeout=2, check=False)
-                        continue
-
-                    # Register new shortcut with COMMAS (most stable separator for kwriteconfig)
-                    val = f"{kde_shortcut},{kde_shortcut},Speech or stop selected text"
-                    subprocess.run(cmd + [val], timeout=2, check=False)
-                except:
-                    pass
+        # ── Unified Registration ─────────────────────────────────────
+        # Update both modern (KGlobalAccel via .desktop) and legacy (KHotKeys via .khotkeys)
+        # using the centralized DesktopIntegrationService.
+        logger.debug("Ensuring unified shortcut registration for: %s", kde_shortcut)
+        DesktopIntegrationService.update_khotkeys(shortcut)
 
         # Rebuild sycoca (KDE service cache)
         for scmd in ["kbuildsycoca6", "kbuildsycoca5"]:

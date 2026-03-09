@@ -193,7 +193,8 @@ class DesktopIntegrationService:
     @staticmethod
     def unregister_shortcut_from_memory() -> None:
         """Unregister our component from KGlobalAccel in-memory cache."""
-        comp = "biglinux-tts-speak.desktop"
+        from config import APP_ID
+        comp = f"{APP_ID}.desktop"
         try:
             subprocess.run(
                 [
@@ -238,9 +239,10 @@ class DesktopIntegrationService:
 
     @staticmethod
     def ensure_desktop_file(kde_key: str) -> Path:
-        """Ensure biglinux-tts-speak.desktop exists locally with current shortcut."""
+        """Ensure the desktop file exists locally with current shortcut."""
+        from config import APP_ID
         local_apps = Path.home() / ".local" / "share" / "applications"
-        desktop_dst = local_apps / "biglinux-tts-speak.desktop"
+        desktop_dst = local_apps / f"{APP_ID}.desktop"
 
         # Dynamic path detection for the executable script
         repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
@@ -256,10 +258,10 @@ Icon=tts-biglinux
 Categories=Utility;Accessibility;
 StartupNotify=false
 NoDisplay=true
-X-KDE-Shortcuts={kde_key}
-Name=BigLinux TTS Speak
+        X-KDE-Shortcuts={kde_key}
+Name=BigLinux TTS
 GenericName=Speech or stop selected text
-GenericName[pt_BR]=Narrador de texto
+GenericName[pt_BR]=Narrador de texto (Alt+V)
 
 Actions=SoftwareRender;AmdRender;IntegratedRender;
 
@@ -291,11 +293,13 @@ Exec=IntegratedRender {exec_path}
         # 2. Radical Cleanup — Unregister zombies via DBus first
         cls.radical_dbus_cleanup()
 
+        from config import APP_ID
         # Groups to clean and register in (Plasma 5 and 6)
         groups = [
+            ("services", f"{APP_ID}.desktop"),
+            ("", f"{APP_ID}.desktop"),
             ("services", "biglinux-tts-speak.desktop"),
             ("", "biglinux-tts-speak.desktop"),
-            ("services", "br.com.biglinux.tts.desktop"),
             ("", "bigtts.desktop"),
         ]
 
