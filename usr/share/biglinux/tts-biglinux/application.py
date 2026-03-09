@@ -335,11 +335,6 @@ class TTSApplication(Adw.Application):
         import subprocess
         from pathlib import Path
 
-        # Ensure shortcut is synchronized across both modern (kglobalaccel)
-        # and legacy (khotkeys) systems.
-        self._sync_khotkeys(kde_shortcut, exec_path)
-
-        rc_path = Path.home() / ".config" / "kglobalshortcutsrc"
         shortcut = self.settings.shortcut.keybinding
 
         # Convert GTK accelerator to KDE format
@@ -363,6 +358,10 @@ class TTSApplication(Adw.Application):
             logger.info("Using development script from Git: %s", exec_path)
         else:
             exec_path = "/usr/bin/biglinux-tts-speak"
+
+        # Ensure shortcut is synchronized across both modern (kglobalaccel)
+        # and legacy (khotkeys) systems.
+        self._sync_khotkeys(kde_shortcut, exec_path)
 
         # ── Zombie Nuke ──────────────────────────────────────────────
         # These old files in ~/.local/share/applications/ often have Alt+V
