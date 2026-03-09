@@ -7,6 +7,7 @@ Handles application lifecycle, services, and global actions.
 from __future__ import annotations
 
 import logging
+import os
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -27,6 +28,7 @@ from config import (
 )
 from resources import load_css
 from services.settings_service import SettingsService
+from services.desktop_integration_service import DesktopIntegrationService
 from services.tray_service import MenuItem, TrayIcon
 from services.tts_service import TTSService
 from utils.i18n import _
@@ -51,6 +53,8 @@ class TTSApplication(Adw.Application):
             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
         )
 
+        # State flags
+        self._is_speaking_only: bool = False
         # Services (lazy)
         self._tts_service: TTSService | None = None
         self._settings_service: SettingsService | None = None
@@ -71,13 +75,19 @@ class TTSApplication(Adw.Application):
     def do_command_line(self, command_line: Gio.ApplicationCommandLine) -> int:
         """Handle command line arguments passed correctly by Gio.Application."""
         args = command_line.get_arguments()
-        logger.debug("Received command line: %s", args)
+        logger.debug("Received command line: %s (remote=%s)", args, command_line.get_is_remote())
         
         # If --speak was passed
         if "--speak" in args:
+            self._is_speaking_only = True
             self._on_tray_speak()
+            
+            # If this is the primary instance starting up, stay alive but hidden
+            if not command_line.get_is_remote():
+                self.activate()
             return 0
             
+        self._is_speaking_only = False
         self.activate()
         return 0
 
@@ -121,11 +131,19 @@ class TTSApplication(Adw.Application):
 
     def _on_activate(self, app: Adw.Application) -> None:
         """Application activate — create or present window."""
-        logger.debug("Application activated")
+        logger.debug("Application activated (speaking_only=%s)", self._is_speaking_only)
         if self._window is None:
             self._window = TTSWindow(application=app)
             self._window.connect("close-request", self._on_window_close_request)
-        self._window.present()
+        
+        # Only show window if not just speaking from shortcut
+        if not self._is_speaking_only:
+            self._window.present()
+        else:
+            # If speaking only, we MUST have a tray or we'll quit instantly
+            # Ensure tray is initialized even if the window is hidden
+            if self._tray is None:
+                self._setup_tray_icon()
 
     def _on_shutdown(self, app: Adw.Application) -> None:
         """Application shutdown — cleanup resources."""
@@ -335,11 +353,6 @@ class TTSApplication(Adw.Application):
         import subprocess
         from pathlib import Path
 
-        # Disable legacy khotkeys binding (it hardcodes Alt+V and conflicts
-        # with the new configurable shortcut mechanism)
-        self._disable_legacy_khotkeys()
-
-        rc_path = Path.home() / ".config" / "kglobalshortcutsrc"
         shortcut = self.settings.shortcut.keybinding
 
         # Convert GTK accelerator to KDE format
@@ -356,182 +369,32 @@ class TTSApplication(Adw.Application):
 
         # ── Smart Path Detection ──────────────────────────────────────
         # Use script from Git repo if running from there, otherwise system path
+        import sys
+        # application.py is in usr/share/biglinux/tts-biglinux/
         repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-        git_script = repo_root / "usr" / "bin" / "biglinux-tts-speak"
-        if git_script.exists():
-            exec_path = str(git_script)
-            logger.info("Using development script from Git: %s", exec_path)
-        else:
-            exec_path = "/usr/bin/biglinux-tts-speak"
+        main_py = repo_root / "usr" / "share" / "biglinux" / "tts-biglinux" / "main.py"
+        
+        logger.debug("Path detection: repo_root=%s, main_py=%s (exists=%s)", 
+                     repo_root, main_py, main_py.exists())
 
-        # ── Zombie Nuke ──────────────────────────────────────────────
-        # These old files in ~/.local/share/applications/ often have Alt+V
-        # hardcoded in X-KDE-Shortcuts and override everything.
+          # ── Zombie Nuke ──────────────────────────────────────────────
+        # Clean up old/conflicting desktop files in ~/.local/share/applications/
         local_apps = Path.home() / ".local" / "share" / "applications"
-        zombies = ["tts-speak.desktop", "bigtts.desktop"]
+        zombies = ["tts-speak.desktop", "bigtts.desktop", "biglinux-tts-speak.desktop"]
         for z in zombies:
             z_path = local_apps / z
             if z_path.exists():
                 try:
                     z_path.unlink()
                     logger.info("Deleted zombie desktop file: %s", z_path)
-                    # Also unregister from memory
-                    comp_name = z
-                    for dbus_cmd in [
-                        ["qdbus6"],
-                        ["qdbus"],
-                        ["dbus-send", "--session", "--dest=org.kde.kglobalaccel"],
-                    ]:
-                        if "dbus-send" in dbus_cmd:
-                            subprocess.run(
-                                dbus_cmd
-                                + [
-                                    "/kglobalaccel",
-                                    "org.kde.KGlobalAccel.unregister",
-                                    f"string:{comp_name}",
-                                    "string:_launch",
-                                ],
-                                timeout=1,
-                                stderr=subprocess.DEVNULL,
-                            )
-                        else:
-                            subprocess.run(
-                                dbus_cmd
-                                + [
-                                    "org.kde.kglobalaccel",
-                                    "/kglobalaccel",
-                                    "org.kde.KGlobalAccel.unregister",
-                                    comp_name,
-                                    "_launch",
-                                ],
-                                timeout=1,
-                                stderr=subprocess.DEVNULL,
-                            )
-                except:
-                    pass
+                except Exception as e:
+                    logger.warning("Could not delete zombie file %s: %s", z_path, e)
 
-        # ── Radical Cleanup ──────────────────────────────────────────
-        self._radical_dbus_cleanup()
-
-        # Groups to clean and register in
-        groups = [
-            ("services", "biglinux-tts-speak.desktop"),  # Plasma 6
-            ("", "biglinux-tts-speak.desktop"),  # Plasma 5
-            ("services", "br.com.biglinux.tts.desktop"),  # Potential UI conflict
-            ("", "bigtts.desktop"),  # Legacy
-        ]
-
-        # Ensure the desktop file exists unconditionally in local apps
-        local_apps = Path.home() / ".local" / "share" / "applications"
-        desktop_dst = local_apps / "biglinux-tts-speak.desktop"
-
-        content = f"""[Desktop Entry]
-Type=Application
-Exec={exec_path}
-Icon=tts-biglinux
-Categories=Utility;Accessibility;
-StartupNotify=false
-NoDisplay=true
-X-KDE-Shortcuts={kde_shortcut}
-Name=BigLinux TTS Speak
-GenericName=Speech or stop selected text
-GenericName[pt_BR]=Narrador de texto
-
-Actions=SoftwareRender;AmdRender;IntegratedRender;
-
-[Desktop Action SoftwareRender]
-Name=Software Render
-Exec=SoftwareRender {exec_path}
-
-[Desktop Action AmdRender]
-Name=Amd Render
-Exec=AmdRender {exec_path}
-
-[Desktop Action IntegratedRender]
-Name=Integrated Render
-Exec=IntegratedRender {exec_path}
-"""
-        try:
-            desktop_dst.parent.mkdir(parents=True, exist_ok=True)
-            desktop_dst.write_text(content, encoding="utf-8")
-            # Update database
-            subprocess.run(
-                ["update-desktop-database", str(local_apps)], timeout=2, check=False
-            )
-        except OSError as e:
-            logger.warning("Could not write desktop file: %s", e)
-
-        # Registry commands
-        registry_cmds = ["kwriteconfig6", "kwriteconfig5", "kwriteconfig"]
-
-        # NUKE 'Alt+V' specifically from anywhere it might be hiding
-        import shutil
-
-        nuke_targets = [
-            "khotkeys",
-            "biglinux-tts-speak.desktop",
-            "bigtts.desktop",
-            "tts-speak.desktop",
-            "tts_speak_desktop",
-            "plasmashell",
-        ]
-        for n_group in nuke_targets:
-            for kcmd in registry_cmds:
-                if shutil.which(kcmd):
-                    subprocess.run(
-                        [
-                            kcmd,
-                            "--file",
-                            "kglobalshortcutsrc",
-                            "--group",
-                            n_group,
-                            "--key",
-                            "_launch",
-                            "--delete",
-                        ],
-                        timeout=1,
-                        stderr=subprocess.DEVNULL,
-                    )
-                    subprocess.run(
-                        [
-                            kcmd,
-                            "--file",
-                            "kglobalshortcutsrc",
-                            "--group",
-                            n_group,
-                            "--key",
-                            "Launch tts-biglinux",
-                            "--delete",
-                        ],
-                        timeout=1,
-                        stderr=subprocess.DEVNULL,
-                    )
-
-        if kde_shortcut.lower() == "none":
-            logger.info("Shortcut is 'none', skipping registration.")
-            # Still reload to ensure old ones are gone
-            self._reload_kglobalaccel()
-            return
-
-        for group_prefix, group_name in groups:
-            for kcmd in registry_cmds:
-                if not shutil.which(kcmd):
-                    continue
-                try:
-                    cmd = [kcmd, "--file", "kglobalshortcutsrc"]
-                    if group_prefix:
-                        cmd.extend(["--group", group_prefix])
-                    cmd.extend(["--group", group_name, "--key", "_launch"])
-                    # If it's a cleanup target, delete it first
-                    if "bigtts" in group_name or "br.com.biglinux.tts" in group_name:
-                        subprocess.run(cmd + ["--delete"], timeout=2, check=False)
-                        continue
-
-                    # Register new shortcut with COMMAS (most stable separator for kwriteconfig)
-                    val = f"{kde_shortcut},{kde_shortcut},Speech or stop selected text"
-                    subprocess.run(cmd + [val], timeout=2, check=False)
-                except:
-                    pass
+        # ── Unified Registration ─────────────────────────────────────
+        # Update both modern (KGlobalAccel via .desktop) and legacy (KHotKeys via .khotkeys)
+        # using the centralized DesktopIntegrationService.
+        logger.debug("Ensuring unified shortcut registration for: %s", kde_shortcut)
+        DesktopIntegrationService.update_khotkeys(shortcut)
 
         # Rebuild sycoca (KDE service cache)
         for scmd in ["kbuildsycoca6", "kbuildsycoca5"]:
@@ -788,8 +651,7 @@ Exec=IntegratedRender {exec_path}
         import subprocess
 
         zombies = [
-            ("khotkeys", "Launch tts-biglinux"),
-            ("khotkeys", "_launch"),
+            # ("khotkeys", "Launch tts-biglinux"),  # Managed by sync
             ("bigtts.desktop", "_launch"),
             ("tts-speak.desktop", "_launch"),
             ("biglinux-tts-speak.desktop", "_launch"),
@@ -841,50 +703,5 @@ Exec=IntegratedRender {exec_path}
 
     @staticmethod
     def _disable_legacy_khotkeys() -> None:
-        """Disable legacy khotkeys binding if still active.
-
-        On Plasma 6, the khotkeys module is typically not loaded. This method
-        checks if it is and, if so, asks kded to unload it to prevent the
-        hardcoded Alt+V from /usr/share/khotkeys/ttsbiglinux.khotkeys from
-        interfering with the configurable shortcut.
-        """
-        import subprocess
-
-        # Check if khotkeys module is loaded in kded6
-        try:
-            result = subprocess.run(
-                [
-                    "qdbus6",
-                    "org.kde.kded6",
-                    "/kded",
-                    "org.kde.kded6.loadedModules",
-                ],
-                capture_output=True,
-                text=True,
-                timeout=3,
-            )
-            if "khotkeys" not in result.stdout:
-                return  # module not loaded, nothing to do
-        except (OSError, subprocess.TimeoutExpired):
-            return
-
-        # khotkeys is loaded — try to tell it to reload so it picks up
-        # the disabled version of ttsbiglinux.khotkeys
-        logger.info("khotkeys module is loaded, requesting reload")
-        try:
-            subprocess.run(
-                [
-                    "dbus-send",
-                    "--session",
-                    "--type=method_call",
-                    "--dest=org.kde.kded6",
-                    "/modules/khotkeys",
-                    "org.kde.khotkeys.reread_configuration",
-                ],
-                timeout=3,
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-        except (OSError, subprocess.TimeoutExpired):
-            pass
+        # Replaced by DesktopIntegrationService methods
+        pass
