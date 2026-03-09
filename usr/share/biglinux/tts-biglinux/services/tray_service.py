@@ -8,6 +8,7 @@ Protocol (parent → child): JSON lines
   {"cmd": "quit"}
   {"cmd": "set_menu", "items": [{"id":1,"label":"X"}, {"id":2,"separator":true}]}
   {"cmd": "set_tooltip", "text": "..."}
+  {"cmd": "set_icon", "path": "/path/to/icon.svg"}
 
 Protocol (child → parent): JSON lines
   {"event": "activate"}          # left-click
@@ -23,6 +24,7 @@ import os
 import subprocess
 import sys
 import textwrap
+from pathlib import Path
 from typing import Callable
 
 from gi.repository import GLib
@@ -50,10 +52,11 @@ except ImportError:
     sys.exit(1)
 
 try:
-    icon_name = sys.argv[1] if len(sys.argv) > 1 else "application-x-executable"
-    title = sys.argv[2] if len(sys.argv) > 2 else "App"
-    tooltip = sys.argv[3] if len(sys.argv) > 3 else title
-    icon_path = sys.argv[4] if len(sys.argv) > 4 else ""
+    # argv: icon_name, title, tooltip, icon_dark_path, icon_light_path
+    title       = sys.argv[1] if len(sys.argv) > 1 else "App"
+    tooltip     = sys.argv[2] if len(sys.argv) > 2 else title
+    icon_dark   = sys.argv[3] if len(sys.argv) > 3 else ""   # for dark bg (white icon)
+    icon_light  = sys.argv[4] if len(sys.argv) > 4 else ""   # for light bg (dark icon)
 
     sys.argv[0] = title
     app = QApplication(sys.argv)
@@ -61,34 +64,42 @@ try:
     app.setDesktopFileName("br.com.biglinux.tts")
     app.setQuitOnLastWindowClosed(False)
 
-    if icon_path:
-        icon = QIcon(icon_path)
-    else:
-        icon = QIcon.fromTheme(icon_name)
+    def is_dark_theme() -> bool:
+        '''Detect if the current system palette is dark.'''
+        palette = app.palette()
+        bg = palette.window().color()
+        # If background luminance < 128 -> dark theme
+        return bg.lightness() < 128
 
-    if icon_name.endswith("-symbolic"):
-        # Tell Qt/Plasma this is a symbolic icon that should be recolored
-        icon.setIsMask(True)
+    def get_icon_for_theme() -> "QIcon":
+        '''Return white icon for dark bg, dark icon for light bg.'''
+        if is_dark_theme():
+            path = icon_dark
+        else:
+            path = icon_light
+        if path:
+            return QIcon(path)
+        # Fallback: use theme icon
+        return QIcon.fromTheme("tts-biglinux-symbolic")
 
+    icon = get_icon_for_theme()
     tray = QSystemTrayIcon(icon, app)
     tray.setToolTip(tooltip)
 
-    def update_icon():
-        '''Refresh icon when theme changes.'''
-        new_icon = QIcon(icon_path) if icon_path else QIcon.fromTheme(icon_name)
-        if icon_name.endswith("-symbolic"):
-            new_icon.setIsMask(True)
+    def update_icon_from_theme():
+        '''Reload icon when system palette changes.'''
+        new_icon = get_icon_for_theme()
         tray.setIcon(new_icon)
 
-    # Listen for theme changes (Light/Dark mode toggle)
-    app.paletteChanged.connect(update_icon)
+    # React to system light/dark mode changes
+    app.paletteChanged.connect(lambda _: update_icon_from_theme())
 
     menu = QMenu()
     tray.setContextMenu(menu)
 
-    action_map: dict[int, QAction] = {}
+    action_map: dict = {}
 
-    def on_activated(reason: QSystemTrayIcon.ActivationReason) -> None:
+    def on_activated(reason) -> None:
         if reason == QSystemTrayIcon.ActivationReason.Trigger:
             send({"event": "activate"})
 
@@ -122,6 +133,8 @@ try:
                         action_map[item_id] = action
             elif cmd == "set_tooltip":
                 tray.setToolTip(msg.get("text", ""))
+            elif cmd == "update_icon":
+                update_icon_from_theme()
 
     tray.activated.connect(on_activated)
     tray.show()
@@ -130,6 +143,11 @@ try:
     timer = QTimer()
     timer.timeout.connect(handle_input)
     timer.start(100)
+
+    # Also poll theme changes every 2s as a safety fallback
+    theme_timer = QTimer()
+    theme_timer.timeout.connect(update_icon_from_theme)
+    theme_timer.start(2000)
 
     signal.signal(signal.SIGTERM, lambda *_: app.quit())
     signal.signal(signal.SIGINT, lambda *_: app.quit())
@@ -159,19 +177,23 @@ class MenuItem:
 
 
 class TrayIcon:
-    """System tray icon using a Qt6 subprocess for native Plasma support."""
+    """System tray icon using a Qt6 subprocess for native Plasma support.
+
+    Automatically switches between a white icon (dark themes) and a dark icon
+    (light themes) by checking palette luminance in the helper process.
+    """
 
     def __init__(
         self,
-        icon_name: str = "tts-biglinux-symbolic",
         title: str = "BigLinux TTS",
         tooltip: str = "",
-        icon_path: str = "",
+        icon_dark_path: str = "",   # white icon – shown on dark backgrounds
+        icon_light_path: str = "",  # dark icon  – shown on light backgrounds
     ) -> None:
-        self._icon_name = icon_name
         self._title = title
         self._tooltip = tooltip or title
-        self._icon_path = icon_path
+        self._icon_dark_path = icon_dark_path
+        self._icon_light_path = icon_light_path
         self._proc: subprocess.Popen | None = None
         self._menu_items: list[MenuItem] = []
         self._io_watch_id: int = 0
@@ -190,12 +212,11 @@ class TrayIcon:
             "/usr/bin/python3",
             "-c",
             _HELPER_SCRIPT,
-            self._icon_name,
             self._title,
             self._tooltip,
+            self._icon_dark_path,
+            self._icon_light_path,
         ]
-        if self._icon_path:
-            cmd.append(self._icon_path)
         self._proc = subprocess.Popen(
             cmd,
             stdin=subprocess.PIPE,
@@ -222,18 +243,17 @@ class TrayIcon:
         if self._io_watch_id:
             GLib.source_remove(self._io_watch_id)
             self._io_watch_id = 0
-            
+
         if self._proc:
             if self._proc.poll() is None:
                 self._send({"cmd": "quit"})
-            
-            # Close stdin manually to avoid BrokenPipeError on garbage collection
+
             if self._proc.stdin:
                 try:
                     self._proc.stdin.close()
                 except Exception:
                     pass
-                    
+
             try:
                 self._proc.wait(timeout=2)
             except subprocess.TimeoutExpired:
@@ -281,7 +301,6 @@ class TrayIcon:
                 try:
                     msg = json.loads(line)
                 except (json.JSONDecodeError, ValueError):
-                    # Likely a raw stderr line from Qt/Python crashing
                     logger.warning("Tray helper stderr: %s", line)
                     continue
 
