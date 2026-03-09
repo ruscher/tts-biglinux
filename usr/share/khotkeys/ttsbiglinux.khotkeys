@@ -17,7 +17,7 @@ Type=COMMAND_SHORTCUT_ACTION_DATA
 ActionsCount=1
 
 [Data_1Actions0]
-Command=/usr/sbin/python /home/ruscher/Documentos/Git/tts-biglinux/usr/share/biglinux/tts-biglinux/main.py --speak
+Command=/usr/bin/biglinux-tts-speak
 Type=COMMAND
 
 [Data_1Conditions]

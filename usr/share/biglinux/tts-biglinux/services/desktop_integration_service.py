@@ -478,18 +478,9 @@ Exec=IntegratedRender {exec_path}
         return False
 
     @staticmethod
-    def sync_khotkeys(kde_shortcut: str, exec_path: str) -> None:
-        """Update khotkeys configuration for backward compatibility.
-        
-        Writes to local user config and development file in the repository.
-        Uses atomic writing to prevent 0-byte files on interruption.
-        """
-        import os
-        import tempfile
-        from pathlib import Path
-        
-        # Template adapted from user's legacy code
-        khotkeys_content = f"""[Main]
+    def _render_khotkeys_content(kde_shortcut: str, exec_path: str) -> str:
+        """Helper to generate .khotkeys file content."""
+        return f"""[Main]
 ImportId=biglinux-tts
 Version=2
 Autostart=true
@@ -524,6 +515,17 @@ Key={kde_shortcut}
 Type=SHORTCUT
 """
 
+    @staticmethod
+    def sync_khotkeys(kde_shortcut: str, exec_path: str) -> None:
+        """Update khotkeys configuration for backward compatibility.
+        
+        Writes to local user config and development file in the repository.
+        Uses atomic writing to prevent 0-byte files on interruption.
+        """
+        import os
+        import tempfile
+        from pathlib import Path
+
         def _atomic_write(file_path: Path, content: str) -> bool:
             """Write content to file atomically."""
             try:
@@ -556,25 +558,26 @@ Type=SHORTCUT
 
         changed = False
 
-        # 1. Update dev file if reachable
-        # services/ -> tts-biglinux/ -> biglinux/ -> share/ -> usr/ -> (root)
+        # 1. Update dev file if reachable (Always use production path for the repo)
         repo_root = Path(__file__).resolve().parent.parent.parent.parent.parent.parent
         dev_khotkeys = repo_root / "usr" / "share" / "khotkeys" / "ttsbiglinux.khotkeys"
         
-        logger.debug("KHotKeys Sync: dev_path=%s (exists=%s)", dev_khotkeys, dev_khotkeys.exists())
-        
         if dev_khotkeys.exists() and os.access(dev_khotkeys, os.W_OK):
-            if _atomic_write(dev_khotkeys, khotkeys_content):
-                logger.debug("Updated dev khotkeys: %s", dev_khotkeys)
+            # For the repository file, always use the standard production path
+            production_content = cls._render_khotkeys_content(kde_shortcut, "/usr/bin/biglinux-tts-speak")
+            logger.debug("KHotKeys Sync: dev file rewrite attempt. Content length: %d", len(production_content))
+            if _atomic_write(dev_khotkeys, production_content):
+                logger.info("Updated dev khotkeys to production path: %s", dev_khotkeys)
                 changed = True
 
-        # 2. Update user local khotkeys
+        # 2. Update user local khotkeys (use the dynamic exec_path for dev/testing)
         local_khotkeys_dir = Path.home() / ".local" / "share" / "khotkeys"
         local_khotkeys = local_khotkeys_dir / "tts-biglinux.khotkeys"
         try:
             local_khotkeys_dir.mkdir(parents=True, exist_ok=True)
-            if _atomic_write(local_khotkeys, khotkeys_content):
-                logger.debug("Updated local khotkeys: %s", local_khotkeys)
+            local_content = cls._render_khotkeys_content(kde_shortcut, exec_path)
+            if _atomic_write(local_khotkeys, local_content):
+                logger.debug("Updated local khotkeys (dynamic path): %s", local_khotkeys)
                 changed = True
         except Exception as e:
             logger.debug("Failed to write local khotkeys: %s", e)
