@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 APP_ID = "br.com.biglinux.tts"
 APP_NAME = "BigLinux TTS"
-APP_VERSION = "3.1.2"
+APP_VERSION = "3.2.0"
 APP_DEVELOPERS = ["Tales A. Mendonça", "Bruno Gonçalves Araujo", "Rafael Ruscher"]
 APP_WEBSITE = "https://www.biglinux.com.br"
 APP_ISSUE_URL = "https://github.com/biglinux/tts-biglinux/issues"
@@ -115,8 +115,8 @@ class SpeechConfig:
     pitch: int = PITCH_DEFAULT
     volume: int = VOLUME_DEFAULT
     voice_id: str = ""
-    backend: str = TTSBackend.SPEECH_DISPATCHER.value
-    output_module: str = "rhvoice"
+    backend: str = TTSBackend.RHVOICE.value
+    output_module: str = ""
 
 
 @dataclass

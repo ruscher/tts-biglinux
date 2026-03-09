@@ -110,7 +110,7 @@ class TTSApplication(Adw.Application):
 
         # Explicitly set color scheme to prevent warnings from KDE injected settings
         style_manager = Adw.StyleManager.get_default()
-        style_manager.set_color_scheme(Adw.ColorScheme.PREFER_DARK)
+        style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
 
         load_css()
         self._create_actions()

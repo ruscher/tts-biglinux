@@ -46,6 +46,7 @@ from ui.components import (
     create_button_row,
     create_combo_row,
     create_expander_row,
+    create_icon_button,
     create_preferences_group,
 )
 from utils.async_utils import run_in_thread
@@ -211,6 +212,21 @@ class MainView(Adw.NavigationPage):
             on_selected=self._on_voice_selected,
             accessible_name=_("Select TTS voice"),
         )
+        # Add refresh button as suffix
+        refresh_btn = create_icon_button(
+            icon_name="view-refresh-symbolic",
+            tooltip=_("Refresh voice list"),
+            on_clicked=self._on_refresh_voices,
+        )
+        self._voice_combo.add_suffix(refresh_btn)
+
+        # Add manage voices button as suffix
+        manage_btn = create_icon_button(
+            icon_name="list-add-symbolic",
+            tooltip=_("Manage voices for current engine"),
+            on_clicked=self._on_manage_current_engine,
+        )
+        self._voice_combo.add_suffix(manage_btn)
         group.add(self._voice_combo)
 
         # SizeGroup for scale title alignment
@@ -277,16 +293,14 @@ class MainView(Adw.NavigationPage):
 
         # Backend selection
         backends = [
-            "speech-dispatcher",
             "RHVoice (Native)",
             "espeak-ng",
             "Piper (Neural TTS)",
         ]
         backend_map = {
-            0: TTSBackend.SPEECH_DISPATCHER.value,
-            1: TTSBackend.RHVOICE.value,
-            2: TTSBackend.ESPEAK_NG.value,
-            3: TTSBackend.PIPER.value,
+            0: TTSBackend.RHVOICE.value,
+            1: TTSBackend.ESPEAK_NG.value,
+            2: TTSBackend.PIPER.value,
         }
         # Find current index
         current_backend = self._settings.speech.backend
@@ -305,6 +319,20 @@ class MainView(Adw.NavigationPage):
             accessible_name=_("Select TTS engine"),
         )
         group.add(self._backend_combo)
+
+        # Voice Manager row
+        voice_mgr_row = Adw.ActionRow()
+        voice_mgr_row.set_title(_("Voice Manager"))
+        voice_mgr_row.set_subtitle(_("Install or remove voice packages"))
+        voice_mgr_row.set_icon_name("audio-speakers-symbolic")
+        voice_mgr_row.set_activatable(True)
+        voice_mgr_row.connect("activated", lambda *_: self._on_open_voice_manager())
+
+        arrow = Gtk.Image.new_from_icon_name("go-next-symbolic")
+        arrow.set_valign(Gtk.Align.CENTER)
+        arrow.add_css_class("dim-label")
+        voice_mgr_row.add_suffix(arrow)
+        group.add(voice_mgr_row)
 
         return group
 
@@ -446,6 +474,9 @@ class MainView(Adw.NavigationPage):
         )
         launcher_row.set_icon_name("view-pin-symbolic")
         expander.add_row(launcher_row)
+
+
+
 
         group.add(expander)
         return group
@@ -610,11 +641,48 @@ class MainView(Adw.NavigationPage):
             app.disable_tray()
             self._on_toast(_("Tray icon disabled"), 2)
 
+    def _on_refresh_voices(self) -> None:
+        """Manually trigger voice discovery."""
+        print("DEBUG: Manual refresh triggered...")
+        self._voice_combo.set_subtitle(_("Refreshing voices..."))
+        run_in_thread(discover_voices, on_done=self._on_voices_discovered)
+        self._on_toast(_("Refreshing voice list…"), 2)
+
+    def _on_manage_current_engine(self) -> None:
+        """Open Voice Manager filtered by current backend."""
+        backend = self._settings.speech.backend
+        # Map internal backend IDs to Voice Manager engine names
+        engine_map = {
+            "rhvoice": "RHVoice",
+            "piper": "Piper",
+            "espeak-ng": "espeak-ng"
+        }
+        engine_filter = engine_map.get(backend.lower())
+        self._on_open_voice_manager(engine_filter)
+
+    def _on_open_voice_manager(self, engine_filter: str | None = None) -> None:
+        """Open the Voice Manager dialog, optionally filtered by engine."""
+        from ui.voice_manager_dialog import VoiceManagerDialog
+
+        dialog = VoiceManagerDialog(
+            on_voices_changed=self._on_refresh_voices,
+            engine_filter=engine_filter,
+        )
+        parent = self.get_root()
+        dialog.present(parent)
+
+
     # ── Voice Discovery Callback ─────────────────────────────────────
 
     def _on_voices_discovered(self, catalog: VoiceCatalog) -> None:
         """Handle voice discovery completion (called on main thread)."""
         self._catalog = catalog
+        print(f"DEBUG: Voices discovered: {len(catalog.voices)} total voices")
+        for v in catalog.voices:
+            if "spomenka" in v.name.lower() or "mateo" in v.name.lower():
+                 print(f"DEBUG: Found important voice: {v.name} ({v.language}) backend={v.backend}")
+
+        logger.info("Voices discovered: %d voices in catalog", len(catalog.voices))
 
         if not catalog.voices:
             self._voice_combo.set_subtitle(
@@ -648,6 +716,7 @@ class MainView(Adw.NavigationPage):
             return
 
         self._voice_list = filtered
+        logger.info("Filtered voices for backend %s: %s", current_backend, [v.name for v in filtered])
         self._test_button.set_sensitive(True)
 
         # Sort voices alphabetically by language name, then by name
@@ -668,9 +737,12 @@ class MainView(Adw.NavigationPage):
         self._updating_ui = True
         model = Gtk.StringList.new(display_names)
         self._voice_combo.set_model(model)
-        self._voice_combo.set_subtitle(
-            _("{count} voices available").format(count=len(display_names))
-        )
+        status_msg = _("{count} voices available").format(count=len(display_names))
+        self._voice_combo.set_subtitle(status_msg)
+        print(f"DEBUG: UI Model updated with {len(display_names)} voices")
+        
+        # Explicitly show a toast for the refresh result
+        self._on_toast(status_msg, 2)
 
         # Select current voice (accent-insensitive match)
         current_voice_id = self._settings.speech.voice_id
@@ -748,12 +820,11 @@ class MainView(Adw.NavigationPage):
         if self._updating_ui:
             return
         backend_map = {
-            0: TTSBackend.SPEECH_DISPATCHER.value,
-            1: TTSBackend.RHVOICE.value,
-            2: TTSBackend.ESPEAK_NG.value,
-            3: TTSBackend.PIPER.value,
+            0: TTSBackend.RHVOICE.value,
+            1: TTSBackend.ESPEAK_NG.value,
+            2: TTSBackend.PIPER.value,
         }
-        backend = backend_map.get(index, TTSBackend.SPEECH_DISPATCHER.value)
+        backend = backend_map.get(index, TTSBackend.RHVOICE.value)
         logger.debug("Backend selected: index=%d → %s", index, backend)
 
         # Stop any active speech before switching
@@ -769,8 +840,8 @@ class MainView(Adw.NavigationPage):
                 self._on_voices_discovered(self._catalog)
                 return
 
-        # If no voices in catalog, or switching to speech-dispatcher for first time
-        if backend == TTSBackend.SPEECH_DISPATCHER.value:
+        # If no voices in catalog, or switching to native RHVoice for first time
+        if backend == TTSBackend.RHVOICE.value:
             self._voice_combo.set_subtitle(_("Searching for voices..."))
             run_in_thread(
                 discover_voices,
@@ -778,13 +849,22 @@ class MainView(Adw.NavigationPage):
             )
             return
 
-        # Refresh voices for new backend from cached catalog
+        # Refresh voices for new backend
         if self._catalog:
             filtered = self._catalog.get_by_backend(backend)
-            if not filtered and backend == TTSBackend.PIPER.value:
-                self._ask_install_piper()
+            if filtered:
+                self._on_voices_discovered(self._catalog)
                 return
-            elif not filtered:
+            elif backend == TTSBackend.PIPER.value:
+                # If Piper is selected but no voices are found, try discovering again
+                # before asking to install (it might have been just installed)
+                self._voice_combo.set_subtitle(_("Checking for Piper voices..."))
+                run_in_thread(
+                    discover_voices,
+                    on_done=lambda cat: self._on_piper_discovery_retry(cat),
+                )
+                return
+            else:
                 self._on_toast(
                     _("No voices found for {engine} — install it first").format(
                         engine=backend,
@@ -823,7 +903,7 @@ class MainView(Adw.NavigationPage):
         if response != "install":
             # Revert to previous backend
             self._updating_ui = True
-            prev_backend = TTSBackend.SPEECH_DISPATCHER.value
+            prev_backend = TTSBackend.RHVOICE.value
             self._settings.speech.backend = prev_backend
             self._settings_service.save(self._settings)
             self._backend_combo.set_selected(0)
@@ -833,9 +913,16 @@ class MainView(Adw.NavigationPage):
             return
 
         self._on_toast(_("Installing Piper TTS — this may take a moment…"), 5)
-        run_in_thread(self._install_piper_packages, on_done=self._on_piper_installed)
+    def _on_piper_discovery_retry(self, catalog: VoiceCatalog) -> None:
+        """Second attempt at discovery after switching to Piper."""
+        self._catalog = catalog
+        filtered = catalog.get_by_backend(TTSBackend.PIPER.value)
+        if not filtered:
+            self._ask_install_piper()
+        else:
+            self._on_voices_discovered(catalog)
 
-    def _install_piper_packages(self) -> bool:
+    def _install_piper_packages(self) -> tuple[bool, str]:
         """Install piper-tts-bin and piper-voices-pt-BR via pkexec + pacman."""
         # Detect system language for voice package
         lang = get_system_language()
@@ -859,60 +946,71 @@ class MainView(Adw.NavigationPage):
         if voice_pkg != "piper-voices-pt-BR":
             voice_pkgs.append("piper-voices-pt-BR")
 
+        # List of packages to install
         pkgs = ["piper-tts-bin"] + voice_pkgs
 
         try:
+            # Detect if a pacman lock exists before even trying
+            lock_file = Path("/var/lib/pacman/db.lck")
+            if lock_file.exists():
+                logger.warning("Pacman database is locked")
+                return False, "Database is locked by another process"
+
             result = subprocess.run(
                 ["pkexec", "pacman", "-Sy", "--noconfirm", "--needed"] + pkgs,
                 capture_output=True,
                 text=True,
-                timeout=300,
+                timeout=600,  # Increased timeout for large voice packages
             )
-            logger.info(
-                "Piper install stdout: %s",
-                result.stdout[-200:] if result.stdout else "",
-            )
+            stdout = result.stdout[-500:] if result.stdout else ""
+            stderr = result.stderr[-500:] if result.stderr else ""
+            
+            logger.info("Piper install stdout: %s", stdout)
             if result.returncode != 0:
-                stderr = result.stderr[-300:] if result.stderr else ""
                 logger.error(
                     "Piper install failed (code %d): %s", result.returncode, stderr
                 )
-                if "authorization" in stderr.lower() or result.returncode == 126:
-                    logger.error(
-                        "pkexec authorization denied. Ensure polkit agent is running "
-                        "and user is in 'wheel' group."
-                    )
-                return False
-            return True
+                if result.returncode == 126 or result.returncode == 1:
+                    if "authorization" in stderr.lower() or not stderr:
+                        return False, "Authorization denied"
+                
+                # Try to extract the most meaningful error from pacman output
+                error_msg = stderr.strip().splitlines()[-1] if stderr.strip() else "Unknown error"
+                return False, error_msg
+            return True, ""
         except FileNotFoundError:
-            logger.error(
-                "pkexec not found — install polkit to enable GUI privilege elevation"
-            )
-            return False
-        except (subprocess.TimeoutExpired, OSError) as e:
-            logger.error("Failed to install Piper: %s", e)
-            return False
-
-    def _on_piper_installed(self, success: bool) -> None:
+            return False, "pkexec not found"
+        except subprocess.TimeoutExpired:
+            return False, "Installation timed out"
+        except Exception as e:
+            return False, str(e)
+    def _on_piper_installed(self, result: tuple[bool, str]) -> None:
         """Called after Piper install completes."""
+        success, error_msg = result
         if success:
             self._on_toast(_("Piper installed successfully! Discovering voices…"), 3)
 
             def _on_done(catalog: VoiceCatalog) -> None:
                 self._on_voices_discovered(catalog)
-                # After discovery, force selecting the Piper backend index (3)
+                # After discovery, force selecting the Piper backend index (2)
                 self._updating_ui = True
-                self._backend_combo.set_selected(3)
-                self._on_backend_selected(3)
+                self._backend_combo.set_selected(2)
+                self._on_backend_selected(2)
                 self._updating_ui = False
 
             # Re-discover voices
             run_in_thread(discover_voices, on_done=_on_done)
         else:
-            self._on_toast(_("Failed to install Piper — check permissions"), 5)
-            # Revert to speech-dispatcher
+            # If error_msg is descriptive, show it, otherwise fallback to generic
+            if error_msg:
+                detailed_error = _("Failed to install: {error}").format(error=error_msg)
+                self._on_toast(detailed_error, 5)
+            else:
+                self._on_toast(_("Failed to install Piper — check permissions"), 5)
+
+            # Revert to native RHVoice
             self._updating_ui = True
-            self._settings.speech.backend = TTSBackend.SPEECH_DISPATCHER.value
+            self._settings.speech.backend = TTSBackend.RHVOICE.value
             self._settings_service.save(self._settings)
             self._backend_combo.set_selected(0)
             if self._catalog:
@@ -1113,12 +1211,18 @@ class MainView(Adw.NavigationPage):
 
         # Backend combo
         backend_map = {
-            TTSBackend.SPEECH_DISPATCHER.value: 0,
-            TTSBackend.RHVOICE.value: 1,
-            TTSBackend.ESPEAK_NG.value: 2,
-            TTSBackend.PIPER.value: 3,
+            TTSBackend.RHVOICE.value: 0,
+            TTSBackend.ESPEAK_NG.value: 1,
+            TTSBackend.PIPER.value: 2,
         }
-        backend_idx = backend_map.get(self._settings.speech.backend, 0)
+        current_backend = self._settings.speech.backend
+        if current_backend not in backend_map:
+            # Handle legacy/removed speech-dispatcher engine
+            current_backend = TTSBackend.RHVOICE.value
+            self._settings.speech.backend = current_backend
+            self._settings_service.save_now()
+
+        backend_idx = backend_map.get(current_backend, 0)
         self._backend_combo.set_selected(backend_idx)
 
         # Keyboard shortcut
