@@ -29,7 +29,7 @@ from gi.repository import GLib
 
 logger = logging.getLogger(__name__)
 
-_HELPER_SCRIPT = textwrap.dedent("""\
+_HELPER_SCRIPT = textwrap.dedent("""
 import json
 import signal
 import sys
@@ -74,7 +74,7 @@ try:
     tray.setToolTip(tooltip)
 
     def update_icon():
-        """Refresh icon when theme changes."""
+        '''Refresh icon when theme changes.'''
         new_icon = QIcon(icon_path) if icon_path else QIcon.fromTheme(icon_name)
         if icon_name.endswith("-symbolic"):
             new_icon.setIsMask(True)
