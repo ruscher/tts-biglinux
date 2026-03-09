@@ -170,6 +170,14 @@ msgstr "Tunnistetaan asennettuja ääniä..."
 msgid "Select TTS voice"
 msgstr "Valitse TTS-ääni"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
+msgid "Refresh voice list"
+msgstr "Päivitä ääniluettelo"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
+msgid "Manage voices for current engine"
+msgstr "Hallitse ääniä nykyiselle moottorille"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 226
 #: 13
 msgid "Speed"
@@ -271,6 +279,17 @@ msgstr "Puhesynteesiin käytettävä moottori"
 #: 34
 msgid "Select TTS engine"
 msgstr "Valitse TTS-moottori"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 325
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
+msgid "Voice Manager"
+msgstr "Äänijohtaja"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
+msgid "Install or remove voice packages"
+msgstr "Asenna tai poista ääni paketteja"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 319
 msgid "Text Processing"
@@ -456,6 +475,14 @@ msgstr "Tehtäväpalkin kuvake käytössä"
 msgid "Tray icon disabled"
 msgstr "Tehtäväpalkin kuvake poistettu käytöstä"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
+msgid "Refreshing voices..."
+msgstr "Päivitetään ääniä..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
+msgid "Refreshing voice list…"
+msgstr "Päivitetään ääniluetteloa…"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73
 msgid "No voices found — install rhvoice or espeak-ng"
@@ -486,6 +513,10 @@ msgstr "{count} ääntä saatavilla"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
 msgid "Searching for voices..."
 msgstr "Etsitään ääniä..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
+msgid "Checking for Piper voices..."
+msgstr "Tarkistetaan Piper-ääniä..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79
@@ -540,6 +571,11 @@ msgstr "Asennetaan Piper TTS — tämä voi kestää hetken…"
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper asennettu onnistuneesti! Etsitään ääniä…"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
+#, python-brace-format
+msgid "Failed to install: {error}"
+msgstr "Asennus epäonnistui: {error}"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1086
 #: 86
 msgid "Failed to install Piper — check permissions"
@@ -584,6 +620,133 @@ msgstr "Lopeta"
 #: 94
 msgid "Settings restored to defaults"
 msgstr "Asetukset palautettu oletusarvoihin"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
+msgid "Loading available voices…"
+msgstr "Ladataan saatavilla olevia ääniä…"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
+msgid "No Voice Packages Found"
+msgstr "Äänipaketteja ei löytynyt"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Ei voitu löytää mitään TTS-ääni paketteja pacman-repositorioista."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
+msgid "High quality offline voices"
+msgstr "Korkealaatuiset offline-äänet"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
+msgid "Neural network voices — natural sounding"
+msgstr "Neuraaliverkkoäänet - luonnollisen kuuloiset"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
+msgid "Lightweight multi-language synthesizer"
+msgstr "Kevyt monikielinen synnyttäjä"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
+#, python-brace-format
+msgid "Add RHVoice — {count} available"
+msgstr "Lisää RHVoice — {count} saatavilla"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
+#, python-brace-format
+msgid "{langs} languages"
+msgstr "{kielet} kielet"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
+#, python-brace-format
+msgid "{count} voice(s)"
+msgstr "{count} ääni(e)"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
+#, python-brace-format
+msgid "Add Piper voices — {count} available"
+msgstr "Lisää Piper-ääniä — {count} saatavilla"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
+msgid "Neural TTS voice packs by language"
+msgstr "Neuraalinen TTS-äänipaketit kieleittäin"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
+msgid "Installed"
+msgstr "Asennettu"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
+msgid "Remove"
+msgstr "Poista"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Poista {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Asenna {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
+msgid "Install Voice"
+msgstr "Asenna ääni"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
+#, python-brace-format
+msgid ""
+"Install <b>{name}</b>?\n"
+"\n"
+"This requires administrator privileges."
+msgstr ""
+"Asenna <b>{name}</b>?\n"
+"\n"
+"Tämä vaatii järjestelmänvalvojan oikeudet."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
+msgid "Remove Voice"
+msgstr "Poista ääni"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
+#, python-brace-format
+msgid ""
+"Remove <b>{name}</b>?\n"
+"\n"
+"You can reinstall it later."
+msgstr ""
+"Poista <b>{name}</b>?\n"
+"\n"
+"Voit asentaa sen uudelleen myöhemmin."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
+msgid "Operation timed out"
+msgstr "Toiminto aikakatkaistiin"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
+msgid "pkexec or pacman not found"
+msgstr "pkexec tai pacman ei löytynyt"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
+msgid "Failed"
+msgstr "Epäonnistui"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
+msgid "Removal Failed"
+msgstr "Poisto epäonnistui"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 644
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 644
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
 # 
 # File: tts-biglinux/src/biglinux_tts/window.py, line: 124
 #: 95
@@ -644,5 +807,3 @@ msgid ""
 msgstr ""
 "BigLinux TTS Speak toimii edelleen taustalla. Voit käyttää sitä milloin tahansa järjestelmäpalkin "
 "kuvakkeesta."
-# 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

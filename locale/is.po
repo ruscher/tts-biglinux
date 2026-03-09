@@ -170,6 +170,14 @@ msgstr "Greini uppsettar raddir..."
 msgid "Select TTS voice"
 msgstr "Veldu TTS rödd"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
+msgid "Refresh voice list"
+msgstr "Endurnýja raddlista"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
+msgid "Manage voices for current engine"
+msgstr "Stjórna raddum fyrir núverandi vél"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 226
 #: 13
 msgid "Speed"
@@ -271,6 +279,17 @@ msgstr "Vél notuð til talsmíðunar"
 #: 34
 msgid "Select TTS engine"
 msgstr "Veldu TTS vél"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 325
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
+msgid "Voice Manager"
+msgstr "Raddstjóri"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
+msgid "Install or remove voice packages"
+msgstr "Setja upp eða fjarlægja raddapakkar"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 319
 msgid "Text Processing"
@@ -454,6 +473,14 @@ msgstr "ícone í tray virkjað"
 msgid "Tray icon disabled"
 msgstr "Vöru tákn óvirkt"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
+msgid "Refreshing voices..."
+msgstr "Endurningar raddir..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
+msgid "Refreshing voice list…"
+msgstr "Endurnýja raddlista…"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73
 msgid "No voices found — install rhvoice or espeak-ng"
@@ -484,6 +511,10 @@ msgstr "{count} raddir tiltækar"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
 msgid "Searching for voices..."
 msgstr "Leita að röddum..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
+msgid "Checking for Piper voices..."
+msgstr "Athugun fyrir Piper raddir..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79
@@ -538,6 +569,11 @@ msgstr "Set upp Piper TTS — þetta gæti tekið smá stund…"
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper sett upp! Greini raddir…"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
+#, python-brace-format
+msgid "Failed to install: {error}"
+msgstr "Ekki tókst að setja upp: {error}"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1086
 #: 86
 msgid "Failed to install Piper — check permissions"
@@ -582,6 +618,133 @@ msgstr "Stöðva"
 #: 94
 msgid "Settings restored to defaults"
 msgstr "Stillingum endurstillt á sjálfgildi"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
+msgid "Loading available voices…"
+msgstr "Hlaða aðgengilegum raddum…"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
+msgid "No Voice Packages Found"
+msgstr "Enginupakkar fannst ekki"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Gat ekki TTS raddpakka frá pacman geymslum."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
+msgid "High quality offline voices"
+msgstr "Hágæðar offline raddir"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
+msgid "Neural network voices — natural sounding"
+msgstr "Tölvunarfræðileg raddir — náttúrulega hljómandi"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
+msgid "Lightweight multi-language synthesizer"
+msgstr "Léttvigt fjöltyngdur hljóðgervill."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
+#, python-brace-format
+msgid "Add RHVoice — {count} available"
+msgstr "Bættu við RHVoice — {count} tiltækt"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
+#, python-brace-format
+msgid "{langs} languages"
+msgstr "{langs} tungumál"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
+#, python-brace-format
+msgid "{count} voice(s)"
+msgstr "{count} raddir(raddir)"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
+#, python-brace-format
+msgid "Add Piper voices — {count} available"
+msgstr "Bættu við Piper rödum — {count} í boði"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
+msgid "Neural TTS voice packs by language"
+msgstr "Tónpakka Neural TTS eftir tungumáli"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
+msgid "Installed"
+msgstr "Installdur"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
+msgid "Remove"
+msgstr "Fjarlægja"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Fjarlægðu {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Settu upp {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
+msgid "Install Voice"
+msgstr "Setja upp radd."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
+#, python-brace-format
+msgid ""
+"Install <b>{name}</b>?\n"
+"\n"
+"This requires administrator privileges."
+msgstr ""
+"Setja upp <b>{name}</b>?\n"
+"\n"
+"Þetta krefst stjórnendaskilríkja."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
+msgid "Remove Voice"
+msgstr "Fjarlægðu raddina"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
+#, python-brace-format
+msgid ""
+"Remove <b>{name}</b>?\n"
+"\n"
+"You can reinstall it later."
+msgstr ""
+"Ertu að fjarlægja <b>{name}</b>?\n"
+"\n"
+"Þú getur endursett það síðar."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
+msgid "Operation timed out"
+msgstr "Aðgerð tímabundið útrunnin"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
+msgid "pkexec or pacman not found"
+msgstr "pkexec eða pacman fannst ekki"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
+msgid "Failed"
+msgstr "Misheppnað"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
+msgid "Removal Failed"
+msgstr "Breyting mistókst"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
+msgid "Unknown error"
+msgstr "Ókunnug villa"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 644
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 644
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198
 # 
 # File: tts-biglinux/src/biglinux_tts/window.py, line: 124
 #: 95
@@ -642,5 +805,3 @@ msgid ""
 msgstr ""
 "BigLinux TTS Speak er ennþá að keyra í bakgrunni. Þú getur aðgang að því hvenær sem er frá "
 "kerfistray tákninu."
-# 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 198

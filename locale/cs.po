@@ -168,6 +168,14 @@ msgstr "Zjišťování nainstalovaných hlasů..."
 msgid "Select TTS voice"
 msgstr "Vyberte hlas TTS"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
+msgid "Refresh voice list"
+msgstr "Obnovit seznam hlasů"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
+msgid "Manage voices for current engine"
+msgstr "Spravovat hlasy pro aktuální engine"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 226
 #: 13
 msgid "Speed"
@@ -269,6 +277,17 @@ msgstr "Engine používaný pro syntézu řeči"
 #: 34
 msgid "Select TTS engine"
 msgstr "Vyberte TTS engine"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 325
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
+msgid "Voice Manager"
+msgstr "Správce hlasu"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
+msgid "Install or remove voice packages"
+msgstr "Nainstalujte nebo odstraňte hlasové balíčky."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 319
 msgid "Text Processing"
@@ -452,6 +471,14 @@ msgstr "Ikona v systémové liště povolena"
 msgid "Tray icon disabled"
 msgstr "Ikona v systémové liště je zakázána"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
+msgid "Refreshing voices..."
+msgstr "Obnovování hlasů..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
+msgid "Refreshing voice list…"
+msgstr "Obnovuji seznam hlasů…"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 837
 #: 73
 msgid "No voices found — install rhvoice or espeak-ng"
@@ -482,6 +509,10 @@ msgstr "{count} dostupných hlasů"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
 msgid "Searching for voices..."
 msgstr "Hledání hlasů..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
+msgid "Checking for Piper voices..."
+msgstr "Kontrola hlasů Piper..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 988
 #: 79
@@ -536,6 +567,11 @@ msgstr "Instalace Piper TTS — může to chvíli trvat…"
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper byl úspěšně nainstalován! Zjišťování hlasů…"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
+#, python-brace-format
+msgid "Failed to install: {error}"
+msgstr "Instalace se nezdařila: {error}"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1086
 #: 86
 msgid "Failed to install Piper — check permissions"
@@ -580,6 +616,127 @@ msgstr "Zastavit"
 #: 94
 msgid "Settings restored to defaults"
 msgstr "Nastavení obnovena na výchozí hodnoty"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
+msgid "Loading available voices…"
+msgstr "Načítání dostupných hlasů…"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
+msgid "No Voice Packages Found"
+msgstr "Nebyly nalezeny žádné hlasové balíčky."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Nebyly nalezeny žádné balíčky TTS hlasů v repozitářích pacman."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
+msgid "High quality offline voices"
+msgstr "Hlasové syntézy vysoké kvality pro offline použití"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
+msgid "Neural network voices — natural sounding"
+msgstr "Hlasové modely neuronových sítí — přirozeně znějící"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
+msgid "Lightweight multi-language synthesizer"
+msgstr "Lehký vícejazyčný syntetizátor"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
+#, python-brace-format
+msgid "Add RHVoice — {count} available"
+msgstr "Přidat RHVoice — {count} k dispozici"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
+#, python-brace-format
+msgid "{langs} languages"
+msgstr "{langs} jazyky"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
+#, python-brace-format
+msgid "{count} voice(s)"
+msgstr "{count} hlas(ů)"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
+#, python-brace-format
+msgid "Add Piper voices — {count} available"
+msgstr "Přidejte hlasy Piper — {count} k dispozici"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
+msgid "Neural TTS voice packs by language"
+msgstr "Hlasové balíčky Neural TTS podle jazyka"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
+msgid "Installed"
+msgstr "Nainstalováno"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
+msgid "Remove"
+msgstr "Odstranit"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Odstranit {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Nainstalujte {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
+msgid "Install Voice"
+msgstr "Nainstalovat hlas"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
+#, python-brace-format
+msgid ""
+"Install <b>{name}</b>?\n"
+"\n"
+"This requires administrator privileges."
+msgstr ""
+"Nainstalovat <b>{name}</b>?\n"
+"\n"
+"To vyžaduje administrátorská práva."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
+msgid "Remove Voice"
+msgstr "Odstranit hlas"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
+#, python-brace-format
+msgid ""
+"Remove <b>{name}</b>?\n"
+"\n"
+"You can reinstall it later."
+msgstr ""
+"Odebrat <b>{name}</b>?\n"
+"\n"
+"Můžete jej později znovu nainstalovat."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
+msgid "Operation timed out"
+msgstr "Čas operace vypršel"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
+msgid "pkexec or pacman not found"
+msgstr "pkexec nebo pacman nenalezen"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
+msgid "Failed"
+msgstr "Selhalo"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
+msgid "Removal Failed"
+msgstr "Odstranění se nezdařilo"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
+msgid "OK"
+msgstr "OK"
 # 
 # File: tts-biglinux/src/biglinux_tts/window.py, line: 124
 #: 95
@@ -640,7 +797,3 @@ msgid ""
 msgstr ""
 "BigLinux TTS Speak stále běží na pozadí. Můžete k němu přistupovat kdykoli z ikony v systémové "
 "liště."
-# 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 185
-msgid "OK"
-msgstr "OK"

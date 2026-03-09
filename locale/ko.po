@@ -161,6 +161,14 @@ msgstr "설치된 음성 감지 중..."
 msgid "Select TTS voice"
 msgstr "TTS 음성 선택"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
+msgid "Refresh voice list"
+msgstr "음성 목록 새로 고침"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
+msgid "Manage voices for current engine"
+msgstr "현재 엔진의 음성 관리"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 223
 msgid "Speed"
 msgstr "속도"
@@ -242,6 +250,17 @@ msgstr "음성 합성에 사용되는 엔진"
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 309
 msgid "Select TTS engine"
 msgstr "TTS 엔진 선택"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 325
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
+msgid "Voice Manager"
+msgstr "음성 관리자"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
+msgid "Install or remove voice packages"
+msgstr "음성 패키지 설치 또는 제거"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 319
 msgid "Text Processing"
@@ -397,6 +416,14 @@ msgstr "트레이 아이콘 활성화됨"
 msgid "Tray icon disabled"
 msgstr "트레이 아이콘 비활성화됨"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
+msgid "Refreshing voices..."
+msgstr "음성을 새로 고치는 중..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
+msgid "Refreshing voice list…"
+msgstr "음성 목록 새로 고침 중…"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 806
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "음성을 찾을 수 없음 — rhvoice 또는 espeak-ng를 설치하세요"
@@ -422,6 +449,10 @@ msgstr "{count}개의 음성 사용 가능"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
 msgid "Searching for voices..."
 msgstr "음성을 검색하는 중..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
+msgid "Checking for Piper voices..."
+msgstr "파이퍼 음성을 확인하는 중..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 954
 #, python-brace-format
@@ -467,6 +498,11 @@ msgstr "Piper TTS 설치 중 — 잠시 기다려 주세요…"
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper가 설치되었습니다! 음성 감지 중…"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
+#, python-brace-format
+msgid "Failed to install: {error}"
+msgstr "설치 실패: {error}"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1054
 msgid "Failed to install Piper — check permissions"
 msgstr "Piper 설치 실패 — 권한을 확인하세요"
@@ -503,6 +539,127 @@ msgstr "중지"
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1234
 msgid "Settings restored to defaults"
 msgstr "설정이 기본값으로 복원됨"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
+msgid "Loading available voices…"
+msgstr "사용 가능한 음성을 로드하는 중…"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
+msgid "No Voice Packages Found"
+msgstr "음성 패키지가 없습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "pacman 저장소에서 TTS 음성 패키지를 찾을 수 없습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
+msgid "High quality offline voices"
+msgstr "고품질 오프라인 음성"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
+msgid "Neural network voices — natural sounding"
+msgstr "신경망 음성 — 자연스러운 소리"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
+msgid "Lightweight multi-language synthesizer"
+msgstr "경량 다국어 합성기"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
+#, python-brace-format
+msgid "Add RHVoice — {count} available"
+msgstr "RHVoice 추가 — {count} 사용 가능"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
+#, python-brace-format
+msgid "{langs} languages"
+msgstr "{langs} 언어"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
+#, python-brace-format
+msgid "{count} voice(s)"
+msgstr "{count} 개의 음성"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
+#, python-brace-format
+msgid "Add Piper voices — {count} available"
+msgstr "파이퍼 음성 추가 — {count} 사용 가능"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
+msgid "Neural TTS voice packs by language"
+msgstr "언어별 신경 TTS 음성 팩"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
+msgid "Installed"
+msgstr "설치됨"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
+msgid "Remove"
+msgstr "제거하다"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "{name}을(를) 제거하세요."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
+#, python-brace-format
+msgid "Install {name}"
+msgstr "{name} 설치"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
+msgid "Install Voice"
+msgstr "음성 설치"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
+#, python-brace-format
+msgid ""
+"Install <b>{name}</b>?\n"
+"\n"
+"This requires administrator privileges."
+msgstr ""
+"<b>{name}</b>를 설치하시겠습니까?\n"
+"\n"
+"이 작업에는 관리자 권한이 필요합니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
+msgid "Remove Voice"
+msgstr "음성 제거"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
+#, python-brace-format
+msgid ""
+"Remove <b>{name}</b>?\n"
+"\n"
+"You can reinstall it later."
+msgstr ""
+"<b>{name}</b>을(를) 제거하시겠습니까?\n"
+"\n"
+"나중에 다시 설치할 수 있습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
+msgid "Operation timed out"
+msgstr "작업 시간이 초과되었습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
+msgid "pkexec or pacman not found"
+msgstr "pkexec 또는 pacman을 찾을 수 없습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
+msgid "Failed"
+msgstr "실패했습니다."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
+msgid "Removal Failed"
+msgstr "제거 실패"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
+msgid "Unknown error"
+msgstr "알 수 없는 오류"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 172
+msgid "OK"
+msgstr "알겠습니다."
 # 
 # File: tts-biglinux/src/biglinux_tts/window.py, line: 138
 msgid "Restore Defaults"
@@ -556,7 +713,3 @@ msgid ""
 msgstr ""
 "BigLinux TTS Speak는 여전히 백그라운드에서 실행 중입니다.  \n"
 "시스템 트레이 아이콘에서 언제든지 접근할 수 있습니다."
-# 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 172
-msgid "OK"
-msgstr "알겠습니다."

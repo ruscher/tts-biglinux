@@ -157,6 +157,14 @@ msgstr "Wykrywanie zainstalowanych głosów..."
 msgid "Select TTS voice"
 msgstr "Wybierz głos TTS"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 218
+msgid "Refresh voice list"
+msgstr "Odśwież listę głosów"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 226
+msgid "Manage voices for current engine"
+msgstr "Zarządzaj głosami dla bieżącego silnika"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 223
 msgid "Speed"
 msgstr "Szybkość"
@@ -238,6 +246,17 @@ msgstr "Silnik używany do syntezy mowy"
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 309
 msgid "Select TTS engine"
 msgstr "Wybierz silnik TTS"
+# 
+# #-#-#-#-#  tts-biglinux.pot (tts-biglinux)  #-#-#-#-#
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 325
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 249
+msgid "Voice Manager"
+msgstr "Menedżer Głosu"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 326
+msgid "Install or remove voice packages"
+msgstr "Zainstaluj lub usuń pakiety głosowe"
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 319
 msgid "Text Processing"
@@ -395,6 +414,14 @@ msgstr "Ikona w zasobniku włączona"
 msgid "Tray icon disabled"
 msgstr "Ikona w zasobniku wyłączona"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 647
+msgid "Refreshing voices..."
+msgstr "Odświeżanie głosów..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 649
+msgid "Refreshing voice list…"
+msgstr "Odświeżanie listy głosów…"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 806
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Nie znaleziono głosów — zainstaluj rhvoice lub espeak-ng"
@@ -420,6 +447,10 @@ msgstr "{count} głosów dostępnych"
 # File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 771
 msgid "Searching for voices..."
 msgstr "Szukam głosów..."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 861
+msgid "Checking for Piper voices..."
+msgstr "Sprawdzanie głosów Piper..."
 # 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 954
 #, python-brace-format
@@ -465,6 +496,11 @@ msgstr "Instalowanie Piper TTS — to może chwilę potrwać…"
 msgid "Piper installed successfully! Discovering voices…"
 msgstr "Piper zainstalowany pomyślnie! Wykrywanie głosów…"
 # 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/main_view.py, line: 1006
+#, python-brace-format
+msgid "Failed to install: {error}"
+msgstr "Nie udało się zainstalować: {error}"
+# 
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1054
 msgid "Failed to install Piper — check permissions"
 msgstr "Nie udało się zainstalować Pipera — sprawdź uprawnienia"
@@ -501,6 +537,127 @@ msgstr "Zatrzymaj"
 # File: tts-biglinux/src/biglinux_tts/ui/main_view.py, line: 1234
 msgid "Settings restored to defaults"
 msgstr "Ustawienia przywrócone do wartości domyślnych"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 287
+msgid "Loading available voices…"
+msgstr "Ładowanie dostępnych głosów…"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 330
+msgid "No Voice Packages Found"
+msgstr "Nie znaleziono pakietów głosowych"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 332
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Nie znaleziono żadnych pakietów głosowych TTS w repozytoriach pacman."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 353
+msgid "High quality offline voices"
+msgstr "Wysokiej jakości głosy offline"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 357
+msgid "Neural network voices — natural sounding"
+msgstr "Głosy sieci neuronowych — brzmiące naturalnie"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 361
+msgid "Lightweight multi-language synthesizer"
+msgstr "Lekki wielojęzyczny syntezator"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 399
+#, python-brace-format
+msgid "Add RHVoice — {count} available"
+msgstr "Dodaj RHVoice — {count} dostępnych"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 402
+#, python-brace-format
+msgid "{langs} languages"
+msgstr "{langs} języki"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 411
+#, python-brace-format
+msgid "{count} voice(s)"
+msgstr "{count} głos(ów)"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 425
+#, python-brace-format
+msgid "Add Piper voices — {count} available"
+msgstr "Dodaj głosy Piper — {count} dostępnych"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 427
+msgid "Neural TTS voice packs by language"
+msgstr "Pakiety głosów Neural TTS według języka"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 474
+msgid "Installed"
+msgstr "Zainstalowane"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 485
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 546
+msgid "Remove"
+msgstr "Usuń"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 490
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Usuń {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 510
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Zainstaluj {name}"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 526
+msgid "Install Voice"
+msgstr "Zainstaluj głos"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 528
+#, python-brace-format
+msgid ""
+"Install <b>{name}</b>?\n"
+"\n"
+"This requires administrator privileges."
+msgstr ""
+"Zainstalować <b>{name}</b>?\n"
+"\n"
+"To wymaga uprawnień administratora."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 542
+msgid "Remove Voice"
+msgstr "Usuń głos"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 544
+#, python-brace-format
+msgid ""
+"Remove <b>{name}</b>?\n"
+"\n"
+"You can reinstall it later."
+msgstr ""
+"Usunąć <b>{name}</b>?\n"
+"\n"
+"Możesz zainstalować go ponownie później."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 617
+msgid "Operation timed out"
+msgstr "Operacja przekroczyła czas oczekiwania."
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 619
+msgid "pkexec or pacman not found"
+msgstr "pkexec lub pacman nie znaleziono"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 640
+msgid "Failed"
+msgstr "Niepowodzenie"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 641
+msgid "Removal Failed"
+msgstr "Usunięcie nie powiodło się"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py, line: 643
+msgid "Unknown error"
+msgstr "Nieznany błąd"
+# 
+# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 172
+msgid "OK"
+msgstr "OK"
 # 
 # File: tts-biglinux/src/biglinux_tts/window.py, line: 138
 msgid "Restore Defaults"
@@ -554,7 +711,3 @@ msgid ""
 msgstr ""
 "BigLinux TTS Speak nadal działa w tle. Możesz uzyskać do niego dostęp w dowolnym momencie z ikony w "
 "zasobniku systemowym."
-# 
-# File: tts-biglinux/usr/share/biglinux/tts-biglinux/application.py, line: 172
-msgid "OK"
-msgstr "OK"
