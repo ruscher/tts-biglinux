@@ -368,6 +368,7 @@ class TrayIcon:
         """Start the Qt6 tray helper subprocess."""
         cmd = [
             "/usr/bin/python3",
+            "-s",  # no ~/.local site-packages: a pip --user PySide6 must not win
             "-c",
             _HELPER_SCRIPT,
             self._title,

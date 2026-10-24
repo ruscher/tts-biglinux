@@ -41,6 +41,15 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
+# GLib 2.80 moved unix_signal_add to GLibUnix; the GLib name is deprecated.
+try:
+    gi.require_version("GLibUnix", "2.0")
+    from gi.repository import GLibUnix
+
+    _unix_signal_add = GLibUnix.signal_add
+except (ImportError, ValueError):
+    _unix_signal_add = GLib.unix_signal_add
+
 
 class TTSApplication(Adw.Application):
     """
@@ -127,7 +136,7 @@ class TTSApplication(Adw.Application):
         """Application startup — load CSS and create actions."""
         # Logout / kill: quit cleanly so no player keeps speaking orphaned.
         for signum in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP):
-            GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signum, self._on_signal)
+            _unix_signal_add(GLib.PRIORITY_DEFAULT, signum, self._on_signal)
         logger.debug("Application startup")
         load_css()
         self._create_actions()

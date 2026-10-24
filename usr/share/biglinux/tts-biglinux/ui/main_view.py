@@ -56,6 +56,7 @@ from ui.components import (
     create_icon_button,
     create_preferences_group,
     create_state_pill,
+    set_row_icon,
     set_state_pill,
 )
 from utils.async_utils import run_in_thread
@@ -211,7 +212,7 @@ class MainView(Adw.NavigationPage):
         row = Adw.ActionRow()
         row.set_title(_("Advanced options"))
         row.set_subtitle(_("Shortcut, performance, behavior"))
-        row.set_icon_name("emblem-system-symbolic")
+        set_row_icon(row, "emblem-system-symbolic")
         row.set_activatable(True)
         row.connect("activated", self._open_advanced_dialog)
         arrow = Gtk.Image.new_from_icon_name("go-next-symbolic")
@@ -650,7 +651,7 @@ class MainView(Adw.NavigationPage):
                 "Select text anywhere and press the shortcut to read aloud. Press again to stop."
             )
         )
-        shortcut_row.set_icon_name("input-keyboard-symbolic")
+        set_row_icon(shortcut_row, "input-keyboard-symbolic")
         self._shortcut_row = shortcut_row
 
         # Current keys + whether the desktop confirmed them.
@@ -681,7 +682,7 @@ class MainView(Adw.NavigationPage):
             on_toggled=self._on_launcher_toggle,
             accessible_name=_("Show system tray icon"),
         )
-        launcher_row.set_icon_name("tts-biglinux-symbolic")
+        set_row_icon(launcher_row, "tts-biglinux-symbolic")
         group.add(launcher_row)
 
         # ── History save ──
@@ -697,7 +698,7 @@ class MainView(Adw.NavigationPage):
             on_toggled=self._on_history_toggle,
             accessible_name=_("Save speech history"),
         )
-        history_row.set_icon_name("document-save-symbolic")
+        set_row_icon(history_row, "document-save-symbolic")
         group.add(history_row)
 
         self._history_audio_row, self._history_audio_switch = create_action_row_with_switch(
@@ -731,7 +732,7 @@ class MainView(Adw.NavigationPage):
         playback_row = Adw.ComboRow()
         playback_row.set_title(_("Audio playback mode"))
         playback_row.set_subtitle(_("Behavior when playing multiple audios or speech"))
-        playback_row.set_icon_name("media-playback-start-symbolic")
+        set_row_icon(playback_row, "media-playback-start-symbolic")
         playback_modes = Gtk.StringList.new(
             [_("Interrupt previous"), _("Queue"), _("Simultaneous")]
         )
@@ -750,7 +751,7 @@ class MainView(Adw.NavigationPage):
             on_toggled=self._on_media_player_toggle,
             accessible_name=_("Show system media player"),
         )
-        media_row.set_icon_name("multimedia-player-symbolic")
+        set_row_icon(media_row, "multimedia-player-symbolic")
         group.add(media_row)
 
         return group
