@@ -428,3 +428,20 @@ def test_speak_command_closes_inherited_descriptors(tmp_path):
     os.close(r)
     os.close(w)
     assert str(r) not in out and str(w) not in out and {"0", "1", "2"} <= set(out)
+
+
+def test_diagnose_flags_a_binding_that_runs_another_command(files, monkeypatch):
+    """Installed over a source checkout: the key is right, the command is not."""
+    from config import AppSettings
+    from services import diagnostics
+    from services.desktop_integration_service import DesktopIntegrationService as DIS
+
+    monkeypatch.setenv("XDG_CURRENT_DESKTOP", "wlmaker")
+    bw.set_wlmaker("<Alt>v", command="/home/u/checkout/usr/bin/biglinux-tts-speak")
+    monkeypatch.setattr(DIS, "_exec_path_for_speak", staticmethod(lambda: CMD))
+    settings = AppSettings()
+    data = diagnostics.collect_integration(settings)
+    assert data["shortcut"]["wlmaker"]["commands"] == ["/home/u/checkout/usr/bin/biglinux-tts-speak"]
+    assert any("--repair-shortcut" in p for p in data["problems"])
+    bw.set_wlmaker("<Alt>v", command=CMD)
+    assert not any("--repair-shortcut" in p for p in diagnostics.collect_integration(settings)["problems"])

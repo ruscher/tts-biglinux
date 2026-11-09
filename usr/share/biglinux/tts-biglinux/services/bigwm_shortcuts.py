@@ -343,6 +343,23 @@ def _wl_describe(entry: plist.Entry) -> str:
     return f"{entry.key.value} → {action}{' ' + arg if arg else ''}"
 
 
+def wlmaker_bound(path: Path) -> list[tuple[str, str]]:
+    """(key, command) of our bindings in the file — for diagnostics; raises on errors."""
+    kb = _wlmaker_bindings(path.read_text(encoding="utf-8"))
+    return [(str(e.key.value), _wl_action(e.value)[1]) for e in kb.entries if _wl_is_ours(e)]
+
+
+def wmaker_bound(path: Path) -> list[tuple[str, str]]:
+    """(SHORTCUT, command) of our root-menu items — for diagnostics; raises on errors."""
+    menu = _wm_menu(path.read_text(encoding="utf-8"))
+    out = []
+    for item, _ in _wm_walk(menu):
+        if _wm_is_ours(item):
+            cmd, sc = _wm_item_command(item)
+            out.append((str(sc.value) if sc is not None else "", cmd))
+    return out
+
+
 def wlmaker_status(path: Path) -> tuple[list[str], list[str]]:
     """(our keys, all keys) in the file — for diagnostics; raises on errors."""
     kb = _wlmaker_bindings(path.read_text(encoding="utf-8"))

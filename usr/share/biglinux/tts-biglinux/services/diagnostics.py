@@ -158,8 +158,9 @@ def collect_integration(settings=None, app=None) -> dict:
     if info.is_big_windowmaker and accel:
         wl_path = bw.wlmaker_config_path(info.compositor_pid if info.compositor == "wlmaker" else None)
         try:
-            ours, _all = bw.wlmaker_status(wl_path)
-            shortcut["wlmaker"] = {"file": str(wl_path), "bound": ours, "expected": bw.to_wlmaker_key(accel)}
+            bound = bw.wlmaker_bound(wl_path)
+            shortcut["wlmaker"] = {"file": str(wl_path), "bound": [k for k, _ in bound],
+                                   "commands": [c for _, c in bound], "expected": bw.to_wlmaker_key(accel)}
         except Exception as e:
             shortcut["wlmaker"] = {"file": str(wl_path), "error": str(e)}
         if info.compositor == "wlmaker" and info.compositor_pid:
@@ -171,15 +172,18 @@ def collect_integration(settings=None, app=None) -> dict:
                                 "log in again (a wlmaker without the CLOEXEC fix leaks pipes)")
         wm_path = bw.wmaker_menu_path()
         try:
-            menu = bw._wm_menu(wm_path.read_text(encoding="utf-8"))
-            keys = [str(sc.value) for item, _ in bw._wm_walk(menu) if bw._wm_is_ours(item)
-                    for sc in [bw._wm_item_command(item)[1]] if sc is not None]
-            shortcut["windowmaker"] = {"file": str(wm_path), "bound": keys, "expected": bw.to_wmaker_key(accel)}
+            bound = bw.wmaker_bound(wm_path)
+            shortcut["windowmaker"] = {"file": str(wm_path), "bound": [k for k, _ in bound],
+                                       "commands": [c for _, c in bound], "expected": bw.to_wmaker_key(accel)}
         except Exception as e:
             shortcut["windowmaker"] = {"file": str(wm_path), "error": str(e)}
         current = shortcut.get("wlmaker" if info.desktop == "wlmaker" else "windowmaker", {})
-        if current.get("bound") is not None and current.get("expected") not in current.get("bound", []):
-            problems.append(f"{info.desktop}: {current.get('expected')} is not in {current.get('file')}")
+        if current.get("bound") is not None:
+            if current.get("expected") not in current["bound"]:
+                problems.append(f"{info.desktop}: {current.get('expected')} is not in {current.get('file')}")
+            elif any(c != command for c in current.get("commands", [])):
+                problems.append(f"{info.desktop}: the shortcut runs {', '.join(current['commands'])}, "
+                                f"not {command} (biglinux-tts --repair-shortcut updates it)")
     elif info.desktop == "kde" and accel:
         active = shortcut_service.kde_active_keys()
         shortcut["kglobalaccel"] = active if active is not None else "unreachable"
@@ -294,7 +298,8 @@ def format_integration(data: dict) -> str:
     for name in ("wlmaker", "windowmaker"):
         if name in sc:
             d = sc[name]
-            state = d.get("error") or (f"bound: {', '.join(d['bound']) or 'none'} (expected {d['expected']})")
+            state = d.get("error") or (f"bound: {', '.join(d['bound']) or 'none'} (expected {d['expected']})"
+                                       + "".join(f" → {c}" for c in d.get("commands", []) if c != sc["command"]))
             lines.append(f"    {name:<16}{state}  [{d['file']}]")
     if "wlmaker_reload" in sc:
         lines.append(f"    wlmaker reload: {'SIGHUP (applies at once)' if sc['wlmaker_reload'] else 'not supported: next login'}")
