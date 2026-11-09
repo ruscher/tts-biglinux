@@ -16,7 +16,7 @@ word per run). Nothing in the user's settings is changed.
 
     python3 scripts/benchmark_shortcut.py [--runs 5] [--json out.json]
 
-Stop any running BigLinux TTS first: the cold run needs to start it.
+A running BigLinux TTS must be quit first (the cold run starts it), or run\non a private session bus: dbus-run-session -- python3 scripts/benchmark_shortcut.py
 """
 
 from __future__ import annotations
@@ -46,15 +46,19 @@ def select_text(text: str) -> None:
         subprocess.Popen(["xsel", "-p", "-i"], stdin=subprocess.PIPE).communicate(text.encode())
 
 
-def app_pids() -> list[int]:
-    """The app's main process and its children (tray helper, players)."""
-    out = subprocess.run(["pgrep", "-f", "tts-biglinux/main.py|biglinux-tts"], capture_output=True, text=True).stdout
-    mains = [int(p) for p in out.split() if int(p) != os.getpid()]
-    pids = set(mains)
-    for pid in mains:
-        kids = subprocess.run(["pgrep", "-P", str(pid)], capture_output=True, text=True).stdout
-        pids.update(int(k) for k in kids.split())
-    return sorted(pids)
+def app_pids(primary: int) -> list[int]:
+    """The app this benchmark started (``primary``) and its children."""
+    pids = [primary] if Path(f"/proc/{primary}").exists() else []
+    kids = subprocess.run(["pgrep", "-P", str(primary)], capture_output=True, text=True).stdout
+    return pids + [int(k) for k in kids.split()]
+
+
+def app_on_bus() -> bool:
+    out = subprocess.run(["gdbus", "call", "--session", "--dest", "org.freedesktop.DBus",
+                          "--object-path", "/org/freedesktop/DBus", "--method",
+                          "org.freedesktop.DBus.NameHasOwner", "br.com.biglinux.tts"],
+                         capture_output=True, text=True).stdout
+    return "true" in out
 
 
 def mem_kib(pid: int) -> tuple[int, int]:
@@ -118,10 +122,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--runs", type=int, default=5)
     parser.add_argument("--json", help="write the results here")
+    parser.add_argument("--command", default=str(SPEAK),
+                        help="the shortcut's command to measure (default: this checkout's); "
+                        "/usr/bin/biglinux-tts-speak measures the installed package")
     args = parser.parse_args()
+    speak = args.command
 
-    if app_pids():
-        print("BigLinux TTS is running: quit it first (the cold run starts it).", file=sys.stderr)
+    if app_on_bus():
+        print("BigLinux TTS is running on this session bus: quit it, or run the benchmark "
+              "on a private bus: dbus-run-session -- python3 scripts/benchmark_shortcut.py", file=sys.stderr)
         return 1
     for tool in ("wl-copy",) if os.environ.get("WAYLAND_DISPLAY") else ("xsel",):
         if not shutil.which(tool):
@@ -134,7 +143,7 @@ def main() -> int:
     # ── cold start ──
     select_text(TEXT)
     t0 = time.monotonic()
-    primary = subprocess.Popen([str(SPEAK), "--debug"], stderr=subprocess.PIPE, stdout=subprocess.DEVNULL, text=True)
+    primary = subprocess.Popen([speak, "--debug"], stderr=subprocess.PIPE, stdout=subprocess.DEVNULL, text=True)
     log = AppLog(primary)
     t_cap = log.wait_for("captured")
     t_audio = log.wait_for("→ TTSState.SPEAKING")
@@ -149,7 +158,7 @@ def main() -> int:
     for _ in range(args.runs):
         select_text(TEXT)
         t0 = time.monotonic()
-        client = subprocess.run([str(SPEAK)], capture_output=True)
+        client = subprocess.run([speak], capture_output=True)
         forward.append((time.monotonic() - t0) * 1000)
         t_cap = log.wait_for("captured")
         t_audio = log.wait_for("→ TTSState.SPEAKING")
@@ -159,13 +168,16 @@ def main() -> int:
             warm_audio.append((t_audio - t0) * 1000)
             # Press again while reading: the default mode stops.
             t1 = time.monotonic()
-            subprocess.run([str(SPEAK)], capture_output=True)
+            subprocess.run([speak], capture_output=True)
             t_stop = log.wait_for("→ TTSState.IDLE", 10)
-            if t_stop:
-                stop.append((t_stop - t1) * 1000)
+            stop.append((t_stop - t1) * 1000 if t_stop else None)
         if client.returncode:
             print("client exit", client.returncode, client.stderr.decode()[-300:], file=sys.stderr)
-        wait_idle(log)
+        if t_audio and stop and stop[-1] is not None:
+            time.sleep(1.0)  # already idle: stopped above
+            log.drain()
+        else:
+            wait_idle(log)
 
     def summary(values):
         return {"median_ms": round(statistics.median(values)), "min_ms": round(min(values)),
@@ -174,21 +186,21 @@ def main() -> int:
     results["warm_capture"] = summary(warm_cap)
     results["warm_audio"] = summary(warm_audio)
     results["forward"] = summary(forward)
-    results["stop"] = summary(stop)
+    results["stop"] = summary([s for s in stop if s is not None])
 
     # ── idle footprint ──
     time.sleep(2)
-    pids = app_pids()
+    pids = app_pids(primary.pid)
     mem = {pid: mem_kib(pid) for pid in pids}
-    c0 = cpu_ticks(pids)
+    c0 = cpu_ticks([primary.pid])
     time.sleep(10)
-    c1 = cpu_ticks(pids)
+    c1 = cpu_ticks([primary.pid])
     hz = os.sysconf("SC_CLK_TCK")
     results["idle"] = {
         "processes": len(pids),
         "rss_mib": round(sum(r for r, _ in mem.values()) / 1024, 1),
         "pss_mib": round(sum(p for _, p in mem.values()) / 1024, 1),
-        "cpu_percent_10s": round((c1 - c0) / hz / 10 * 100, 2),
+        "main_cpu_percent_10s": round((c1 - c0) / hz / 10 * 100, 2),
     }
 
     primary.terminate()
@@ -197,7 +209,7 @@ def main() -> int:
     except subprocess.TimeoutExpired:
         primary.kill()
     time.sleep(1)
-    results["leftover_processes"] = len(app_pids())
+    results["leftover_processes"] = len(app_pids(primary.pid)) + int(app_on_bus())
 
     print(json.dumps(results, indent=2))
     if args.json:

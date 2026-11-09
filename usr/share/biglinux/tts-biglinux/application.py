@@ -157,9 +157,10 @@ class TTSApplication(Adw.Application):
         GLib.set_application_name(APP_NAME)
         Gtk.Window.set_default_icon_name("tts-biglinux")
         self._setup_tray_icon()
-        # Registration talks to the desktop over D-Bus/CLI tools: never on the
-        # main thread, never delaying the first Alt+V.
-        self.apply_shortcut(self.settings.shortcut.keybinding)
+        # Registration talks to the desktop over D-Bus/CLI tools or edits its
+        # files: never on the main thread, and a moment after start-up so a
+        # cold Alt+V's capture and speech do not compete with it.
+        GLib.timeout_add(1500, self._apply_startup_shortcut)
         if self.settings.show_media_player:
             self.enable_media_player()
         # Prewarm the selected neural model during idle (no audio) so the first
@@ -168,6 +169,10 @@ class TTSApplication(Adw.Application):
         # Bring the History index in line with its files (recovers entries
         # from older versions, the Trash or a crash). Off the main thread.
         GLib.timeout_add_seconds(2, self._repair_history)
+
+    def _apply_startup_shortcut(self) -> bool:
+        self.apply_shortcut(self.settings.shortcut.keybinding)
+        return GLib.SOURCE_REMOVE
 
     def _repair_history(self) -> bool:
         import threading

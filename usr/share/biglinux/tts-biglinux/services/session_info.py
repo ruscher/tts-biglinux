@@ -185,21 +185,30 @@ def xwayland_running(env: dict | None = None) -> bool:
     the server starts on the first X11 client: connecting to check would
     start it (~35 MB). So look for the process instead.
     """
+    global _xwayland_pid
     env = os.environ if env is None else env
     display = env.get("DISPLAY", "")
-    pids = _own_processes({"Xwayland"}).get("Xwayland", [])
-    if not pids:
-        return False
-    if not display:
-        return True
-    for pid in pids:
+
+    def serves_display(pid: int) -> bool:
         try:
             argv = (_PROC / str(pid) / "cmdline").read_bytes().split(b"\0")
         except OSError:
-            continue
-        if display.encode() in argv:
+            return False
+        return bool(argv) and argv[0].endswith(b"Xwayland") and (not display or display.encode() in argv)
+
+    # The last one found, checked in O(1); the /proc scan (~13 ms) only when
+    # it is gone (XWayland exits some seconds after its last X11 client).
+    if _xwayland_pid and serves_display(_xwayland_pid):
+        return True
+    for pid in _own_processes({"Xwayland"}).get("Xwayland", []):
+        if serves_display(pid):
+            _xwayland_pid = pid
             return True
+    _xwayland_pid = 0
     return False
+
+
+_xwayland_pid = 0
 
 
 # ── detection ────────────────────────────────────────────────────────
