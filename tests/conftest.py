@@ -42,3 +42,27 @@ def _never_touch_user_data(tmp_path_factory, monkeypatch):
     monkeypatch.setattr(config, "CONFIG_DIR", home / ".config" / "biglinux-tts")
     monkeypatch.setattr(config, "SETTINGS_FILE", home / ".config" / "biglinux-tts" / "settings.json")
     monkeypatch.setattr(config, "LEGACY_CONFIG_DIR", home / ".config" / "tts-biglinux")
+
+
+@pytest.fixture(autouse=True)
+def _never_touch_the_desktop(tmp_path_factory, monkeypatch):
+    """No test edits the real session's shortcut files or signals it.
+
+    The suite may run inside a Big WindowMaker session: registration would
+    otherwise write ~/.config/wlmaker/Config.plist and ~/GNUstep/Defaults
+    and send SIGHUP to the running wlmaker. Session detection is reduced to
+    the environment (a test sets the variables it needs), the config roots
+    point to a scratch folder and no compositor is ever signalled.
+    """
+    from services import bigwm_shortcuts, session_info
+
+    root = tmp_path_factory.mktemp("desktop")
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(root / ".config"))
+    monkeypatch.setenv("GNUSTEP_USER_ROOT", str(root / "GNUstep"))
+    monkeypatch.setattr(session_info, "wayland_compositor_pid", lambda env=None: None)
+    monkeypatch.setattr(session_info, "_own_processes", lambda names: {})
+    # The real one stays reachable for the test of its own guards.
+    monkeypatch.setattr(bigwm_shortcuts, "real_reload_wlmaker", bigwm_shortcuts.reload_wlmaker, raising=False)
+    monkeypatch.setattr(bigwm_shortcuts, "reload_wlmaker", lambda pid: False)
+    yield root
+
