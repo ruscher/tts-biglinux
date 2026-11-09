@@ -53,7 +53,10 @@ def main() -> None:
     args, unknown = parser.parse_known_args()
 
     # Configure logging
-    log_level = logging.DEBUG if args.debug else logging.WARNING
+    # BIGLINUX_TTS_DEBUG=1: debug log also when a desktop shortcut starts the
+    # app (no way to add --debug there); the log goes to the session's log.
+    debug = args.debug or os.environ.get("BIGLINUX_TTS_DEBUG", "") not in ("", "0")
+    log_level = logging.DEBUG if debug else logging.WARNING
     logging.basicConfig(
         level=log_level,
         format="%(asctime)s.%(msecs)03d [%(levelname)s] %(name)s: %(message)s",
