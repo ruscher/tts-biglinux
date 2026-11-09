@@ -242,7 +242,14 @@ class MainView(Adw.NavigationPage):
             adv_clamp.set_margin_bottom(18)
             adv_clamp.set_margin_start(12)
             adv_clamp.set_margin_end(12)
-            adv_clamp.set_child(self._advanced_group)
+            content = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=24)
+            content.append(self._advanced_group)
+            app = self._root_app()
+            if app is not None and hasattr(app, "add_integration_listener"):
+                from ui.integration_panel import IntegrationGroup
+
+                content.append(IntegrationGroup(app, self._settings_service))
+            adv_clamp.set_child(content)
             adv_scroll.set_child(adv_clamp)
             toolbar.set_content(adv_scroll)
             dlg.set_content(toolbar)

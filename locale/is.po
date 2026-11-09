@@ -14,616 +14,1353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "BigLinux Text-to-Speech — Read selected text aloud"
-msgstr "BigLinux texti-í-tal — Lesa valinn texta upphátt"
-
-msgid "Enable debug logging"
-msgstr "Virkja villuleitarannál"
-
-msgid "Settings"
-msgstr "Stillingar"
-
-msgid "Show settings"
-msgstr "Sýna stillingar"
-
-msgid "Back"
-msgstr "Til baka"
-
-msgid "Text narrator"
-msgstr "Textalesari"
-
-msgid "The shortcut is not active — open Advanced options to fix it"
-msgstr "Flýtilykillinn er ekki virkur — opnaðu Ítarlega valkosti til að laga það"
-
-#, python-brace-format
-msgid "Select text and press {key} to read it aloud"
-msgstr "Veldu texta og ýttu á {key} til að láta lesa hann upphátt"
-
-msgid "History"
-msgstr "Ferill"
-
-msgid "Loading voice…"
-msgstr "Hleð inn rödd…"
-
-msgid "Speaking…"
-msgstr "Talar…"
-
-msgid "Could not read the text"
-msgstr "Ekki tókst að lesa textann"
-
-msgid "Show tray icon"
-msgstr "Sýna kerfisbakkatákn"
-
-msgid "Restore Defaults…"
-msgstr "Endurheimta sjálfgefið…"
-
-msgid "Welcome"
-msgstr "Velkomin"
-
-msgid "About BigLinux TTS"
-msgstr "Um BigLinux TTS"
-
-msgid "Quit"
-msgstr "Hætta"
-
-msgid "Main menu"
-msgstr "Aðalvalmynd"
-
-msgid "Restore settings?"
-msgstr "Endurstilla stillingar?"
-
-msgid "This will return all adjustments to their original defaults."
-msgstr "Þetta mun færa allar stillingar til baka í upprunaleg sjálfgildi."
-
-msgid "Cancel"
-msgstr "Hætta við"
-
-msgid "Restore"
-msgstr "Endurstilla"
-
-msgid "This key combination is not valid."
-msgstr "Þessi lyklasamsetning er ekki gild."
-
-msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
-msgstr "Notaðu Ctrl, Alt eða Super ásamt öðrum lykli svo venjulegur innsláttur raskist ekki."
-
-msgid "This key combination is not supported by the desktop."
-msgstr "Skjáborðið styður ekki þessa lyklasamsetningu."
-
-#, python-brace-format
-msgid "{shortcut} is already used by: {names}. Choose another shortcut."
-msgstr "{shortcut} er þegar í notkun hjá: {names}. Veldu annan flýtilykil."
-
-msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
-msgstr "Skjáborðið samþykkti ekki flýtilykilinn. Er þjónusta KDE fyrir víðværa flýtilykla í gangi?"
-
-msgid "The desktop did not confirm the new shortcut."
-msgstr "Skjáborðið staðfesti ekki nýja flýtilykilinn."
-
-msgid "The shortcut was saved, but the desktop could not confirm it yet."
-msgstr "Flýtilykillinn var vistaður, en skjáborðið gat ekki staðfest hann enn."
-
-msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
-msgstr "Ekki tókst að skrá flýtilykilinn á þessu skjáborði. Bættu honum við í lyklaborðsstillingum kerfisins með skipuninni biglinux-tts-speak."
-
-msgid "The installation was cancelled: the administrator password was not confirmed."
-msgstr "Hætt var við uppsetninguna: lykilorð kerfisstjóra var ekki staðfest."
-
-#, python-brace-format
-msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
-msgstr "{packages} er ekki tiltækt í hugbúnaðarsöfnunum þínum. Uppfærðu kerfið (sudo pacman -Syu) og reyndu aftur."
-
-msgid "Another program is installing or updating packages. Wait for it to finish and try again."
-msgstr "Annað forrit er að setja upp eða uppfæra pakka. Bíddu þar til því lýkur og reyndu aftur."
-
-msgid "The packages could not be downloaded. Check your internet connection and try again."
-msgstr "Ekki tókst að sækja pakkana. Athugaðu nettenginguna og reyndu aftur."
-
-#, python-brace-format
-msgid "{packages} conflicts with installed files or packages. See the details."
-msgstr "{packages} stangast á við uppsettar skrár eða pakka. Sjá nánar."
-
-#, python-brace-format
-msgid "Not enough free disk space to install {packages}."
-msgstr "Ekki nægt laust diskpláss til að setja upp {packages}."
-
-#, python-brace-format
-msgid "{packages} could not be installed. See the details."
-msgstr "Ekki tókst að setja upp {packages}. Sjá nánar."
-
-msgid "Nothing to install."
-msgstr "Ekkert að setja upp."
-
-msgid "pkexec is not installed (package polkit)."
-msgstr "pkexec er ekki uppsett (pakkinn polkit)."
-
-msgid "The installation took too long and was stopped."
-msgstr "Uppsetningin tók of langan tíma og var stöðvuð."
-
-#, python-brace-format
-msgid "{packages} could not be built from the AUR. See the details."
-msgstr "Ekki tókst að byggja {packages} úr AUR. Sjá nánar."
-
-msgid "Read or stop the selected text"
-msgstr "Lesa eða stöðva valinn texta"
-
-msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
-msgstr "Kokoro er ekki uppsett. Settu upp pakkann biglinux-kokoro-tts."
-
-msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
-msgstr "Raddlíkan Kokoro vantar. Settu pakkann biglinux-kokoro-tts upp aftur."
-
-msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
-msgstr "Engar Kokoro-raddir fundust. Opnaðu Raddstjórnun til að sækja rödd."
-
-msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
-msgstr "Þessi Kokoro-rödd er ekki uppsett. Opnaðu Raddstjórnun til að sækja hana."
-
-#, python-brace-format
-msgid "Unknown voice: {voice_id}"
-msgstr "Óþekkt rödd: {voice_id}"
-
-#, python-brace-format
-msgid "Invalid voice id: {voice_id}"
-msgstr "Ógilt raddauðkenni: {voice_id}"
-
-msgid "The voice file is larger than expected."
-msgstr "Raddskráin er stærri en búist var við."
-
-#, python-brace-format
-msgid "incomplete download ({received} of {total} bytes)"
-msgstr "ófullgert niðurhal ({received} af {total} bætum)"
-
-msgid "empty response"
-msgstr "tómt svar"
-
-#, python-brace-format
-msgid "Could not download the voice. Check your internet connection and try again. ({error})"
-msgstr "Ekki tókst að sækja röddina. Athugaðu nettenginguna og reyndu aftur. ({error})"
-
-#, python-brace-format
-msgid "The downloaded voice file is damaged. Try again. ({error})"
-msgstr "Sótta raddskráin er skemmd. Reyndu aftur. ({error})"
-
-#, python-brace-format
-msgid "Not enough disk space to install the voice ({size} MB needed)."
-msgstr "Ekki nægt diskpláss til að setja upp röddina ({size} MB þarf)."
-
-#, python-brace-format
-msgid "Cannot create user voices directory: {error}"
-msgstr "Ekki hægt að búa til möppu fyrir notandaraddir: {error}"
-
-#, python-brace-format
-msgid "Failed to add voice: {error}"
-msgstr "Mistókst að bæta við rödd: {error}"
-
-msgid "Cannot remove base voice"
-msgstr "Ekki hægt að fjarlægja grunnrödd"
-
-msgid "No user voices installed"
-msgstr "Engar notandaraddir uppsettar"
-
-#, python-brace-format
-msgid "Failed to remove voice: {error}"
-msgstr "Mistókst að fjarlægja rödd: {error}"
-
-msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
-msgstr "Ekki tókst að spila hljóð. Athugaðu hvort alsa-utils (aplay) sé uppsett."
-
-#, python-brace-format
-msgid "{engine} could not start. Check that it is installed."
-msgstr "{engine} gat ekki ræst. Athugaðu hvort það sé uppsett."
-
-msgid "RHVoice is not installed. Install the rhvoice package."
-msgstr "RHVoice er ekki uppsett. Settu upp pakkann rhvoice."
-
-msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
-msgstr "espeak-ng gat ekki lesið þennan texta. Athugaðu hvort espeak-ng sé uppsett."
-
-msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
-msgstr "Valda Piper-röddin er ekki uppsett. Veldu aðra rödd í Raddstjórnun."
-
-msgid "Piper could not read this text. Try another voice."
-msgstr "Piper gat ekki lesið þennan texta. Prófaðu aðra rödd."
-
-#, python-brace-format
-msgid "{engine} crashed while reading the text."
-msgstr "{engine} hrundi við lestur textans."
-
-#, python-brace-format
-msgid "{engine} stopped with an error and could not read the text."
-msgstr "{engine} stöðvaðist með villu og gat ekki lesið textann."
-
-msgid "Extra low quality"
-msgstr "Mjög lítil gæði"
-
-msgid "Low quality"
-msgstr "Lítil gæði"
-
-msgid "Medium quality"
-msgstr "Miðlungs gæði"
-
-msgid "High quality"
-msgstr "Mikil gæði"
-
-#, python-brace-format
-msgid "{language} ({region})"
-msgstr "{language} ({region})"
-
+#: usr/share/biglinux/tts-biglinux/application.py:76
 msgid "Read the selected text aloud"
 msgstr "Lesa valinn texta upphátt"
 
+#: usr/share/biglinux/tts-biglinux/application.py:377
 msgid "Could not read the text."
 msgstr "Ekki tókst að lesa textann."
 
+#: usr/share/biglinux/tts-biglinux/application.py:378
+#: usr/share/biglinux/tts-biglinux/application.py:583
+#: usr/share/biglinux/tts-biglinux/application.py:588
+#: usr/share/biglinux/tts-biglinux/application.py:593
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1785
+#: usr/share/biglinux/tts-biglinux/window.py:310
+msgid "Could not read the text"
+msgstr "Ekki tókst að lesa textann"
+
+#: usr/share/biglinux/tts-biglinux/application.py:389
 msgid "Reading text"
 msgstr "Les texta"
 
+#: usr/share/biglinux/tts-biglinux/application.py:431
+#: usr/share/biglinux/tts-biglinux/application.py:456
+#: usr/share/biglinux/tts-biglinux/application.py:737
 msgid "Playing…"
 msgstr "Spila…"
 
+#: usr/share/biglinux/tts-biglinux/application.py:582
 msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
 msgstr "Settu upp wl-clipboard (Wayland) eða xclip (X11) svo hægt sé að lesa valinn texta."
 
+#: usr/share/biglinux/tts-biglinux/application.py:587
+msgid "This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:592
+msgid "The program with the selected text did not answer. Try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:597
 msgid "Select some text first, then press the shortcut."
 msgstr "Veldu fyrst texta og ýttu svo á flýtilykilinn."
 
+#: usr/share/biglinux/tts-biglinux/application.py:598
 msgid "No text selected"
 msgstr "Enginn texti valinn"
 
+#: usr/share/biglinux/tts-biglinux/application.py:693
 msgid "Read text"
 msgstr "Lesa texta"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:107
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:169
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:210
 msgid "Play"
 msgstr "Spila"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:196
 msgid "Pause"
 msgstr "Pausa"
 
+#: usr/share/biglinux/tts-biglinux/application.py:704
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:115
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:116
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
 msgid "Stop"
 msgstr "Stöðva"
 
+#: usr/share/biglinux/tts-biglinux/application.py:709
+#: usr/share/biglinux/tts-biglinux/window.py:48
+#: usr/share/biglinux/tts-biglinux/window.py:148
+msgid "Settings"
+msgstr "Stillingar"
+
+#: usr/share/biglinux/tts-biglinux/application.py:711
+#: usr/share/biglinux/tts-biglinux/window.py:390
+msgid "Quit"
+msgstr "Hætta"
+
+#: usr/share/biglinux/tts-biglinux/application.py:733
 msgid "Paused"
 msgstr "Í bið"
 
+#: usr/share/biglinux/tts-biglinux/application.py:735
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1766
+#: usr/share/biglinux/tts-biglinux/window.py:306
+msgid "Loading voice…"
+msgstr "Hleð inn rödd…"
+
+#: usr/share/biglinux/tts-biglinux/application.py:893
 msgid "BigLinux Team"
 msgstr "BigLinux-teymið"
 
+#: usr/share/biglinux/tts-biglinux/application.py:904
 msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
 msgstr "BigLinux TTS breytir völdum eða innslegnum texta í tal með staðbundnum röddum, víðværum flýtilyklum og nákvæmum spilunarstýringum."
 
+#: usr/share/biglinux/tts-biglinux/application.py:907
 msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
 msgstr "BigLinux TTS hófst sem vefverkfæri árið 2021 og þróaðist í innbyggt GTK4-forrit með mörgum talvélum, raddstjórnun og hljóðvél skrifaðri í Rust."
 
+#: usr/share/biglinux/tts-biglinux/application.py:959
 msgid "Could not register the shortcut."
 msgstr "Ekki tókst að skrá flýtilykilinn."
 
+#: usr/share/biglinux/tts-biglinux/application.py:985
 #, python-brace-format
 msgid "Select text and press {shortcut} to hear it"
 msgstr "Veldu texta og ýttu á {shortcut} til að hlusta á hann"
 
+#: usr/share/biglinux/tts-biglinux/application.py:986
 msgid "Text-to-speech assistant"
 msgstr "Tölvutalandi aðstoðarmaður"
 
+#: usr/share/biglinux/tts-biglinux/main.py:24
+msgid "BigLinux Text-to-Speech — Read selected text aloud"
+msgstr "BigLinux texti-í-tal — Lesa valinn texta upphátt"
+
+#: usr/share/biglinux/tts-biglinux/main.py:29
+msgid "Enable debug logging"
+msgstr "Virkja villuleitarannál"
+
+#: usr/share/biglinux/tts-biglinux/main.py:40
+msgid "Show how the shortcut, text capture, tray icon, voices and audio are set up, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:45
+msgid "Register the global shortcut again on this desktop, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:50
+msgid "Remove the shortcut this app added to Big WindowMaker, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:331
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:403
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:335
+msgid "Read or stop the selected text"
+msgstr "Lesa eða stöðva valinn texta"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:244
+msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
+msgstr "Kokoro er ekki uppsett. Settu upp pakkann biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:246
+msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
+msgstr "Raddlíkan Kokoro vantar. Settu pakkann biglinux-kokoro-tts upp aftur."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:248
+msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
+msgstr "Engar Kokoro-raddir fundust. Opnaðu Raddstjórnun til að sækja rödd."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:252
+msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
+msgstr "Þessi Kokoro-rödd er ekki uppsett. Opnaðu Raddstjórnun til að sækja hana."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:470
+#, python-brace-format
+msgid "Unknown voice: {voice_id}"
+msgstr "Óþekkt rödd: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:475
+#, python-brace-format
+msgid "Invalid voice id: {voice_id}"
+msgstr "Ógilt raddauðkenni: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:496
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:508
+msgid "The voice file is larger than expected."
+msgstr "Raddskráin er stærri en búist var við."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:518
+#, python-brace-format
+msgid "incomplete download ({received} of {total} bytes)"
+msgstr "ófullgert niðurhal ({received} af {total} bætum)"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:523
+msgid "empty response"
+msgstr "tómt svar"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:529
+#, python-brace-format
+msgid "Could not download the voice. Check your internet connection and try again. ({error})"
+msgstr "Ekki tókst að sækja röddina. Athugaðu nettenginguna og reyndu aftur. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:536
+#, python-brace-format
+msgid "The downloaded voice file is damaged. Try again. ({error})"
+msgstr "Sótta raddskráin er skemmd. Reyndu aftur. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:547
+#, python-brace-format
+msgid "Not enough disk space to install the voice ({size} MB needed)."
+msgstr "Ekki nægt diskpláss til að setja upp röddina ({size} MB þarf)."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:555
+#, python-brace-format
+msgid "Cannot create user voices directory: {error}"
+msgstr "Ekki hægt að búa til möppu fyrir notandaraddir: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:561
+#, python-brace-format
+msgid "Failed to add voice: {error}"
+msgstr "Mistókst að bæta við rödd: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:574
+msgid "Cannot remove base voice"
+msgstr "Ekki hægt að fjarlægja grunnrödd"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:577
+msgid "No user voices installed"
+msgstr "Engar notandaraddir uppsettar"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:582
+#, python-brace-format
+msgid "Failed to remove voice: {error}"
+msgstr "Mistókst að fjarlægja rödd: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:177
+msgid "The installation was cancelled: the administrator password was not confirmed."
+msgstr "Hætt var við uppsetninguna: lykilorð kerfisstjóra var ekki staðfest."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:180
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:239
+#, python-brace-format
+msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
+msgstr "{packages} er ekki tiltækt í hugbúnaðarsöfnunum þínum. Uppfærðu kerfið (sudo pacman -Syu) og reyndu aftur."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:184
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:204
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:244
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:263
+msgid "Another program is installing or updating packages. Wait for it to finish and try again."
+msgstr "Annað forrit er að setja upp eða uppfæra pakka. Bíddu þar til því lýkur og reyndu aftur."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:186
+msgid "The packages could not be downloaded. Check your internet connection and try again."
+msgstr "Ekki tókst að sækja pakkana. Athugaðu nettenginguna og reyndu aftur."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:188
+#, python-brace-format
+msgid "{packages} conflicts with installed files or packages. See the details."
+msgstr "{packages} stangast á við uppsettar skrár eða pakka. Sjá nánar."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:190
+#, python-brace-format
+msgid "Not enough free disk space to install {packages}."
+msgstr "Ekki nægt laust diskpláss til að setja upp {packages}."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:192
+#, python-brace-format
+msgid "{packages} could not be installed. See the details."
+msgstr "Ekki tókst að setja upp {packages}. Sjá nánar."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:200
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:236
+msgid "Nothing to install."
+msgstr "Ekkert að setja upp."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:213
+msgid "pkexec is not installed (package polkit)."
+msgstr "pkexec er ekki uppsett (pakkinn polkit)."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:215
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:218
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:255
+msgid "The installation took too long and was stopped."
+msgstr "Uppsetningin tók of langan tíma og var stöðvuð."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:252
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:265
+#, python-brace-format
+msgid "{packages} could not be built from the AUR. See the details."
+msgstr "Ekki tókst að byggja {packages} úr AUR. Sjá nánar."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:127
+msgid "This key combination is not valid."
+msgstr "Þessi lyklasamsetning er ekki gild."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:134
+msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
+msgstr "Notaðu Ctrl, Alt eða Super ásamt öðrum lykli svo venjulegur innsláttur raskist ekki."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:235
+msgid "This key combination is not supported by the desktop."
+msgstr "Skjáborðið styður ekki þessa lyklasamsetningu."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:247
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:296
+#, python-brace-format
+msgid "{shortcut} is already used by: {names}. Choose another shortcut."
+msgstr "{shortcut} er þegar í notkun hjá: {names}. Veldu annan flýtilykil."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:266
+msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
+msgstr "Skjáborðið samþykkti ekki flýtilykilinn. Er þjónusta KDE fyrir víðværa flýtilykla í gangi?"
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:272
+msgid "The desktop did not confirm the new shortcut."
+msgstr "Skjáborðið staðfesti ekki nýja flýtilykilinn."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:292
+#, python-brace-format
+msgid "{shortcut} is saved. It starts working after you log in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:303
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:307
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:311
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:383
+msgid "Could not save the shortcut. Nothing was changed."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:392
+msgid "The shortcut was saved, but the desktop could not confirm it yet."
+msgstr "Flýtilykillinn var vistaður, en skjáborðið gat ekki staðfest hann enn."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:404
+msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
+msgstr "Ekki tókst að skrá flýtilykilinn á þessu skjáborði. Bættu honum við í lyklaborðsstillingum kerfisins með skipuninni biglinux-tts-speak."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:138
+msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
+msgstr "Ekki tókst að spila hljóð. Athugaðu hvort alsa-utils (aplay) sé uppsett."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:505
+#, python-brace-format
+msgid "{engine} could not start. Check that it is installed."
+msgstr "{engine} gat ekki ræst. Athugaðu hvort það sé uppsett."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:650
+msgid "RHVoice is not installed. Install the rhvoice package."
+msgstr "RHVoice er ekki uppsett. Settu upp pakkann rhvoice."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:918
+msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
+msgstr "espeak-ng gat ekki lesið þennan texta. Athugaðu hvort espeak-ng sé uppsett."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:933
+msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
+msgstr "Valda Piper-röddin er ekki uppsett. Veldu aðra rödd í Raddstjórnun."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:989
+msgid "Piper could not read this text. Try another voice."
+msgstr "Piper gat ekki lesið þennan texta. Prófaðu aðra rödd."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1180
+#, python-brace-format
+msgid "{engine} crashed while reading the text."
+msgstr "{engine} hrundi við lestur textans."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1182
+#, python-brace-format
+msgid "{engine} stopped with an error and could not read the text."
+msgstr "{engine} stöðvaðist með villu og gat ekki lesið textann."
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:608
+msgid "Extra low quality"
+msgstr "Mjög lítil gæði"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:609
+msgid "Low quality"
+msgstr "Lítil gæði"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:610
+msgid "Medium quality"
+msgstr "Miðlungs gæði"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:611
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1192
+msgid "High quality"
+msgstr "Mikil gæði"
+
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:134
 msgid "Playback position"
 msgstr "Staða spilunar"
 
-msgid "BigLinux TTS"
-msgstr "BigLinux TTS"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:311
+#: usr/share/biglinux/tts-biglinux/ui/components.py:314
+msgid "No shortcut"
+msgstr "Enginn flýtilykill"
 
-msgid "Advanced options"
-msgstr "Ítarlegir valkostir"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:326
+#, python-brace-format
+msgid "Shortcut: {keys}"
+msgstr "Flýtilykill: {keys}"
 
-msgid "Shortcut, performance, behavior"
-msgstr "Flýtilykill, afköst, hegðun"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:44
+msgid "Unknown"
+msgstr "Óþekkt"
 
-msgid "Change shortcut"
-msgstr "Breyta flýtilykli"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:60
+#, python-brace-format
+msgid "Today, {time}"
+msgstr "Í dag, {time}"
 
-msgid "Try again"
-msgstr "Reyna aftur"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:62
+#, python-brace-format
+msgid "Yesterday, {time}"
+msgstr "Í gær, {time}"
 
-msgid "Open Voice Manager"
-msgstr "Opna Raddstjórnun"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:135
+msgid "Select this reading"
+msgstr "Velja þennan upplestur"
 
-msgid "Details"
-msgstr "Nánar"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:141
+msgid "(text not kept)"
+msgstr "(texti ekki geymdur)"
 
-msgid "This is a test, welcome to BigLinux!"
-msgstr "Þetta er prufa, velkomin í BigLinux!"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:158
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show more"
+msgstr "Sýna meira"
 
-msgid "Type text to test…"
-msgstr "Sláðu inn texta til að prófa…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:169
+msgid "Copy text"
+msgstr "Afrita texta"
 
-msgid "Text to test the voice"
-msgstr "Texti til að prófa röddina"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:171
+msgid "Read again with the current voice"
+msgstr "Lesa aftur upp með núverandi rödd"
 
-msgid "Test voice"
-msgstr "Prófa rödd"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:177
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:178
+msgid "More actions"
+msgstr "Fleiri aðgerðir"
 
-msgid "Test the selected voice"
-msgstr "Prófa valda rödd"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1791
+msgid "Stopped"
+msgstr "Stöðvað"
 
-msgid "Voice settings"
-msgstr "Raddstillingar"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1913
+msgid "Error"
+msgstr "Villa"
 
-msgid "Choose voice and adjust speech parameters"
-msgstr "Veldu rödd og stilltu talmælisbreytur"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:202
+msgid "Reading stopped before the end"
+msgstr "Upplestur stöðvaður fyrir lokin"
 
-msgid "RHVoice (Native)"
-msgstr "RHVoice (Fæddur)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:203
+msgid "The engine failed during this reading"
+msgstr "Vélin brást í þessum upplestri"
 
-msgid "espeak-ng"
-msgstr "espeak-ng"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:219
+msgid "Audio not kept for this reading"
+msgstr "Hljóð ekki geymt fyrir þennan upplestur"
 
-msgid "Piper (Neural TTS)"
-msgstr "Piper (TTS taugur)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:225
+#, python-brace-format
+msgid "{engine} reading, {when}"
+msgstr "Upplestur með {engine}, {when}"
 
-msgid "Kokoro (Neural TTS)"
-msgstr "Kokoro (TTS taugur)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:256
+msgid "Save audio as…"
+msgstr "Vista hljóð sem…"
 
-msgid "TTS Backend"
-msgstr "TTS bakendi"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:257
+msgid "Open file location"
+msgstr "Opna skráarstað"
 
-msgid "Engine used for speech synthesis"
-msgstr "Vél notuð til talsmíðunar"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:258
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:820
+msgid "Delete"
+msgstr "Eyða"
 
-msgid "Select TTS engine"
-msgstr "Veldu TTS vél"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show less"
+msgstr "Sýna minna"
 
-msgid "Engine status"
-msgstr "Staða talvéla"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:271
+msgid "Text copied"
+msgstr "Texti afritaður"
 
-msgid "Checking installed engines…"
-msgstr "Athuga uppsettar talvélar…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:279
+msgid "Save audio as"
+msgstr "Vista hljóð sem"
 
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Audio saved"
+msgstr "Hljóð vistað"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Could not save the audio"
+msgstr "Ekki tókst að vista hljóðið"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:324
+#: usr/share/biglinux/tts-biglinux/window.py:288
+#: usr/share/biglinux/tts-biglinux/window.py:377
+msgid "History"
+msgstr "Ferill"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:350
+msgid "Saving is off: new readings are not kept."
+msgstr "Vistun er óvirk: nýir upplestrar eru ekki geymdir."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:351
+msgid "Turn On"
+msgstr "Kveikja"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:367
+msgid "Search text, voice, engine or date…"
+msgstr "Leita að texta, rödd, vél eða dagsetningu…"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "All dates"
+msgstr "Allar dagsetningar"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Today"
+msgstr "Í dag"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Yesterday"
+msgstr "Í gær"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Last 7 days"
+msgstr "Síðustu 7 dagar"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:376
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:377
+msgid "Filter by date"
+msgstr "Sía eftir dagsetningu"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:381
+msgid "All engines"
+msgstr "Allar vélar"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:383
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:384
+msgid "Filter by engine"
+msgstr "Sía eftir vél"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:391
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Newest first"
+msgstr "Nýjast fyrst"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:392
+msgid "Sort order"
+msgstr "Röðun"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:397
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:398
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as grid"
+msgstr "Sýna sem reitanet"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:403
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:404
+msgid "Select readings"
+msgstr "Velja upplestra"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:416
+msgid "Select All"
+msgstr "Veljaðu allt"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:420
+msgid "Deselect All"
+msgstr "Fellaðu allt"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:429
+msgid "Save the selected readings to a folder"
+msgstr "Vista valda upplestra í möppu"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:430
+msgid "Save selected"
+msgstr "Vista valið"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:435
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:436
+msgid "Delete selected"
+msgstr "Eyða valið"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:445
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:457
+msgid "History entries"
+msgstr "Færslur ferils"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:648
+msgid "The history could not be read"
+msgstr "Ekki tókst að lesa ferilinn"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:650
+#, python-brace-format
+msgid "Check the permissions of the folder {folder}."
+msgstr "Athugaðu heimildir möppunnar {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:657
+msgid "No readings found"
+msgstr "Engir upplestrar fundust"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:658
+msgid "Try other words or another date or engine."
+msgstr "Prófaðu önnur orð, aðra dagsetningu eða aðra vél."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:659
+msgid "Clear Filters"
+msgstr "Hreinsa síur"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:663
+msgid "No readings yet"
+msgstr "Engir upplestrar enn"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:667
+#, python-brace-format
+msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
+msgstr "Allt sem þú hlustar á birtist hér, ásamt hljóðinu. Það er aðeins geymt á þessari tölvu, í {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:673
+#, python-brace-format
+msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
+msgstr "Vistun er óvirk. Kveiktu á henni til að geyma það sem þú hlustar á, ásamt hljóðinu — aðeins á þessari tölvu, í {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:676
+msgid "Turn On History"
+msgstr "Kveikja á ferli"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Oldest first"
+msgstr "Elst fyrst"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as list"
+msgstr "Sýna sem lista"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:751
+#, python-brace-format
+msgid "Selected: {count}"
+msgstr "Valið: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:781
+msgid "Reading deleted"
+msgstr "Upplestri eytt"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:782
+msgid "Undo"
+msgstr "Afturkalla"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:816
+msgid "Delete the selected readings?"
+msgstr "Eyða völdum upplestrum?"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:817
+#, python-brace-format
+msgid "Readings: {count}. Their audio and text files are moved to the Trash."
+msgstr "Upplestrar: {count}. Hljóð- og textaskrár þeirra eru færðar í ruslið."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:819
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1483
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1540
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:498
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:760
+#: usr/share/biglinux/tts-biglinux/window.py:464
+msgid "Cancel"
+msgstr "Hætta við"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:832
+#, python-brace-format
+msgid "Moved to the Trash: {count}"
+msgstr "Fært í ruslið: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:843
+msgid "Save the selected readings"
+msgstr "Vista valda upplestra"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:863
+#, python-brace-format
+msgid "Saved to {folder}: {count}"
+msgstr "Vistað í {folder}: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:43
+msgid "Desktop not recognized"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:51
+msgid "selection (Wayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:52
+msgid "selection of an X11 program (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:53
+msgid "selection (X11)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:54
+msgid "copied text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:64
+#, python-brace-format
+msgid "Last reading: {count} characters from the {source}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:66
+msgid "Last time nothing was selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:67
+msgid "Last time the text could not be read"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:79
+msgid "Desktop integration"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:80
+msgid "Check that the shortcut, the text capture and the tray icon work on this desktop."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:82
+msgid "Desktop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:86
+msgid "Global shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:88
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:423
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:434
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:668
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1896
 msgid "Checking…"
 msgstr "Athuga…"
 
-msgid "Voice"
-msgstr "Rödd"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:89
+msgid "Fix integration"
+msgstr ""
 
-msgid "Loading voices..."
-msgstr "Hleð röddum..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:97
+msgid "Selected text"
+msgstr ""
 
-msgid "Detecting installed voices..."
-msgstr "Greini uppsettar raddir..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:103
+msgid "Read copied text"
+msgstr ""
 
-msgid "Select TTS voice"
-msgstr "Veldu TTS rödd"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:104
+msgid "When nothing is selected, read what was copied (Ctrl+C). Off: an old copied text is never read by mistake."
+msgstr ""
 
-msgid "Refresh voice list"
-msgstr "Endurnýja raddlista"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:107
+msgid "Read copied text when nothing is selected"
+msgstr ""
 
-msgid "Manage voices for current engine"
-msgstr "Stjórna raddum fyrir núverandi vél"
-
-msgid "Speed"
-msgstr "Hraði"
-
-msgid "Speech rate"
-msgstr "Talhraði"
-
-msgid "Slow"
-msgstr "Hægt"
-
-msgid "Normal"
-msgstr "Venjulegt"
-
-msgid "Fast"
-msgstr "Hratt"
-
-msgid "Speech speed"
-msgstr "Talhraði"
-
-msgid "Pitch"
-msgstr "Tónhæð"
-
-msgid "Voice tone"
-msgstr "Raddbragð"
-
-msgid "Low"
-msgstr "Lágt"
-
-msgid "High"
-msgstr "Hátt"
-
-msgid "Voice pitch"
-msgstr "Tónhæð raddar"
-
-msgid "Volume"
-msgstr "Hljóðstyrkur"
-
-msgid "Speech volume"
-msgstr "Hljóðstyrkur tals"
-
-msgid "Mute"
-msgstr "Hljóðlaust"
-
-msgid "Max"
-msgstr "Hámark"
-
-msgid "Neutral"
-msgstr "Neutral"
-
-msgid "Happy"
-msgstr "Sæll"
-
-msgid "Calm"
-msgstr "Rólegur"
-
-msgid "Urgent"
-msgstr "Brýnt"
-
-msgid "Narrative"
-msgstr "Sagnir"
-
-msgid "Expression style"
-msgstr "Útlitsstíll"
-
-msgid "Changes speed and intonation to match the mood"
-msgstr "Breytingar á hraða og tónfalli til að passa við skap."
-
-msgid "Select expression style"
-msgstr "Veldu tjáningarstíl"
-
-msgid "None (single voice)"
-msgstr "Enginn (einn röst)"
-
-msgid "Voice blend"
-msgstr "Röddblanda"
-
-msgid "Mix a second voice with the primary voice"
-msgstr "Blandaðu annarri röddu við aðalröddina."
-
-msgid "Select blend voice"
-msgstr "Veldu blöndu rödd"
-
-msgid "Expand abbreviations"
-msgstr "Víkka skammstafanir"
-
-msgid "Replace common abbreviations with full words"
-msgstr "Skipta algengum skammstöfunum út fyrir heil orð"
-
-msgid "Expand text abbreviations"
-msgstr "Víkka textaskammstafanir"
-
-msgid "Read special characters"
-msgstr "Lesa sérstafi"
-
-msgid "Speak symbols like # @ % by name"
-msgstr "Segja tákn eins og # @ % eftir nafni"
-
-msgid "Read special characters aloud"
-msgstr "Lesa sérstafi upphátt"
-
-msgid "Remove formatting"
-msgstr "Fjarlægja snið"
-
-msgid "Strip Markdown and HTML before reading"
-msgstr "Fjarlægja Markdown og HTML áður en lesið er"
-
-msgid "Remove text formatting"
-msgstr "Fjarlægja textasnið"
-
-msgid "Read URLs"
-msgstr "Lesa vefslóðir"
-
-msgid "Read web addresses aloud instead of skipping them"
-msgstr "Lesa vefföng upphátt í stað þess að sleppa þeim"
-
-msgid "Read URLs aloud"
-msgstr "Lesa vefslóðir upphátt"
-
-msgid "Unlimited"
-msgstr "Ótakmarkað"
-
-msgid "1 000"
-msgstr "1 000"
-
-msgid "5 000"
-msgstr "5 000"
-
-msgid "10 000"
-msgstr "10 000"
-
-msgid "50 000"
-msgstr "50 000"
-
-msgid "100 000"
-msgstr "100 000"
-
-msgid "Character limit"
-msgstr "Stafatakmörk"
-
-msgid "Maximum number of characters to read at once"
-msgstr "Hámarksfjöldi stafa til að lesa í einu"
-
-msgid "Maximum character limit"
-msgstr "Hámarks stafatakmörk"
-
-msgid "Keyboard shortcut"
-msgstr "Flýtilykill"
-
-msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
-msgstr "Veldu texta hvar sem er og ýttu á flýtilykil til að lesa upphátt. Ýttu aftur til að stöðva."
-
-msgid "Change"
-msgstr "Breyta"
-
-msgid "Change keyboard shortcut"
-msgstr "Breyta flýtilykli lyklaborðs"
-
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:112
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:687
 msgid "Tray icon"
 msgstr "Vinnustiklu tákn"
 
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:118
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:234
+msgid "Test the shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:119
+msgid "Select a sample text, press the shortcut and listen"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:121
+msgid "Start test"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1837
+msgid "Checking the shortcut with the desktop…"
+msgstr "Athuga flýtilykilinn hjá skjáborðinu…"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1833
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1839
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1869
+msgid "The shortcut is not active."
+msgstr "Flýtilykillinn er ekki virkur."
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Not active"
+msgstr "Ekki virkt"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:167
+msgid "After login"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:169
+#, python-brace-format
+msgid "{keys} reads or stops the selected text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:170
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Active"
+msgstr "Virkt"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:173
+#, python-brace-format
+msgid "last used at {time}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:174
+msgid "Working"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:183
+msgid "This desktop does not share selected text. Turn on “Read copied text” below."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:185
+msgid "Read from the selection, also in X11 programs (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:187
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:189
+msgid "Read from the selection, no copying needed"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "Shown"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "In the system tray; click it to read or stop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Starting…"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Waiting for the system tray"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:199
+msgid "Unavailable"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:200
+msgid "No system tray on this desktop. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:202
+msgid "The tray icon could not be shown. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Off"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Turn it on in the options above"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:247
+msgid "BigLinux TTS reads the text you select, with accents and numbers: 2026."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:248
+msgid "Sample text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:256
+msgid "The sample text above is selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:257
+#, python-brace-format
+msgid "Press {keys} now"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:258
+msgid "BigLinux TTS captures the selection"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:259
+msgid "The text is read aloud"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:275
+msgid "I heard nothing"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:277
+msgid "I heard it"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:329
+msgid "Did you hear the sample text?"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:332
+msgid "The text was not captured. Keep the sample text selected and try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:340
+msgid "The shortcut did not reach BigLinux TTS. Use “Fix integration”; if the shortcut waits for a new login, log out and in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:349
+#, python-brace-format
+msgid "Everything works: select text anywhere and press {keys}."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:353
+msgid "The text was read, but no sound reached you. Check the volume and the audio output; “biglinux-tts --diagnose” in a terminal shows the details."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:87
+msgid "BigLinux TTS"
+msgstr "BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:213
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:229
+msgid "Advanced options"
+msgstr "Ítarlegir valkostir"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:214
+msgid "Shortcut, performance, behavior"
+msgstr "Flýtilykill, afköst, hegðun"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:324
+msgid "Change shortcut"
+msgstr "Breyta flýtilykli"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:336
+msgid "Try again"
+msgstr "Reyna aftur"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:340
+msgid "Open Voice Manager"
+msgstr "Opna Raddstjórnun"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:344
+msgid "Details"
+msgstr "Nánar"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:356
+msgid "This is a test, welcome to BigLinux!"
+msgstr "Þetta er prufa, velkomin í BigLinux!"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:357
+msgid "Type text to test…"
+msgstr "Sláðu inn texta til að prófa…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:360
+msgid "Text to test the voice"
+msgstr "Texti til að prófa röddina"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:365
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Test voice"
+msgstr "Prófa rödd"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:368
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1817
+msgid "Test the selected voice"
+msgstr "Prófa valda rödd"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:383
+msgid "Voice settings"
+msgstr "Raddstillingar"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:384
+msgid "Choose voice and adjust speech parameters"
+msgstr "Veldu rödd og stilltu talmælisbreytur"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:389
+msgid "RHVoice (Native)"
+msgstr "RHVoice (Fæddur)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:390
+msgid "espeak-ng"
+msgstr "espeak-ng"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:391
+msgid "Piper (Neural TTS)"
+msgstr "Piper (TTS taugur)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:392
+msgid "Kokoro (Neural TTS)"
+msgstr "Kokoro (TTS taugur)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:408
+msgid "TTS Backend"
+msgstr "TTS bakendi"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:409
+msgid "Engine used for speech synthesis"
+msgstr "Vél notuð til talsmíðunar"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:413
+msgid "Select TTS engine"
+msgstr "Veldu TTS vél"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:421
+msgid "Engine status"
+msgstr "Staða talvéla"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:422
+msgid "Checking installed engines…"
+msgstr "Athuga uppsettar talvélar…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:442
+msgid "Voice"
+msgstr "Rödd"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:443
+msgid "Loading voices..."
+msgstr "Hleð röddum..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:444
+msgid "Detecting installed voices..."
+msgstr "Greini uppsettar raddir..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:446
+msgid "Select TTS voice"
+msgstr "Veldu TTS rödd"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:452
+msgid "Refresh voice list"
+msgstr "Endurnýja raddlista"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:460
+msgid "Manage voices for current engine"
+msgstr "Stjórna raddum fyrir núverandi vél"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:471
+msgid "Speed"
+msgstr "Hraði"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:472
+msgid "Speech rate"
+msgstr "Talhraði"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Slow"
+msgstr "Hægt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Normal"
+msgstr "Venjulegt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Fast"
+msgstr "Hratt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:480
+msgid "Speech speed"
+msgstr "Talhraði"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:487
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Pitch"
+msgstr "Tónhæð"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:488
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Voice tone"
+msgstr "Raddbragð"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Low"
+msgstr "Lágt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "High"
+msgstr "Hátt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:496
+msgid "Voice pitch"
+msgstr "Tónhæð raddar"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:504
+msgid "Volume"
+msgstr "Hljóðstyrkur"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:505
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:513
+msgid "Speech volume"
+msgstr "Hljóðstyrkur tals"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Mute"
+msgstr "Hljóðlaust"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Max"
+msgstr "Hámark"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:524
+msgid "Neutral"
+msgstr "Neutral"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:525
+msgid "Happy"
+msgstr "Sæll"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:526
+msgid "Calm"
+msgstr "Rólegur"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:527
+msgid "Urgent"
+msgstr "Brýnt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:528
+msgid "Narrative"
+msgstr "Sagnir"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:541
+msgid "Expression style"
+msgstr "Útlitsstíll"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:542
+msgid "Changes speed and intonation to match the mood"
+msgstr "Breytingar á hraða og tónfalli til að passa við skap."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:546
+msgid "Select expression style"
+msgstr "Veldu tjáningarstíl"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:554
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1041
+msgid "None (single voice)"
+msgstr "Enginn (einn röst)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:557
+msgid "Voice blend"
+msgstr "Röddblanda"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:558
+msgid "Mix a second voice with the primary voice"
+msgstr "Blandaðu annarri röddu við aðalröddina."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:562
+msgid "Select blend voice"
+msgstr "Veldu blöndu rödd"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:580
+msgid "Expand abbreviations"
+msgstr "Víkka skammstafanir"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:581
+msgid "Replace common abbreviations with full words"
+msgstr "Skipta algengum skammstöfunum út fyrir heil orð"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:584
+msgid "Expand text abbreviations"
+msgstr "Víkka textaskammstafanir"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:590
+msgid "Read special characters"
+msgstr "Lesa sérstafi"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:591
+msgid "Speak symbols like # @ % by name"
+msgstr "Segja tákn eins og # @ % eftir nafni"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:594
+msgid "Read special characters aloud"
+msgstr "Lesa sérstafi upphátt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:600
+msgid "Remove formatting"
+msgstr "Fjarlægja snið"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:601
+msgid "Strip Markdown and HTML before reading"
+msgstr "Fjarlægja Markdown og HTML áður en lesið er"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:604
+msgid "Remove text formatting"
+msgstr "Fjarlægja textasnið"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:610
+msgid "Read URLs"
+msgstr "Lesa vefslóðir"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:611
+msgid "Read web addresses aloud instead of skipping them"
+msgstr "Lesa vefföng upphátt í stað þess að sleppa þeim"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:614
+msgid "Read URLs aloud"
+msgstr "Lesa vefslóðir upphátt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:620
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:732
+msgid "Unlimited"
+msgstr "Ótakmarkað"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:621
+msgid "1 000"
+msgstr "1 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:622
+msgid "5 000"
+msgstr "5 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:623
+msgid "10 000"
+msgstr "10 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:624
+msgid "50 000"
+msgstr "50 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:625
+msgid "100 000"
+msgstr "100 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:637
+msgid "Character limit"
+msgstr "Stafatakmörk"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:638
+msgid "Maximum number of characters to read at once"
+msgstr "Hámarksfjöldi stafa til að lesa í einu"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:642
+msgid "Maximum character limit"
+msgstr "Hámarks stafatakmörk"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:656
+msgid "Keyboard shortcut"
+msgstr "Flýtilykill"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:659
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1841
+msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
+msgstr "Veldu texta hvar sem er og ýttu á flýtilykil til að lesa upphátt. Ýttu aftur til að stöðva."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:671
+msgid "Change"
+msgstr "Breyta"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:674
+msgid "Change keyboard shortcut"
+msgstr "Breyta flýtilykli lyklaborðs"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:688
 msgid "Fixes quick access and allows running in the background"
 msgstr "Laga fljótlegan aðgang og leyfir að keyra í bakgrunni."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:691
 msgid "Show system tray icon"
 msgstr "Sýna kerfistákn í kerfistré."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:701
 msgid "Save history"
 msgstr "Vista feril"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:702
 #, python-brace-format
 msgid "Keep what you listen to, only on this computer, in {folder}"
 msgstr "Geyma það sem þú hlustar á, aðeins á þessari tölvu, í {folder}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:707
 msgid "Save speech history"
 msgstr "Vista lestrarferil"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:713
 msgid "Keep the audio"
 msgstr "Geyma hljóðið"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:714
 msgid "Listen to each reading again, with the same voice"
 msgstr "Hlustaðu aftur á hvern upplestur, með sömu rödd"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:717
 msgid "Keep the audio of each reading"
 msgstr "Geyma hljóð hvers upplesturs"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:721
 msgid "Keep the text"
 msgstr "Geyma textann"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:722
 msgid "Search, copy and read again what was read"
 msgstr "Leitaðu, afritaðu og lestu aftur upp það sem var lesið"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:725
 msgid "Keep the text of each reading"
 msgstr "Geyma texta hvers upplesturs"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:730
 msgid "Keep at most"
 msgstr "Geyma að hámarki"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:731
 msgid "The oldest readings are deleted beyond this number"
 msgstr "Elstu upplestrunum er eytt umfram þennan fjölda"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:741
 msgid "Audio playback mode"
 msgstr "Hljóðspilunarhamur"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:742
 msgid "Behavior when playing multiple audios or speech"
 msgstr "Hegðun þegar spilað er fleiri hljóð eða tal."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Interrupt previous"
 msgstr "Rjúfa fyrri"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Queue"
 msgstr "Röð"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Simultaneous"
 msgstr "Samhliða"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:756
 msgid "Media player"
 msgstr "Margmiðlunarspilari"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:757
 msgid "Show a system mini-player (play/stop, time) while reading"
 msgstr "Sýna smáspilara kerfisins (spila/stöðva, tími) við lestur"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:760
 msgid "Show system media player"
 msgstr "Sýna margmiðlunarspilara kerfisins"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:790
 msgid "Set new shortcut"
 msgstr "Setja nýjan flýtilykil"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:806
 msgid ""
 "<b>Hold modifier keys</b> (Alt, Ctrl, Shift, Super)\n"
 "and press a letter or key.\n"
@@ -635,244 +1372,429 @@ msgstr ""
 "\n"
 "<small>Ýttu á Escape til að hætta við</small>"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:825
 msgid "Press the new shortcut"
 msgstr "Ýttu á nýja flýtilykilinn"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:948
 msgid "Tray icon enabled"
 msgstr "ícone í tray virkjað"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:951
 msgid "Tray icon disabled"
 msgstr "Vöru tákn óvirkt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:959
 msgid "History saving enabled"
 msgstr "Vistun ferils virk"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:960
 msgid "History saving disabled. Saved readings are kept."
 msgstr "Vistun ferils óvirk. Vistaðir upplestrar eru geymdir."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1071
 msgid "Refreshing voices..."
 msgstr "Endurningar raddir..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1073
 msgid "Refreshing voice list…"
 msgstr "Endurnýja raddlista…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1117
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Engar raddir fundust — settu upp rhvoice eða espeak-ng"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1119
 msgid "No voices available"
 msgstr "Engar raddir tiltækar"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1169
 msgid "No voices available for this engine"
 msgstr "Engar raddir tiltækar fyrir þessa vél"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1172
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Settu fyrst upp raddir fyrir {engine}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1190
 msgid "Neural"
 msgstr "Tauganet"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1200
 #, python-brace-format
 msgid "Voices available: {count}"
 msgstr "Tiltækar raddir: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Expressiveness"
 msgstr "Tjáning"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Voice variation (not pitch)"
 msgstr "Raddbreytileiki (ekki tónhæð)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1307
 msgid "Kokoro voices do not support this setting."
 msgstr "Kokoro-raddir styðja ekki þessa stillingu."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1312
 msgid "Kokoro voices only follow Mute. Use the system volume to change how loud they are."
 msgstr "Kokoro-raddir fara aðeins eftir „Hljóðlaust“. Notaðu hljóðstyrk kerfisins til að breyta hversu hátt þær tala."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1370
 msgid "Searching for voices..."
 msgstr "Leita að röddum..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1391
 msgid "Checking for Piper voices..."
 msgstr "Athugun fyrir Piper raddir..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1399
 msgid "Checking for Kokoro voices..."
 msgstr "Athugun að Kokoro röddum..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1407
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "Engar raddir fundust fyrir {engine} — settu það fyrst upp"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1461
 msgid "Piper is not available"
 msgstr "Piper er ekki tiltækt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1462
 #, python-brace-format
 msgid "No Piper voice package was found in your repositories ({packages}). Update the system (sudo pacman -Syu) and try again."
 msgstr "Enginn Piper-raddpakki fannst í hugbúnaðarsöfnunum þínum ({packages}). Uppfærðu kerfið (sudo pacman -Syu) og reyndu aftur."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1466
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1528
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1604
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:899
 msgid "OK"
 msgstr "Í lagi"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1477
 msgid "Piper provides natural neural voices. These packages will be installed:"
 msgstr "Piper býður upp á náttúrulegar tauganetsraddir. Þessir pakkar verða settir upp:"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1480
 msgid "Packages marked AUR are not in your repositories: they come from the Arch User Repository, are maintained by the community and are built on this computer, which takes longer."
 msgstr "Pakkar merktir AUR eru ekki í hugbúnaðarsöfnunum þínum: þeir koma úr Arch User Repository, samfélagið viðheldur þeim og þeir eru byggðir á þessari tölvu, sem tekur lengri tíma."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1481
 msgid "This requires administrator permissions."
 msgstr "Þetta krefst kerfisstjóraheimilda."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1482
 msgid "Install Piper Neural TTS?"
 msgstr "Setja upp Piper Neural TTS?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1484
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1541
 msgid "Install"
 msgstr "Setja upp"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1502
 msgid "Installing Piper TTS"
 msgstr "Að setja upp Piper TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1503
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1554
 msgid "Downloading and installing packages…"
 msgstr "Sækja og setja upp pakka…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1523
 msgid "Kokoro is not available"
 msgstr "Kokoro er ekki tiltækt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1524
 #, python-brace-format
 msgid "The {package} package was not found in your repositories, so Kokoro cannot be installed yet. Update the system (sudo pacman -Syu) and try again."
 msgstr "Pakkinn {package} fannst ekki í hugbúnaðarsöfnunum þínum, svo ekki er hægt að setja Kokoro upp enn. Uppfærðu kerfið (sudo pacman -Syu) og reyndu aftur."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1534
 msgid "Install Kokoro neural voices?"
 msgstr "Setja upp Kokoro-tauganetsraddir?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1535
 msgid "Kokoro offers natural neural voices in several languages, with expression styles and voice blending."
 msgstr "Kokoro býður upp á náttúrulegar tauganetsraddir á mörgum tungumálum, með tjáningarstílum og raddblöndun."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1536
 #, python-brace-format
 msgid "The {package} package{size} will be installed. This requires administrator permissions."
 msgstr "Pakkinn {package}{size} verður settur upp. Þetta krefst kerfisstjóraheimilda."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1553
 msgid "Installing Kokoro TTS"
 msgstr "Installing Kokoro TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1582
 msgid "The installation failed."
 msgstr "Uppsetningin mistókst."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1609
 #, python-brace-format
 msgid "{engine} installed. Looking for voices…"
 msgstr "{engine} uppsett. Leita að röddum…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1620
 #, python-brace-format
 msgid "{engine} could not be installed"
 msgstr "Ekki tókst að setja upp {engine}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1687
 msgid "Type some text to test"
 msgstr "Sláðu inn texta til að prófa"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1701
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "Hljóðstyrkur er núll — eykst í lágmark fyrir próf"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1769
 #, python-brace-format
 msgid "Preparing {voice}. Speech starts in a moment."
 msgstr "Undirbý {voice}. Tal hefst eftir augnablik."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1770
 msgid "Preparing the voice. Speech starts in a moment."
 msgstr "Undirbý röddina. Tal hefst eftir augnablik."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1776
+#: usr/share/biglinux/tts-biglinux/window.py:308
+msgid "Speaking…"
+msgstr "Talar…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1778
 #, python-brace-format
 msgid "Press {shortcut} again to stop."
 msgstr "Ýttu aftur á {shortcut} til að stöðva."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1779
 msgid "Use Stop to end the reading."
 msgstr "Notaðu Stöðva til að ljúka lestrinum."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1786
 msgid "The speech engine reported a problem."
 msgstr "Talvélin tilkynnti vandamál."
 
-msgid "Stopped"
-msgstr "Stöðvað"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1792
 msgid "Reading was stopped."
 msgstr "Lestur var stöðvaður."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1796
 msgid "Ready to speak"
 msgstr "Tilbúið að tala"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1797
 msgid "Select any text and use the shortcut to hear it."
 msgstr "Veldu hvaða texta sem er og notaðu flýtilykilinn til að hlusta á hann."
 
-msgid "The shortcut is not active."
-msgstr "Flýtilykillinn er ekki virkur."
-
-msgid "Checking the shortcut with the desktop…"
-msgstr "Athuga flýtilykilinn hjá skjáborðinu…"
-
-msgid "Not active"
-msgstr "Ekki virkt"
-
-msgid "Active"
-msgstr "Virkt"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1858
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Flýtilykli breytt í {keys}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1878
 msgid "Not installed. Install the rhvoice package and a voice."
 msgstr "Ekki uppsett. Settu upp pakkann rhvoice og rödd."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1879
 msgid "Not installed. Install the espeak-ng package."
 msgstr "Ekki uppsett. Settu upp pakkann espeak-ng."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1880
 msgid "Not installed. Install Piper from the TTS Backend list."
 msgstr "Ekki uppsett. Settu upp Piper úr listanum TTS bakendi."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1881
 msgid "Not installed. Install the biglinux-kokoro-tts package."
 msgstr "Ekki uppsett. Settu upp pakkann biglinux-kokoro-tts."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1882
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1898
 msgid "Not installed"
 msgstr "Ekki uppsett"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1901
 msgid "No voices"
 msgstr "Engar raddir"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1902
 msgid "Installed, but no voice is available. Open the Voice Manager."
 msgstr "Uppsett, en engin rödd er tiltæk. Opnaðu Raddstjórnun."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1905
 msgid "Ready"
 msgstr "Tilbúið"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1906
 #, python-brace-format
 msgid "Voices installed: {count}"
 msgstr "Uppsettar raddir: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1909
 msgid "Loading"
 msgstr "Hleð inn"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1911
 msgid "Speaking"
 msgstr "Talar"
 
-msgid "Error"
-msgstr "Villa"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1922
 #, python-brace-format
 msgid "{engine}: {state}"
 msgstr "{engine}: {state}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1927
 msgid "Technical details"
 msgstr "Tæknilegar upplýsingar"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1929
 msgid "Close"
 msgstr "Loka"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1964
 msgid "Settings restored to defaults"
 msgstr "Stillingum endurstillt á sjálfgildi"
 
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:350
+msgid "Piper engine"
+msgstr "Piper-talvél"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:414
+msgid "Voice Manager"
+msgstr "Raddstjóri"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:435
+msgid "Search voices by name or language…"
+msgstr "Leita að röddum eftir nafni eða tungumáli…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:467
+msgid "Loading available voices…"
+msgstr "Hlaða aðgengilegum raddum…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:538
+msgid "No Voice Packages Found"
+msgstr "Enginupakkar fannst ekki"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:540
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Gat ekki TTS raddpakka frá pacman geymslum."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:586
+msgid "High quality offline voices"
+msgstr "Hágæðar offline raddir"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:590
+msgid "Neural network voices — natural sounding"
+msgstr "Tölvunarfræðileg raddir — náttúrulega hljómandi"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:594
+msgid "Lightweight multi-language synthesizer"
+msgstr "Léttvigt fjöltyngdur hljóðgervill."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:598
+msgid "Neural TTS — high quality multilingual voices (82M)"
+msgstr "TTS taugur — hágæðamultítyngdar raddir (82M)"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:697
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:698
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Settu upp {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:706
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:707
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Fjarlægðu {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:716
+msgid "Installed"
+msgstr "Installdur"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:735
+#, python-brace-format
+msgid "Remove {name}?"
+msgstr "Fjarlægja {name}?"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:736
+msgid "The voice will no longer be available for reading. You can install it again later."
+msgstr "Röddin verður ekki lengur tiltæk til lestrar. Þú getur sett hana upp aftur síðar."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:737
+msgid "Remove"
+msgstr "Fjarlægja"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:803
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "Sæki {name}…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:812
+#, python-brace-format
+msgid "Downloading {name}… {done} of {total} KB"
+msgstr "Sæki {name}… {done} af {total} KB"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:864
+msgid "Operation timed out"
+msgstr "Aðgerð tímabundið útrunnin"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:866
+msgid "pkexec or pacman not found"
+msgstr "pkexec eða pacman fannst ekki"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:891
+msgid "Download cancelled"
+msgstr "Hætt við niðurhal"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:895
+msgid "Failed"
+msgstr "Misheppnað"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:896
+msgid "Removal Failed"
+msgstr "Breyting mistókst"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:898
+msgid "Unknown error"
+msgstr "Ókunnug villa"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:915
+#, python-brace-format
+msgid "Play a sample of {name}"
+msgstr "Spila sýnishorn af {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:984
+msgid "Stop the sample"
+msgstr "Stöðva sýnishornið"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1047
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1052
+msgid "The sample could not be played."
+msgstr "Ekki tókst að spila sýnishornið."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1050
+#, python-brace-format
+msgid "The sample could not be played: {program} is not installed."
+msgstr "Ekki tókst að spila sýnishornið: {program} er ekki uppsett."
+
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:60
 msgid "Welcome to BigLinux TTS"
 msgstr "Velkomin í BigLinux TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:67
 msgid "Your text-to-speech assistant"
 msgstr "Þinn texti-í-tala aðstoðarmaður"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:77
 msgid "Multiple TTS Engines"
 msgstr "Fjölmargir TTS vélar"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:79
 msgid ""
 "RHVoice, espeak-ng, Piper and Kokoro\n"
 "with automatic voice discovery"
@@ -880,17 +1802,21 @@ msgstr ""
 "RHVoice, espeak-ng, Piper og Kokoro\n"
 "með sjálfvirkri raddleit"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:83
 msgid "Multilingual Support"
 msgstr "Fjöltyngd stuðningur"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:84
 msgid ""
 "Voices in dozens of languages\n"
 "including Portuguese (Brazil)"
 msgstr "Raddir á mörgum tungumálum, þar á meðal portúgölsku (Brasilíu)"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:88
 msgid "Global Shortcut"
 msgstr "Alheimsstytting"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:89
 #, python-brace-format
 msgid ""
 "Press {key} to read selected text\n"
@@ -899,33 +1825,41 @@ msgstr ""
 "Ýttu á {key} til að lesa valinn texta\n"
 "úr hvaða forriti sem er"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:93
 msgid "Clipboard Reading"
 msgstr "Skilaboð Lesning"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:94
 msgid ""
 "Paste or type text directly\n"
 "and listen instantly"
 msgstr "Límduðu eða skrifaðu texta beint og hlustaðu strax."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:98
 msgid "Fine-Tune Speech"
 msgstr "Fínna Tal"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:99
 msgid ""
 "Adjust speed, pitch and volume\n"
 "to your preference"
 msgstr "Aðlagaðu hraða, tónhæð og hljóðstyrk að þínum óskum"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:101
 msgid "Easy Installation"
 msgstr "Auðveld uppsetning"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:102
 msgid ""
 "Install new voices and engines\n"
 "directly from the interface"
 msgstr "Settu nýjar raddir og vélar beint frá viðmótinu"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:106
 msgid "Neural Voices"
 msgstr "Taugðar raddir"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:108
 msgid ""
 "Install Piper or Kokoro voices for natural,\n"
 "high-quality speech synthesis"
@@ -933,9 +1867,11 @@ msgstr ""
 "Settu upp Piper- eða Kokoro-raddir fyrir náttúrulega\n"
 "talgervingu í háum gæðum"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:112
 msgid "Reading History"
 msgstr "Lestrarferill"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:114
 msgid ""
 "Optionally save and replay previous\n"
 "readings when history is enabled"
@@ -943,300 +1879,77 @@ msgstr ""
 "Vista og endurspila fyrri lestur\n"
 "ef þú kveikir á ferlinum"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:146
 #, python-brace-format
 msgid "Tip: Press {key} to read selected text from any application."
 msgstr "Ábending: Ýttu á {key} til að lesa valinn texta úr hvaða forriti sem er."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:166
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:169
 msgid "Show dialog on startup"
 msgstr "Sýna glugga við ræsingu"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:178
 msgid "Let's Start"
 msgstr "Látum okkur byrja"
 
-msgid "Unknown"
-msgstr "Óþekkt"
-
+#: usr/share/biglinux/tts-biglinux/utils/i18n.py:207
 #, python-brace-format
-msgid "Today, {time}"
-msgstr "Í dag, {time}"
+msgid "{language} ({region})"
+msgstr "{language} ({region})"
 
+#: usr/share/biglinux/tts-biglinux/window.py:49
+msgid "Show settings"
+msgstr "Sýna stillingar"
+
+#: usr/share/biglinux/tts-biglinux/window.py:169
+#: usr/share/biglinux/tts-biglinux/window.py:170
+msgid "Back"
+msgstr "Til baka"
+
+#: usr/share/biglinux/tts-biglinux/window.py:178
+#: usr/share/biglinux/tts-biglinux/window.py:297
+msgid "Text narrator"
+msgstr "Textalesari"
+
+#: usr/share/biglinux/tts-biglinux/window.py:249
+msgid "The shortcut is not active — open Advanced options to fix it"
+msgstr "Flýtilykillinn er ekki virkur — opnaðu Ítarlega valkosti til að laga það"
+
+#: usr/share/biglinux/tts-biglinux/window.py:250
 #, python-brace-format
-msgid "Yesterday, {time}"
-msgstr "Í gær, {time}"
-
-msgid "Select this reading"
-msgstr "Velja þennan upplestur"
-
-msgid "(text not kept)"
-msgstr "(texti ekki geymdur)"
-
-msgid "Show more"
-msgstr "Sýna meira"
-
-msgid "Copy text"
-msgstr "Afrita texta"
-
-msgid "Read again with the current voice"
-msgstr "Lesa aftur upp með núverandi rödd"
-
-msgid "More actions"
-msgstr "Fleiri aðgerðir"
-
-msgid "Reading stopped before the end"
-msgstr "Upplestur stöðvaður fyrir lokin"
-
-msgid "The engine failed during this reading"
-msgstr "Vélin brást í þessum upplestri"
-
-msgid "Audio not kept for this reading"
-msgstr "Hljóð ekki geymt fyrir þennan upplestur"
-
-#, python-brace-format
-msgid "{engine} reading, {when}"
-msgstr "Upplestur með {engine}, {when}"
-
-msgid "Save audio as…"
-msgstr "Vista hljóð sem…"
-
-msgid "Open file location"
-msgstr "Opna skráarstað"
-
-msgid "Delete"
-msgstr "Eyða"
-
-msgid "Show less"
-msgstr "Sýna minna"
-
-msgid "Text copied"
-msgstr "Texti afritaður"
-
-msgid "Save audio as"
-msgstr "Vista hljóð sem"
-
-msgid "Audio saved"
-msgstr "Hljóð vistað"
-
-msgid "Could not save the audio"
-msgstr "Ekki tókst að vista hljóðið"
-
-msgid "Saving is off: new readings are not kept."
-msgstr "Vistun er óvirk: nýir upplestrar eru ekki geymdir."
-
-msgid "Turn On"
-msgstr "Kveikja"
-
-msgid "Search text, voice, engine or date…"
-msgstr "Leita að texta, rödd, vél eða dagsetningu…"
-
-msgid "All dates"
-msgstr "Allar dagsetningar"
-
-msgid "Today"
-msgstr "Í dag"
-
-msgid "Yesterday"
-msgstr "Í gær"
-
-msgid "Last 7 days"
-msgstr "Síðustu 7 dagar"
-
-msgid "Filter by date"
-msgstr "Sía eftir dagsetningu"
-
-msgid "All engines"
-msgstr "Allar vélar"
-
-msgid "Filter by engine"
-msgstr "Sía eftir vél"
-
-msgid "Newest first"
-msgstr "Nýjast fyrst"
-
-msgid "Sort order"
-msgstr "Röðun"
-
-msgid "Show as grid"
-msgstr "Sýna sem reitanet"
-
-msgid "Select readings"
-msgstr "Velja upplestra"
-
-msgid "Select All"
-msgstr "Veljaðu allt"
-
-msgid "Deselect All"
-msgstr "Fellaðu allt"
-
-msgid "Save the selected readings to a folder"
-msgstr "Vista valda upplestra í möppu"
-
-msgid "Save selected"
-msgstr "Vista valið"
-
-msgid "Delete selected"
-msgstr "Eyða valið"
-
-msgid "History entries"
-msgstr "Færslur ferils"
-
-msgid "The history could not be read"
-msgstr "Ekki tókst að lesa ferilinn"
-
-#, python-brace-format
-msgid "Check the permissions of the folder {folder}."
-msgstr "Athugaðu heimildir möppunnar {folder}."
-
-msgid "No readings found"
-msgstr "Engir upplestrar fundust"
-
-msgid "Try other words or another date or engine."
-msgstr "Prófaðu önnur orð, aðra dagsetningu eða aðra vél."
-
-msgid "Clear Filters"
-msgstr "Hreinsa síur"
-
-msgid "No readings yet"
-msgstr "Engir upplestrar enn"
-
-#, python-brace-format
-msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
-msgstr "Allt sem þú hlustar á birtist hér, ásamt hljóðinu. Það er aðeins geymt á þessari tölvu, í {folder}."
-
-#, python-brace-format
-msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
-msgstr "Vistun er óvirk. Kveiktu á henni til að geyma það sem þú hlustar á, ásamt hljóðinu — aðeins á þessari tölvu, í {folder}."
-
-msgid "Turn On History"
-msgstr "Kveikja á ferli"
-
-msgid "Oldest first"
-msgstr "Elst fyrst"
-
-msgid "Show as list"
-msgstr "Sýna sem lista"
-
-#, python-brace-format
-msgid "Selected: {count}"
-msgstr "Valið: {count}"
-
-msgid "Reading deleted"
-msgstr "Upplestri eytt"
-
-msgid "Undo"
-msgstr "Afturkalla"
-
-msgid "Delete the selected readings?"
-msgstr "Eyða völdum upplestrum?"
-
-#, python-brace-format
-msgid "Readings: {count}. Their audio and text files are moved to the Trash."
-msgstr "Upplestrar: {count}. Hljóð- og textaskrár þeirra eru færðar í ruslið."
-
-#, python-brace-format
-msgid "Moved to the Trash: {count}"
-msgstr "Fært í ruslið: {count}"
-
-msgid "Save the selected readings"
-msgstr "Vista valda upplestra"
-
-#, python-brace-format
-msgid "Saved to {folder}: {count}"
-msgstr "Vistað í {folder}: {count}"
-
-msgid "No shortcut"
-msgstr "Enginn flýtilykill"
-
-#, python-brace-format
-msgid "Shortcut: {keys}"
-msgstr "Flýtilykill: {keys}"
-
-msgid "Piper engine"
-msgstr "Piper-talvél"
-
-msgid "Voice Manager"
-msgstr "Raddstjóri"
-
-msgid "Search voices by name or language…"
-msgstr "Leita að röddum eftir nafni eða tungumáli…"
-
-msgid "Loading available voices…"
-msgstr "Hlaða aðgengilegum raddum…"
-
-msgid "No Voice Packages Found"
-msgstr "Enginupakkar fannst ekki"
-
-msgid "Could not find any TTS voice packages from pacman repositories."
-msgstr "Gat ekki TTS raddpakka frá pacman geymslum."
-
-msgid "High quality offline voices"
-msgstr "Hágæðar offline raddir"
-
-msgid "Neural network voices — natural sounding"
-msgstr "Tölvunarfræðileg raddir — náttúrulega hljómandi"
-
-msgid "Lightweight multi-language synthesizer"
-msgstr "Léttvigt fjöltyngdur hljóðgervill."
-
-msgid "Neural TTS — high quality multilingual voices (82M)"
-msgstr "TTS taugur — hágæðamultítyngdar raddir (82M)"
-
-#, python-brace-format
-msgid "Install {name}"
-msgstr "Settu upp {name}"
-
-#, python-brace-format
-msgid "Remove {name}"
-msgstr "Fjarlægðu {name}"
-
-msgid "Installed"
-msgstr "Installdur"
-
-#, python-brace-format
-msgid "Remove {name}?"
-msgstr "Fjarlægja {name}?"
-
-msgid "The voice will no longer be available for reading. You can install it again later."
-msgstr "Röddin verður ekki lengur tiltæk til lestrar. Þú getur sett hana upp aftur síðar."
-
-msgid "Remove"
-msgstr "Fjarlægja"
-
-#, python-brace-format
-msgid "Downloading {name}…"
-msgstr "Sæki {name}…"
-
-#, python-brace-format
-msgid "Downloading {name}… {done} of {total} KB"
-msgstr "Sæki {name}… {done} af {total} KB"
-
-msgid "Operation timed out"
-msgstr "Aðgerð tímabundið útrunnin"
-
-msgid "pkexec or pacman not found"
-msgstr "pkexec eða pacman fannst ekki"
-
-msgid "Download cancelled"
-msgstr "Hætt við niðurhal"
-
-msgid "Failed"
-msgstr "Misheppnað"
-
-msgid "Removal Failed"
-msgstr "Breyting mistókst"
-
-msgid "Unknown error"
-msgstr "Ókunnug villa"
-
-#, python-brace-format
-msgid "Play a sample of {name}"
-msgstr "Spila sýnishorn af {name}"
-
-msgid "Stop the sample"
-msgstr "Stöðva sýnishornið"
-
-msgid "The sample could not be played."
-msgstr "Ekki tókst að spila sýnishornið."
-
-#, python-brace-format
-msgid "The sample could not be played: {program} is not installed."
-msgstr "Ekki tókst að spila sýnishornið: {program} er ekki uppsett."
+msgid "Select text and press {key} to read it aloud"
+msgstr "Veldu texta og ýttu á {key} til að láta lesa hann upphátt"
+
+#: usr/share/biglinux/tts-biglinux/window.py:382
+msgid "Show tray icon"
+msgstr "Sýna kerfisbakkatákn"
+
+#: usr/share/biglinux/tts-biglinux/window.py:383
+msgid "Restore Defaults…"
+msgstr "Endurheimta sjálfgefið…"
+
+#: usr/share/biglinux/tts-biglinux/window.py:388
+msgid "Welcome"
+msgstr "Velkomin"
+
+#: usr/share/biglinux/tts-biglinux/window.py:389
+msgid "About BigLinux TTS"
+msgstr "Um BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/window.py:400
+#: usr/share/biglinux/tts-biglinux/window.py:401
+msgid "Main menu"
+msgstr "Aðalvalmynd"
+
+#: usr/share/biglinux/tts-biglinux/window.py:461
+msgid "Restore settings?"
+msgstr "Endurstilla stillingar?"
+
+#: usr/share/biglinux/tts-biglinux/window.py:462
+msgid "This will return all adjustments to their original defaults."
+msgstr "Þetta mun færa allar stillingar til baka í upprunaleg sjálfgildi."
+
+#: usr/share/biglinux/tts-biglinux/window.py:465
+msgid "Restore"
+msgstr "Endurstilla"

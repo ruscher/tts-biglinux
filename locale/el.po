@@ -14,616 +14,1353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "BigLinux Text-to-Speech — Read selected text aloud"
-msgstr "BigLinux Μετατροπή κειμένου σε ομιλία — Ανάγνωση επιλεγμένου κειμένου φωναχτά"
-
-msgid "Enable debug logging"
-msgstr "Ενεργοποίηση καταγραφής αποσφαλμάτωσης"
-
-msgid "Settings"
-msgstr "Ρυθμίσεις"
-
-msgid "Show settings"
-msgstr "Εμφάνιση ρυθμίσεων"
-
-msgid "Back"
-msgstr "Πίσω"
-
-msgid "Text narrator"
-msgstr "Αφηγητής κειμένου"
-
-msgid "The shortcut is not active — open Advanced options to fix it"
-msgstr "Η συντόμευση δεν είναι ενεργή — ανοίξτε τις Επιλογές για προχωρημένους για να το διορθώσετε"
-
-#, python-brace-format
-msgid "Select text and press {key} to read it aloud"
-msgstr "Επιλέξτε κείμενο και πατήστε {key} για να διαβαστεί φωναχτά"
-
-msgid "History"
-msgstr "Ιστορικό"
-
-msgid "Loading voice…"
-msgstr "Φόρτωση φωνής…"
-
-msgid "Speaking…"
-msgstr "Ομιλία…"
-
-msgid "Could not read the text"
-msgstr "Δεν ήταν δυνατή η ανάγνωση του κειμένου"
-
-msgid "Show tray icon"
-msgstr "Εμφάνιση εικονιδίου στο πλαίσιο συστήματος"
-
-msgid "Restore Defaults…"
-msgstr "Επαναφορά προεπιλογών…"
-
-msgid "Welcome"
-msgstr "Καλώς ήρθατε"
-
-msgid "About BigLinux TTS"
-msgstr "Σχετικά με το BigLinux TTS"
-
-msgid "Quit"
-msgstr "Έξοδος"
-
-msgid "Main menu"
-msgstr "Κύριο μενού"
-
-msgid "Restore settings?"
-msgstr "Επαναφορά ρυθμίσεων;"
-
-msgid "This will return all adjustments to their original defaults."
-msgstr "Αυτό θα επαναφέρει όλες τις ρυθμίσεις στις αρχικές προεπιλογές."
-
-msgid "Cancel"
-msgstr "Ακύρωση"
-
-msgid "Restore"
-msgstr "Επαναφορά"
-
-msgid "This key combination is not valid."
-msgstr "Αυτός ο συνδυασμός πλήκτρων δεν είναι έγκυρος."
-
-msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
-msgstr "Χρησιμοποιήστε Ctrl, Alt ή Super μαζί με ένα πλήκτρο, ώστε να μην επηρεάζεται η κανονική πληκτρολόγηση."
-
-msgid "This key combination is not supported by the desktop."
-msgstr "Αυτός ο συνδυασμός πλήκτρων δεν υποστηρίζεται από την επιφάνεια εργασίας."
-
-#, python-brace-format
-msgid "{shortcut} is already used by: {names}. Choose another shortcut."
-msgstr "Η συντόμευση {shortcut} χρησιμοποιείται ήδη από: {names}. Επιλέξτε άλλη συντόμευση."
-
-msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
-msgstr "Η επιφάνεια εργασίας δεν αποδέχτηκε τη συντόμευση. Εκτελείται η υπηρεσία καθολικών συντομεύσεων του KDE;"
-
-msgid "The desktop did not confirm the new shortcut."
-msgstr "Η επιφάνεια εργασίας δεν επιβεβαίωσε τη νέα συντόμευση."
-
-msgid "The shortcut was saved, but the desktop could not confirm it yet."
-msgstr "Η συντόμευση αποθηκεύτηκε, αλλά η επιφάνεια εργασίας δεν μπόρεσε ακόμη να την επιβεβαιώσει."
-
-msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
-msgstr "Δεν ήταν δυνατή η καταχώριση της συντόμευσης σε αυτή την επιφάνεια εργασίας. Προσθέστε την στις ρυθμίσεις πληκτρολογίου του συστήματος με την εντολή biglinux-tts-speak."
-
-msgid "The installation was cancelled: the administrator password was not confirmed."
-msgstr "Η εγκατάσταση ακυρώθηκε: ο κωδικός πρόσβασης διαχειριστή δεν επιβεβαιώθηκε."
-
-#, python-brace-format
-msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
-msgstr "Το {packages} δεν είναι διαθέσιμο στα αποθετήριά σας. Ενημερώστε το σύστημα (sudo pacman -Syu) και δοκιμάστε ξανά."
-
-msgid "Another program is installing or updating packages. Wait for it to finish and try again."
-msgstr "Ένα άλλο πρόγραμμα εγκαθιστά ή ενημερώνει πακέτα. Περιμένετε να ολοκληρωθεί και δοκιμάστε ξανά."
-
-msgid "The packages could not be downloaded. Check your internet connection and try again."
-msgstr "Δεν ήταν δυνατή η λήψη των πακέτων. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά."
-
-#, python-brace-format
-msgid "{packages} conflicts with installed files or packages. See the details."
-msgstr "Το {packages} συγκρούεται με εγκατεστημένα αρχεία ή πακέτα. Δείτε τις λεπτομέρειες."
-
-#, python-brace-format
-msgid "Not enough free disk space to install {packages}."
-msgstr "Δεν υπάρχει αρκετός ελεύθερος χώρος στον δίσκο για την εγκατάσταση του {packages}."
-
-#, python-brace-format
-msgid "{packages} could not be installed. See the details."
-msgstr "Δεν ήταν δυνατή η εγκατάσταση του {packages}. Δείτε τις λεπτομέρειες."
-
-msgid "Nothing to install."
-msgstr "Δεν υπάρχει τίποτα για εγκατάσταση."
-
-msgid "pkexec is not installed (package polkit)."
-msgstr "Το pkexec δεν είναι εγκατεστημένο (πακέτο polkit)."
-
-msgid "The installation took too long and was stopped."
-msgstr "Η εγκατάσταση διήρκεσε πολύ και διακόπηκε."
-
-#, python-brace-format
-msgid "{packages} could not be built from the AUR. See the details."
-msgstr "Δεν ήταν δυνατή η μεταγλώττιση του {packages} από το AUR. Δείτε τις λεπτομέρειες."
-
-msgid "Read or stop the selected text"
-msgstr "Ανάγνωση ή διακοπή του επιλεγμένου κειμένου"
-
-msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
-msgstr "Το Kokoro δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο biglinux-kokoro-tts."
-
-msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
-msgstr "Λείπει το μοντέλο φωνής του Kokoro. Επανεγκαταστήστε το πακέτο biglinux-kokoro-tts."
-
-msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
-msgstr "Δεν βρέθηκαν φωνές Kokoro. Ανοίξτε τη Διαχείριση φωνών για να κατεβάσετε μια φωνή."
-
-msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
-msgstr "Αυτή η φωνή Kokoro δεν είναι εγκατεστημένη. Ανοίξτε τη Διαχείριση φωνών για να την κατεβάσετε."
-
-#, python-brace-format
-msgid "Unknown voice: {voice_id}"
-msgstr "Άγνωστη φωνή: {voice_id}"
-
-#, python-brace-format
-msgid "Invalid voice id: {voice_id}"
-msgstr "Μη έγκυρο αναγνωριστικό φωνής: {voice_id}"
-
-msgid "The voice file is larger than expected."
-msgstr "Το αρχείο φωνής είναι μεγαλύτερο από το αναμενόμενο."
-
-#, python-brace-format
-msgid "incomplete download ({received} of {total} bytes)"
-msgstr "ελλιπής λήψη ({received} από {total} byte)"
-
-msgid "empty response"
-msgstr "κενή απόκριση"
-
-#, python-brace-format
-msgid "Could not download the voice. Check your internet connection and try again. ({error})"
-msgstr "Δεν ήταν δυνατή η λήψη της φωνής. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά. ({error})"
-
-#, python-brace-format
-msgid "The downloaded voice file is damaged. Try again. ({error})"
-msgstr "Το ληφθέν αρχείο φωνής είναι κατεστραμμένο. Δοκιμάστε ξανά. ({error})"
-
-#, python-brace-format
-msgid "Not enough disk space to install the voice ({size} MB needed)."
-msgstr "Δεν υπάρχει αρκετός χώρος στον δίσκο για την εγκατάσταση της φωνής (απαιτούνται {size} MB)."
-
-#, python-brace-format
-msgid "Cannot create user voices directory: {error}"
-msgstr "Δεν είναι δυνατή η δημιουργία του καταλόγου φωνών χρήστη: {error}"
-
-#, python-brace-format
-msgid "Failed to add voice: {error}"
-msgstr "Αποτυχία προσθήκης φωνής: {error}"
-
-msgid "Cannot remove base voice"
-msgstr "Δεν είναι δυνατή η αφαίρεση της βασικής φωνής"
-
-msgid "No user voices installed"
-msgstr "Δεν υπάρχουν εγκατεστημένες φωνές χρήστη"
-
-#, python-brace-format
-msgid "Failed to remove voice: {error}"
-msgstr "Αποτυχία αφαίρεσης φωνής: {error}"
-
-msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
-msgstr "Δεν ήταν δυνατή η αναπαραγωγή ήχου. Ελέγξτε ότι το alsa-utils (aplay) είναι εγκατεστημένο."
-
-#, python-brace-format
-msgid "{engine} could not start. Check that it is installed."
-msgstr "Το {engine} δεν μπόρεσε να ξεκινήσει. Ελέγξτε ότι είναι εγκατεστημένο."
-
-msgid "RHVoice is not installed. Install the rhvoice package."
-msgstr "Το RHVoice δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο rhvoice."
-
-msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
-msgstr "Το espeak-ng δεν μπόρεσε να διαβάσει αυτό το κείμενο. Ελέγξτε ότι το espeak-ng είναι εγκατεστημένο."
-
-msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
-msgstr "Η επιλεγμένη φωνή Piper δεν είναι εγκατεστημένη. Επιλέξτε άλλη φωνή στη Διαχείριση φωνών."
-
-msgid "Piper could not read this text. Try another voice."
-msgstr "Το Piper δεν μπόρεσε να διαβάσει αυτό το κείμενο. Δοκιμάστε άλλη φωνή."
-
-#, python-brace-format
-msgid "{engine} crashed while reading the text."
-msgstr "Το {engine} κατέρρευσε κατά την ανάγνωση του κειμένου."
-
-#, python-brace-format
-msgid "{engine} stopped with an error and could not read the text."
-msgstr "Το {engine} σταμάτησε με σφάλμα και δεν μπόρεσε να διαβάσει το κείμενο."
-
-msgid "Extra low quality"
-msgstr "Πολύ χαμηλή ποιότητα"
-
-msgid "Low quality"
-msgstr "Χαμηλή ποιότητα"
-
-msgid "Medium quality"
-msgstr "Μέτρια ποιότητα"
-
-msgid "High quality"
-msgstr "Υψηλή ποιότητα"
-
-#, python-brace-format
-msgid "{language} ({region})"
-msgstr "{language} ({region})"
-
+#: usr/share/biglinux/tts-biglinux/application.py:76
 msgid "Read the selected text aloud"
 msgstr "Ανάγνωση του επιλεγμένου κειμένου φωναχτά"
 
+#: usr/share/biglinux/tts-biglinux/application.py:377
 msgid "Could not read the text."
 msgstr "Δεν ήταν δυνατή η ανάγνωση του κειμένου."
 
+#: usr/share/biglinux/tts-biglinux/application.py:378
+#: usr/share/biglinux/tts-biglinux/application.py:583
+#: usr/share/biglinux/tts-biglinux/application.py:588
+#: usr/share/biglinux/tts-biglinux/application.py:593
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1785
+#: usr/share/biglinux/tts-biglinux/window.py:310
+msgid "Could not read the text"
+msgstr "Δεν ήταν δυνατή η ανάγνωση του κειμένου"
+
+#: usr/share/biglinux/tts-biglinux/application.py:389
 msgid "Reading text"
 msgstr "Ανάγνωση κειμένου"
 
+#: usr/share/biglinux/tts-biglinux/application.py:431
+#: usr/share/biglinux/tts-biglinux/application.py:456
+#: usr/share/biglinux/tts-biglinux/application.py:737
 msgid "Playing…"
 msgstr "Παίζοντας…"
 
+#: usr/share/biglinux/tts-biglinux/application.py:582
 msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
 msgstr "Εγκαταστήστε το wl-clipboard (Wayland) ή το xclip (X11) ώστε να μπορεί να διαβαστεί το επιλεγμένο κείμενο."
 
+#: usr/share/biglinux/tts-biglinux/application.py:587
+msgid "This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:592
+msgid "The program with the selected text did not answer. Try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:597
 msgid "Select some text first, then press the shortcut."
 msgstr "Επιλέξτε πρώτα κάποιο κείμενο και μετά πατήστε τη συντόμευση."
 
+#: usr/share/biglinux/tts-biglinux/application.py:598
 msgid "No text selected"
 msgstr "Δεν έχει επιλεγεί κείμενο"
 
+#: usr/share/biglinux/tts-biglinux/application.py:693
 msgid "Read text"
 msgstr "Διαβάστε κείμενο"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:107
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:169
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:210
 msgid "Play"
 msgstr "Παίξε"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:196
 msgid "Pause"
 msgstr "Παύση"
 
+#: usr/share/biglinux/tts-biglinux/application.py:704
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:115
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:116
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
 msgid "Stop"
 msgstr "Διακοπή"
 
+#: usr/share/biglinux/tts-biglinux/application.py:709
+#: usr/share/biglinux/tts-biglinux/window.py:48
+#: usr/share/biglinux/tts-biglinux/window.py:148
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: usr/share/biglinux/tts-biglinux/application.py:711
+#: usr/share/biglinux/tts-biglinux/window.py:390
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: usr/share/biglinux/tts-biglinux/application.py:733
 msgid "Paused"
 msgstr "Σε παύση"
 
+#: usr/share/biglinux/tts-biglinux/application.py:735
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1766
+#: usr/share/biglinux/tts-biglinux/window.py:306
+msgid "Loading voice…"
+msgstr "Φόρτωση φωνής…"
+
+#: usr/share/biglinux/tts-biglinux/application.py:893
 msgid "BigLinux Team"
 msgstr "Ομάδα BigLinux"
 
+#: usr/share/biglinux/tts-biglinux/application.py:904
 msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
 msgstr "Το BigLinux TTS μετατρέπει το επιλεγμένο ή πληκτρολογημένο κείμενο σε ομιλία με τοπικές φωνές, καθολικές συντομεύσεις και ακριβή χειριστήρια αναπαραγωγής."
 
+#: usr/share/biglinux/tts-biglinux/application.py:907
 msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
 msgstr "Το BigLinux TTS ξεκίνησε το 2021 ως διαδικτυακό εργαλείο και εξελίχθηκε σε εγγενή εφαρμογή GTK4 με πολλαπλές μηχανές ομιλίας, διαχείριση φωνών και μηχανή ήχου γραμμένη σε Rust."
 
+#: usr/share/biglinux/tts-biglinux/application.py:959
 msgid "Could not register the shortcut."
 msgstr "Δεν ήταν δυνατή η καταχώριση της συντόμευσης."
 
+#: usr/share/biglinux/tts-biglinux/application.py:985
 #, python-brace-format
 msgid "Select text and press {shortcut} to hear it"
 msgstr "Επιλέξτε κείμενο και πατήστε {shortcut} για να το ακούσετε"
 
+#: usr/share/biglinux/tts-biglinux/application.py:986
 msgid "Text-to-speech assistant"
 msgstr "Βοηθός κειμένου σε ομιλία"
 
+#: usr/share/biglinux/tts-biglinux/main.py:24
+msgid "BigLinux Text-to-Speech — Read selected text aloud"
+msgstr "BigLinux Μετατροπή κειμένου σε ομιλία — Ανάγνωση επιλεγμένου κειμένου φωναχτά"
+
+#: usr/share/biglinux/tts-biglinux/main.py:29
+msgid "Enable debug logging"
+msgstr "Ενεργοποίηση καταγραφής αποσφαλμάτωσης"
+
+#: usr/share/biglinux/tts-biglinux/main.py:40
+msgid "Show how the shortcut, text capture, tray icon, voices and audio are set up, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:45
+msgid "Register the global shortcut again on this desktop, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:50
+msgid "Remove the shortcut this app added to Big WindowMaker, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:331
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:403
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:335
+msgid "Read or stop the selected text"
+msgstr "Ανάγνωση ή διακοπή του επιλεγμένου κειμένου"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:244
+msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
+msgstr "Το Kokoro δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:246
+msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
+msgstr "Λείπει το μοντέλο φωνής του Kokoro. Επανεγκαταστήστε το πακέτο biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:248
+msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
+msgstr "Δεν βρέθηκαν φωνές Kokoro. Ανοίξτε τη Διαχείριση φωνών για να κατεβάσετε μια φωνή."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:252
+msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
+msgstr "Αυτή η φωνή Kokoro δεν είναι εγκατεστημένη. Ανοίξτε τη Διαχείριση φωνών για να την κατεβάσετε."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:470
+#, python-brace-format
+msgid "Unknown voice: {voice_id}"
+msgstr "Άγνωστη φωνή: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:475
+#, python-brace-format
+msgid "Invalid voice id: {voice_id}"
+msgstr "Μη έγκυρο αναγνωριστικό φωνής: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:496
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:508
+msgid "The voice file is larger than expected."
+msgstr "Το αρχείο φωνής είναι μεγαλύτερο από το αναμενόμενο."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:518
+#, python-brace-format
+msgid "incomplete download ({received} of {total} bytes)"
+msgstr "ελλιπής λήψη ({received} από {total} byte)"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:523
+msgid "empty response"
+msgstr "κενή απόκριση"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:529
+#, python-brace-format
+msgid "Could not download the voice. Check your internet connection and try again. ({error})"
+msgstr "Δεν ήταν δυνατή η λήψη της φωνής. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:536
+#, python-brace-format
+msgid "The downloaded voice file is damaged. Try again. ({error})"
+msgstr "Το ληφθέν αρχείο φωνής είναι κατεστραμμένο. Δοκιμάστε ξανά. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:547
+#, python-brace-format
+msgid "Not enough disk space to install the voice ({size} MB needed)."
+msgstr "Δεν υπάρχει αρκετός χώρος στον δίσκο για την εγκατάσταση της φωνής (απαιτούνται {size} MB)."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:555
+#, python-brace-format
+msgid "Cannot create user voices directory: {error}"
+msgstr "Δεν είναι δυνατή η δημιουργία του καταλόγου φωνών χρήστη: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:561
+#, python-brace-format
+msgid "Failed to add voice: {error}"
+msgstr "Αποτυχία προσθήκης φωνής: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:574
+msgid "Cannot remove base voice"
+msgstr "Δεν είναι δυνατή η αφαίρεση της βασικής φωνής"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:577
+msgid "No user voices installed"
+msgstr "Δεν υπάρχουν εγκατεστημένες φωνές χρήστη"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:582
+#, python-brace-format
+msgid "Failed to remove voice: {error}"
+msgstr "Αποτυχία αφαίρεσης φωνής: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:177
+msgid "The installation was cancelled: the administrator password was not confirmed."
+msgstr "Η εγκατάσταση ακυρώθηκε: ο κωδικός πρόσβασης διαχειριστή δεν επιβεβαιώθηκε."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:180
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:239
+#, python-brace-format
+msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
+msgstr "Το {packages} δεν είναι διαθέσιμο στα αποθετήριά σας. Ενημερώστε το σύστημα (sudo pacman -Syu) και δοκιμάστε ξανά."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:184
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:204
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:244
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:263
+msgid "Another program is installing or updating packages. Wait for it to finish and try again."
+msgstr "Ένα άλλο πρόγραμμα εγκαθιστά ή ενημερώνει πακέτα. Περιμένετε να ολοκληρωθεί και δοκιμάστε ξανά."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:186
+msgid "The packages could not be downloaded. Check your internet connection and try again."
+msgstr "Δεν ήταν δυνατή η λήψη των πακέτων. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:188
+#, python-brace-format
+msgid "{packages} conflicts with installed files or packages. See the details."
+msgstr "Το {packages} συγκρούεται με εγκατεστημένα αρχεία ή πακέτα. Δείτε τις λεπτομέρειες."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:190
+#, python-brace-format
+msgid "Not enough free disk space to install {packages}."
+msgstr "Δεν υπάρχει αρκετός ελεύθερος χώρος στον δίσκο για την εγκατάσταση του {packages}."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:192
+#, python-brace-format
+msgid "{packages} could not be installed. See the details."
+msgstr "Δεν ήταν δυνατή η εγκατάσταση του {packages}. Δείτε τις λεπτομέρειες."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:200
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:236
+msgid "Nothing to install."
+msgstr "Δεν υπάρχει τίποτα για εγκατάσταση."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:213
+msgid "pkexec is not installed (package polkit)."
+msgstr "Το pkexec δεν είναι εγκατεστημένο (πακέτο polkit)."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:215
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:218
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:255
+msgid "The installation took too long and was stopped."
+msgstr "Η εγκατάσταση διήρκεσε πολύ και διακόπηκε."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:252
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:265
+#, python-brace-format
+msgid "{packages} could not be built from the AUR. See the details."
+msgstr "Δεν ήταν δυνατή η μεταγλώττιση του {packages} από το AUR. Δείτε τις λεπτομέρειες."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:127
+msgid "This key combination is not valid."
+msgstr "Αυτός ο συνδυασμός πλήκτρων δεν είναι έγκυρος."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:134
+msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
+msgstr "Χρησιμοποιήστε Ctrl, Alt ή Super μαζί με ένα πλήκτρο, ώστε να μην επηρεάζεται η κανονική πληκτρολόγηση."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:235
+msgid "This key combination is not supported by the desktop."
+msgstr "Αυτός ο συνδυασμός πλήκτρων δεν υποστηρίζεται από την επιφάνεια εργασίας."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:247
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:296
+#, python-brace-format
+msgid "{shortcut} is already used by: {names}. Choose another shortcut."
+msgstr "Η συντόμευση {shortcut} χρησιμοποιείται ήδη από: {names}. Επιλέξτε άλλη συντόμευση."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:266
+msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
+msgstr "Η επιφάνεια εργασίας δεν αποδέχτηκε τη συντόμευση. Εκτελείται η υπηρεσία καθολικών συντομεύσεων του KDE;"
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:272
+msgid "The desktop did not confirm the new shortcut."
+msgstr "Η επιφάνεια εργασίας δεν επιβεβαίωσε τη νέα συντόμευση."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:292
+#, python-brace-format
+msgid "{shortcut} is saved. It starts working after you log in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:303
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:307
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:311
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:383
+msgid "Could not save the shortcut. Nothing was changed."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:392
+msgid "The shortcut was saved, but the desktop could not confirm it yet."
+msgstr "Η συντόμευση αποθηκεύτηκε, αλλά η επιφάνεια εργασίας δεν μπόρεσε ακόμη να την επιβεβαιώσει."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:404
+msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
+msgstr "Δεν ήταν δυνατή η καταχώριση της συντόμευσης σε αυτή την επιφάνεια εργασίας. Προσθέστε την στις ρυθμίσεις πληκτρολογίου του συστήματος με την εντολή biglinux-tts-speak."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:138
+msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
+msgstr "Δεν ήταν δυνατή η αναπαραγωγή ήχου. Ελέγξτε ότι το alsa-utils (aplay) είναι εγκατεστημένο."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:505
+#, python-brace-format
+msgid "{engine} could not start. Check that it is installed."
+msgstr "Το {engine} δεν μπόρεσε να ξεκινήσει. Ελέγξτε ότι είναι εγκατεστημένο."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:650
+msgid "RHVoice is not installed. Install the rhvoice package."
+msgstr "Το RHVoice δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο rhvoice."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:918
+msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
+msgstr "Το espeak-ng δεν μπόρεσε να διαβάσει αυτό το κείμενο. Ελέγξτε ότι το espeak-ng είναι εγκατεστημένο."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:933
+msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
+msgstr "Η επιλεγμένη φωνή Piper δεν είναι εγκατεστημένη. Επιλέξτε άλλη φωνή στη Διαχείριση φωνών."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:989
+msgid "Piper could not read this text. Try another voice."
+msgstr "Το Piper δεν μπόρεσε να διαβάσει αυτό το κείμενο. Δοκιμάστε άλλη φωνή."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1180
+#, python-brace-format
+msgid "{engine} crashed while reading the text."
+msgstr "Το {engine} κατέρρευσε κατά την ανάγνωση του κειμένου."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1182
+#, python-brace-format
+msgid "{engine} stopped with an error and could not read the text."
+msgstr "Το {engine} σταμάτησε με σφάλμα και δεν μπόρεσε να διαβάσει το κείμενο."
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:608
+msgid "Extra low quality"
+msgstr "Πολύ χαμηλή ποιότητα"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:609
+msgid "Low quality"
+msgstr "Χαμηλή ποιότητα"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:610
+msgid "Medium quality"
+msgstr "Μέτρια ποιότητα"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:611
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1192
+msgid "High quality"
+msgstr "Υψηλή ποιότητα"
+
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:134
 msgid "Playback position"
 msgstr "Θέση αναπαραγωγής"
 
-msgid "BigLinux TTS"
-msgstr "BigLinux TTS"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:311
+#: usr/share/biglinux/tts-biglinux/ui/components.py:314
+msgid "No shortcut"
+msgstr "Χωρίς συντόμευση"
 
-msgid "Advanced options"
-msgstr "Επιλογές για προχωρημένους"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:326
+#, python-brace-format
+msgid "Shortcut: {keys}"
+msgstr "Συντόμευση: {keys}"
 
-msgid "Shortcut, performance, behavior"
-msgstr "Συντόμευση, επιδόσεις, συμπεριφορά"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:44
+msgid "Unknown"
+msgstr "Άγνωστο"
 
-msgid "Change shortcut"
-msgstr "Αλλαγή συντόμευσης"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:60
+#, python-brace-format
+msgid "Today, {time}"
+msgstr "Σήμερα, {time}"
 
-msgid "Try again"
-msgstr "Δοκιμάστε ξανά"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:62
+#, python-brace-format
+msgid "Yesterday, {time}"
+msgstr "Χθες, {time}"
 
-msgid "Open Voice Manager"
-msgstr "Άνοιγμα Διαχείρισης φωνών"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:135
+msgid "Select this reading"
+msgstr "Επιλογή αυτής της ανάγνωσης"
 
-msgid "Details"
-msgstr "Λεπτομέρειες"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:141
+msgid "(text not kept)"
+msgstr "(το κείμενο δεν διατηρήθηκε)"
 
-msgid "This is a test, welcome to BigLinux!"
-msgstr "Αυτό είναι δοκιμή, καλώς ήρθατε στο BigLinux!"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:158
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show more"
+msgstr "Εμφάνιση περισσότερων"
 
-msgid "Type text to test…"
-msgstr "Πληκτρολογήστε κείμενο για δοκιμή…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:169
+msgid "Copy text"
+msgstr "Αντιγραφή κειμένου"
 
-msgid "Text to test the voice"
-msgstr "Κείμενο για δοκιμή της φωνής"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:171
+msgid "Read again with the current voice"
+msgstr "Νέα ανάγνωση με την τρέχουσα φωνή"
 
-msgid "Test voice"
-msgstr "Δοκιμή φωνής"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:177
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:178
+msgid "More actions"
+msgstr "Περισσότερες ενέργειες"
 
-msgid "Test the selected voice"
-msgstr "Δοκιμή της επιλεγμένης φωνής"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1791
+msgid "Stopped"
+msgstr "Διακόπηκε"
 
-msgid "Voice settings"
-msgstr "Ρυθμίσεις φωνής"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1913
+msgid "Error"
+msgstr "Σφάλμα"
 
-msgid "Choose voice and adjust speech parameters"
-msgstr "Επιλέξτε φωνή και ρυθμίστε τις παραμέτρους ομιλίας"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:202
+msgid "Reading stopped before the end"
+msgstr "Η ανάγνωση σταμάτησε πριν από το τέλος"
 
-msgid "RHVoice (Native)"
-msgstr "RHVoice (Εγγενές)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:203
+msgid "The engine failed during this reading"
+msgstr "Η μηχανή απέτυχε κατά την ανάγνωση αυτή"
 
-msgid "espeak-ng"
-msgstr "espeak-ng"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:219
+msgid "Audio not kept for this reading"
+msgstr "Ο ήχος αυτής της ανάγνωσης δεν διατηρήθηκε"
 
-msgid "Piper (Neural TTS)"
-msgstr "Πάιπερ (Νευρωνική TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:225
+#, python-brace-format
+msgid "{engine} reading, {when}"
+msgstr "Ανάγνωση με {engine}, {when}"
 
-msgid "Kokoro (Neural TTS)"
-msgstr "Κοκόρο (Νευρωνικό TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:256
+msgid "Save audio as…"
+msgstr "Αποθήκευση ήχου ως…"
 
-msgid "TTS Backend"
-msgstr "Υποσύστημα TTS"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:257
+msgid "Open file location"
+msgstr "Άνοιγμα τοποθεσίας αρχείου"
 
-msgid "Engine used for speech synthesis"
-msgstr "Μηχανή που χρησιμοποιείται για σύνθεση ομιλίας"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:258
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:820
+msgid "Delete"
+msgstr "Διαγραφή"
 
-msgid "Select TTS engine"
-msgstr "Επιλέξτε μηχανή TTS"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show less"
+msgstr "Εμφάνιση λιγότερων"
 
-msgid "Engine status"
-msgstr "Κατάσταση μηχανών"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:271
+msgid "Text copied"
+msgstr "Το κείμενο αντιγράφηκε"
 
-msgid "Checking installed engines…"
-msgstr "Έλεγχος εγκατεστημένων μηχανών…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:279
+msgid "Save audio as"
+msgstr "Αποθήκευση ήχου ως"
 
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Audio saved"
+msgstr "Ο ήχος αποθηκεύτηκε"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Could not save the audio"
+msgstr "Αδυναμία αποθήκευσης του ήχου"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:324
+#: usr/share/biglinux/tts-biglinux/window.py:288
+#: usr/share/biglinux/tts-biglinux/window.py:377
+msgid "History"
+msgstr "Ιστορικό"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:350
+msgid "Saving is off: new readings are not kept."
+msgstr "Η αποθήκευση είναι απενεργοποιημένη: οι νέες αναγνώσεις δεν διατηρούνται."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:351
+msgid "Turn On"
+msgstr "Ενεργοποίηση"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:367
+msgid "Search text, voice, engine or date…"
+msgstr "Αναζήτηση κειμένου, φωνής, μηχανής ή ημερομηνίας…"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "All dates"
+msgstr "Όλες οι ημερομηνίες"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Today"
+msgstr "Σήμερα"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Yesterday"
+msgstr "Χθες"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Last 7 days"
+msgstr "Τελευταίες 7 ημέρες"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:376
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:377
+msgid "Filter by date"
+msgstr "Φιλτράρισμα κατά ημερομηνία"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:381
+msgid "All engines"
+msgstr "Όλες οι μηχανές"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:383
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:384
+msgid "Filter by engine"
+msgstr "Φιλτράρισμα κατά μηχανή"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:391
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Newest first"
+msgstr "Νεότερες πρώτα"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:392
+msgid "Sort order"
+msgstr "Σειρά ταξινόμησης"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:397
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:398
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as grid"
+msgstr "Εμφάνιση ως πλέγμα"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:403
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:404
+msgid "Select readings"
+msgstr "Επιλογή αναγνώσεων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:416
+msgid "Select All"
+msgstr "Επιλογή όλων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:420
+msgid "Deselect All"
+msgstr "Αποεπιλογή όλων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:429
+msgid "Save the selected readings to a folder"
+msgstr "Αποθήκευση των επιλεγμένων αναγνώσεων σε φάκελο"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:430
+msgid "Save selected"
+msgstr "Αποθήκευση επιλεγμένων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:435
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:436
+msgid "Delete selected"
+msgstr "Διαγραφή επιλεγμένων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:445
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:457
+msgid "History entries"
+msgstr "Καταχωρίσεις ιστορικού"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:648
+msgid "The history could not be read"
+msgstr "Δεν ήταν δυνατή η ανάγνωση του ιστορικού"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:650
+#, python-brace-format
+msgid "Check the permissions of the folder {folder}."
+msgstr "Ελέγξτε τα δικαιώματα του φακέλου {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:657
+msgid "No readings found"
+msgstr "Δεν βρέθηκαν αναγνώσεις"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:658
+msgid "Try other words or another date or engine."
+msgstr "Δοκιμάστε άλλες λέξεις, άλλη ημερομηνία ή άλλη μηχανή."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:659
+msgid "Clear Filters"
+msgstr "Καθαρισμός φίλτρων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:663
+msgid "No readings yet"
+msgstr "Δεν υπάρχουν αναγνώσεις ακόμη"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:667
+#, python-brace-format
+msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
+msgstr "Ό,τι ακούτε θα εμφανίζεται εδώ, μαζί με τον ήχο του. Αποθηκεύεται μόνο σε αυτόν τον υπολογιστή, στο {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:673
+#, python-brace-format
+msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
+msgstr "Η αποθήκευση είναι απενεργοποιημένη. Ενεργοποιήστε την για να διατηρείτε ό,τι ακούτε, μαζί με τον ήχο — μόνο σε αυτόν τον υπολογιστή, στο {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:676
+msgid "Turn On History"
+msgstr "Ενεργοποίηση ιστορικού"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Oldest first"
+msgstr "Παλαιότερες πρώτα"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as list"
+msgstr "Εμφάνιση ως λίστα"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:751
+#, python-brace-format
+msgid "Selected: {count}"
+msgstr "Επιλεγμένες: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:781
+msgid "Reading deleted"
+msgstr "Η ανάγνωση διαγράφηκε"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:782
+msgid "Undo"
+msgstr "Αναίρεση"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:816
+msgid "Delete the selected readings?"
+msgstr "Διαγραφή των επιλεγμένων αναγνώσεων;"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:817
+#, python-brace-format
+msgid "Readings: {count}. Their audio and text files are moved to the Trash."
+msgstr "Αναγνώσεις: {count}. Τα αρχεία ήχου και κειμένου τους μετακινούνται στα απορρίμματα."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:819
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1483
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1540
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:498
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:760
+#: usr/share/biglinux/tts-biglinux/window.py:464
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:832
+#, python-brace-format
+msgid "Moved to the Trash: {count}"
+msgstr "Μετακινήθηκαν στα απορρίμματα: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:843
+msgid "Save the selected readings"
+msgstr "Αποθήκευση των επιλεγμένων αναγνώσεων"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:863
+#, python-brace-format
+msgid "Saved to {folder}: {count}"
+msgstr "Αποθηκεύτηκαν στο {folder}: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:43
+msgid "Desktop not recognized"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:51
+msgid "selection (Wayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:52
+msgid "selection of an X11 program (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:53
+msgid "selection (X11)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:54
+msgid "copied text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:64
+#, python-brace-format
+msgid "Last reading: {count} characters from the {source}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:66
+msgid "Last time nothing was selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:67
+msgid "Last time the text could not be read"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:79
+msgid "Desktop integration"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:80
+msgid "Check that the shortcut, the text capture and the tray icon work on this desktop."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:82
+msgid "Desktop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:86
+msgid "Global shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:88
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:423
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:434
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:668
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1896
 msgid "Checking…"
 msgstr "Έλεγχος…"
 
-msgid "Voice"
-msgstr "Φωνή"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:89
+msgid "Fix integration"
+msgstr ""
 
-msgid "Loading voices..."
-msgstr "Φόρτωση φωνών..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:97
+msgid "Selected text"
+msgstr ""
 
-msgid "Detecting installed voices..."
-msgstr "Ανίχνευση εγκατεστημένων φωνών..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:103
+msgid "Read copied text"
+msgstr ""
 
-msgid "Select TTS voice"
-msgstr "Επιλέξτε φωνή TTS"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:104
+msgid "When nothing is selected, read what was copied (Ctrl+C). Off: an old copied text is never read by mistake."
+msgstr ""
 
-msgid "Refresh voice list"
-msgstr "Ανανεώστε τη λίστα φωνών"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:107
+msgid "Read copied text when nothing is selected"
+msgstr ""
 
-msgid "Manage voices for current engine"
-msgstr "Διαχείριση φωνών για την τρέχουσα μηχανή"
-
-msgid "Speed"
-msgstr "Ταχύτητα"
-
-msgid "Speech rate"
-msgstr "Ταχύτητα ομιλίας"
-
-msgid "Slow"
-msgstr "Αργά"
-
-msgid "Normal"
-msgstr "Κανονικά"
-
-msgid "Fast"
-msgstr "Γρήγορα"
-
-msgid "Speech speed"
-msgstr "Ταχύτητα ομιλίας"
-
-msgid "Pitch"
-msgstr "Τονικότητα"
-
-msgid "Voice tone"
-msgstr "Τόνος φωνής"
-
-msgid "Low"
-msgstr "Χαμηλός"
-
-msgid "High"
-msgstr "Υψηλός"
-
-msgid "Voice pitch"
-msgstr "Τόνος φωνής"
-
-msgid "Volume"
-msgstr "Ένταση"
-
-msgid "Speech volume"
-msgstr "Ένταση ομιλίας"
-
-msgid "Mute"
-msgstr "Σίγαση"
-
-msgid "Max"
-msgstr "Μέγ"
-
-msgid "Neutral"
-msgstr "Ουδέτερος"
-
-msgid "Happy"
-msgstr "Ευτυχισμένος"
-
-msgid "Calm"
-msgstr "Ήρεμος"
-
-msgid "Urgent"
-msgstr "Επείγον"
-
-msgid "Narrative"
-msgstr "Αφήγηση"
-
-msgid "Expression style"
-msgstr "Στυλ έκφρασης"
-
-msgid "Changes speed and intonation to match the mood"
-msgstr "Αλλάζει την ταχύτητα και την τονικότητα για να ταιριάζει με τη διάθεση."
-
-msgid "Select expression style"
-msgstr "Επιλέξτε στυλ έκφρασης"
-
-msgid "None (single voice)"
-msgstr "Κανένα (μοναδική φωνή)"
-
-msgid "Voice blend"
-msgstr "Μείγμα φωνής"
-
-msgid "Mix a second voice with the primary voice"
-msgstr "Αναμίξτε μια δεύτερη φωνή με την κύρια φωνή."
-
-msgid "Select blend voice"
-msgstr "Επιλέξτε φωνή ανάμειξης"
-
-msgid "Expand abbreviations"
-msgstr "Ανάπτυξη συντομογραφιών"
-
-msgid "Replace common abbreviations with full words"
-msgstr "Αντικατάσταση κοινών συντομογραφιών με πλήρεις λέξεις"
-
-msgid "Expand text abbreviations"
-msgstr "Ανάπτυξη συντομογραφιών κειμένου"
-
-msgid "Read special characters"
-msgstr "Ανάγνωση ειδικών χαρακτήρων"
-
-msgid "Speak symbols like # @ % by name"
-msgstr "Εκφώνηση συμβόλων όπως # @ % με το όνομά τους"
-
-msgid "Read special characters aloud"
-msgstr "Ανάγνωση ειδικών χαρακτήρων φωναχτά"
-
-msgid "Remove formatting"
-msgstr "Αφαίρεση μορφοποίησης"
-
-msgid "Strip Markdown and HTML before reading"
-msgstr "Αφαίρεση Markdown και HTML πριν την ανάγνωση"
-
-msgid "Remove text formatting"
-msgstr "Αφαίρεση μορφοποίησης κειμένου"
-
-msgid "Read URLs"
-msgstr "Ανάγνωση URL"
-
-msgid "Read web addresses aloud instead of skipping them"
-msgstr "Ανάγνωση διευθύνσεων ιστού φωναχτά αντί να παραλείπονται"
-
-msgid "Read URLs aloud"
-msgstr "Ανάγνωση URL φωναχτά"
-
-msgid "Unlimited"
-msgstr "Απεριόριστο"
-
-msgid "1 000"
-msgstr "1 000"
-
-msgid "5 000"
-msgstr "5 000"
-
-msgid "10 000"
-msgstr "10 000"
-
-msgid "50 000"
-msgstr "50 000"
-
-msgid "100 000"
-msgstr "100 000"
-
-msgid "Character limit"
-msgstr "Όριο χαρακτήρων"
-
-msgid "Maximum number of characters to read at once"
-msgstr "Μέγιστος αριθμός χαρακτήρων για ανάγνωση κάθε φορά"
-
-msgid "Maximum character limit"
-msgstr "Μέγιστο όριο χαρακτήρων"
-
-msgid "Keyboard shortcut"
-msgstr "Συντόμευση πληκτρολογίου"
-
-msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
-msgstr "Επιλέξτε κείμενο οπουδήποτε και πατήστε τη συντόμευση για ανάγνωση. Πατήστε ξανά για διακοπή."
-
-msgid "Change"
-msgstr "Αλλαγή"
-
-msgid "Change keyboard shortcut"
-msgstr "Αλλαγή συντόμευσης πληκτρολογίου"
-
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:112
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:687
 msgid "Tray icon"
 msgstr "Εικονίδιο δίσκου"
 
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:118
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:234
+msgid "Test the shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:119
+msgid "Select a sample text, press the shortcut and listen"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:121
+msgid "Start test"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1837
+msgid "Checking the shortcut with the desktop…"
+msgstr "Έλεγχος της συντόμευσης με την επιφάνεια εργασίας…"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1833
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1839
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1869
+msgid "The shortcut is not active."
+msgstr "Η συντόμευση δεν είναι ενεργή."
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Not active"
+msgstr "Ανενεργό"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:167
+msgid "After login"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:169
+#, python-brace-format
+msgid "{keys} reads or stops the selected text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:170
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Active"
+msgstr "Ενεργό"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:173
+#, python-brace-format
+msgid "last used at {time}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:174
+msgid "Working"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:183
+msgid "This desktop does not share selected text. Turn on “Read copied text” below."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:185
+msgid "Read from the selection, also in X11 programs (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:187
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:189
+msgid "Read from the selection, no copying needed"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "Shown"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "In the system tray; click it to read or stop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Starting…"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Waiting for the system tray"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:199
+msgid "Unavailable"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:200
+msgid "No system tray on this desktop. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:202
+msgid "The tray icon could not be shown. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Off"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Turn it on in the options above"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:247
+msgid "BigLinux TTS reads the text you select, with accents and numbers: 2026."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:248
+msgid "Sample text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:256
+msgid "The sample text above is selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:257
+#, python-brace-format
+msgid "Press {keys} now"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:258
+msgid "BigLinux TTS captures the selection"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:259
+msgid "The text is read aloud"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:275
+msgid "I heard nothing"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:277
+msgid "I heard it"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:329
+msgid "Did you hear the sample text?"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:332
+msgid "The text was not captured. Keep the sample text selected and try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:340
+msgid "The shortcut did not reach BigLinux TTS. Use “Fix integration”; if the shortcut waits for a new login, log out and in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:349
+#, python-brace-format
+msgid "Everything works: select text anywhere and press {keys}."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:353
+msgid "The text was read, but no sound reached you. Check the volume and the audio output; “biglinux-tts --diagnose” in a terminal shows the details."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:87
+msgid "BigLinux TTS"
+msgstr "BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:213
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:229
+msgid "Advanced options"
+msgstr "Επιλογές για προχωρημένους"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:214
+msgid "Shortcut, performance, behavior"
+msgstr "Συντόμευση, επιδόσεις, συμπεριφορά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:324
+msgid "Change shortcut"
+msgstr "Αλλαγή συντόμευσης"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:336
+msgid "Try again"
+msgstr "Δοκιμάστε ξανά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:340
+msgid "Open Voice Manager"
+msgstr "Άνοιγμα Διαχείρισης φωνών"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:344
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:356
+msgid "This is a test, welcome to BigLinux!"
+msgstr "Αυτό είναι δοκιμή, καλώς ήρθατε στο BigLinux!"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:357
+msgid "Type text to test…"
+msgstr "Πληκτρολογήστε κείμενο για δοκιμή…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:360
+msgid "Text to test the voice"
+msgstr "Κείμενο για δοκιμή της φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:365
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Test voice"
+msgstr "Δοκιμή φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:368
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1817
+msgid "Test the selected voice"
+msgstr "Δοκιμή της επιλεγμένης φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:383
+msgid "Voice settings"
+msgstr "Ρυθμίσεις φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:384
+msgid "Choose voice and adjust speech parameters"
+msgstr "Επιλέξτε φωνή και ρυθμίστε τις παραμέτρους ομιλίας"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:389
+msgid "RHVoice (Native)"
+msgstr "RHVoice (Εγγενές)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:390
+msgid "espeak-ng"
+msgstr "espeak-ng"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:391
+msgid "Piper (Neural TTS)"
+msgstr "Πάιπερ (Νευρωνική TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:392
+msgid "Kokoro (Neural TTS)"
+msgstr "Κοκόρο (Νευρωνικό TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:408
+msgid "TTS Backend"
+msgstr "Υποσύστημα TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:409
+msgid "Engine used for speech synthesis"
+msgstr "Μηχανή που χρησιμοποιείται για σύνθεση ομιλίας"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:413
+msgid "Select TTS engine"
+msgstr "Επιλέξτε μηχανή TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:421
+msgid "Engine status"
+msgstr "Κατάσταση μηχανών"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:422
+msgid "Checking installed engines…"
+msgstr "Έλεγχος εγκατεστημένων μηχανών…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:442
+msgid "Voice"
+msgstr "Φωνή"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:443
+msgid "Loading voices..."
+msgstr "Φόρτωση φωνών..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:444
+msgid "Detecting installed voices..."
+msgstr "Ανίχνευση εγκατεστημένων φωνών..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:446
+msgid "Select TTS voice"
+msgstr "Επιλέξτε φωνή TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:452
+msgid "Refresh voice list"
+msgstr "Ανανεώστε τη λίστα φωνών"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:460
+msgid "Manage voices for current engine"
+msgstr "Διαχείριση φωνών για την τρέχουσα μηχανή"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:471
+msgid "Speed"
+msgstr "Ταχύτητα"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:472
+msgid "Speech rate"
+msgstr "Ταχύτητα ομιλίας"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Slow"
+msgstr "Αργά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Normal"
+msgstr "Κανονικά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Fast"
+msgstr "Γρήγορα"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:480
+msgid "Speech speed"
+msgstr "Ταχύτητα ομιλίας"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:487
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Pitch"
+msgstr "Τονικότητα"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:488
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Voice tone"
+msgstr "Τόνος φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Low"
+msgstr "Χαμηλός"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "High"
+msgstr "Υψηλός"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:496
+msgid "Voice pitch"
+msgstr "Τόνος φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:504
+msgid "Volume"
+msgstr "Ένταση"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:505
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:513
+msgid "Speech volume"
+msgstr "Ένταση ομιλίας"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Mute"
+msgstr "Σίγαση"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Max"
+msgstr "Μέγ"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:524
+msgid "Neutral"
+msgstr "Ουδέτερος"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:525
+msgid "Happy"
+msgstr "Ευτυχισμένος"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:526
+msgid "Calm"
+msgstr "Ήρεμος"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:527
+msgid "Urgent"
+msgstr "Επείγον"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:528
+msgid "Narrative"
+msgstr "Αφήγηση"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:541
+msgid "Expression style"
+msgstr "Στυλ έκφρασης"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:542
+msgid "Changes speed and intonation to match the mood"
+msgstr "Αλλάζει την ταχύτητα και την τονικότητα για να ταιριάζει με τη διάθεση."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:546
+msgid "Select expression style"
+msgstr "Επιλέξτε στυλ έκφρασης"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:554
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1041
+msgid "None (single voice)"
+msgstr "Κανένα (μοναδική φωνή)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:557
+msgid "Voice blend"
+msgstr "Μείγμα φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:558
+msgid "Mix a second voice with the primary voice"
+msgstr "Αναμίξτε μια δεύτερη φωνή με την κύρια φωνή."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:562
+msgid "Select blend voice"
+msgstr "Επιλέξτε φωνή ανάμειξης"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:580
+msgid "Expand abbreviations"
+msgstr "Ανάπτυξη συντομογραφιών"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:581
+msgid "Replace common abbreviations with full words"
+msgstr "Αντικατάσταση κοινών συντομογραφιών με πλήρεις λέξεις"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:584
+msgid "Expand text abbreviations"
+msgstr "Ανάπτυξη συντομογραφιών κειμένου"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:590
+msgid "Read special characters"
+msgstr "Ανάγνωση ειδικών χαρακτήρων"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:591
+msgid "Speak symbols like # @ % by name"
+msgstr "Εκφώνηση συμβόλων όπως # @ % με το όνομά τους"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:594
+msgid "Read special characters aloud"
+msgstr "Ανάγνωση ειδικών χαρακτήρων φωναχτά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:600
+msgid "Remove formatting"
+msgstr "Αφαίρεση μορφοποίησης"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:601
+msgid "Strip Markdown and HTML before reading"
+msgstr "Αφαίρεση Markdown και HTML πριν την ανάγνωση"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:604
+msgid "Remove text formatting"
+msgstr "Αφαίρεση μορφοποίησης κειμένου"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:610
+msgid "Read URLs"
+msgstr "Ανάγνωση URL"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:611
+msgid "Read web addresses aloud instead of skipping them"
+msgstr "Ανάγνωση διευθύνσεων ιστού φωναχτά αντί να παραλείπονται"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:614
+msgid "Read URLs aloud"
+msgstr "Ανάγνωση URL φωναχτά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:620
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:732
+msgid "Unlimited"
+msgstr "Απεριόριστο"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:621
+msgid "1 000"
+msgstr "1 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:622
+msgid "5 000"
+msgstr "5 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:623
+msgid "10 000"
+msgstr "10 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:624
+msgid "50 000"
+msgstr "50 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:625
+msgid "100 000"
+msgstr "100 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:637
+msgid "Character limit"
+msgstr "Όριο χαρακτήρων"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:638
+msgid "Maximum number of characters to read at once"
+msgstr "Μέγιστος αριθμός χαρακτήρων για ανάγνωση κάθε φορά"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:642
+msgid "Maximum character limit"
+msgstr "Μέγιστο όριο χαρακτήρων"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:656
+msgid "Keyboard shortcut"
+msgstr "Συντόμευση πληκτρολογίου"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:659
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1841
+msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
+msgstr "Επιλέξτε κείμενο οπουδήποτε και πατήστε τη συντόμευση για ανάγνωση. Πατήστε ξανά για διακοπή."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:671
+msgid "Change"
+msgstr "Αλλαγή"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:674
+msgid "Change keyboard shortcut"
+msgstr "Αλλαγή συντόμευσης πληκτρολογίου"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:688
 msgid "Fixes quick access and allows running in the background"
 msgstr "Διορθώνει την γρήγορη πρόσβαση και επιτρέπει την εκτέλεση στο παρασκήνιο."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:691
 msgid "Show system tray icon"
 msgstr "Εμφάνιση εικονιδίου στη γραμμή ειδοποιήσεων"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:701
 msgid "Save history"
 msgstr "Αποθήκευση ιστορικού"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:702
 #, python-brace-format
 msgid "Keep what you listen to, only on this computer, in {folder}"
 msgstr "Διατηρήστε ό,τι ακούτε, μόνο σε αυτόν τον υπολογιστή, στο {folder}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:707
 msgid "Save speech history"
 msgstr "Αποθήκευση ιστορικού ομιλίας"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:713
 msgid "Keep the audio"
 msgstr "Διατήρηση του ήχου"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:714
 msgid "Listen to each reading again, with the same voice"
 msgstr "Ακούστε ξανά κάθε ανάγνωση, με την ίδια φωνή"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:717
 msgid "Keep the audio of each reading"
 msgstr "Διατήρηση του ήχου κάθε ανάγνωσης"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:721
 msgid "Keep the text"
 msgstr "Διατήρηση του κειμένου"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:722
 msgid "Search, copy and read again what was read"
 msgstr "Αναζητήστε, αντιγράψτε και διαβάστε ξανά ό,τι διαβάστηκε"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:725
 msgid "Keep the text of each reading"
 msgstr "Διατήρηση του κειμένου κάθε ανάγνωσης"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:730
 msgid "Keep at most"
 msgstr "Διατήρηση έως"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:731
 msgid "The oldest readings are deleted beyond this number"
 msgstr "Πέρα από αυτόν τον αριθμό, οι παλαιότερες αναγνώσεις διαγράφονται"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:741
 msgid "Audio playback mode"
 msgstr "Λειτουργία αναπαραγωγής ήχου"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:742
 msgid "Behavior when playing multiple audios or speech"
 msgstr "Συμπεριφορά κατά την αναπαραγωγή πολλαπλών ήχων ή ομιλίας"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Interrupt previous"
 msgstr "Διακόψτε την προηγούμενη."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Queue"
 msgstr "Ουρά"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Simultaneous"
 msgstr "Ταυτόχρονα"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:756
 msgid "Media player"
 msgstr "Πρόγραμμα αναπαραγωγής"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:757
 msgid "Show a system mini-player (play/stop, time) while reading"
 msgstr "Εμφάνιση μίνι προγράμματος αναπαραγωγής του συστήματος (αναπαραγωγή/διακοπή, χρόνος) κατά την ανάγνωση"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:760
 msgid "Show system media player"
 msgstr "Εμφάνιση προγράμματος αναπαραγωγής του συστήματος"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:790
 msgid "Set new shortcut"
 msgstr "Ορισμός νέας συντόμευσης"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:806
 msgid ""
 "<b>Hold modifier keys</b> (Alt, Ctrl, Shift, Super)\n"
 "and press a letter or key.\n"
@@ -635,244 +1372,429 @@ msgstr ""
 "\n"
 "<small>Πατήστε Escape για ακύρωση</small>"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:825
 msgid "Press the new shortcut"
 msgstr "Πατήστε τη νέα συντόμευση"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:948
 msgid "Tray icon enabled"
 msgstr "Ενεργοποιημένο εικονίδιο δίσκου"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:951
 msgid "Tray icon disabled"
 msgstr "Εικονίδιο δίσκου απενεργοποιημένο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:959
 msgid "History saving enabled"
 msgstr "Η αποθήκευση ιστορικού είναι ενεργοποιημένη"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:960
 msgid "History saving disabled. Saved readings are kept."
 msgstr "Η αποθήκευση ιστορικού απενεργοποιήθηκε. Οι αποθηκευμένες αναγνώσεις διατηρούνται."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1071
 msgid "Refreshing voices..."
 msgstr "Ανανεώνοντας φωνές..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1073
 msgid "Refreshing voice list…"
 msgstr "Ανανεώνω τη λίστα φωνών…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1117
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Δεν βρέθηκαν φωνές — εγκαταστήστε rhvoice ή espeak-ng"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1119
 msgid "No voices available"
 msgstr "Δεν υπάρχουν διαθέσιμες φωνές"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1169
 msgid "No voices available for this engine"
 msgstr "Δεν υπάρχουν φωνές για αυτή τη μηχανή"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1172
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Εγκαταστήστε πρώτα φωνές {engine}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1190
 msgid "Neural"
 msgstr "Νευρωνική"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1200
 #, python-brace-format
 msgid "Voices available: {count}"
 msgstr "Διαθέσιμες φωνές: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Expressiveness"
 msgstr "Εκφραστικότητα"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Voice variation (not pitch)"
 msgstr "Παραλλαγή φωνής (όχι τονικό ύψος)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1307
 msgid "Kokoro voices do not support this setting."
 msgstr "Οι φωνές Kokoro δεν υποστηρίζουν αυτή τη ρύθμιση."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1312
 msgid "Kokoro voices only follow Mute. Use the system volume to change how loud they are."
 msgstr "Οι φωνές Kokoro ακολουθούν μόνο τη «Σίγαση». Χρησιμοποιήστε την ένταση του συστήματος για να αλλάξετε πόσο δυνατά μιλούν."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1370
 msgid "Searching for voices..."
 msgstr "Αναζητώντας φωνές..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1391
 msgid "Checking for Piper voices..."
 msgstr "Έλεγχος για φωνές Piper..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1399
 msgid "Checking for Kokoro voices..."
 msgstr "Έλεγχος για φωνές Kokoro..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1407
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "Δεν βρέθηκαν φωνές για {engine} — εγκαταστήστε το πρώτα"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1461
 msgid "Piper is not available"
 msgstr "Το Piper δεν είναι διαθέσιμο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1462
 #, python-brace-format
 msgid "No Piper voice package was found in your repositories ({packages}). Update the system (sudo pacman -Syu) and try again."
 msgstr "Δεν βρέθηκε πακέτο φωνών Piper στα αποθετήριά σας ({packages}). Ενημερώστε το σύστημα (sudo pacman -Syu) και δοκιμάστε ξανά."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1466
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1528
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1604
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:899
 msgid "OK"
 msgstr "Εντάξει"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1477
 msgid "Piper provides natural neural voices. These packages will be installed:"
 msgstr "Το Piper παρέχει φυσικές νευρωνικές φωνές. Θα εγκατασταθούν τα εξής πακέτα:"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1480
 msgid "Packages marked AUR are not in your repositories: they come from the Arch User Repository, are maintained by the community and are built on this computer, which takes longer."
 msgstr "Τα πακέτα με την ένδειξη AUR δεν βρίσκονται στα αποθετήριά σας: προέρχονται από το Arch User Repository, συντηρούνται από την κοινότητα και μεταγλωττίζονται σε αυτόν τον υπολογιστή, κάτι που διαρκεί περισσότερο."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1481
 msgid "This requires administrator permissions."
 msgstr "Απαιτούνται δικαιώματα διαχειριστή."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1482
 msgid "Install Piper Neural TTS?"
 msgstr "Εγκατάσταση Piper Neural TTS;"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1484
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1541
 msgid "Install"
 msgstr "Εγκατάσταση"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1502
 msgid "Installing Piper TTS"
 msgstr "Εγκατάσταση Piper TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1503
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1554
 msgid "Downloading and installing packages…"
 msgstr "Κατεβάζω και εγκαθιστώ πακέτα…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1523
 msgid "Kokoro is not available"
 msgstr "Το Kokoro δεν είναι διαθέσιμο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1524
 #, python-brace-format
 msgid "The {package} package was not found in your repositories, so Kokoro cannot be installed yet. Update the system (sudo pacman -Syu) and try again."
 msgstr "Το πακέτο {package} δεν βρέθηκε στα αποθετήριά σας, οπότε το Kokoro δεν μπορεί ακόμη να εγκατασταθεί. Ενημερώστε το σύστημα (sudo pacman -Syu) και δοκιμάστε ξανά."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1534
 msgid "Install Kokoro neural voices?"
 msgstr "Εγκατάσταση νευρωνικών φωνών Kokoro;"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1535
 msgid "Kokoro offers natural neural voices in several languages, with expression styles and voice blending."
 msgstr "Το Kokoro προσφέρει φυσικές νευρωνικές φωνές σε πολλές γλώσσες, με στυλ έκφρασης και ανάμειξη φωνών."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1536
 #, python-brace-format
 msgid "The {package} package{size} will be installed. This requires administrator permissions."
 msgstr "Θα εγκατασταθεί το πακέτο {package}{size}. Απαιτούνται δικαιώματα διαχειριστή."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1553
 msgid "Installing Kokoro TTS"
 msgstr "Εγκατάσταση Kokoro TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1582
 msgid "The installation failed."
 msgstr "Η εγκατάσταση απέτυχε."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1609
 #, python-brace-format
 msgid "{engine} installed. Looking for voices…"
 msgstr "Το {engine} εγκαταστάθηκε. Αναζήτηση φωνών…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1620
 #, python-brace-format
 msgid "{engine} could not be installed"
 msgstr "Δεν ήταν δυνατή η εγκατάσταση του {engine}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1687
 msgid "Type some text to test"
 msgstr "Πληκτρολογήστε κείμενο για δοκιμή"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1701
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "Ο ήχος είναι στο μηδέν — αυξάνεται στο ελάχιστο για δοκιμή"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1769
 #, python-brace-format
 msgid "Preparing {voice}. Speech starts in a moment."
 msgstr "Προετοιμασία της φωνής {voice}. Η ομιλία ξεκινά σε λίγο."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1770
 msgid "Preparing the voice. Speech starts in a moment."
 msgstr "Προετοιμασία της φωνής. Η ομιλία ξεκινά σε λίγο."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1776
+#: usr/share/biglinux/tts-biglinux/window.py:308
+msgid "Speaking…"
+msgstr "Ομιλία…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1778
 #, python-brace-format
 msgid "Press {shortcut} again to stop."
 msgstr "Πατήστε ξανά {shortcut} για διακοπή."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1779
 msgid "Use Stop to end the reading."
 msgstr "Χρησιμοποιήστε τη Διακοπή για να τερματίσετε την ανάγνωση."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1786
 msgid "The speech engine reported a problem."
 msgstr "Η μηχανή ομιλίας ανέφερε πρόβλημα."
 
-msgid "Stopped"
-msgstr "Διακόπηκε"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1792
 msgid "Reading was stopped."
 msgstr "Η ανάγνωση διακόπηκε."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1796
 msgid "Ready to speak"
 msgstr "Έτοιμο για ομιλία"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1797
 msgid "Select any text and use the shortcut to hear it."
 msgstr "Επιλέξτε οποιοδήποτε κείμενο και χρησιμοποιήστε τη συντόμευση για να το ακούσετε."
 
-msgid "The shortcut is not active."
-msgstr "Η συντόμευση δεν είναι ενεργή."
-
-msgid "Checking the shortcut with the desktop…"
-msgstr "Έλεγχος της συντόμευσης με την επιφάνεια εργασίας…"
-
-msgid "Not active"
-msgstr "Ανενεργό"
-
-msgid "Active"
-msgstr "Ενεργό"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1858
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Η συντόμευση άλλαξε σε {keys}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1878
 msgid "Not installed. Install the rhvoice package and a voice."
 msgstr "Δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο rhvoice και μια φωνή."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1879
 msgid "Not installed. Install the espeak-ng package."
 msgstr "Δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο espeak-ng."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1880
 msgid "Not installed. Install Piper from the TTS Backend list."
 msgstr "Δεν είναι εγκατεστημένο. Εγκαταστήστε το Piper από τη λίστα Υποσύστημα TTS."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1881
 msgid "Not installed. Install the biglinux-kokoro-tts package."
 msgstr "Δεν είναι εγκατεστημένο. Εγκαταστήστε το πακέτο biglinux-kokoro-tts."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1882
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1898
 msgid "Not installed"
 msgstr "Δεν είναι εγκατεστημένο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1901
 msgid "No voices"
 msgstr "Χωρίς φωνές"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1902
 msgid "Installed, but no voice is available. Open the Voice Manager."
 msgstr "Εγκατεστημένο, αλλά δεν υπάρχει διαθέσιμη φωνή. Ανοίξτε τη Διαχείριση φωνών."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1905
 msgid "Ready"
 msgstr "Έτοιμο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1906
 #, python-brace-format
 msgid "Voices installed: {count}"
 msgstr "Εγκατεστημένες φωνές: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1909
 msgid "Loading"
 msgstr "Φόρτωση"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1911
 msgid "Speaking"
 msgstr "Ομιλία"
 
-msgid "Error"
-msgstr "Σφάλμα"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1922
 #, python-brace-format
 msgid "{engine}: {state}"
 msgstr "{engine}: {state}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1927
 msgid "Technical details"
 msgstr "Τεχνικές λεπτομέρειες"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1929
 msgid "Close"
 msgstr "Κλείσιμο"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1964
 msgid "Settings restored to defaults"
 msgstr "Οι ρυθμίσεις επαναφέρθηκαν στις προεπιλογές"
 
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:350
+msgid "Piper engine"
+msgstr "Μηχανή Piper"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:414
+msgid "Voice Manager"
+msgstr "Διαχειριστής Φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:435
+msgid "Search voices by name or language…"
+msgstr "Αναζήτηση φωνών κατά όνομα ή γλώσσα…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:467
+msgid "Loading available voices…"
+msgstr "Φόρτωση διαθέσιμων φωνών…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:538
+msgid "No Voice Packages Found"
+msgstr "Δεν βρέθηκαν πακέτα φωνής"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:540
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Δεν βρέθηκαν πακέτα φωνής TTS από τα αποθετήρια pacman."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:586
+msgid "High quality offline voices"
+msgstr "Φωνές υψηλής ποιότητας εκτός σύνδεσης"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:590
+msgid "Neural network voices — natural sounding"
+msgstr "Φωνές νευρωνικών δικτύων — φυσικός ήχος"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:594
+msgid "Lightweight multi-language synthesizer"
+msgstr "Ελαφρύς πολυγλωσσικός συνθετητής"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:598
+msgid "Neural TTS — high quality multilingual voices (82M)"
+msgstr "Νευρωνική TTS — υψηλής ποιότητας πολύγλωσσες φωνές (82M)"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:697
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:698
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Εγκαταστήστε το {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:706
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:707
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Αφαιρέστε {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:716
+msgid "Installed"
+msgstr "Εγκατεστημένο"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:735
+#, python-brace-format
+msgid "Remove {name}?"
+msgstr "Αφαίρεση του {name};"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:736
+msgid "The voice will no longer be available for reading. You can install it again later."
+msgstr "Η φωνή δεν θα είναι πλέον διαθέσιμη για ανάγνωση. Μπορείτε να την εγκαταστήσετε ξανά αργότερα."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:737
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:803
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "Λήψη {name}…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:812
+#, python-brace-format
+msgid "Downloading {name}… {done} of {total} KB"
+msgstr "Λήψη {name}… {done} από {total} KB"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:864
+msgid "Operation timed out"
+msgstr "Η λειτουργία υπερέβη το χρονικό όριο."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:866
+msgid "pkexec or pacman not found"
+msgstr "Δεν βρέθηκε το pkexec ή το pacman."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:891
+msgid "Download cancelled"
+msgstr "Η λήψη ακυρώθηκε"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:895
+msgid "Failed"
+msgstr "Απέτυχε"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:896
+msgid "Removal Failed"
+msgstr "Αποτυχία Αφαίρεσης"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:898
+msgid "Unknown error"
+msgstr "Άγνωστο σφάλμα"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:915
+#, python-brace-format
+msgid "Play a sample of {name}"
+msgstr "Αναπαραγωγή δείγματος του {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:984
+msgid "Stop the sample"
+msgstr "Διακοπή δείγματος"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1047
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1052
+msgid "The sample could not be played."
+msgstr "Δεν ήταν δυνατή η αναπαραγωγή του δείγματος."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1050
+#, python-brace-format
+msgid "The sample could not be played: {program} is not installed."
+msgstr "Δεν ήταν δυνατή η αναπαραγωγή του δείγματος: το {program} δεν είναι εγκατεστημένο."
+
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:60
 msgid "Welcome to BigLinux TTS"
 msgstr "Καλώς ήρθατε στο BigLinux TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:67
 msgid "Your text-to-speech assistant"
 msgstr "Ο βοηθός σας για μετατροπή κειμένου σε ομιλία"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:77
 msgid "Multiple TTS Engines"
 msgstr "Πολλαπλές Μηχανές TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:79
 msgid ""
 "RHVoice, espeak-ng, Piper and Kokoro\n"
 "with automatic voice discovery"
@@ -880,17 +1802,21 @@ msgstr ""
 "RHVoice, espeak-ng, Piper και Kokoro\n"
 "με αυτόματο εντοπισμό φωνών"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:83
 msgid "Multilingual Support"
 msgstr "Πολυγλωσσική Υποστήριξη"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:84
 msgid ""
 "Voices in dozens of languages\n"
 "including Portuguese (Brazil)"
 msgstr "Φωνές σε δεκάδες γλώσσες, συμπεριλαμβανομένων των Πορτογαλικών (Βραζιλίας)"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:88
 msgid "Global Shortcut"
 msgstr "Παγκόσμια Συντόμευση"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:89
 #, python-brace-format
 msgid ""
 "Press {key} to read selected text\n"
@@ -899,25 +1825,31 @@ msgstr ""
 "Πατήστε {key} για ανάγνωση επιλεγμένου κειμένου\n"
 "από οποιαδήποτε εφαρμογή"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:93
 msgid "Clipboard Reading"
 msgstr "Ανάγνωση Πρόχειρου"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:94
 msgid ""
 "Paste or type text directly\n"
 "and listen instantly"
 msgstr "Επικολλήστε ή πληκτρολογήστε κείμενο απευθείας και ακούστε αμέσως."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:98
 msgid "Fine-Tune Speech"
 msgstr "Λεπτομερής Ρύθμιση Ομιλίας"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:99
 msgid ""
 "Adjust speed, pitch and volume\n"
 "to your preference"
 msgstr "Ρυθμίστε την ταχύτητα, τον τόνο και την ένταση σύμφωνα με τις προτιμήσεις σας."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:101
 msgid "Easy Installation"
 msgstr "Εύκολη Εγκατάσταση"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:102
 msgid ""
 "Install new voices and engines\n"
 "directly from the interface"
@@ -925,9 +1857,11 @@ msgstr ""
 "Εγκαταστήστε νέες φωνές και μηχανές\n"
 "απευθείας από τη διεπαφή"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:106
 msgid "Neural Voices"
 msgstr "Νευρωνικές Φωνές"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:108
 msgid ""
 "Install Piper or Kokoro voices for natural,\n"
 "high-quality speech synthesis"
@@ -935,9 +1869,11 @@ msgstr ""
 "Εγκαταστήστε φωνές Piper ή Kokoro για φυσική\n"
 "σύνθεση ομιλίας υψηλής ποιότητας"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:112
 msgid "Reading History"
 msgstr "Ιστορικό ανάγνωσης"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:114
 msgid ""
 "Optionally save and replay previous\n"
 "readings when history is enabled"
@@ -945,300 +1881,77 @@ msgstr ""
 "Προαιρετική αποθήκευση και επανάληψη προηγούμενων\n"
 "αναγνώσεων όταν το ιστορικό είναι ενεργό"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:146
 #, python-brace-format
 msgid "Tip: Press {key} to read selected text from any application."
 msgstr "Συμβουλή: Πατήστε {key} για ανάγνωση επιλεγμένου κειμένου από οποιαδήποτε εφαρμογή."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:166
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:169
 msgid "Show dialog on startup"
 msgstr "Εμφάνιση διαλόγου κατά την εκκίνηση"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:178
 msgid "Let's Start"
 msgstr "Ας ξεκινήσουμε"
 
-msgid "Unknown"
-msgstr "Άγνωστο"
-
+#: usr/share/biglinux/tts-biglinux/utils/i18n.py:207
 #, python-brace-format
-msgid "Today, {time}"
-msgstr "Σήμερα, {time}"
+msgid "{language} ({region})"
+msgstr "{language} ({region})"
 
+#: usr/share/biglinux/tts-biglinux/window.py:49
+msgid "Show settings"
+msgstr "Εμφάνιση ρυθμίσεων"
+
+#: usr/share/biglinux/tts-biglinux/window.py:169
+#: usr/share/biglinux/tts-biglinux/window.py:170
+msgid "Back"
+msgstr "Πίσω"
+
+#: usr/share/biglinux/tts-biglinux/window.py:178
+#: usr/share/biglinux/tts-biglinux/window.py:297
+msgid "Text narrator"
+msgstr "Αφηγητής κειμένου"
+
+#: usr/share/biglinux/tts-biglinux/window.py:249
+msgid "The shortcut is not active — open Advanced options to fix it"
+msgstr "Η συντόμευση δεν είναι ενεργή — ανοίξτε τις Επιλογές για προχωρημένους για να το διορθώσετε"
+
+#: usr/share/biglinux/tts-biglinux/window.py:250
 #, python-brace-format
-msgid "Yesterday, {time}"
-msgstr "Χθες, {time}"
-
-msgid "Select this reading"
-msgstr "Επιλογή αυτής της ανάγνωσης"
-
-msgid "(text not kept)"
-msgstr "(το κείμενο δεν διατηρήθηκε)"
-
-msgid "Show more"
-msgstr "Εμφάνιση περισσότερων"
-
-msgid "Copy text"
-msgstr "Αντιγραφή κειμένου"
-
-msgid "Read again with the current voice"
-msgstr "Νέα ανάγνωση με την τρέχουσα φωνή"
-
-msgid "More actions"
-msgstr "Περισσότερες ενέργειες"
-
-msgid "Reading stopped before the end"
-msgstr "Η ανάγνωση σταμάτησε πριν από το τέλος"
-
-msgid "The engine failed during this reading"
-msgstr "Η μηχανή απέτυχε κατά την ανάγνωση αυτή"
-
-msgid "Audio not kept for this reading"
-msgstr "Ο ήχος αυτής της ανάγνωσης δεν διατηρήθηκε"
-
-#, python-brace-format
-msgid "{engine} reading, {when}"
-msgstr "Ανάγνωση με {engine}, {when}"
-
-msgid "Save audio as…"
-msgstr "Αποθήκευση ήχου ως…"
-
-msgid "Open file location"
-msgstr "Άνοιγμα τοποθεσίας αρχείου"
-
-msgid "Delete"
-msgstr "Διαγραφή"
-
-msgid "Show less"
-msgstr "Εμφάνιση λιγότερων"
-
-msgid "Text copied"
-msgstr "Το κείμενο αντιγράφηκε"
-
-msgid "Save audio as"
-msgstr "Αποθήκευση ήχου ως"
-
-msgid "Audio saved"
-msgstr "Ο ήχος αποθηκεύτηκε"
-
-msgid "Could not save the audio"
-msgstr "Αδυναμία αποθήκευσης του ήχου"
-
-msgid "Saving is off: new readings are not kept."
-msgstr "Η αποθήκευση είναι απενεργοποιημένη: οι νέες αναγνώσεις δεν διατηρούνται."
-
-msgid "Turn On"
-msgstr "Ενεργοποίηση"
-
-msgid "Search text, voice, engine or date…"
-msgstr "Αναζήτηση κειμένου, φωνής, μηχανής ή ημερομηνίας…"
-
-msgid "All dates"
-msgstr "Όλες οι ημερομηνίες"
-
-msgid "Today"
-msgstr "Σήμερα"
-
-msgid "Yesterday"
-msgstr "Χθες"
-
-msgid "Last 7 days"
-msgstr "Τελευταίες 7 ημέρες"
-
-msgid "Filter by date"
-msgstr "Φιλτράρισμα κατά ημερομηνία"
-
-msgid "All engines"
-msgstr "Όλες οι μηχανές"
-
-msgid "Filter by engine"
-msgstr "Φιλτράρισμα κατά μηχανή"
-
-msgid "Newest first"
-msgstr "Νεότερες πρώτα"
-
-msgid "Sort order"
-msgstr "Σειρά ταξινόμησης"
-
-msgid "Show as grid"
-msgstr "Εμφάνιση ως πλέγμα"
-
-msgid "Select readings"
-msgstr "Επιλογή αναγνώσεων"
-
-msgid "Select All"
-msgstr "Επιλογή όλων"
-
-msgid "Deselect All"
-msgstr "Αποεπιλογή όλων"
-
-msgid "Save the selected readings to a folder"
-msgstr "Αποθήκευση των επιλεγμένων αναγνώσεων σε φάκελο"
-
-msgid "Save selected"
-msgstr "Αποθήκευση επιλεγμένων"
-
-msgid "Delete selected"
-msgstr "Διαγραφή επιλεγμένων"
-
-msgid "History entries"
-msgstr "Καταχωρίσεις ιστορικού"
-
-msgid "The history could not be read"
-msgstr "Δεν ήταν δυνατή η ανάγνωση του ιστορικού"
-
-#, python-brace-format
-msgid "Check the permissions of the folder {folder}."
-msgstr "Ελέγξτε τα δικαιώματα του φακέλου {folder}."
-
-msgid "No readings found"
-msgstr "Δεν βρέθηκαν αναγνώσεις"
-
-msgid "Try other words or another date or engine."
-msgstr "Δοκιμάστε άλλες λέξεις, άλλη ημερομηνία ή άλλη μηχανή."
-
-msgid "Clear Filters"
-msgstr "Καθαρισμός φίλτρων"
-
-msgid "No readings yet"
-msgstr "Δεν υπάρχουν αναγνώσεις ακόμη"
-
-#, python-brace-format
-msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
-msgstr "Ό,τι ακούτε θα εμφανίζεται εδώ, μαζί με τον ήχο του. Αποθηκεύεται μόνο σε αυτόν τον υπολογιστή, στο {folder}."
-
-#, python-brace-format
-msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
-msgstr "Η αποθήκευση είναι απενεργοποιημένη. Ενεργοποιήστε την για να διατηρείτε ό,τι ακούτε, μαζί με τον ήχο — μόνο σε αυτόν τον υπολογιστή, στο {folder}."
-
-msgid "Turn On History"
-msgstr "Ενεργοποίηση ιστορικού"
-
-msgid "Oldest first"
-msgstr "Παλαιότερες πρώτα"
-
-msgid "Show as list"
-msgstr "Εμφάνιση ως λίστα"
-
-#, python-brace-format
-msgid "Selected: {count}"
-msgstr "Επιλεγμένες: {count}"
-
-msgid "Reading deleted"
-msgstr "Η ανάγνωση διαγράφηκε"
-
-msgid "Undo"
-msgstr "Αναίρεση"
-
-msgid "Delete the selected readings?"
-msgstr "Διαγραφή των επιλεγμένων αναγνώσεων;"
-
-#, python-brace-format
-msgid "Readings: {count}. Their audio and text files are moved to the Trash."
-msgstr "Αναγνώσεις: {count}. Τα αρχεία ήχου και κειμένου τους μετακινούνται στα απορρίμματα."
-
-#, python-brace-format
-msgid "Moved to the Trash: {count}"
-msgstr "Μετακινήθηκαν στα απορρίμματα: {count}"
-
-msgid "Save the selected readings"
-msgstr "Αποθήκευση των επιλεγμένων αναγνώσεων"
-
-#, python-brace-format
-msgid "Saved to {folder}: {count}"
-msgstr "Αποθηκεύτηκαν στο {folder}: {count}"
-
-msgid "No shortcut"
-msgstr "Χωρίς συντόμευση"
-
-#, python-brace-format
-msgid "Shortcut: {keys}"
-msgstr "Συντόμευση: {keys}"
-
-msgid "Piper engine"
-msgstr "Μηχανή Piper"
-
-msgid "Voice Manager"
-msgstr "Διαχειριστής Φωνής"
-
-msgid "Search voices by name or language…"
-msgstr "Αναζήτηση φωνών κατά όνομα ή γλώσσα…"
-
-msgid "Loading available voices…"
-msgstr "Φόρτωση διαθέσιμων φωνών…"
-
-msgid "No Voice Packages Found"
-msgstr "Δεν βρέθηκαν πακέτα φωνής"
-
-msgid "Could not find any TTS voice packages from pacman repositories."
-msgstr "Δεν βρέθηκαν πακέτα φωνής TTS από τα αποθετήρια pacman."
-
-msgid "High quality offline voices"
-msgstr "Φωνές υψηλής ποιότητας εκτός σύνδεσης"
-
-msgid "Neural network voices — natural sounding"
-msgstr "Φωνές νευρωνικών δικτύων — φυσικός ήχος"
-
-msgid "Lightweight multi-language synthesizer"
-msgstr "Ελαφρύς πολυγλωσσικός συνθετητής"
-
-msgid "Neural TTS — high quality multilingual voices (82M)"
-msgstr "Νευρωνική TTS — υψηλής ποιότητας πολύγλωσσες φωνές (82M)"
-
-#, python-brace-format
-msgid "Install {name}"
-msgstr "Εγκαταστήστε το {name}"
-
-#, python-brace-format
-msgid "Remove {name}"
-msgstr "Αφαιρέστε {name}"
-
-msgid "Installed"
-msgstr "Εγκατεστημένο"
-
-#, python-brace-format
-msgid "Remove {name}?"
-msgstr "Αφαίρεση του {name};"
-
-msgid "The voice will no longer be available for reading. You can install it again later."
-msgstr "Η φωνή δεν θα είναι πλέον διαθέσιμη για ανάγνωση. Μπορείτε να την εγκαταστήσετε ξανά αργότερα."
-
-msgid "Remove"
-msgstr "Αφαίρεση"
-
-#, python-brace-format
-msgid "Downloading {name}…"
-msgstr "Λήψη {name}…"
-
-#, python-brace-format
-msgid "Downloading {name}… {done} of {total} KB"
-msgstr "Λήψη {name}… {done} από {total} KB"
-
-msgid "Operation timed out"
-msgstr "Η λειτουργία υπερέβη το χρονικό όριο."
-
-msgid "pkexec or pacman not found"
-msgstr "Δεν βρέθηκε το pkexec ή το pacman."
-
-msgid "Download cancelled"
-msgstr "Η λήψη ακυρώθηκε"
-
-msgid "Failed"
-msgstr "Απέτυχε"
-
-msgid "Removal Failed"
-msgstr "Αποτυχία Αφαίρεσης"
-
-msgid "Unknown error"
-msgstr "Άγνωστο σφάλμα"
-
-#, python-brace-format
-msgid "Play a sample of {name}"
-msgstr "Αναπαραγωγή δείγματος του {name}"
-
-msgid "Stop the sample"
-msgstr "Διακοπή δείγματος"
-
-msgid "The sample could not be played."
-msgstr "Δεν ήταν δυνατή η αναπαραγωγή του δείγματος."
-
-#, python-brace-format
-msgid "The sample could not be played: {program} is not installed."
-msgstr "Δεν ήταν δυνατή η αναπαραγωγή του δείγματος: το {program} δεν είναι εγκατεστημένο."
+msgid "Select text and press {key} to read it aloud"
+msgstr "Επιλέξτε κείμενο και πατήστε {key} για να διαβαστεί φωναχτά"
+
+#: usr/share/biglinux/tts-biglinux/window.py:382
+msgid "Show tray icon"
+msgstr "Εμφάνιση εικονιδίου στο πλαίσιο συστήματος"
+
+#: usr/share/biglinux/tts-biglinux/window.py:383
+msgid "Restore Defaults…"
+msgstr "Επαναφορά προεπιλογών…"
+
+#: usr/share/biglinux/tts-biglinux/window.py:388
+msgid "Welcome"
+msgstr "Καλώς ήρθατε"
+
+#: usr/share/biglinux/tts-biglinux/window.py:389
+msgid "About BigLinux TTS"
+msgstr "Σχετικά με το BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/window.py:400
+#: usr/share/biglinux/tts-biglinux/window.py:401
+msgid "Main menu"
+msgstr "Κύριο μενού"
+
+#: usr/share/biglinux/tts-biglinux/window.py:461
+msgid "Restore settings?"
+msgstr "Επαναφορά ρυθμίσεων;"
+
+#: usr/share/biglinux/tts-biglinux/window.py:462
+msgid "This will return all adjustments to their original defaults."
+msgstr "Αυτό θα επαναφέρει όλες τις ρυθμίσεις στις αρχικές προεπιλογές."
+
+#: usr/share/biglinux/tts-biglinux/window.py:465
+msgid "Restore"
+msgstr "Επαναφορά"

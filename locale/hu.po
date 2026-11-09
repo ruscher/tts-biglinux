@@ -14,616 +14,1353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "BigLinux Text-to-Speech — Read selected text aloud"
-msgstr "BigLinux szövegfelolvasó — Kijelölt szöveg felolvasása"
-
-msgid "Enable debug logging"
-msgstr "Hibakeresési naplózás engedélyezése"
-
-msgid "Settings"
-msgstr "Beállítások"
-
-msgid "Show settings"
-msgstr "Beállítások megjelenítése"
-
-msgid "Back"
-msgstr "Vissza"
-
-msgid "Text narrator"
-msgstr "Szövegfelolvasó"
-
-msgid "The shortcut is not active — open Advanced options to fix it"
-msgstr "A gyorsbillentyű nem aktív — a javításhoz nyissa meg a Speciális beállításokat"
-
-#, python-brace-format
-msgid "Select text and press {key} to read it aloud"
-msgstr "Jelöljön ki szöveget, és nyomja meg a(z) {key} billentyűt a felolvasáshoz"
-
-msgid "History"
-msgstr "Előzmények"
-
-msgid "Loading voice…"
-msgstr "Hang betöltése…"
-
-msgid "Speaking…"
-msgstr "Felolvasás…"
-
-msgid "Could not read the text"
-msgstr "Nem sikerült felolvasni a szöveget"
-
-msgid "Show tray icon"
-msgstr "Tálcaikon megjelenítése"
-
-msgid "Restore Defaults…"
-msgstr "Alapértékek visszaállítása…"
-
-msgid "Welcome"
-msgstr "Üdvözöljük"
-
-msgid "About BigLinux TTS"
-msgstr "A BigLinux TTS névjegye"
-
-msgid "Quit"
-msgstr "Kilépés"
-
-msgid "Main menu"
-msgstr "Főmenü"
-
-msgid "Restore settings?"
-msgstr "Visszaállítja a beállításokat?"
-
-msgid "This will return all adjustments to their original defaults."
-msgstr "Ez visszaállítja az összes beállítást az eredeti alapértékekre."
-
-msgid "Cancel"
-msgstr "Mégse"
-
-msgid "Restore"
-msgstr "Visszaállítás"
-
-msgid "This key combination is not valid."
-msgstr "Ez a billentyűkombináció érvénytelen."
-
-msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
-msgstr "Használja a Ctrl, Alt vagy Super billentyűt egy másik billentyűvel együtt, hogy ne zavarja a normál gépelést."
-
-msgid "This key combination is not supported by the desktop."
-msgstr "Ezt a billentyűkombinációt az asztali környezet nem támogatja."
-
-#, python-brace-format
-msgid "{shortcut} is already used by: {names}. Choose another shortcut."
-msgstr "A(z) {shortcut} már használatban van: {names}. Válasszon másik gyorsbillentyűt."
-
-msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
-msgstr "Az asztali környezet nem fogadta el a gyorsbillentyűt. Fut a KDE globális gyorsbillentyű-szolgáltatása?"
-
-msgid "The desktop did not confirm the new shortcut."
-msgstr "Az asztali környezet nem erősítette meg az új gyorsbillentyűt."
-
-msgid "The shortcut was saved, but the desktop could not confirm it yet."
-msgstr "A gyorsbillentyű mentve, de az asztali környezet még nem tudta megerősíteni."
-
-msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
-msgstr "Nem sikerült regisztrálni a gyorsbillentyűt ebben az asztali környezetben. Adja hozzá a rendszer billentyűzetbeállításaiban a biglinux-tts-speak paranccsal."
-
-msgid "The installation was cancelled: the administrator password was not confirmed."
-msgstr "A telepítés megszakadt: a rendszergazdai jelszó nem lett megerősítve."
-
-#, python-brace-format
-msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
-msgstr "A(z) {packages} nem érhető el a tárolókban. Frissítse a rendszert (sudo pacman -Syu), és próbálja újra."
-
-msgid "Another program is installing or updating packages. Wait for it to finish and try again."
-msgstr "Egy másik program csomagokat telepít vagy frissít. Várja meg, amíg befejeződik, és próbálja újra."
-
-msgid "The packages could not be downloaded. Check your internet connection and try again."
-msgstr "Nem sikerült letölteni a csomagokat. Ellenőrizze az internetkapcsolatot, és próbálja újra."
-
-#, python-brace-format
-msgid "{packages} conflicts with installed files or packages. See the details."
-msgstr "A(z) {packages} ütközik telepített fájlokkal vagy csomagokkal. Lásd a részleteket."
-
-#, python-brace-format
-msgid "Not enough free disk space to install {packages}."
-msgstr "Nincs elég szabad lemezterület a(z) {packages} telepítéséhez."
-
-#, python-brace-format
-msgid "{packages} could not be installed. See the details."
-msgstr "A(z) {packages} nem telepíthető. Lásd a részleteket."
-
-msgid "Nothing to install."
-msgstr "Nincs mit telepíteni."
-
-msgid "pkexec is not installed (package polkit)."
-msgstr "A pkexec nincs telepítve (polkit csomag)."
-
-msgid "The installation took too long and was stopped."
-msgstr "A telepítés túl sokáig tartott, ezért leállt."
-
-#, python-brace-format
-msgid "{packages} could not be built from the AUR. See the details."
-msgstr "A(z) {packages} nem fordítható le az AUR-ból. Lásd a részleteket."
-
-msgid "Read or stop the selected text"
-msgstr "Kijelölt szöveg felolvasása vagy leállítása"
-
-msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
-msgstr "A Kokoro nincs telepítve. Telepítse a biglinux-kokoro-tts csomagot."
-
-msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
-msgstr "A Kokoro hangmodell hiányzik. Telepítse újra a biglinux-kokoro-tts csomagot."
-
-msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
-msgstr "Nem található Kokoro hang. Nyissa meg a Hangkezelőt egy hang letöltéséhez."
-
-msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
-msgstr "Ez a Kokoro hang nincs telepítve. Nyissa meg a Hangkezelőt a letöltéséhez."
-
-#, python-brace-format
-msgid "Unknown voice: {voice_id}"
-msgstr "Ismeretlen hang: {voice_id}"
-
-#, python-brace-format
-msgid "Invalid voice id: {voice_id}"
-msgstr "Érvénytelen hangazonosító: {voice_id}"
-
-msgid "The voice file is larger than expected."
-msgstr "A hangfájl a vártnál nagyobb."
-
-#, python-brace-format
-msgid "incomplete download ({received} of {total} bytes)"
-msgstr "hiányos letöltés ({received} / {total} bájt)"
-
-msgid "empty response"
-msgstr "üres válasz"
-
-#, python-brace-format
-msgid "Could not download the voice. Check your internet connection and try again. ({error})"
-msgstr "Nem sikerült letölteni a hangot. Ellenőrizze az internetkapcsolatot, és próbálja újra. ({error})"
-
-#, python-brace-format
-msgid "The downloaded voice file is damaged. Try again. ({error})"
-msgstr "A letöltött hangfájl sérült. Próbálja újra. ({error})"
-
-#, python-brace-format
-msgid "Not enough disk space to install the voice ({size} MB needed)."
-msgstr "Nincs elég lemezterület a hang telepítéséhez ({size} MB szükséges)."
-
-#, python-brace-format
-msgid "Cannot create user voices directory: {error}"
-msgstr "Nem hozható létre a felhasználói hangok könyvtára: {error}"
-
-#, python-brace-format
-msgid "Failed to add voice: {error}"
-msgstr "Nem sikerült hozzáadni a hangot: {error}"
-
-msgid "Cannot remove base voice"
-msgstr "Az alaphang nem távolítható el"
-
-msgid "No user voices installed"
-msgstr "Nincsenek telepített felhasználói hangok"
-
-#, python-brace-format
-msgid "Failed to remove voice: {error}"
-msgstr "Nem sikerült eltávolítani a hangot: {error}"
-
-msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
-msgstr "Nem sikerült lejátszani a hangot. Ellenőrizze, hogy az alsa-utils (aplay) telepítve van-e."
-
-#, python-brace-format
-msgid "{engine} could not start. Check that it is installed."
-msgstr "A(z) {engine} nem indult el. Ellenőrizze, hogy telepítve van-e."
-
-msgid "RHVoice is not installed. Install the rhvoice package."
-msgstr "Az RHVoice nincs telepítve. Telepítse az rhvoice csomagot."
-
-msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
-msgstr "Az espeak-ng nem tudta felolvasni ezt a szöveget. Ellenőrizze, hogy az espeak-ng telepítve van-e."
-
-msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
-msgstr "A kiválasztott Piper hang nincs telepítve. Válasszon másik hangot a Hangkezelőben."
-
-msgid "Piper could not read this text. Try another voice."
-msgstr "A Piper nem tudta felolvasni ezt a szöveget. Próbáljon másik hangot."
-
-#, python-brace-format
-msgid "{engine} crashed while reading the text."
-msgstr "A(z) {engine} összeomlott a szöveg felolvasása közben."
-
-#, python-brace-format
-msgid "{engine} stopped with an error and could not read the text."
-msgstr "A(z) {engine} hibával leállt, és nem tudta felolvasni a szöveget."
-
-msgid "Extra low quality"
-msgstr "Nagyon alacsony minőség"
-
-msgid "Low quality"
-msgstr "Alacsony minőség"
-
-msgid "Medium quality"
-msgstr "Közepes minőség"
-
-msgid "High quality"
-msgstr "Magas minőség"
-
-#, python-brace-format
-msgid "{language} ({region})"
-msgstr "{language} ({region})"
-
+#: usr/share/biglinux/tts-biglinux/application.py:76
 msgid "Read the selected text aloud"
 msgstr "Kijelölt szöveg felolvasása"
 
+#: usr/share/biglinux/tts-biglinux/application.py:377
 msgid "Could not read the text."
 msgstr "Nem sikerült felolvasni a szöveget."
 
+#: usr/share/biglinux/tts-biglinux/application.py:378
+#: usr/share/biglinux/tts-biglinux/application.py:583
+#: usr/share/biglinux/tts-biglinux/application.py:588
+#: usr/share/biglinux/tts-biglinux/application.py:593
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1785
+#: usr/share/biglinux/tts-biglinux/window.py:310
+msgid "Could not read the text"
+msgstr "Nem sikerült felolvasni a szöveget"
+
+#: usr/share/biglinux/tts-biglinux/application.py:389
 msgid "Reading text"
 msgstr "Szöveg felolvasása"
 
+#: usr/share/biglinux/tts-biglinux/application.py:431
+#: usr/share/biglinux/tts-biglinux/application.py:456
+#: usr/share/biglinux/tts-biglinux/application.py:737
 msgid "Playing…"
 msgstr "Játékban…"
 
+#: usr/share/biglinux/tts-biglinux/application.py:582
 msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
 msgstr "Telepítse a wl-clipboard (Wayland) vagy az xclip (X11) csomagot, hogy a kijelölt szöveg felolvasható legyen."
 
+#: usr/share/biglinux/tts-biglinux/application.py:587
+msgid "This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:592
+msgid "The program with the selected text did not answer. Try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:597
 msgid "Select some text first, then press the shortcut."
 msgstr "Előbb jelöljön ki szöveget, majd nyomja meg a gyorsbillentyűt."
 
+#: usr/share/biglinux/tts-biglinux/application.py:598
 msgid "No text selected"
 msgstr "Nincs kijelölt szöveg"
 
+#: usr/share/biglinux/tts-biglinux/application.py:693
 msgid "Read text"
 msgstr "Olvasd el a szöveget"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:107
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:169
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:210
 msgid "Play"
 msgstr "Játék"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:196
 msgid "Pause"
 msgstr "Szüneteltetés"
 
+#: usr/share/biglinux/tts-biglinux/application.py:704
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:115
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:116
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
 msgid "Stop"
 msgstr "Leállítás"
 
+#: usr/share/biglinux/tts-biglinux/application.py:709
+#: usr/share/biglinux/tts-biglinux/window.py:48
+#: usr/share/biglinux/tts-biglinux/window.py:148
+msgid "Settings"
+msgstr "Beállítások"
+
+#: usr/share/biglinux/tts-biglinux/application.py:711
+#: usr/share/biglinux/tts-biglinux/window.py:390
+msgid "Quit"
+msgstr "Kilépés"
+
+#: usr/share/biglinux/tts-biglinux/application.py:733
 msgid "Paused"
 msgstr "Szüneteltetve"
 
+#: usr/share/biglinux/tts-biglinux/application.py:735
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1766
+#: usr/share/biglinux/tts-biglinux/window.py:306
+msgid "Loading voice…"
+msgstr "Hang betöltése…"
+
+#: usr/share/biglinux/tts-biglinux/application.py:893
 msgid "BigLinux Team"
 msgstr "BigLinux csapat"
 
+#: usr/share/biglinux/tts-biglinux/application.py:904
 msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
 msgstr "A BigLinux TTS a kijelölt vagy begépelt szöveget beszéddé alakítja helyi hangokkal, globális gyorsbillentyűkkel és pontos lejátszásvezérléssel."
 
+#: usr/share/biglinux/tts-biglinux/application.py:907
 msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
 msgstr "A BigLinux TTS 2021-ben webes eszközként indult, majd natív GTK4-alkalmazássá fejlődött több beszédmotorral, hangkezeléssel és Rust nyelvű hangmotorral."
 
+#: usr/share/biglinux/tts-biglinux/application.py:959
 msgid "Could not register the shortcut."
 msgstr "Nem sikerült regisztrálni a gyorsbillentyűt."
 
+#: usr/share/biglinux/tts-biglinux/application.py:985
 #, python-brace-format
 msgid "Select text and press {shortcut} to hear it"
 msgstr "Jelöljön ki szöveget, és nyomja meg a(z) {shortcut} billentyűt a meghallgatáshoz"
 
+#: usr/share/biglinux/tts-biglinux/application.py:986
 msgid "Text-to-speech assistant"
 msgstr "Szövegfelolvasó asszisztens"
 
+#: usr/share/biglinux/tts-biglinux/main.py:24
+msgid "BigLinux Text-to-Speech — Read selected text aloud"
+msgstr "BigLinux szövegfelolvasó — Kijelölt szöveg felolvasása"
+
+#: usr/share/biglinux/tts-biglinux/main.py:29
+msgid "Enable debug logging"
+msgstr "Hibakeresési naplózás engedélyezése"
+
+#: usr/share/biglinux/tts-biglinux/main.py:40
+msgid "Show how the shortcut, text capture, tray icon, voices and audio are set up, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:45
+msgid "Register the global shortcut again on this desktop, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:50
+msgid "Remove the shortcut this app added to Big WindowMaker, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:331
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:403
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:335
+msgid "Read or stop the selected text"
+msgstr "Kijelölt szöveg felolvasása vagy leállítása"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:244
+msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
+msgstr "A Kokoro nincs telepítve. Telepítse a biglinux-kokoro-tts csomagot."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:246
+msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
+msgstr "A Kokoro hangmodell hiányzik. Telepítse újra a biglinux-kokoro-tts csomagot."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:248
+msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
+msgstr "Nem található Kokoro hang. Nyissa meg a Hangkezelőt egy hang letöltéséhez."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:252
+msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
+msgstr "Ez a Kokoro hang nincs telepítve. Nyissa meg a Hangkezelőt a letöltéséhez."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:470
+#, python-brace-format
+msgid "Unknown voice: {voice_id}"
+msgstr "Ismeretlen hang: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:475
+#, python-brace-format
+msgid "Invalid voice id: {voice_id}"
+msgstr "Érvénytelen hangazonosító: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:496
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:508
+msgid "The voice file is larger than expected."
+msgstr "A hangfájl a vártnál nagyobb."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:518
+#, python-brace-format
+msgid "incomplete download ({received} of {total} bytes)"
+msgstr "hiányos letöltés ({received} / {total} bájt)"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:523
+msgid "empty response"
+msgstr "üres válasz"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:529
+#, python-brace-format
+msgid "Could not download the voice. Check your internet connection and try again. ({error})"
+msgstr "Nem sikerült letölteni a hangot. Ellenőrizze az internetkapcsolatot, és próbálja újra. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:536
+#, python-brace-format
+msgid "The downloaded voice file is damaged. Try again. ({error})"
+msgstr "A letöltött hangfájl sérült. Próbálja újra. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:547
+#, python-brace-format
+msgid "Not enough disk space to install the voice ({size} MB needed)."
+msgstr "Nincs elég lemezterület a hang telepítéséhez ({size} MB szükséges)."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:555
+#, python-brace-format
+msgid "Cannot create user voices directory: {error}"
+msgstr "Nem hozható létre a felhasználói hangok könyvtára: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:561
+#, python-brace-format
+msgid "Failed to add voice: {error}"
+msgstr "Nem sikerült hozzáadni a hangot: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:574
+msgid "Cannot remove base voice"
+msgstr "Az alaphang nem távolítható el"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:577
+msgid "No user voices installed"
+msgstr "Nincsenek telepített felhasználói hangok"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:582
+#, python-brace-format
+msgid "Failed to remove voice: {error}"
+msgstr "Nem sikerült eltávolítani a hangot: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:177
+msgid "The installation was cancelled: the administrator password was not confirmed."
+msgstr "A telepítés megszakadt: a rendszergazdai jelszó nem lett megerősítve."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:180
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:239
+#, python-brace-format
+msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
+msgstr "A(z) {packages} nem érhető el a tárolókban. Frissítse a rendszert (sudo pacman -Syu), és próbálja újra."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:184
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:204
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:244
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:263
+msgid "Another program is installing or updating packages. Wait for it to finish and try again."
+msgstr "Egy másik program csomagokat telepít vagy frissít. Várja meg, amíg befejeződik, és próbálja újra."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:186
+msgid "The packages could not be downloaded. Check your internet connection and try again."
+msgstr "Nem sikerült letölteni a csomagokat. Ellenőrizze az internetkapcsolatot, és próbálja újra."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:188
+#, python-brace-format
+msgid "{packages} conflicts with installed files or packages. See the details."
+msgstr "A(z) {packages} ütközik telepített fájlokkal vagy csomagokkal. Lásd a részleteket."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:190
+#, python-brace-format
+msgid "Not enough free disk space to install {packages}."
+msgstr "Nincs elég szabad lemezterület a(z) {packages} telepítéséhez."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:192
+#, python-brace-format
+msgid "{packages} could not be installed. See the details."
+msgstr "A(z) {packages} nem telepíthető. Lásd a részleteket."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:200
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:236
+msgid "Nothing to install."
+msgstr "Nincs mit telepíteni."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:213
+msgid "pkexec is not installed (package polkit)."
+msgstr "A pkexec nincs telepítve (polkit csomag)."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:215
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:218
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:255
+msgid "The installation took too long and was stopped."
+msgstr "A telepítés túl sokáig tartott, ezért leállt."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:252
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:265
+#, python-brace-format
+msgid "{packages} could not be built from the AUR. See the details."
+msgstr "A(z) {packages} nem fordítható le az AUR-ból. Lásd a részleteket."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:127
+msgid "This key combination is not valid."
+msgstr "Ez a billentyűkombináció érvénytelen."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:134
+msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
+msgstr "Használja a Ctrl, Alt vagy Super billentyűt egy másik billentyűvel együtt, hogy ne zavarja a normál gépelést."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:235
+msgid "This key combination is not supported by the desktop."
+msgstr "Ezt a billentyűkombinációt az asztali környezet nem támogatja."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:247
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:296
+#, python-brace-format
+msgid "{shortcut} is already used by: {names}. Choose another shortcut."
+msgstr "A(z) {shortcut} már használatban van: {names}. Válasszon másik gyorsbillentyűt."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:266
+msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
+msgstr "Az asztali környezet nem fogadta el a gyorsbillentyűt. Fut a KDE globális gyorsbillentyű-szolgáltatása?"
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:272
+msgid "The desktop did not confirm the new shortcut."
+msgstr "Az asztali környezet nem erősítette meg az új gyorsbillentyűt."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:292
+#, python-brace-format
+msgid "{shortcut} is saved. It starts working after you log in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:303
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:307
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:311
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:383
+msgid "Could not save the shortcut. Nothing was changed."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:392
+msgid "The shortcut was saved, but the desktop could not confirm it yet."
+msgstr "A gyorsbillentyű mentve, de az asztali környezet még nem tudta megerősíteni."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:404
+msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
+msgstr "Nem sikerült regisztrálni a gyorsbillentyűt ebben az asztali környezetben. Adja hozzá a rendszer billentyűzetbeállításaiban a biglinux-tts-speak paranccsal."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:138
+msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
+msgstr "Nem sikerült lejátszani a hangot. Ellenőrizze, hogy az alsa-utils (aplay) telepítve van-e."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:505
+#, python-brace-format
+msgid "{engine} could not start. Check that it is installed."
+msgstr "A(z) {engine} nem indult el. Ellenőrizze, hogy telepítve van-e."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:650
+msgid "RHVoice is not installed. Install the rhvoice package."
+msgstr "Az RHVoice nincs telepítve. Telepítse az rhvoice csomagot."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:918
+msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
+msgstr "Az espeak-ng nem tudta felolvasni ezt a szöveget. Ellenőrizze, hogy az espeak-ng telepítve van-e."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:933
+msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
+msgstr "A kiválasztott Piper hang nincs telepítve. Válasszon másik hangot a Hangkezelőben."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:989
+msgid "Piper could not read this text. Try another voice."
+msgstr "A Piper nem tudta felolvasni ezt a szöveget. Próbáljon másik hangot."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1180
+#, python-brace-format
+msgid "{engine} crashed while reading the text."
+msgstr "A(z) {engine} összeomlott a szöveg felolvasása közben."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1182
+#, python-brace-format
+msgid "{engine} stopped with an error and could not read the text."
+msgstr "A(z) {engine} hibával leállt, és nem tudta felolvasni a szöveget."
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:608
+msgid "Extra low quality"
+msgstr "Nagyon alacsony minőség"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:609
+msgid "Low quality"
+msgstr "Alacsony minőség"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:610
+msgid "Medium quality"
+msgstr "Közepes minőség"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:611
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1192
+msgid "High quality"
+msgstr "Magas minőség"
+
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:134
 msgid "Playback position"
 msgstr "Lejátszási pozíció"
 
-msgid "BigLinux TTS"
-msgstr "BigLinux TTS"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:311
+#: usr/share/biglinux/tts-biglinux/ui/components.py:314
+msgid "No shortcut"
+msgstr "Nincs gyorsbillentyű"
 
-msgid "Advanced options"
-msgstr "Speciális beállítások"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:326
+#, python-brace-format
+msgid "Shortcut: {keys}"
+msgstr "Gyorsbillentyű: {keys}"
 
-msgid "Shortcut, performance, behavior"
-msgstr "Gyorsbillentyű, teljesítmény, viselkedés"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:44
+msgid "Unknown"
+msgstr "Ismeretlen"
 
-msgid "Change shortcut"
-msgstr "Gyorsbillentyű módosítása"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:60
+#, python-brace-format
+msgid "Today, {time}"
+msgstr "Ma, {time}"
 
-msgid "Try again"
-msgstr "Újrapróbálás"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:62
+#, python-brace-format
+msgid "Yesterday, {time}"
+msgstr "Tegnap, {time}"
 
-msgid "Open Voice Manager"
-msgstr "Hangkezelő megnyitása"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:135
+msgid "Select this reading"
+msgstr "Felolvasás kijelölése"
 
-msgid "Details"
-msgstr "Részletek"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:141
+msgid "(text not kept)"
+msgstr "(a szöveg nincs megőrizve)"
 
-msgid "This is a test, welcome to BigLinux!"
-msgstr "Ez egy teszt, üdvözöljük a BigLinuxban!"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:158
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show more"
+msgstr "Több megjelenítése"
 
-msgid "Type text to test…"
-msgstr "Írjon szöveget a teszteléshez…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:169
+msgid "Copy text"
+msgstr "Szöveg másolása"
 
-msgid "Text to test the voice"
-msgstr "Szöveg a hang teszteléséhez"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:171
+msgid "Read again with the current voice"
+msgstr "Újrafelolvasás a jelenlegi hanggal"
 
-msgid "Test voice"
-msgstr "Hang tesztelése"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:177
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:178
+msgid "More actions"
+msgstr "További műveletek"
 
-msgid "Test the selected voice"
-msgstr "A kiválasztott hang tesztelése"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1791
+msgid "Stopped"
+msgstr "Leállítva"
 
-msgid "Voice settings"
-msgstr "Hangbeállítások"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1913
+msgid "Error"
+msgstr "Hiba"
 
-msgid "Choose voice and adjust speech parameters"
-msgstr "Válasszon hangot, és állítsa be a beszédparamétereket"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:202
+msgid "Reading stopped before the end"
+msgstr "A felolvasás a vége előtt leállt"
 
-msgid "RHVoice (Native)"
-msgstr "RHVoice (Natív)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:203
+msgid "The engine failed during this reading"
+msgstr "A motor hibába ütközött a felolvasás során"
 
-msgid "espeak-ng"
-msgstr "espeak-ng"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:219
+msgid "Audio not kept for this reading"
+msgstr "A felolvasás hangja nincs megőrizve"
 
-msgid "Piper (Neural TTS)"
-msgstr "Piper (Neurális TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:225
+#, python-brace-format
+msgid "{engine} reading, {when}"
+msgstr "{engine} felolvasás, {when}"
 
-msgid "Kokoro (Neural TTS)"
-msgstr "Kokoro (Neurális TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:256
+msgid "Save audio as…"
+msgstr "Hang mentése másként…"
 
-msgid "TTS Backend"
-msgstr "TTS háttérrendszer"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:257
+msgid "Open file location"
+msgstr "Fájl helyének megnyitása"
 
-msgid "Engine used for speech synthesis"
-msgstr "Beszédszintézishez használt motor"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:258
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:820
+msgid "Delete"
+msgstr "Törlés"
 
-msgid "Select TTS engine"
-msgstr "TTS motor kiválasztása"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show less"
+msgstr "Kevesebb megjelenítése"
 
-msgid "Engine status"
-msgstr "Motorok állapota"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:271
+msgid "Text copied"
+msgstr "Szöveg másolva"
 
-msgid "Checking installed engines…"
-msgstr "Telepített motorok ellenőrzése…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:279
+msgid "Save audio as"
+msgstr "Hang mentése másként"
 
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Audio saved"
+msgstr "Hang mentve"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Could not save the audio"
+msgstr "A hang mentése sikertelen"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:324
+#: usr/share/biglinux/tts-biglinux/window.py:288
+#: usr/share/biglinux/tts-biglinux/window.py:377
+msgid "History"
+msgstr "Előzmények"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:350
+msgid "Saving is off: new readings are not kept."
+msgstr "A mentés ki van kapcsolva: az új felolvasások nem maradnak meg."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:351
+msgid "Turn On"
+msgstr "Bekapcsolás"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:367
+msgid "Search text, voice, engine or date…"
+msgstr "Keresés szövegre, hangra, motorra vagy dátumra…"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "All dates"
+msgstr "Minden dátum"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Today"
+msgstr "Ma"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Yesterday"
+msgstr "Tegnap"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Last 7 days"
+msgstr "Elmúlt 7 nap"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:376
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:377
+msgid "Filter by date"
+msgstr "Szűrés dátum szerint"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:381
+msgid "All engines"
+msgstr "Minden motor"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:383
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:384
+msgid "Filter by engine"
+msgstr "Szűrés motor szerint"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:391
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Newest first"
+msgstr "Legújabb elöl"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:392
+msgid "Sort order"
+msgstr "Rendezési sorrend"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:397
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:398
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as grid"
+msgstr "Megjelenítés rácsként"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:403
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:404
+msgid "Select readings"
+msgstr "Felolvasások kijelölése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:416
+msgid "Select All"
+msgstr "Összes kiválasztása"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:420
+msgid "Deselect All"
+msgstr "Mindet kijelölés megszüntetése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:429
+msgid "Save the selected readings to a folder"
+msgstr "A kijelölt felolvasások mentése egy mappába"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:430
+msgid "Save selected"
+msgstr "Kijelöltek mentése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:435
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:436
+msgid "Delete selected"
+msgstr "Kiválasztott törlése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:445
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:457
+msgid "History entries"
+msgstr "Előzménybejegyzések"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:648
+msgid "The history could not be read"
+msgstr "Az előzmények nem olvashatók be"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:650
+#, python-brace-format
+msgid "Check the permissions of the folder {folder}."
+msgstr "Ellenőrizze a(z) {folder} mappa jogosultságait."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:657
+msgid "No readings found"
+msgstr "Nem található felolvasás"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:658
+msgid "Try other words or another date or engine."
+msgstr "Próbáljon más szavakat, másik dátumot vagy motort."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:659
+msgid "Clear Filters"
+msgstr "Szűrők törlése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:663
+msgid "No readings yet"
+msgstr "Még nincsenek felolvasások"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:667
+#, python-brace-format
+msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
+msgstr "Minden, amit meghallgat, itt jelenik meg a hanggal együtt. Csak ezen a számítógépen tárolódik, itt: {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:673
+#, python-brace-format
+msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
+msgstr "A mentés ki van kapcsolva. Kapcsolja be, hogy megőrizze, amit meghallgat, a hanggal együtt — csak ezen a számítógépen, itt: {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:676
+msgid "Turn On History"
+msgstr "Előzmények bekapcsolása"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Oldest first"
+msgstr "Legrégebbi elöl"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as list"
+msgstr "Megjelenítés listaként"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:751
+#, python-brace-format
+msgid "Selected: {count}"
+msgstr "Kijelölve: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:781
+msgid "Reading deleted"
+msgstr "Felolvasás törölve"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:782
+msgid "Undo"
+msgstr "Visszavonás"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:816
+msgid "Delete the selected readings?"
+msgstr "Törli a kijelölt felolvasásokat?"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:817
+#, python-brace-format
+msgid "Readings: {count}. Their audio and text files are moved to the Trash."
+msgstr "Felolvasások: {count}. A hang- és szövegfájljaik a Kukába kerülnek."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:819
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1483
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1540
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:498
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:760
+#: usr/share/biglinux/tts-biglinux/window.py:464
+msgid "Cancel"
+msgstr "Mégse"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:832
+#, python-brace-format
+msgid "Moved to the Trash: {count}"
+msgstr "Kukába helyezve: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:843
+msgid "Save the selected readings"
+msgstr "A kijelölt felolvasások mentése"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:863
+#, python-brace-format
+msgid "Saved to {folder}: {count}"
+msgstr "Mentve a(z) {folder} mappába: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:43
+msgid "Desktop not recognized"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:51
+msgid "selection (Wayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:52
+msgid "selection of an X11 program (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:53
+msgid "selection (X11)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:54
+msgid "copied text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:64
+#, python-brace-format
+msgid "Last reading: {count} characters from the {source}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:66
+msgid "Last time nothing was selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:67
+msgid "Last time the text could not be read"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:79
+msgid "Desktop integration"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:80
+msgid "Check that the shortcut, the text capture and the tray icon work on this desktop."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:82
+msgid "Desktop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:86
+msgid "Global shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:88
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:423
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:434
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:668
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1896
 msgid "Checking…"
 msgstr "Ellenőrzés…"
 
-msgid "Voice"
-msgstr "Hang"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:89
+msgid "Fix integration"
+msgstr ""
 
-msgid "Loading voices..."
-msgstr "Hangok betöltése..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:97
+msgid "Selected text"
+msgstr ""
 
-msgid "Detecting installed voices..."
-msgstr "Telepített hangok felderítése..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:103
+msgid "Read copied text"
+msgstr ""
 
-msgid "Select TTS voice"
-msgstr "TTS hang kiválasztása"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:104
+msgid "When nothing is selected, read what was copied (Ctrl+C). Off: an old copied text is never read by mistake."
+msgstr ""
 
-msgid "Refresh voice list"
-msgstr "Hanglista frissítése"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:107
+msgid "Read copied text when nothing is selected"
+msgstr ""
 
-msgid "Manage voices for current engine"
-msgstr "Jelenlegi motor hangjainak kezelése"
-
-msgid "Speed"
-msgstr "Sebesség"
-
-msgid "Speech rate"
-msgstr "Beszédsebesség"
-
-msgid "Slow"
-msgstr "Lassú"
-
-msgid "Normal"
-msgstr "Normál"
-
-msgid "Fast"
-msgstr "Gyors"
-
-msgid "Speech speed"
-msgstr "Beszédsebesség"
-
-msgid "Pitch"
-msgstr "Hangmagasság"
-
-msgid "Voice tone"
-msgstr "Hangszín"
-
-msgid "Low"
-msgstr "Mély"
-
-msgid "High"
-msgstr "Magas"
-
-msgid "Voice pitch"
-msgstr "Hangmagasság"
-
-msgid "Volume"
-msgstr "Hangerő"
-
-msgid "Speech volume"
-msgstr "Beszéd hangereje"
-
-msgid "Mute"
-msgstr "Némítás"
-
-msgid "Max"
-msgstr "Max"
-
-msgid "Neutral"
-msgstr "Semleges"
-
-msgid "Happy"
-msgstr "Boldog"
-
-msgid "Calm"
-msgstr "Nyugodt"
-
-msgid "Urgent"
-msgstr "Sürgős"
-
-msgid "Narrative"
-msgstr "Elbeszélés"
-
-msgid "Expression style"
-msgstr "Kifejezésstílus"
-
-msgid "Changes speed and intonation to match the mood"
-msgstr "Megváltoztatja a sebességet és a hanglejtést, hogy illeszkedjen a hangulathoz."
-
-msgid "Select expression style"
-msgstr "Válassza ki a kifejezés stílusát"
-
-msgid "None (single voice)"
-msgstr "Nincs (egyes hang)"
-
-msgid "Voice blend"
-msgstr "Hangkeverés"
-
-msgid "Mix a second voice with the primary voice"
-msgstr "Keverd össze a második hangot az elsődleges hanggal."
-
-msgid "Select blend voice"
-msgstr "Válassza ki a kevert hangot"
-
-msgid "Expand abbreviations"
-msgstr "Rövidítések kibontása"
-
-msgid "Replace common abbreviations with full words"
-msgstr "Gyakori rövidítések cseréje teljes szavakra"
-
-msgid "Expand text abbreviations"
-msgstr "Szöveges rövidítések kibontása"
-
-msgid "Read special characters"
-msgstr "Speciális karakterek felolvasása"
-
-msgid "Speak symbols like # @ % by name"
-msgstr "Szimbólumok felolvasása név szerint, mint # @ %"
-
-msgid "Read special characters aloud"
-msgstr "Speciális karakterek felolvasása hangosan"
-
-msgid "Remove formatting"
-msgstr "Formázás eltávolítása"
-
-msgid "Strip Markdown and HTML before reading"
-msgstr "Markdown és HTML eltávolítása olvasás előtt"
-
-msgid "Remove text formatting"
-msgstr "Szövegformázás eltávolítása"
-
-msgid "Read URLs"
-msgstr "URL-ek felolvasása"
-
-msgid "Read web addresses aloud instead of skipping them"
-msgstr "Webcímek felolvasása kihagyás helyett"
-
-msgid "Read URLs aloud"
-msgstr "URL-ek felolvasása hangosan"
-
-msgid "Unlimited"
-msgstr "Korlátlan"
-
-msgid "1 000"
-msgstr "1 000"
-
-msgid "5 000"
-msgstr "5 000"
-
-msgid "10 000"
-msgstr "10 000"
-
-msgid "50 000"
-msgstr "50 000"
-
-msgid "100 000"
-msgstr "100 000"
-
-msgid "Character limit"
-msgstr "Karakterkorlát"
-
-msgid "Maximum number of characters to read at once"
-msgstr "Egyszerre felolvasható karakterek maximális száma"
-
-msgid "Maximum character limit"
-msgstr "Maximális karakterkorlát"
-
-msgid "Keyboard shortcut"
-msgstr "Gyorsbillentyű"
-
-msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
-msgstr "Jelöljön ki szöveget bárhol, és nyomja meg a gyorsbillentyűt a felolvasáshoz. Nyomja meg újra a leállításhoz."
-
-msgid "Change"
-msgstr "Módosítás"
-
-msgid "Change keyboard shortcut"
-msgstr "Billentyűparancs módosítása"
-
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:112
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:687
 msgid "Tray icon"
 msgstr "Tálca ikon"
 
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:118
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:234
+msgid "Test the shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:119
+msgid "Select a sample text, press the shortcut and listen"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:121
+msgid "Start test"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1837
+msgid "Checking the shortcut with the desktop…"
+msgstr "Gyorsbillentyű ellenőrzése az asztali környezettel…"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1833
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1839
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1869
+msgid "The shortcut is not active."
+msgstr "A gyorsbillentyű nem aktív."
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Not active"
+msgstr "Nem aktív"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:167
+msgid "After login"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:169
+#, python-brace-format
+msgid "{keys} reads or stops the selected text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:170
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Active"
+msgstr "Aktív"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:173
+#, python-brace-format
+msgid "last used at {time}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:174
+msgid "Working"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:183
+msgid "This desktop does not share selected text. Turn on “Read copied text” below."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:185
+msgid "Read from the selection, also in X11 programs (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:187
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:189
+msgid "Read from the selection, no copying needed"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "Shown"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "In the system tray; click it to read or stop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Starting…"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Waiting for the system tray"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:199
+msgid "Unavailable"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:200
+msgid "No system tray on this desktop. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:202
+msgid "The tray icon could not be shown. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Off"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Turn it on in the options above"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:247
+msgid "BigLinux TTS reads the text you select, with accents and numbers: 2026."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:248
+msgid "Sample text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:256
+msgid "The sample text above is selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:257
+#, python-brace-format
+msgid "Press {keys} now"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:258
+msgid "BigLinux TTS captures the selection"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:259
+msgid "The text is read aloud"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:275
+msgid "I heard nothing"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:277
+msgid "I heard it"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:329
+msgid "Did you hear the sample text?"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:332
+msgid "The text was not captured. Keep the sample text selected and try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:340
+msgid "The shortcut did not reach BigLinux TTS. Use “Fix integration”; if the shortcut waits for a new login, log out and in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:349
+#, python-brace-format
+msgid "Everything works: select text anywhere and press {keys}."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:353
+msgid "The text was read, but no sound reached you. Check the volume and the audio output; “biglinux-tts --diagnose” in a terminal shows the details."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:87
+msgid "BigLinux TTS"
+msgstr "BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:213
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:229
+msgid "Advanced options"
+msgstr "Speciális beállítások"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:214
+msgid "Shortcut, performance, behavior"
+msgstr "Gyorsbillentyű, teljesítmény, viselkedés"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:324
+msgid "Change shortcut"
+msgstr "Gyorsbillentyű módosítása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:336
+msgid "Try again"
+msgstr "Újrapróbálás"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:340
+msgid "Open Voice Manager"
+msgstr "Hangkezelő megnyitása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:344
+msgid "Details"
+msgstr "Részletek"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:356
+msgid "This is a test, welcome to BigLinux!"
+msgstr "Ez egy teszt, üdvözöljük a BigLinuxban!"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:357
+msgid "Type text to test…"
+msgstr "Írjon szöveget a teszteléshez…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:360
+msgid "Text to test the voice"
+msgstr "Szöveg a hang teszteléséhez"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:365
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Test voice"
+msgstr "Hang tesztelése"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:368
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1817
+msgid "Test the selected voice"
+msgstr "A kiválasztott hang tesztelése"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:383
+msgid "Voice settings"
+msgstr "Hangbeállítások"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:384
+msgid "Choose voice and adjust speech parameters"
+msgstr "Válasszon hangot, és állítsa be a beszédparamétereket"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:389
+msgid "RHVoice (Native)"
+msgstr "RHVoice (Natív)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:390
+msgid "espeak-ng"
+msgstr "espeak-ng"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:391
+msgid "Piper (Neural TTS)"
+msgstr "Piper (Neurális TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:392
+msgid "Kokoro (Neural TTS)"
+msgstr "Kokoro (Neurális TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:408
+msgid "TTS Backend"
+msgstr "TTS háttérrendszer"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:409
+msgid "Engine used for speech synthesis"
+msgstr "Beszédszintézishez használt motor"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:413
+msgid "Select TTS engine"
+msgstr "TTS motor kiválasztása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:421
+msgid "Engine status"
+msgstr "Motorok állapota"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:422
+msgid "Checking installed engines…"
+msgstr "Telepített motorok ellenőrzése…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:442
+msgid "Voice"
+msgstr "Hang"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:443
+msgid "Loading voices..."
+msgstr "Hangok betöltése..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:444
+msgid "Detecting installed voices..."
+msgstr "Telepített hangok felderítése..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:446
+msgid "Select TTS voice"
+msgstr "TTS hang kiválasztása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:452
+msgid "Refresh voice list"
+msgstr "Hanglista frissítése"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:460
+msgid "Manage voices for current engine"
+msgstr "Jelenlegi motor hangjainak kezelése"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:471
+msgid "Speed"
+msgstr "Sebesség"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:472
+msgid "Speech rate"
+msgstr "Beszédsebesség"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Slow"
+msgstr "Lassú"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Normal"
+msgstr "Normál"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Fast"
+msgstr "Gyors"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:480
+msgid "Speech speed"
+msgstr "Beszédsebesség"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:487
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Pitch"
+msgstr "Hangmagasság"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:488
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Voice tone"
+msgstr "Hangszín"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Low"
+msgstr "Mély"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "High"
+msgstr "Magas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:496
+msgid "Voice pitch"
+msgstr "Hangmagasság"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:504
+msgid "Volume"
+msgstr "Hangerő"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:505
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:513
+msgid "Speech volume"
+msgstr "Beszéd hangereje"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Mute"
+msgstr "Némítás"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Max"
+msgstr "Max"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:524
+msgid "Neutral"
+msgstr "Semleges"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:525
+msgid "Happy"
+msgstr "Boldog"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:526
+msgid "Calm"
+msgstr "Nyugodt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:527
+msgid "Urgent"
+msgstr "Sürgős"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:528
+msgid "Narrative"
+msgstr "Elbeszélés"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:541
+msgid "Expression style"
+msgstr "Kifejezésstílus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:542
+msgid "Changes speed and intonation to match the mood"
+msgstr "Megváltoztatja a sebességet és a hanglejtést, hogy illeszkedjen a hangulathoz."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:546
+msgid "Select expression style"
+msgstr "Válassza ki a kifejezés stílusát"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:554
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1041
+msgid "None (single voice)"
+msgstr "Nincs (egyes hang)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:557
+msgid "Voice blend"
+msgstr "Hangkeverés"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:558
+msgid "Mix a second voice with the primary voice"
+msgstr "Keverd össze a második hangot az elsődleges hanggal."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:562
+msgid "Select blend voice"
+msgstr "Válassza ki a kevert hangot"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:580
+msgid "Expand abbreviations"
+msgstr "Rövidítések kibontása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:581
+msgid "Replace common abbreviations with full words"
+msgstr "Gyakori rövidítések cseréje teljes szavakra"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:584
+msgid "Expand text abbreviations"
+msgstr "Szöveges rövidítések kibontása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:590
+msgid "Read special characters"
+msgstr "Speciális karakterek felolvasása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:591
+msgid "Speak symbols like # @ % by name"
+msgstr "Szimbólumok felolvasása név szerint, mint # @ %"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:594
+msgid "Read special characters aloud"
+msgstr "Speciális karakterek felolvasása hangosan"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:600
+msgid "Remove formatting"
+msgstr "Formázás eltávolítása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:601
+msgid "Strip Markdown and HTML before reading"
+msgstr "Markdown és HTML eltávolítása olvasás előtt"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:604
+msgid "Remove text formatting"
+msgstr "Szövegformázás eltávolítása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:610
+msgid "Read URLs"
+msgstr "URL-ek felolvasása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:611
+msgid "Read web addresses aloud instead of skipping them"
+msgstr "Webcímek felolvasása kihagyás helyett"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:614
+msgid "Read URLs aloud"
+msgstr "URL-ek felolvasása hangosan"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:620
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:732
+msgid "Unlimited"
+msgstr "Korlátlan"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:621
+msgid "1 000"
+msgstr "1 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:622
+msgid "5 000"
+msgstr "5 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:623
+msgid "10 000"
+msgstr "10 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:624
+msgid "50 000"
+msgstr "50 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:625
+msgid "100 000"
+msgstr "100 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:637
+msgid "Character limit"
+msgstr "Karakterkorlát"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:638
+msgid "Maximum number of characters to read at once"
+msgstr "Egyszerre felolvasható karakterek maximális száma"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:642
+msgid "Maximum character limit"
+msgstr "Maximális karakterkorlát"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:656
+msgid "Keyboard shortcut"
+msgstr "Gyorsbillentyű"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:659
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1841
+msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
+msgstr "Jelöljön ki szöveget bárhol, és nyomja meg a gyorsbillentyűt a felolvasáshoz. Nyomja meg újra a leállításhoz."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:671
+msgid "Change"
+msgstr "Módosítás"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:674
+msgid "Change keyboard shortcut"
+msgstr "Billentyűparancs módosítása"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:688
 msgid "Fixes quick access and allows running in the background"
 msgstr "Javítja a gyors hozzáférést és lehetővé teszi a háttérben való futást."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:691
 msgid "Show system tray icon"
 msgstr "Rendszer tálca ikon megjelenítése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:701
 msgid "Save history"
 msgstr "Előzmények mentése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:702
 #, python-brace-format
 msgid "Keep what you listen to, only on this computer, in {folder}"
 msgstr "Megőrzi, amit meghallgat, csak ezen a számítógépen, itt: {folder}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:707
 msgid "Save speech history"
 msgstr "Felolvasási előzmények mentése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:713
 msgid "Keep the audio"
 msgstr "Hang megőrzése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:714
 msgid "Listen to each reading again, with the same voice"
 msgstr "Minden felolvasás újrahallgatása ugyanazzal a hanggal"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:717
 msgid "Keep the audio of each reading"
 msgstr "Minden felolvasás hangjának megőrzése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:721
 msgid "Keep the text"
 msgstr "Szöveg megőrzése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:722
 msgid "Search, copy and read again what was read"
 msgstr "A felolvasottak keresése, másolása és újrafelolvasása"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:725
 msgid "Keep the text of each reading"
 msgstr "Minden felolvasás szövegének megőrzése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:730
 msgid "Keep at most"
 msgstr "Megőrzés legfeljebb"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:731
 msgid "The oldest readings are deleted beyond this number"
 msgstr "E szám felett a legrégebbi felolvasások törlődnek"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:741
 msgid "Audio playback mode"
 msgstr "Hangkimeneti mód"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:742
 msgid "Behavior when playing multiple audios or speech"
 msgstr "Több audio vagy beszéd lejátszása közbeni viselkedés"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Interrupt previous"
 msgstr "Megszakítja az előzőt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Queue"
 msgstr "Sor"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Simultaneous"
 msgstr "Párhuzamos"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:756
 msgid "Media player"
 msgstr "Médialejátszó"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:757
 msgid "Show a system mini-player (play/stop, time) while reading"
 msgstr "Rendszer-minilejátszó megjelenítése (lejátszás/leállítás, idő) felolvasás közben"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:760
 msgid "Show system media player"
 msgstr "Rendszer médialejátszójának megjelenítése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:790
 msgid "Set new shortcut"
 msgstr "Új gyorsbillentyű beállítása"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:806
 msgid ""
 "<b>Hold modifier keys</b> (Alt, Ctrl, Shift, Super)\n"
 "and press a letter or key.\n"
@@ -635,244 +1372,429 @@ msgstr ""
 "\n"
 "<small>Nyomja meg az Escape-et a megszakításhoz</small>"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:825
 msgid "Press the new shortcut"
 msgstr "Nyomja meg az új gyorsbillentyűt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:948
 msgid "Tray icon enabled"
 msgstr "Tálca ikon engedélyezve"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:951
 msgid "Tray icon disabled"
 msgstr "Tálca ikon letiltva"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:959
 msgid "History saving enabled"
 msgstr "Előzmények mentése bekapcsolva"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:960
 msgid "History saving disabled. Saved readings are kept."
 msgstr "Előzmények mentése kikapcsolva. A mentett felolvasások megmaradnak."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1071
 msgid "Refreshing voices..."
 msgstr "Frissítő hangok..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1073
 msgid "Refreshing voice list…"
 msgstr "Hanglista frissítése…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1117
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Nem található hang — telepítse a rhvoice-t vagy az espeak-ng-t"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1119
 msgid "No voices available"
 msgstr "Nincs elérhető hang"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1169
 msgid "No voices available for this engine"
 msgstr "Nincs elérhető hang ehhez a motorhoz"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1172
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Először telepítse a(z) {engine} hangokat"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1190
 msgid "Neural"
 msgstr "Neurális"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1200
 #, python-brace-format
 msgid "Voices available: {count}"
 msgstr "Elérhető hangok: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Expressiveness"
 msgstr "Kifejezőerő"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Voice variation (not pitch)"
 msgstr "Hangvariáció (nem hangmagasság)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1307
 msgid "Kokoro voices do not support this setting."
 msgstr "A Kokoro hangok nem támogatják ezt a beállítást."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1312
 msgid "Kokoro voices only follow Mute. Use the system volume to change how loud they are."
 msgstr "A Kokoro hangok csak a „Némítás” beállítást követik. A hangerőt a rendszer hangerejével módosíthatja."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1370
 msgid "Searching for voices..."
 msgstr "Hangok keresése..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1391
 msgid "Checking for Piper voices..."
 msgstr "Piper hangok ellenőrzése..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1399
 msgid "Checking for Kokoro voices..."
 msgstr "Kokoro hangok keresése..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1407
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "Nem található hang a(z) {engine} motorhoz — először telepítse"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1461
 msgid "Piper is not available"
 msgstr "A Piper nem érhető el"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1462
 #, python-brace-format
 msgid "No Piper voice package was found in your repositories ({packages}). Update the system (sudo pacman -Syu) and try again."
 msgstr "Nem található Piper hangcsomag a tárolókban ({packages}). Frissítse a rendszert (sudo pacman -Syu), és próbálja újra."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1466
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1528
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1604
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:899
 msgid "OK"
 msgstr "Rendben"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1477
 msgid "Piper provides natural neural voices. These packages will be installed:"
 msgstr "A Piper természetes neurális hangokat biztosít. A következő csomagok lesznek telepítve:"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1480
 msgid "Packages marked AUR are not in your repositories: they come from the Arch User Repository, are maintained by the community and are built on this computer, which takes longer."
 msgstr "Az AUR jelölésű csomagok nincsenek a tárolóidban: az Arch User Repositoryból származnak, a közösség tartja karban őket, és ezen a számítógépen fordítódnak, ami tovább tart."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1481
 msgid "This requires administrator permissions."
 msgstr "Ehhez rendszergazdai jogosultság szükséges."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1482
 msgid "Install Piper Neural TTS?"
 msgstr "Telepíti a Piper Neural TTS-t?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1484
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1541
 msgid "Install"
 msgstr "Telepítés"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1502
 msgid "Installing Piper TTS"
 msgstr "Piper TTS telepítése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1503
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1554
 msgid "Downloading and installing packages…"
 msgstr "Csomagok letöltése és telepítése…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1523
 msgid "Kokoro is not available"
 msgstr "A Kokoro nem érhető el"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1524
 #, python-brace-format
 msgid "The {package} package was not found in your repositories, so Kokoro cannot be installed yet. Update the system (sudo pacman -Syu) and try again."
 msgstr "A(z) {package} csomag nem található a tárolókban, így a Kokoro még nem telepíthető. Frissítse a rendszert (sudo pacman -Syu), és próbálja újra."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1534
 msgid "Install Kokoro neural voices?"
 msgstr "Telepíti a Kokoro neurális hangokat?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1535
 msgid "Kokoro offers natural neural voices in several languages, with expression styles and voice blending."
 msgstr "A Kokoro természetes neurális hangokat kínál több nyelven, kifejezési stílusokkal és hangkeveréssel."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1536
 #, python-brace-format
 msgid "The {package} package{size} will be installed. This requires administrator permissions."
 msgstr "A(z) {package} csomag{size} telepítésre kerül. Ehhez rendszergazdai jogosultság szükséges."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1553
 msgid "Installing Kokoro TTS"
 msgstr "Kokoro TTS telepítése"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1582
 msgid "The installation failed."
 msgstr "A telepítés sikertelen."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1609
 #, python-brace-format
 msgid "{engine} installed. Looking for voices…"
 msgstr "A(z) {engine} telepítve. Hangok keresése…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1620
 #, python-brace-format
 msgid "{engine} could not be installed"
 msgstr "A(z) {engine} nem telepíthető"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1687
 msgid "Type some text to test"
 msgstr "Írjon szöveget a teszteléshez"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1701
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "A hangerő nulla — a teszt kedvéért minimumra növelve"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1769
 #, python-brace-format
 msgid "Preparing {voice}. Speech starts in a moment."
 msgstr "{voice} előkészítése. A beszéd hamarosan indul."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1770
 msgid "Preparing the voice. Speech starts in a moment."
 msgstr "A hang előkészítése. A beszéd hamarosan indul."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1776
+#: usr/share/biglinux/tts-biglinux/window.py:308
+msgid "Speaking…"
+msgstr "Felolvasás…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1778
 #, python-brace-format
 msgid "Press {shortcut} again to stop."
 msgstr "A leállításhoz nyomja meg újra a(z) {shortcut} billentyűt."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1779
 msgid "Use Stop to end the reading."
 msgstr "A felolvasás befejezéséhez használja a Leállítás gombot."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1786
 msgid "The speech engine reported a problem."
 msgstr "A beszédmotor hibát jelzett."
 
-msgid "Stopped"
-msgstr "Leállítva"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1792
 msgid "Reading was stopped."
 msgstr "A felolvasás leállt."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1796
 msgid "Ready to speak"
 msgstr "Felolvasásra kész"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1797
 msgid "Select any text and use the shortcut to hear it."
 msgstr "Jelöljön ki bármilyen szöveget, és a gyorsbillentyűvel hallgassa meg."
 
-msgid "The shortcut is not active."
-msgstr "A gyorsbillentyű nem aktív."
-
-msgid "Checking the shortcut with the desktop…"
-msgstr "Gyorsbillentyű ellenőrzése az asztali környezettel…"
-
-msgid "Not active"
-msgstr "Nem aktív"
-
-msgid "Active"
-msgstr "Aktív"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1858
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Gyorsbillentyű módosítva: {keys}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1878
 msgid "Not installed. Install the rhvoice package and a voice."
 msgstr "Nincs telepítve. Telepítse az rhvoice csomagot és egy hangot."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1879
 msgid "Not installed. Install the espeak-ng package."
 msgstr "Nincs telepítve. Telepítse az espeak-ng csomagot."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1880
 msgid "Not installed. Install Piper from the TTS Backend list."
 msgstr "Nincs telepítve. Telepítse a Pipert a TTS háttérrendszer listából."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1881
 msgid "Not installed. Install the biglinux-kokoro-tts package."
 msgstr "Nincs telepítve. Telepítse a biglinux-kokoro-tts csomagot."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1882
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1898
 msgid "Not installed"
 msgstr "Nincs telepítve"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1901
 msgid "No voices"
 msgstr "Nincsenek hangok"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1902
 msgid "Installed, but no voice is available. Open the Voice Manager."
 msgstr "Telepítve, de nincs elérhető hang. Nyissa meg a Hangkezelőt."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1905
 msgid "Ready"
 msgstr "Kész"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1906
 #, python-brace-format
 msgid "Voices installed: {count}"
 msgstr "Telepített hangok: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1909
 msgid "Loading"
 msgstr "Betöltés"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1911
 msgid "Speaking"
 msgstr "Felolvasás"
 
-msgid "Error"
-msgstr "Hiba"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1922
 #, python-brace-format
 msgid "{engine}: {state}"
 msgstr "{engine}: {state}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1927
 msgid "Technical details"
 msgstr "Műszaki részletek"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1929
 msgid "Close"
 msgstr "Bezárás"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1964
 msgid "Settings restored to defaults"
 msgstr "Beállítások visszaállítva az alapértékekre"
 
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:350
+msgid "Piper engine"
+msgstr "Piper motor"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:414
+msgid "Voice Manager"
+msgstr "Hangkezelő"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:435
+msgid "Search voices by name or language…"
+msgstr "Hangok keresése név vagy nyelv szerint…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:467
+msgid "Loading available voices…"
+msgstr "Elérhető hangok betöltése…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:538
+msgid "No Voice Packages Found"
+msgstr "Nincs hangcsomag található"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:540
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Nem található TTS hangcsomag a pacman tárolókból."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:586
+msgid "High quality offline voices"
+msgstr "Magas minőségű offline hangok"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:590
+msgid "Neural network voices — natural sounding"
+msgstr "Neurális hálózat hangok — természetes hangzású"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:594
+msgid "Lightweight multi-language synthesizer"
+msgstr "Könnyű, többnyelvű szintetizátor"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:598
+msgid "Neural TTS — high quality multilingual voices (82M)"
+msgstr "Neurális TTS — magas minőségű többnyelvű hangok (82M)"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:697
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:698
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Telepítse a {name} alkalmazást"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:706
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:707
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Távolítsa el {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:716
+msgid "Installed"
+msgstr "Telepítve"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:735
+#, python-brace-format
+msgid "Remove {name}?"
+msgstr "Eltávolítja: {name}?"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:736
+msgid "The voice will no longer be available for reading. You can install it again later."
+msgstr "A hang többé nem lesz elérhető a felolvasáshoz. Később újra telepítheti."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:737
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:803
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "{name} letöltése…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:812
+#, python-brace-format
+msgid "Downloading {name}… {done} of {total} KB"
+msgstr "{name} letöltése… {done} / {total} KB"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:864
+msgid "Operation timed out"
+msgstr "A művelet időtúllépett"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:866
+msgid "pkexec or pacman not found"
+msgstr "pkexec vagy pacman nem található"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:891
+msgid "Download cancelled"
+msgstr "Letöltés megszakítva"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:895
+msgid "Failed"
+msgstr "Sikertelen"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:896
+msgid "Removal Failed"
+msgstr "Eltávolítás sikertelen"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:898
+msgid "Unknown error"
+msgstr "Ismeretlen hiba"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:915
+#, python-brace-format
+msgid "Play a sample of {name}"
+msgstr "{name} hangminta lejátszása"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:984
+msgid "Stop the sample"
+msgstr "Hangminta leállítása"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1047
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1052
+msgid "The sample could not be played."
+msgstr "A hangmintát nem sikerült lejátszani."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1050
+#, python-brace-format
+msgid "The sample could not be played: {program} is not installed."
+msgstr "A hangmintát nem sikerült lejátszani: a(z) {program} nincs telepítve."
+
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:60
 msgid "Welcome to BigLinux TTS"
 msgstr "Üdvözöljük a BigLinux TTS-ben"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:67
 msgid "Your text-to-speech assistant"
 msgstr "A szövegfelolvasó asszisztensed"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:77
 msgid "Multiple TTS Engines"
 msgstr "Több TTS motor"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:79
 msgid ""
 "RHVoice, espeak-ng, Piper and Kokoro\n"
 "with automatic voice discovery"
@@ -880,17 +1802,21 @@ msgstr ""
 "RHVoice, espeak-ng, Piper és Kokoro\n"
 "automatikus hangfelismeréssel"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:83
 msgid "Multilingual Support"
 msgstr "Többnyelvű Támogatás"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:84
 msgid ""
 "Voices in dozens of languages\n"
 "including Portuguese (Brazil)"
 msgstr "Hangok tucatnyi nyelven, beleértve a portugált (Brazília)"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:88
 msgid "Global Shortcut"
 msgstr "Globális gyorsbillentyű"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:89
 #, python-brace-format
 msgid ""
 "Press {key} to read selected text\n"
@@ -899,33 +1825,41 @@ msgstr ""
 "Nyomja meg a(z) {key} billentyűt a kijelölt\n"
 "szöveg felolvasásához bármely alkalmazásból"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:93
 msgid "Clipboard Reading"
 msgstr "Vágólap olvasása"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:94
 msgid ""
 "Paste or type text directly\n"
 "and listen instantly"
 msgstr "Illessze be vagy írja be a szöveget közvetlenül, és hallgassa meg azonnal."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:98
 msgid "Fine-Tune Speech"
 msgstr "Finomhangolt beszéd"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:99
 msgid ""
 "Adjust speed, pitch and volume\n"
 "to your preference"
 msgstr "Állítsa be a sebességet, a hangmagasságot és a hangerőt az Ön preferenciái szerint."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:101
 msgid "Easy Installation"
 msgstr "Könnyű telepítés"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:102
 msgid ""
 "Install new voices and engines\n"
 "directly from the interface"
 msgstr "Új hangok és motorok telepítése közvetlenül a felületről"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:106
 msgid "Neural Voices"
 msgstr "Neurális Hangok"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:108
 msgid ""
 "Install Piper or Kokoro voices for natural,\n"
 "high-quality speech synthesis"
@@ -933,9 +1867,11 @@ msgstr ""
 "Telepítsen Piper vagy Kokoro hangokat a természetes,\n"
 "kiváló minőségű beszédszintézishez"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:112
 msgid "Reading History"
 msgstr "Felolvasási előzmények"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:114
 msgid ""
 "Optionally save and replay previous\n"
 "readings when history is enabled"
@@ -943,300 +1879,77 @@ msgstr ""
 "Korábbi felolvasások mentése és visszajátszása,\n"
 "ha az előzmények engedélyezve vannak"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:146
 #, python-brace-format
 msgid "Tip: Press {key} to read selected text from any application."
 msgstr "Tipp: nyomja meg a(z) {key} billentyűt a kijelölt szöveg felolvasásához bármely alkalmazásból."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:166
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:169
 msgid "Show dialog on startup"
 msgstr "Párbeszédablak megjelenítése indításkor"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:178
 msgid "Let's Start"
 msgstr "Kezdjük!"
 
-msgid "Unknown"
-msgstr "Ismeretlen"
-
+#: usr/share/biglinux/tts-biglinux/utils/i18n.py:207
 #, python-brace-format
-msgid "Today, {time}"
-msgstr "Ma, {time}"
+msgid "{language} ({region})"
+msgstr "{language} ({region})"
 
+#: usr/share/biglinux/tts-biglinux/window.py:49
+msgid "Show settings"
+msgstr "Beállítások megjelenítése"
+
+#: usr/share/biglinux/tts-biglinux/window.py:169
+#: usr/share/biglinux/tts-biglinux/window.py:170
+msgid "Back"
+msgstr "Vissza"
+
+#: usr/share/biglinux/tts-biglinux/window.py:178
+#: usr/share/biglinux/tts-biglinux/window.py:297
+msgid "Text narrator"
+msgstr "Szövegfelolvasó"
+
+#: usr/share/biglinux/tts-biglinux/window.py:249
+msgid "The shortcut is not active — open Advanced options to fix it"
+msgstr "A gyorsbillentyű nem aktív — a javításhoz nyissa meg a Speciális beállításokat"
+
+#: usr/share/biglinux/tts-biglinux/window.py:250
 #, python-brace-format
-msgid "Yesterday, {time}"
-msgstr "Tegnap, {time}"
-
-msgid "Select this reading"
-msgstr "Felolvasás kijelölése"
-
-msgid "(text not kept)"
-msgstr "(a szöveg nincs megőrizve)"
-
-msgid "Show more"
-msgstr "Több megjelenítése"
-
-msgid "Copy text"
-msgstr "Szöveg másolása"
-
-msgid "Read again with the current voice"
-msgstr "Újrafelolvasás a jelenlegi hanggal"
-
-msgid "More actions"
-msgstr "További műveletek"
-
-msgid "Reading stopped before the end"
-msgstr "A felolvasás a vége előtt leállt"
-
-msgid "The engine failed during this reading"
-msgstr "A motor hibába ütközött a felolvasás során"
-
-msgid "Audio not kept for this reading"
-msgstr "A felolvasás hangja nincs megőrizve"
-
-#, python-brace-format
-msgid "{engine} reading, {when}"
-msgstr "{engine} felolvasás, {when}"
-
-msgid "Save audio as…"
-msgstr "Hang mentése másként…"
-
-msgid "Open file location"
-msgstr "Fájl helyének megnyitása"
-
-msgid "Delete"
-msgstr "Törlés"
-
-msgid "Show less"
-msgstr "Kevesebb megjelenítése"
-
-msgid "Text copied"
-msgstr "Szöveg másolva"
-
-msgid "Save audio as"
-msgstr "Hang mentése másként"
-
-msgid "Audio saved"
-msgstr "Hang mentve"
-
-msgid "Could not save the audio"
-msgstr "A hang mentése sikertelen"
-
-msgid "Saving is off: new readings are not kept."
-msgstr "A mentés ki van kapcsolva: az új felolvasások nem maradnak meg."
-
-msgid "Turn On"
-msgstr "Bekapcsolás"
-
-msgid "Search text, voice, engine or date…"
-msgstr "Keresés szövegre, hangra, motorra vagy dátumra…"
-
-msgid "All dates"
-msgstr "Minden dátum"
-
-msgid "Today"
-msgstr "Ma"
-
-msgid "Yesterday"
-msgstr "Tegnap"
-
-msgid "Last 7 days"
-msgstr "Elmúlt 7 nap"
-
-msgid "Filter by date"
-msgstr "Szűrés dátum szerint"
-
-msgid "All engines"
-msgstr "Minden motor"
-
-msgid "Filter by engine"
-msgstr "Szűrés motor szerint"
-
-msgid "Newest first"
-msgstr "Legújabb elöl"
-
-msgid "Sort order"
-msgstr "Rendezési sorrend"
-
-msgid "Show as grid"
-msgstr "Megjelenítés rácsként"
-
-msgid "Select readings"
-msgstr "Felolvasások kijelölése"
-
-msgid "Select All"
-msgstr "Összes kiválasztása"
-
-msgid "Deselect All"
-msgstr "Mindet kijelölés megszüntetése"
-
-msgid "Save the selected readings to a folder"
-msgstr "A kijelölt felolvasások mentése egy mappába"
-
-msgid "Save selected"
-msgstr "Kijelöltek mentése"
-
-msgid "Delete selected"
-msgstr "Kiválasztott törlése"
-
-msgid "History entries"
-msgstr "Előzménybejegyzések"
-
-msgid "The history could not be read"
-msgstr "Az előzmények nem olvashatók be"
-
-#, python-brace-format
-msgid "Check the permissions of the folder {folder}."
-msgstr "Ellenőrizze a(z) {folder} mappa jogosultságait."
-
-msgid "No readings found"
-msgstr "Nem található felolvasás"
-
-msgid "Try other words or another date or engine."
-msgstr "Próbáljon más szavakat, másik dátumot vagy motort."
-
-msgid "Clear Filters"
-msgstr "Szűrők törlése"
-
-msgid "No readings yet"
-msgstr "Még nincsenek felolvasások"
-
-#, python-brace-format
-msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
-msgstr "Minden, amit meghallgat, itt jelenik meg a hanggal együtt. Csak ezen a számítógépen tárolódik, itt: {folder}."
-
-#, python-brace-format
-msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
-msgstr "A mentés ki van kapcsolva. Kapcsolja be, hogy megőrizze, amit meghallgat, a hanggal együtt — csak ezen a számítógépen, itt: {folder}."
-
-msgid "Turn On History"
-msgstr "Előzmények bekapcsolása"
-
-msgid "Oldest first"
-msgstr "Legrégebbi elöl"
-
-msgid "Show as list"
-msgstr "Megjelenítés listaként"
-
-#, python-brace-format
-msgid "Selected: {count}"
-msgstr "Kijelölve: {count}"
-
-msgid "Reading deleted"
-msgstr "Felolvasás törölve"
-
-msgid "Undo"
-msgstr "Visszavonás"
-
-msgid "Delete the selected readings?"
-msgstr "Törli a kijelölt felolvasásokat?"
-
-#, python-brace-format
-msgid "Readings: {count}. Their audio and text files are moved to the Trash."
-msgstr "Felolvasások: {count}. A hang- és szövegfájljaik a Kukába kerülnek."
-
-#, python-brace-format
-msgid "Moved to the Trash: {count}"
-msgstr "Kukába helyezve: {count}"
-
-msgid "Save the selected readings"
-msgstr "A kijelölt felolvasások mentése"
-
-#, python-brace-format
-msgid "Saved to {folder}: {count}"
-msgstr "Mentve a(z) {folder} mappába: {count}"
-
-msgid "No shortcut"
-msgstr "Nincs gyorsbillentyű"
-
-#, python-brace-format
-msgid "Shortcut: {keys}"
-msgstr "Gyorsbillentyű: {keys}"
-
-msgid "Piper engine"
-msgstr "Piper motor"
-
-msgid "Voice Manager"
-msgstr "Hangkezelő"
-
-msgid "Search voices by name or language…"
-msgstr "Hangok keresése név vagy nyelv szerint…"
-
-msgid "Loading available voices…"
-msgstr "Elérhető hangok betöltése…"
-
-msgid "No Voice Packages Found"
-msgstr "Nincs hangcsomag található"
-
-msgid "Could not find any TTS voice packages from pacman repositories."
-msgstr "Nem található TTS hangcsomag a pacman tárolókból."
-
-msgid "High quality offline voices"
-msgstr "Magas minőségű offline hangok"
-
-msgid "Neural network voices — natural sounding"
-msgstr "Neurális hálózat hangok — természetes hangzású"
-
-msgid "Lightweight multi-language synthesizer"
-msgstr "Könnyű, többnyelvű szintetizátor"
-
-msgid "Neural TTS — high quality multilingual voices (82M)"
-msgstr "Neurális TTS — magas minőségű többnyelvű hangok (82M)"
-
-#, python-brace-format
-msgid "Install {name}"
-msgstr "Telepítse a {name} alkalmazást"
-
-#, python-brace-format
-msgid "Remove {name}"
-msgstr "Távolítsa el {name}"
-
-msgid "Installed"
-msgstr "Telepítve"
-
-#, python-brace-format
-msgid "Remove {name}?"
-msgstr "Eltávolítja: {name}?"
-
-msgid "The voice will no longer be available for reading. You can install it again later."
-msgstr "A hang többé nem lesz elérhető a felolvasáshoz. Később újra telepítheti."
-
-msgid "Remove"
-msgstr "Eltávolítás"
-
-#, python-brace-format
-msgid "Downloading {name}…"
-msgstr "{name} letöltése…"
-
-#, python-brace-format
-msgid "Downloading {name}… {done} of {total} KB"
-msgstr "{name} letöltése… {done} / {total} KB"
-
-msgid "Operation timed out"
-msgstr "A művelet időtúllépett"
-
-msgid "pkexec or pacman not found"
-msgstr "pkexec vagy pacman nem található"
-
-msgid "Download cancelled"
-msgstr "Letöltés megszakítva"
-
-msgid "Failed"
-msgstr "Sikertelen"
-
-msgid "Removal Failed"
-msgstr "Eltávolítás sikertelen"
-
-msgid "Unknown error"
-msgstr "Ismeretlen hiba"
-
-#, python-brace-format
-msgid "Play a sample of {name}"
-msgstr "{name} hangminta lejátszása"
-
-msgid "Stop the sample"
-msgstr "Hangminta leállítása"
-
-msgid "The sample could not be played."
-msgstr "A hangmintát nem sikerült lejátszani."
-
-#, python-brace-format
-msgid "The sample could not be played: {program} is not installed."
-msgstr "A hangmintát nem sikerült lejátszani: a(z) {program} nincs telepítve."
+msgid "Select text and press {key} to read it aloud"
+msgstr "Jelöljön ki szöveget, és nyomja meg a(z) {key} billentyűt a felolvasáshoz"
+
+#: usr/share/biglinux/tts-biglinux/window.py:382
+msgid "Show tray icon"
+msgstr "Tálcaikon megjelenítése"
+
+#: usr/share/biglinux/tts-biglinux/window.py:383
+msgid "Restore Defaults…"
+msgstr "Alapértékek visszaállítása…"
+
+#: usr/share/biglinux/tts-biglinux/window.py:388
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: usr/share/biglinux/tts-biglinux/window.py:389
+msgid "About BigLinux TTS"
+msgstr "A BigLinux TTS névjegye"
+
+#: usr/share/biglinux/tts-biglinux/window.py:400
+#: usr/share/biglinux/tts-biglinux/window.py:401
+msgid "Main menu"
+msgstr "Főmenü"
+
+#: usr/share/biglinux/tts-biglinux/window.py:461
+msgid "Restore settings?"
+msgstr "Visszaállítja a beállításokat?"
+
+#: usr/share/biglinux/tts-biglinux/window.py:462
+msgid "This will return all adjustments to their original defaults."
+msgstr "Ez visszaállítja az összes beállítást az eredeti alapértékekre."
+
+#: usr/share/biglinux/tts-biglinux/window.py:465
+msgid "Restore"
+msgstr "Visszaállítás"

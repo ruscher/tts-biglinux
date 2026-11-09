@@ -14,616 +14,1353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "BigLinux Text-to-Speech — Read selected text aloud"
-msgstr "BigLinux pretvorba teksta u govor — Čitanje odabranog teksta naglas"
-
-msgid "Enable debug logging"
-msgstr "Omogući zapisivanje za otklanjanje grešaka"
-
-msgid "Settings"
-msgstr "Postavke"
-
-msgid "Show settings"
-msgstr "Prikaži postavke"
-
-msgid "Back"
-msgstr "Natrag"
-
-msgid "Text narrator"
-msgstr "Čitač teksta"
-
-msgid "The shortcut is not active — open Advanced options to fix it"
-msgstr "Prečac nije aktivan — otvorite Napredne opcije da ga popravite"
-
-#, python-brace-format
-msgid "Select text and press {key} to read it aloud"
-msgstr "Odaberite tekst i pritisnite {key} da ga pročitate naglas"
-
-msgid "History"
-msgstr "Povijest"
-
-msgid "Loading voice…"
-msgstr "Učitavanje glasa…"
-
-msgid "Speaking…"
-msgstr "Govori…"
-
-msgid "Could not read the text"
-msgstr "Nije moguće pročitati tekst"
-
-msgid "Show tray icon"
-msgstr "Prikaži ikonu u traci sustava"
-
-msgid "Restore Defaults…"
-msgstr "Vrati zadane postavke…"
-
-msgid "Welcome"
-msgstr "Dobrodošli"
-
-msgid "About BigLinux TTS"
-msgstr "O BigLinux TTS-u"
-
-msgid "Quit"
-msgstr "Izlaz"
-
-msgid "Main menu"
-msgstr "Glavni izbornik"
-
-msgid "Restore settings?"
-msgstr "Vratiti postavke?"
-
-msgid "This will return all adjustments to their original defaults."
-msgstr "Ovo će vratiti sve prilagodbe na izvorne zadane vrijednosti."
-
-msgid "Cancel"
-msgstr "Odustani"
-
-msgid "Restore"
-msgstr "Vrati"
-
-msgid "This key combination is not valid."
-msgstr "Ova kombinacija tipki nije valjana."
-
-msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
-msgstr "Koristite Ctrl, Alt ili Super zajedno s nekom tipkom kako ne bi utjecali na uobičajeno tipkanje."
-
-msgid "This key combination is not supported by the desktop."
-msgstr "Radno okruženje ne podržava ovu kombinaciju tipki."
-
-#, python-brace-format
-msgid "{shortcut} is already used by: {names}. Choose another shortcut."
-msgstr "{shortcut} već koristi: {names}. Odaberite drugi prečac."
-
-msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
-msgstr "Radno okruženje nije prihvatilo prečac. Je li pokrenuta KDE usluga globalnih prečaca?"
-
-msgid "The desktop did not confirm the new shortcut."
-msgstr "Radno okruženje nije potvrdilo novi prečac."
-
-msgid "The shortcut was saved, but the desktop could not confirm it yet."
-msgstr "Prečac je spremljen, ali ga radno okruženje još nije moglo potvrditi."
-
-msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
-msgstr "Prečac nije moguće registrirati u ovom radnom okruženju. Dodajte ga u postavkama tipkovnice sustava s naredbom biglinux-tts-speak."
-
-msgid "The installation was cancelled: the administrator password was not confirmed."
-msgstr "Instalacija je otkazana: administratorska lozinka nije potvrđena."
-
-#, python-brace-format
-msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
-msgstr "{packages} nije dostupno u vašim repozitorijima. Ažurirajte sustav (sudo pacman -Syu) i pokušajte ponovno."
-
-msgid "Another program is installing or updating packages. Wait for it to finish and try again."
-msgstr "Drugi program instalira ili ažurira pakete. Pričekajte da završi i pokušajte ponovno."
-
-msgid "The packages could not be downloaded. Check your internet connection and try again."
-msgstr "Paketi se nisu mogli preuzeti. Provjerite internetsku vezu i pokušajte ponovno."
-
-#, python-brace-format
-msgid "{packages} conflicts with installed files or packages. See the details."
-msgstr "{packages} je u sukobu s instaliranim datotekama ili paketima. Pogledajte pojedinosti."
-
-#, python-brace-format
-msgid "Not enough free disk space to install {packages}."
-msgstr "Nema dovoljno slobodnog prostora na disku za instalaciju paketa {packages}."
-
-#, python-brace-format
-msgid "{packages} could not be installed. See the details."
-msgstr "{packages} nije moguće instalirati. Pogledajte pojedinosti."
-
-msgid "Nothing to install."
-msgstr "Nema ništa za instalirati."
-
-msgid "pkexec is not installed (package polkit)."
-msgstr "pkexec nije instaliran (paket polkit)."
-
-msgid "The installation took too long and was stopped."
-msgstr "Instalacija je trajala predugo i zaustavljena je."
-
-#, python-brace-format
-msgid "{packages} could not be built from the AUR. See the details."
-msgstr "{packages} nije moguće izgraditi iz AUR-a. Pogledajte pojedinosti."
-
-msgid "Read or stop the selected text"
-msgstr "Pročitaj ili zaustavi odabrani tekst"
-
-msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
-msgstr "Kokoro nije instaliran. Instalirajte paket biglinux-kokoro-tts."
-
-msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
-msgstr "Nedostaje Kokoro glasovni model. Ponovno instalirajte paket biglinux-kokoro-tts."
-
-msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
-msgstr "Nisu pronađeni Kokoro glasovi. Otvorite Upravitelj glasova da preuzmete glas."
-
-msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
-msgstr "Ovaj Kokoro glas nije instaliran. Otvorite Upravitelj glasova da ga preuzmete."
-
-#, python-brace-format
-msgid "Unknown voice: {voice_id}"
-msgstr "Nepoznat glas: {voice_id}"
-
-#, python-brace-format
-msgid "Invalid voice id: {voice_id}"
-msgstr "Neispravan ID glasa: {voice_id}"
-
-msgid "The voice file is larger than expected."
-msgstr "Datoteka glasa veća je od očekivane."
-
-#, python-brace-format
-msgid "incomplete download ({received} of {total} bytes)"
-msgstr "nepotpuno preuzimanje ({received} od {total} bajtova)"
-
-msgid "empty response"
-msgstr "prazan odgovor"
-
-#, python-brace-format
-msgid "Could not download the voice. Check your internet connection and try again. ({error})"
-msgstr "Nije moguće preuzeti glas. Provjerite internetsku vezu i pokušajte ponovno. ({error})"
-
-#, python-brace-format
-msgid "The downloaded voice file is damaged. Try again. ({error})"
-msgstr "Preuzeta datoteka glasa je oštećena. Pokušajte ponovno. ({error})"
-
-#, python-brace-format
-msgid "Not enough disk space to install the voice ({size} MB needed)."
-msgstr "Nema dovoljno prostora na disku za instalaciju glasa (potrebno {size} MB)."
-
-#, python-brace-format
-msgid "Cannot create user voices directory: {error}"
-msgstr "Nije moguće stvoriti direktorij korisničkih glasova: {error}"
-
-#, python-brace-format
-msgid "Failed to add voice: {error}"
-msgstr "Dodavanje glasa nije uspjelo: {error}"
-
-msgid "Cannot remove base voice"
-msgstr "Osnovni glas nije moguće ukloniti"
-
-msgid "No user voices installed"
-msgstr "Nema instaliranih korisničkih glasova"
-
-#, python-brace-format
-msgid "Failed to remove voice: {error}"
-msgstr "Uklanjanje glasa nije uspjelo: {error}"
-
-msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
-msgstr "Nije moguće reproducirati zvuk. Provjerite je li alsa-utils (aplay) instaliran."
-
-#, python-brace-format
-msgid "{engine} could not start. Check that it is installed."
-msgstr "{engine} se nije mogao pokrenuti. Provjerite je li instaliran."
-
-msgid "RHVoice is not installed. Install the rhvoice package."
-msgstr "RHVoice nije instaliran. Instalirajte paket rhvoice."
-
-msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
-msgstr "espeak-ng nije mogao pročitati ovaj tekst. Provjerite je li espeak-ng instaliran."
-
-msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
-msgstr "Odabrani Piper glas nije instaliran. Odaberite drugi glas u Upravitelju glasova."
-
-msgid "Piper could not read this text. Try another voice."
-msgstr "Piper nije mogao pročitati ovaj tekst. Pokušajte s drugim glasom."
-
-#, python-brace-format
-msgid "{engine} crashed while reading the text."
-msgstr "{engine} se srušio tijekom čitanja teksta."
-
-#, python-brace-format
-msgid "{engine} stopped with an error and could not read the text."
-msgstr "{engine} se zaustavio s greškom i nije mogao pročitati tekst."
-
-msgid "Extra low quality"
-msgstr "Vrlo niska kvaliteta"
-
-msgid "Low quality"
-msgstr "Niska kvaliteta"
-
-msgid "Medium quality"
-msgstr "Srednja kvaliteta"
-
-msgid "High quality"
-msgstr "Visoka kvaliteta"
-
-#, python-brace-format
-msgid "{language} ({region})"
-msgstr "{language} ({region})"
-
+#: usr/share/biglinux/tts-biglinux/application.py:76
 msgid "Read the selected text aloud"
 msgstr "Pročitaj odabrani tekst naglas"
 
+#: usr/share/biglinux/tts-biglinux/application.py:377
 msgid "Could not read the text."
 msgstr "Nije moguće pročitati tekst."
 
+#: usr/share/biglinux/tts-biglinux/application.py:378
+#: usr/share/biglinux/tts-biglinux/application.py:583
+#: usr/share/biglinux/tts-biglinux/application.py:588
+#: usr/share/biglinux/tts-biglinux/application.py:593
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1785
+#: usr/share/biglinux/tts-biglinux/window.py:310
+msgid "Could not read the text"
+msgstr "Nije moguće pročitati tekst"
+
+#: usr/share/biglinux/tts-biglinux/application.py:389
 msgid "Reading text"
 msgstr "Čitanje teksta"
 
+#: usr/share/biglinux/tts-biglinux/application.py:431
+#: usr/share/biglinux/tts-biglinux/application.py:456
+#: usr/share/biglinux/tts-biglinux/application.py:737
 msgid "Playing…"
 msgstr "Igra…"
 
+#: usr/share/biglinux/tts-biglinux/application.py:582
 msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
 msgstr "Instalirajte wl-clipboard (Wayland) ili xclip (X11) kako bi se odabrani tekst mogao čitati."
 
+#: usr/share/biglinux/tts-biglinux/application.py:587
+msgid "This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:592
+msgid "The program with the selected text did not answer. Try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/application.py:597
 msgid "Select some text first, then press the shortcut."
 msgstr "Najprije odaberite tekst, a zatim pritisnite prečac."
 
+#: usr/share/biglinux/tts-biglinux/application.py:598
 msgid "No text selected"
 msgstr "Nema odabranog teksta"
 
+#: usr/share/biglinux/tts-biglinux/application.py:693
 msgid "Read text"
 msgstr "Pročitajte tekst"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:107
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:169
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:210
 msgid "Play"
 msgstr "Igraj"
 
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:196
 msgid "Pause"
 msgstr "Pauza"
 
+#: usr/share/biglinux/tts-biglinux/application.py:704
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:115
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:116
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
 msgid "Stop"
 msgstr "Zaustavi"
 
+#: usr/share/biglinux/tts-biglinux/application.py:709
+#: usr/share/biglinux/tts-biglinux/window.py:48
+#: usr/share/biglinux/tts-biglinux/window.py:148
+msgid "Settings"
+msgstr "Postavke"
+
+#: usr/share/biglinux/tts-biglinux/application.py:711
+#: usr/share/biglinux/tts-biglinux/window.py:390
+msgid "Quit"
+msgstr "Izlaz"
+
+#: usr/share/biglinux/tts-biglinux/application.py:733
 msgid "Paused"
 msgstr "Pauzirano"
 
+#: usr/share/biglinux/tts-biglinux/application.py:735
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1766
+#: usr/share/biglinux/tts-biglinux/window.py:306
+msgid "Loading voice…"
+msgstr "Učitavanje glasa…"
+
+#: usr/share/biglinux/tts-biglinux/application.py:893
 msgid "BigLinux Team"
 msgstr "BigLinux tim"
 
+#: usr/share/biglinux/tts-biglinux/application.py:904
 msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
 msgstr "BigLinux TTS pretvara odabrani ili upisani tekst u govor pomoću lokalnih glasova, globalnih prečaca i preciznih kontrola reprodukcije."
 
+#: usr/share/biglinux/tts-biglinux/application.py:907
 msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
 msgstr "BigLinux TTS započeo je 2021. kao web-alat i razvio se u izvornu GTK4 aplikaciju s više govornih pogona, upravljanjem glasovima i audio pogonom napisanim u Rustu."
 
+#: usr/share/biglinux/tts-biglinux/application.py:959
 msgid "Could not register the shortcut."
 msgstr "Nije moguće registrirati prečac."
 
+#: usr/share/biglinux/tts-biglinux/application.py:985
 #, python-brace-format
 msgid "Select text and press {shortcut} to hear it"
 msgstr "Odaberite tekst i pritisnite {shortcut} da ga poslušate"
 
+#: usr/share/biglinux/tts-biglinux/application.py:986
 msgid "Text-to-speech assistant"
 msgstr "Asistent za pretvaranje teksta u govor"
 
+#: usr/share/biglinux/tts-biglinux/main.py:24
+msgid "BigLinux Text-to-Speech — Read selected text aloud"
+msgstr "BigLinux pretvorba teksta u govor — Čitanje odabranog teksta naglas"
+
+#: usr/share/biglinux/tts-biglinux/main.py:29
+msgid "Enable debug logging"
+msgstr "Omogući zapisivanje za otklanjanje grešaka"
+
+#: usr/share/biglinux/tts-biglinux/main.py:40
+msgid "Show how the shortcut, text capture, tray icon, voices and audio are set up, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:45
+msgid "Register the global shortcut again on this desktop, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:50
+msgid "Remove the shortcut this app added to Big WindowMaker, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:331
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:403
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:335
+msgid "Read or stop the selected text"
+msgstr "Pročitaj ili zaustavi odabrani tekst"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:244
+msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
+msgstr "Kokoro nije instaliran. Instalirajte paket biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:246
+msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
+msgstr "Nedostaje Kokoro glasovni model. Ponovno instalirajte paket biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:248
+msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
+msgstr "Nisu pronađeni Kokoro glasovi. Otvorite Upravitelj glasova da preuzmete glas."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:252
+msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
+msgstr "Ovaj Kokoro glas nije instaliran. Otvorite Upravitelj glasova da ga preuzmete."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:470
+#, python-brace-format
+msgid "Unknown voice: {voice_id}"
+msgstr "Nepoznat glas: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:475
+#, python-brace-format
+msgid "Invalid voice id: {voice_id}"
+msgstr "Neispravan ID glasa: {voice_id}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:496
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:508
+msgid "The voice file is larger than expected."
+msgstr "Datoteka glasa veća je od očekivane."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:518
+#, python-brace-format
+msgid "incomplete download ({received} of {total} bytes)"
+msgstr "nepotpuno preuzimanje ({received} od {total} bajtova)"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:523
+msgid "empty response"
+msgstr "prazan odgovor"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:529
+#, python-brace-format
+msgid "Could not download the voice. Check your internet connection and try again. ({error})"
+msgstr "Nije moguće preuzeti glas. Provjerite internetsku vezu i pokušajte ponovno. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:536
+#, python-brace-format
+msgid "The downloaded voice file is damaged. Try again. ({error})"
+msgstr "Preuzeta datoteka glasa je oštećena. Pokušajte ponovno. ({error})"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:547
+#, python-brace-format
+msgid "Not enough disk space to install the voice ({size} MB needed)."
+msgstr "Nema dovoljno prostora na disku za instalaciju glasa (potrebno {size} MB)."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:555
+#, python-brace-format
+msgid "Cannot create user voices directory: {error}"
+msgstr "Nije moguće stvoriti direktorij korisničkih glasova: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:561
+#, python-brace-format
+msgid "Failed to add voice: {error}"
+msgstr "Dodavanje glasa nije uspjelo: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:574
+msgid "Cannot remove base voice"
+msgstr "Osnovni glas nije moguće ukloniti"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:577
+msgid "No user voices installed"
+msgstr "Nema instaliranih korisničkih glasova"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:582
+#, python-brace-format
+msgid "Failed to remove voice: {error}"
+msgstr "Uklanjanje glasa nije uspjelo: {error}"
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:177
+msgid "The installation was cancelled: the administrator password was not confirmed."
+msgstr "Instalacija je otkazana: administratorska lozinka nije potvrđena."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:180
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:239
+#, python-brace-format
+msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
+msgstr "{packages} nije dostupno u vašim repozitorijima. Ažurirajte sustav (sudo pacman -Syu) i pokušajte ponovno."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:184
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:204
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:244
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:263
+msgid "Another program is installing or updating packages. Wait for it to finish and try again."
+msgstr "Drugi program instalira ili ažurira pakete. Pričekajte da završi i pokušajte ponovno."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:186
+msgid "The packages could not be downloaded. Check your internet connection and try again."
+msgstr "Paketi se nisu mogli preuzeti. Provjerite internetsku vezu i pokušajte ponovno."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:188
+#, python-brace-format
+msgid "{packages} conflicts with installed files or packages. See the details."
+msgstr "{packages} je u sukobu s instaliranim datotekama ili paketima. Pogledajte pojedinosti."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:190
+#, python-brace-format
+msgid "Not enough free disk space to install {packages}."
+msgstr "Nema dovoljno slobodnog prostora na disku za instalaciju paketa {packages}."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:192
+#, python-brace-format
+msgid "{packages} could not be installed. See the details."
+msgstr "{packages} nije moguće instalirati. Pogledajte pojedinosti."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:200
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:236
+msgid "Nothing to install."
+msgstr "Nema ništa za instalirati."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:213
+msgid "pkexec is not installed (package polkit)."
+msgstr "pkexec nije instaliran (paket polkit)."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:215
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:218
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:255
+msgid "The installation took too long and was stopped."
+msgstr "Instalacija je trajala predugo i zaustavljena je."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:252
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:265
+#, python-brace-format
+msgid "{packages} could not be built from the AUR. See the details."
+msgstr "{packages} nije moguće izgraditi iz AUR-a. Pogledajte pojedinosti."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:127
+msgid "This key combination is not valid."
+msgstr "Ova kombinacija tipki nije valjana."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:134
+msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
+msgstr "Koristite Ctrl, Alt ili Super zajedno s nekom tipkom kako ne bi utjecali na uobičajeno tipkanje."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:235
+msgid "This key combination is not supported by the desktop."
+msgstr "Radno okruženje ne podržava ovu kombinaciju tipki."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:247
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:296
+#, python-brace-format
+msgid "{shortcut} is already used by: {names}. Choose another shortcut."
+msgstr "{shortcut} već koristi: {names}. Odaberite drugi prečac."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:266
+msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
+msgstr "Radno okruženje nije prihvatilo prečac. Je li pokrenuta KDE usluga globalnih prečaca?"
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:272
+msgid "The desktop did not confirm the new shortcut."
+msgstr "Radno okruženje nije potvrdilo novi prečac."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:292
+#, python-brace-format
+msgid "{shortcut} is saved. It starts working after you log in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:303
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:307
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:311
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:383
+msgid "Could not save the shortcut. Nothing was changed."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:392
+msgid "The shortcut was saved, but the desktop could not confirm it yet."
+msgstr "Prečac je spremljen, ali ga radno okruženje još nije moglo potvrditi."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:404
+msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
+msgstr "Prečac nije moguće registrirati u ovom radnom okruženju. Dodajte ga u postavkama tipkovnice sustava s naredbom biglinux-tts-speak."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:138
+msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
+msgstr "Nije moguće reproducirati zvuk. Provjerite je li alsa-utils (aplay) instaliran."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:505
+#, python-brace-format
+msgid "{engine} could not start. Check that it is installed."
+msgstr "{engine} se nije mogao pokrenuti. Provjerite je li instaliran."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:650
+msgid "RHVoice is not installed. Install the rhvoice package."
+msgstr "RHVoice nije instaliran. Instalirajte paket rhvoice."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:918
+msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
+msgstr "espeak-ng nije mogao pročitati ovaj tekst. Provjerite je li espeak-ng instaliran."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:933
+msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
+msgstr "Odabrani Piper glas nije instaliran. Odaberite drugi glas u Upravitelju glasova."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:989
+msgid "Piper could not read this text. Try another voice."
+msgstr "Piper nije mogao pročitati ovaj tekst. Pokušajte s drugim glasom."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1180
+#, python-brace-format
+msgid "{engine} crashed while reading the text."
+msgstr "{engine} se srušio tijekom čitanja teksta."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1182
+#, python-brace-format
+msgid "{engine} stopped with an error and could not read the text."
+msgstr "{engine} se zaustavio s greškom i nije mogao pročitati tekst."
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:608
+msgid "Extra low quality"
+msgstr "Vrlo niska kvaliteta"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:609
+msgid "Low quality"
+msgstr "Niska kvaliteta"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:610
+msgid "Medium quality"
+msgstr "Srednja kvaliteta"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:611
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1192
+msgid "High quality"
+msgstr "Visoka kvaliteta"
+
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:134
 msgid "Playback position"
 msgstr "Položaj reprodukcije"
 
-msgid "BigLinux TTS"
-msgstr "BigLinux TTS"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:311
+#: usr/share/biglinux/tts-biglinux/ui/components.py:314
+msgid "No shortcut"
+msgstr "Nema prečaca"
 
-msgid "Advanced options"
-msgstr "Napredne opcije"
+#: usr/share/biglinux/tts-biglinux/ui/components.py:326
+#, python-brace-format
+msgid "Shortcut: {keys}"
+msgstr "Prečac: {keys}"
 
-msgid "Shortcut, performance, behavior"
-msgstr "Prečac, performanse, ponašanje"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:44
+msgid "Unknown"
+msgstr "Nepoznato"
 
-msgid "Change shortcut"
-msgstr "Promijeni prečac"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:60
+#, python-brace-format
+msgid "Today, {time}"
+msgstr "Danas, {time}"
 
-msgid "Try again"
-msgstr "Pokušaj ponovno"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:62
+#, python-brace-format
+msgid "Yesterday, {time}"
+msgstr "Jučer, {time}"
 
-msgid "Open Voice Manager"
-msgstr "Otvori Upravitelj glasova"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:135
+msgid "Select this reading"
+msgstr "Odaberi ovo čitanje"
 
-msgid "Details"
-msgstr "Pojedinosti"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:141
+msgid "(text not kept)"
+msgstr "(tekst nije zadržan)"
 
-msgid "This is a test, welcome to BigLinux!"
-msgstr "Ovo je test, dobrodošli u BigLinux!"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:158
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show more"
+msgstr "Prikaži više"
 
-msgid "Type text to test…"
-msgstr "Unesite tekst za testiranje…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:169
+msgid "Copy text"
+msgstr "Kopiraj tekst"
 
-msgid "Text to test the voice"
-msgstr "Tekst za testiranje glasa"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:171
+msgid "Read again with the current voice"
+msgstr "Ponovno pročitaj trenutnim glasom"
 
-msgid "Test voice"
-msgstr "Testiraj glas"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:177
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:178
+msgid "More actions"
+msgstr "Više radnji"
 
-msgid "Test the selected voice"
-msgstr "Testirajte odabrani glas"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1791
+msgid "Stopped"
+msgstr "Zaustavljeno"
 
-msgid "Voice settings"
-msgstr "Postavke glasa"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1913
+msgid "Error"
+msgstr "Greška"
 
-msgid "Choose voice and adjust speech parameters"
-msgstr "Odaberite glas i prilagodite parametre govora"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:202
+msgid "Reading stopped before the end"
+msgstr "Čitanje zaustavljeno prije kraja"
 
-msgid "RHVoice (Native)"
-msgstr "RHVoice (Izvorno)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:203
+msgid "The engine failed during this reading"
+msgstr "Motor nije uspio tijekom ovog čitanja"
 
-msgid "espeak-ng"
-msgstr "espeak-ng"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:219
+msgid "Audio not kept for this reading"
+msgstr "Zvuk ovog čitanja nije zadržan"
 
-msgid "Piper (Neural TTS)"
-msgstr "Piper (Neural TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:225
+#, python-brace-format
+msgid "{engine} reading, {when}"
+msgstr "Čitanje s {engine}, {when}"
 
-msgid "Kokoro (Neural TTS)"
-msgstr "Kokoro (Neural TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:256
+msgid "Save audio as…"
+msgstr "Spremi zvuk kao…"
 
-msgid "TTS Backend"
-msgstr "TTS pozadinski sustav"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:257
+msgid "Open file location"
+msgstr "Otvorite lokaciju datoteke"
 
-msgid "Engine used for speech synthesis"
-msgstr "Motor korišten za sintezu govora"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:258
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:820
+msgid "Delete"
+msgstr "Izbriši"
 
-msgid "Select TTS engine"
-msgstr "Odaberite TTS motor"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show less"
+msgstr "Prikaži manje"
 
-msgid "Engine status"
-msgstr "Stanje pogona"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:271
+msgid "Text copied"
+msgstr "Tekst kopiran"
 
-msgid "Checking installed engines…"
-msgstr "Provjera instaliranih pogona…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:279
+msgid "Save audio as"
+msgstr "Spremi zvuk kao"
 
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Audio saved"
+msgstr "Zvuk spremljen"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Could not save the audio"
+msgstr "Nije moguće spremiti zvuk"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:324
+#: usr/share/biglinux/tts-biglinux/window.py:288
+#: usr/share/biglinux/tts-biglinux/window.py:377
+msgid "History"
+msgstr "Povijest"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:350
+msgid "Saving is off: new readings are not kept."
+msgstr "Spremanje je isključeno: nova čitanja se ne zadržavaju."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:351
+msgid "Turn On"
+msgstr "Uključi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:367
+msgid "Search text, voice, engine or date…"
+msgstr "Pretraži tekst, glas, motor ili datum…"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "All dates"
+msgstr "Svi datumi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Today"
+msgstr "Danas"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Yesterday"
+msgstr "Jučer"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Last 7 days"
+msgstr "Zadnjih 7 dana"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:376
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:377
+msgid "Filter by date"
+msgstr "Filtriraj po datumu"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:381
+msgid "All engines"
+msgstr "Svi motori"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:383
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:384
+msgid "Filter by engine"
+msgstr "Filtriraj po motoru"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:391
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Newest first"
+msgstr "Najnovije prvo"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:392
+msgid "Sort order"
+msgstr "Redoslijed"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:397
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:398
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as grid"
+msgstr "Prikaži kao rešetku"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:403
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:404
+msgid "Select readings"
+msgstr "Odaberi čitanja"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:416
+msgid "Select All"
+msgstr "Odaberi sve"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:420
+msgid "Deselect All"
+msgstr "Poništi sve"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:429
+msgid "Save the selected readings to a folder"
+msgstr "Spremi odabrana čitanja u mapu"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:430
+msgid "Save selected"
+msgstr "Spremi odabrano"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:435
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:436
+msgid "Delete selected"
+msgstr "Izbriši odabrano"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:445
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:457
+msgid "History entries"
+msgstr "Unosi povijesti"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:648
+msgid "The history could not be read"
+msgstr "Povijest nije moguće pročitati"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:650
+#, python-brace-format
+msgid "Check the permissions of the folder {folder}."
+msgstr "Provjerite dozvole mape {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:657
+msgid "No readings found"
+msgstr "Nema pronađenih čitanja"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:658
+msgid "Try other words or another date or engine."
+msgstr "Pokušajte s drugim riječima, drugim datumom ili motorom."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:659
+msgid "Clear Filters"
+msgstr "Očisti filtre"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:663
+msgid "No readings yet"
+msgstr "Još nema čitanja"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:667
+#, python-brace-format
+msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
+msgstr "Sve što slušate pojavit će se ovdje, sa zvukom. Sprema se samo na ovom računalu, u {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:673
+#, python-brace-format
+msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
+msgstr "Spremanje je isključeno. Uključite ga da biste zadržali ono što slušate, sa zvukom — samo na ovom računalu, u {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:676
+msgid "Turn On History"
+msgstr "Uključi povijest"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Oldest first"
+msgstr "Najstarije prvo"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as list"
+msgstr "Prikaži kao popis"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:751
+#, python-brace-format
+msgid "Selected: {count}"
+msgstr "Odabrano: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:781
+msgid "Reading deleted"
+msgstr "Čitanje izbrisano"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:782
+msgid "Undo"
+msgstr "Poništi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:816
+msgid "Delete the selected readings?"
+msgstr "Izbrisati odabrana čitanja?"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:817
+#, python-brace-format
+msgid "Readings: {count}. Their audio and text files are moved to the Trash."
+msgstr "Čitanja: {count}. Njihove zvučne i tekstne datoteke premještaju se u smeće."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:819
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1483
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1540
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:498
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:760
+#: usr/share/biglinux/tts-biglinux/window.py:464
+msgid "Cancel"
+msgstr "Odustani"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:832
+#, python-brace-format
+msgid "Moved to the Trash: {count}"
+msgstr "Premješteno u smeće: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:843
+msgid "Save the selected readings"
+msgstr "Spremi odabrana čitanja"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:863
+#, python-brace-format
+msgid "Saved to {folder}: {count}"
+msgstr "Spremljeno u {folder}: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:43
+msgid "Desktop not recognized"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:51
+msgid "selection (Wayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:52
+msgid "selection of an X11 program (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:53
+msgid "selection (X11)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:54
+msgid "copied text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:64
+#, python-brace-format
+msgid "Last reading: {count} characters from the {source}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:66
+msgid "Last time nothing was selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:67
+msgid "Last time the text could not be read"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:79
+msgid "Desktop integration"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:80
+msgid "Check that the shortcut, the text capture and the tray icon work on this desktop."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:82
+msgid "Desktop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:86
+msgid "Global shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:88
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:423
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:434
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:668
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1896
 msgid "Checking…"
 msgstr "Provjera…"
 
-msgid "Voice"
-msgstr "Glas"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:89
+msgid "Fix integration"
+msgstr ""
 
-msgid "Loading voices..."
-msgstr "Učitavanje glasova..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:97
+msgid "Selected text"
+msgstr ""
 
-msgid "Detecting installed voices..."
-msgstr "Otkrivanje instaliranih glasova..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:103
+msgid "Read copied text"
+msgstr ""
 
-msgid "Select TTS voice"
-msgstr "Odaberite TTS glas"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:104
+msgid "When nothing is selected, read what was copied (Ctrl+C). Off: an old copied text is never read by mistake."
+msgstr ""
 
-msgid "Refresh voice list"
-msgstr "Osvježi popis glasova"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:107
+msgid "Read copied text when nothing is selected"
+msgstr ""
 
-msgid "Manage voices for current engine"
-msgstr "Upravljanje glasovima za trenutni motor"
-
-msgid "Speed"
-msgstr "Brzina"
-
-msgid "Speech rate"
-msgstr "Brzina govora"
-
-msgid "Slow"
-msgstr "Sporo"
-
-msgid "Normal"
-msgstr "Normalno"
-
-msgid "Fast"
-msgstr "Brzo"
-
-msgid "Speech speed"
-msgstr "Brzina govora"
-
-msgid "Pitch"
-msgstr "Visina tona"
-
-msgid "Voice tone"
-msgstr "Ton glasa"
-
-msgid "Low"
-msgstr "Nisko"
-
-msgid "High"
-msgstr "Visoko"
-
-msgid "Voice pitch"
-msgstr "Visina glasa"
-
-msgid "Volume"
-msgstr "Glasnoća"
-
-msgid "Speech volume"
-msgstr "Glasnoća govora"
-
-msgid "Mute"
-msgstr "Bez zvuka"
-
-msgid "Max"
-msgstr "Maks"
-
-msgid "Neutral"
-msgstr "Neutralan"
-
-msgid "Happy"
-msgstr "Sretan"
-
-msgid "Calm"
-msgstr "Smirenost"
-
-msgid "Urgent"
-msgstr "Hitno"
-
-msgid "Narrative"
-msgstr "Narativ"
-
-msgid "Expression style"
-msgstr "Izrazni stil"
-
-msgid "Changes speed and intonation to match the mood"
-msgstr "Mijenja brzinu i intonaciju kako bi odgovarali raspoloženju."
-
-msgid "Select expression style"
-msgstr "Odaberite stil izraza"
-
-msgid "None (single voice)"
-msgstr "Nema (jedan glas)"
-
-msgid "Voice blend"
-msgstr "Miješanje glasa"
-
-msgid "Mix a second voice with the primary voice"
-msgstr "Pomiješajte drugi glas s primarnim glasom."
-
-msgid "Select blend voice"
-msgstr "Odaberite mješoviti glas"
-
-msgid "Expand abbreviations"
-msgstr "Proširi kratice"
-
-msgid "Replace common abbreviations with full words"
-msgstr "Zamijenite uobičajene kratice potpunim riječima"
-
-msgid "Expand text abbreviations"
-msgstr "Proširi tekstualne kratice"
-
-msgid "Read special characters"
-msgstr "Čitaj posebne znakove"
-
-msgid "Speak symbols like # @ % by name"
-msgstr "Izgovarajte simbole poput # @ % po imenu"
-
-msgid "Read special characters aloud"
-msgstr "Čitaj posebne znakove naglas"
-
-msgid "Remove formatting"
-msgstr "Ukloni oblikovanje"
-
-msgid "Strip Markdown and HTML before reading"
-msgstr "Ukloni Markdown i HTML prije čitanja"
-
-msgid "Remove text formatting"
-msgstr "Ukloni oblikovanje teksta"
-
-msgid "Read URLs"
-msgstr "Čitaj URL-ove"
-
-msgid "Read web addresses aloud instead of skipping them"
-msgstr "Čitajte web adrese naglas umjesto da ih preskačete"
-
-msgid "Read URLs aloud"
-msgstr "Čitaj URL-ove naglas"
-
-msgid "Unlimited"
-msgstr "Neograničeno"
-
-msgid "1 000"
-msgstr "1 000"
-
-msgid "5 000"
-msgstr "5 000"
-
-msgid "10 000"
-msgstr "10 000"
-
-msgid "50 000"
-msgstr "50 000"
-
-msgid "100 000"
-msgstr "100 000"
-
-msgid "Character limit"
-msgstr "Ograničenje znakova"
-
-msgid "Maximum number of characters to read at once"
-msgstr "Maksimalan broj znakova za čitanje odjednom"
-
-msgid "Maximum character limit"
-msgstr "Maksimalno ograničenje znakova"
-
-msgid "Keyboard shortcut"
-msgstr "Tipkovnički prečac"
-
-msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
-msgstr "Odaberite tekst bilo gdje i pritisnite prečac za čitanje naglas. Pritisnite ponovo za zaustavljanje."
-
-msgid "Change"
-msgstr "Promijeni"
-
-msgid "Change keyboard shortcut"
-msgstr "Promijeni tipkovnički prečac"
-
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:112
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:687
 msgid "Tray icon"
 msgstr "Ikona u sistemskoj traci"
 
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:118
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:234
+msgid "Test the shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:119
+msgid "Select a sample text, press the shortcut and listen"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:121
+msgid "Start test"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1837
+msgid "Checking the shortcut with the desktop…"
+msgstr "Provjera prečaca s radnim okruženjem…"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1833
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1839
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1869
+msgid "The shortcut is not active."
+msgstr "Prečac nije aktivan."
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Not active"
+msgstr "Nije aktivno"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:167
+msgid "After login"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:169
+#, python-brace-format
+msgid "{keys} reads or stops the selected text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:170
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Active"
+msgstr "Aktivno"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:173
+#, python-brace-format
+msgid "last used at {time}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:174
+msgid "Working"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:183
+msgid "This desktop does not share selected text. Turn on “Read copied text” below."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:185
+msgid "Read from the selection, also in X11 programs (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:187
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:189
+msgid "Read from the selection, no copying needed"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "Shown"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "In the system tray; click it to read or stop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Starting…"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Waiting for the system tray"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:199
+msgid "Unavailable"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:200
+msgid "No system tray on this desktop. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:202
+msgid "The tray icon could not be shown. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Off"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Turn it on in the options above"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:247
+msgid "BigLinux TTS reads the text you select, with accents and numbers: 2026."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:248
+msgid "Sample text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:256
+msgid "The sample text above is selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:257
+#, python-brace-format
+msgid "Press {keys} now"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:258
+msgid "BigLinux TTS captures the selection"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:259
+msgid "The text is read aloud"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:275
+msgid "I heard nothing"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:277
+msgid "I heard it"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:329
+msgid "Did you hear the sample text?"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:332
+msgid "The text was not captured. Keep the sample text selected and try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:340
+msgid "The shortcut did not reach BigLinux TTS. Use “Fix integration”; if the shortcut waits for a new login, log out and in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:349
+#, python-brace-format
+msgid "Everything works: select text anywhere and press {keys}."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:353
+msgid "The text was read, but no sound reached you. Check the volume and the audio output; “biglinux-tts --diagnose” in a terminal shows the details."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:87
+msgid "BigLinux TTS"
+msgstr "BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:213
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:229
+msgid "Advanced options"
+msgstr "Napredne opcije"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:214
+msgid "Shortcut, performance, behavior"
+msgstr "Prečac, performanse, ponašanje"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:324
+msgid "Change shortcut"
+msgstr "Promijeni prečac"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:336
+msgid "Try again"
+msgstr "Pokušaj ponovno"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:340
+msgid "Open Voice Manager"
+msgstr "Otvori Upravitelj glasova"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:344
+msgid "Details"
+msgstr "Pojedinosti"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:356
+msgid "This is a test, welcome to BigLinux!"
+msgstr "Ovo je test, dobrodošli u BigLinux!"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:357
+msgid "Type text to test…"
+msgstr "Unesite tekst za testiranje…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:360
+msgid "Text to test the voice"
+msgstr "Tekst za testiranje glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:365
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Test voice"
+msgstr "Testiraj glas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:368
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1817
+msgid "Test the selected voice"
+msgstr "Testirajte odabrani glas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:383
+msgid "Voice settings"
+msgstr "Postavke glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:384
+msgid "Choose voice and adjust speech parameters"
+msgstr "Odaberite glas i prilagodite parametre govora"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:389
+msgid "RHVoice (Native)"
+msgstr "RHVoice (Izvorno)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:390
+msgid "espeak-ng"
+msgstr "espeak-ng"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:391
+msgid "Piper (Neural TTS)"
+msgstr "Piper (Neural TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:392
+msgid "Kokoro (Neural TTS)"
+msgstr "Kokoro (Neural TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:408
+msgid "TTS Backend"
+msgstr "TTS pozadinski sustav"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:409
+msgid "Engine used for speech synthesis"
+msgstr "Motor korišten za sintezu govora"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:413
+msgid "Select TTS engine"
+msgstr "Odaberite TTS motor"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:421
+msgid "Engine status"
+msgstr "Stanje pogona"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:422
+msgid "Checking installed engines…"
+msgstr "Provjera instaliranih pogona…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:442
+msgid "Voice"
+msgstr "Glas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:443
+msgid "Loading voices..."
+msgstr "Učitavanje glasova..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:444
+msgid "Detecting installed voices..."
+msgstr "Otkrivanje instaliranih glasova..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:446
+msgid "Select TTS voice"
+msgstr "Odaberite TTS glas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:452
+msgid "Refresh voice list"
+msgstr "Osvježi popis glasova"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:460
+msgid "Manage voices for current engine"
+msgstr "Upravljanje glasovima za trenutni motor"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:471
+msgid "Speed"
+msgstr "Brzina"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:472
+msgid "Speech rate"
+msgstr "Brzina govora"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Slow"
+msgstr "Sporo"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Normal"
+msgstr "Normalno"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Fast"
+msgstr "Brzo"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:480
+msgid "Speech speed"
+msgstr "Brzina govora"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:487
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Pitch"
+msgstr "Visina tona"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:488
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Voice tone"
+msgstr "Ton glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Low"
+msgstr "Nisko"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "High"
+msgstr "Visoko"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:496
+msgid "Voice pitch"
+msgstr "Visina glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:504
+msgid "Volume"
+msgstr "Glasnoća"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:505
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:513
+msgid "Speech volume"
+msgstr "Glasnoća govora"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Mute"
+msgstr "Bez zvuka"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Max"
+msgstr "Maks"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:524
+msgid "Neutral"
+msgstr "Neutralan"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:525
+msgid "Happy"
+msgstr "Sretan"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:526
+msgid "Calm"
+msgstr "Smirenost"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:527
+msgid "Urgent"
+msgstr "Hitno"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:528
+msgid "Narrative"
+msgstr "Narativ"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:541
+msgid "Expression style"
+msgstr "Izrazni stil"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:542
+msgid "Changes speed and intonation to match the mood"
+msgstr "Mijenja brzinu i intonaciju kako bi odgovarali raspoloženju."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:546
+msgid "Select expression style"
+msgstr "Odaberite stil izraza"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:554
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1041
+msgid "None (single voice)"
+msgstr "Nema (jedan glas)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:557
+msgid "Voice blend"
+msgstr "Miješanje glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:558
+msgid "Mix a second voice with the primary voice"
+msgstr "Pomiješajte drugi glas s primarnim glasom."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:562
+msgid "Select blend voice"
+msgstr "Odaberite mješoviti glas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:580
+msgid "Expand abbreviations"
+msgstr "Proširi kratice"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:581
+msgid "Replace common abbreviations with full words"
+msgstr "Zamijenite uobičajene kratice potpunim riječima"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:584
+msgid "Expand text abbreviations"
+msgstr "Proširi tekstualne kratice"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:590
+msgid "Read special characters"
+msgstr "Čitaj posebne znakove"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:591
+msgid "Speak symbols like # @ % by name"
+msgstr "Izgovarajte simbole poput # @ % po imenu"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:594
+msgid "Read special characters aloud"
+msgstr "Čitaj posebne znakove naglas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:600
+msgid "Remove formatting"
+msgstr "Ukloni oblikovanje"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:601
+msgid "Strip Markdown and HTML before reading"
+msgstr "Ukloni Markdown i HTML prije čitanja"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:604
+msgid "Remove text formatting"
+msgstr "Ukloni oblikovanje teksta"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:610
+msgid "Read URLs"
+msgstr "Čitaj URL-ove"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:611
+msgid "Read web addresses aloud instead of skipping them"
+msgstr "Čitajte web adrese naglas umjesto da ih preskačete"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:614
+msgid "Read URLs aloud"
+msgstr "Čitaj URL-ove naglas"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:620
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:732
+msgid "Unlimited"
+msgstr "Neograničeno"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:621
+msgid "1 000"
+msgstr "1 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:622
+msgid "5 000"
+msgstr "5 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:623
+msgid "10 000"
+msgstr "10 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:624
+msgid "50 000"
+msgstr "50 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:625
+msgid "100 000"
+msgstr "100 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:637
+msgid "Character limit"
+msgstr "Ograničenje znakova"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:638
+msgid "Maximum number of characters to read at once"
+msgstr "Maksimalan broj znakova za čitanje odjednom"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:642
+msgid "Maximum character limit"
+msgstr "Maksimalno ograničenje znakova"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:656
+msgid "Keyboard shortcut"
+msgstr "Tipkovnički prečac"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:659
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1841
+msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
+msgstr "Odaberite tekst bilo gdje i pritisnite prečac za čitanje naglas. Pritisnite ponovo za zaustavljanje."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:671
+msgid "Change"
+msgstr "Promijeni"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:674
+msgid "Change keyboard shortcut"
+msgstr "Promijeni tipkovnički prečac"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:688
 msgid "Fixes quick access and allows running in the background"
 msgstr "Ispravlja brzi pristup i omogućuje rad u pozadini."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:691
 msgid "Show system tray icon"
 msgstr "Prikaži ikonu u sistemskoj traci"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:701
 msgid "Save history"
 msgstr "Spremi povijest"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:702
 #, python-brace-format
 msgid "Keep what you listen to, only on this computer, in {folder}"
 msgstr "Zadržite ono što slušate, samo na ovom računalu, u {folder}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:707
 msgid "Save speech history"
 msgstr "Spremi povijest govora"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:713
 msgid "Keep the audio"
 msgstr "Zadrži zvuk"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:714
 msgid "Listen to each reading again, with the same voice"
 msgstr "Ponovno poslušajte svako čitanje, istim glasom"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:717
 msgid "Keep the audio of each reading"
 msgstr "Zadrži zvuk svakog čitanja"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:721
 msgid "Keep the text"
 msgstr "Zadrži tekst"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:722
 msgid "Search, copy and read again what was read"
 msgstr "Pretražite, kopirajte i ponovno pročitajte ono što je pročitano"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:725
 msgid "Keep the text of each reading"
 msgstr "Zadrži tekst svakog čitanja"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:730
 msgid "Keep at most"
 msgstr "Zadrži najviše"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:731
 msgid "The oldest readings are deleted beyond this number"
 msgstr "Iznad ovog broja najstarija čitanja se brišu"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:741
 msgid "Audio playback mode"
 msgstr "Način reprodukcije zvuka"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:742
 msgid "Behavior when playing multiple audios or speech"
 msgstr "Ponašanje prilikom reprodukcije više audio zapisa ili govora"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Interrupt previous"
 msgstr "Prekinite prethodno"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Queue"
 msgstr "Redoslijed"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Simultaneous"
 msgstr "Istodobno"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:756
 msgid "Media player"
 msgstr "Medijski reproduktor"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:757
 msgid "Show a system mini-player (play/stop, time) while reading"
 msgstr "Prikaži sistemski mini-reproduktor (reprodukcija/zaustavljanje, vrijeme) tijekom čitanja"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:760
 msgid "Show system media player"
 msgstr "Prikaži sistemski medijski reproduktor"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:790
 msgid "Set new shortcut"
 msgstr "Postavi novi prečac"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:806
 msgid ""
 "<b>Hold modifier keys</b> (Alt, Ctrl, Shift, Super)\n"
 "and press a letter or key.\n"
@@ -635,244 +1372,429 @@ msgstr ""
 "\n"
 "<small>Pritisnite Escape za odustajanje</small>"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:825
 msgid "Press the new shortcut"
 msgstr "Pritisnite novi prečac"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:948
 msgid "Tray icon enabled"
 msgstr "Ikona u sistemskoj traci omogućena"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:951
 msgid "Tray icon disabled"
 msgstr "Ikona u sistemskoj traci onemogućena"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:959
 msgid "History saving enabled"
 msgstr "Spremanje povijesti omogućeno"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:960
 msgid "History saving disabled. Saved readings are kept."
 msgstr "Spremanje povijesti isključeno. Spremljena čitanja se zadržavaju."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1071
 msgid "Refreshing voices..."
 msgstr "Osvježavanje glasova..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1073
 msgid "Refreshing voice list…"
 msgstr "Osvježavanje popisa glasova…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1117
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Glasovi nisu pronađeni — instalirajte rhvoice ili espeak-ng"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1119
 msgid "No voices available"
 msgstr "Nema dostupnih glasova"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1169
 msgid "No voices available for this engine"
 msgstr "Nema dostupnih glasova za ovaj motor"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1172
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Prvo instalirajte glasove za {engine}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1190
 msgid "Neural"
 msgstr "Neuronski"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1200
 #, python-brace-format
 msgid "Voices available: {count}"
 msgstr "Dostupni glasovi: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Expressiveness"
 msgstr "Izražajnost"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Voice variation (not pitch)"
 msgstr "Varijacija glasa (ne visina tona)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1307
 msgid "Kokoro voices do not support this setting."
 msgstr "Kokoro glasovi ne podržavaju ovu postavku."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1312
 msgid "Kokoro voices only follow Mute. Use the system volume to change how loud they are."
 msgstr "Kokoro glasovi slijede samo „Bez zvuka”. Za promjenu glasnoće koristite glasnoću sustava."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1370
 msgid "Searching for voices..."
 msgstr "Traženje glasova..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1391
 msgid "Checking for Piper voices..."
 msgstr "Provjera Piper glasova..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1399
 msgid "Checking for Kokoro voices..."
 msgstr "Provjera Kokoro glasova..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1407
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "Glasovi za {engine} nisu pronađeni — prvo ga instalirajte"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1461
 msgid "Piper is not available"
 msgstr "Piper nije dostupan"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1462
 #, python-brace-format
 msgid "No Piper voice package was found in your repositories ({packages}). Update the system (sudo pacman -Syu) and try again."
 msgstr "U vašim repozitorijima nije pronađen nijedan paket Piper glasova ({packages}). Ažurirajte sustav (sudo pacman -Syu) i pokušajte ponovno."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1466
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1528
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1604
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:899
 msgid "OK"
 msgstr "U redu"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1477
 msgid "Piper provides natural neural voices. These packages will be installed:"
 msgstr "Piper pruža prirodne neuronske glasove. Instalirat će se ovi paketi:"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1480
 msgid "Packages marked AUR are not in your repositories: they come from the Arch User Repository, are maintained by the community and are built on this computer, which takes longer."
 msgstr "Paketi označeni s AUR nisu u vašim repozitorijima: dolaze iz Arch User Repositoryja, održava ih zajednica i grade se na ovom računalu, što traje dulje."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1481
 msgid "This requires administrator permissions."
 msgstr "Za ovo su potrebna administratorska prava."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1482
 msgid "Install Piper Neural TTS?"
 msgstr "Instalirati Piper Neural TTS?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1484
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1541
 msgid "Install"
 msgstr "Instaliraj"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1502
 msgid "Installing Piper TTS"
 msgstr "Instaliranje Piper TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1503
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1554
 msgid "Downloading and installing packages…"
 msgstr "Preuzimanje i instaliranje paketa…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1523
 msgid "Kokoro is not available"
 msgstr "Kokoro nije dostupan"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1524
 #, python-brace-format
 msgid "The {package} package was not found in your repositories, so Kokoro cannot be installed yet. Update the system (sudo pacman -Syu) and try again."
 msgstr "Paket {package} nije pronađen u vašim repozitorijima pa se Kokoro još ne može instalirati. Ažurirajte sustav (sudo pacman -Syu) i pokušajte ponovno."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1534
 msgid "Install Kokoro neural voices?"
 msgstr "Instalirati Kokoro neuronske glasove?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1535
 msgid "Kokoro offers natural neural voices in several languages, with expression styles and voice blending."
 msgstr "Kokoro nudi prirodne neuronske glasove na više jezika, sa stilovima izražavanja i miješanjem glasova."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1536
 #, python-brace-format
 msgid "The {package} package{size} will be installed. This requires administrator permissions."
 msgstr "Instalirat će se paket {package}{size}. Za ovo su potrebna administratorska prava."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1553
 msgid "Installing Kokoro TTS"
 msgstr "Instaliranje Kokoro TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1582
 msgid "The installation failed."
 msgstr "Instalacija nije uspjela."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1609
 #, python-brace-format
 msgid "{engine} installed. Looking for voices…"
 msgstr "{engine} je instaliran. Traženje glasova…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1620
 #, python-brace-format
 msgid "{engine} could not be installed"
 msgstr "{engine} nije moguće instalirati"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1687
 msgid "Type some text to test"
 msgstr "Unesite tekst za testiranje"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1701
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "Zvučna jačina je na nuli — povećava se na minimum za test."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1769
 #, python-brace-format
 msgid "Preparing {voice}. Speech starts in a moment."
 msgstr "Priprema glasa {voice}. Govor počinje za trenutak."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1770
 msgid "Preparing the voice. Speech starts in a moment."
 msgstr "Priprema glasa. Govor počinje za trenutak."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1776
+#: usr/share/biglinux/tts-biglinux/window.py:308
+msgid "Speaking…"
+msgstr "Govori…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1778
 #, python-brace-format
 msgid "Press {shortcut} again to stop."
 msgstr "Ponovno pritisnite {shortcut} za zaustavljanje."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1779
 msgid "Use Stop to end the reading."
 msgstr "Koristite Zaustavi za prekid čitanja."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1786
 msgid "The speech engine reported a problem."
 msgstr "Govorni pogon prijavio je problem."
 
-msgid "Stopped"
-msgstr "Zaustavljeno"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1792
 msgid "Reading was stopped."
 msgstr "Čitanje je zaustavljeno."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1796
 msgid "Ready to speak"
 msgstr "Spremno za govor"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1797
 msgid "Select any text and use the shortcut to hear it."
 msgstr "Odaberite bilo koji tekst i upotrijebite prečac da ga poslušate."
 
-msgid "The shortcut is not active."
-msgstr "Prečac nije aktivan."
-
-msgid "Checking the shortcut with the desktop…"
-msgstr "Provjera prečaca s radnim okruženjem…"
-
-msgid "Not active"
-msgstr "Nije aktivno"
-
-msgid "Active"
-msgstr "Aktivno"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1858
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Prečac promijenjen u {keys}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1878
 msgid "Not installed. Install the rhvoice package and a voice."
 msgstr "Nije instalirano. Instalirajte paket rhvoice i jedan glas."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1879
 msgid "Not installed. Install the espeak-ng package."
 msgstr "Nije instalirano. Instalirajte paket espeak-ng."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1880
 msgid "Not installed. Install Piper from the TTS Backend list."
 msgstr "Nije instalirano. Instalirajte Piper s popisa TTS pozadinski sustav."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1881
 msgid "Not installed. Install the biglinux-kokoro-tts package."
 msgstr "Nije instalirano. Instalirajte paket biglinux-kokoro-tts."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1882
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1898
 msgid "Not installed"
 msgstr "Nije instalirano"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1901
 msgid "No voices"
 msgstr "Nema glasova"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1902
 msgid "Installed, but no voice is available. Open the Voice Manager."
 msgstr "Instalirano, ali nijedan glas nije dostupan. Otvorite Upravitelj glasova."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1905
 msgid "Ready"
 msgstr "Spremno"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1906
 #, python-brace-format
 msgid "Voices installed: {count}"
 msgstr "Instalirani glasovi: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1909
 msgid "Loading"
 msgstr "Učitavanje"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1911
 msgid "Speaking"
 msgstr "Govori"
 
-msgid "Error"
-msgstr "Greška"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1922
 #, python-brace-format
 msgid "{engine}: {state}"
 msgstr "{engine}: {state}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1927
 msgid "Technical details"
 msgstr "Tehničke pojedinosti"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1929
 msgid "Close"
 msgstr "Zatvori"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1964
 msgid "Settings restored to defaults"
 msgstr "Postavke vraćene na zadane vrijednosti"
 
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:350
+msgid "Piper engine"
+msgstr "Piper pogon"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:414
+msgid "Voice Manager"
+msgstr "Upravitelj glasa"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:435
+msgid "Search voices by name or language…"
+msgstr "Pretraži glasove po nazivu ili jeziku…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:467
+msgid "Loading available voices…"
+msgstr "Učitavanje dostupnih glasova…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:538
+msgid "No Voice Packages Found"
+msgstr "Nema pronađenih glasovnih paketa"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:540
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Nisu pronađeni TTS glasovni paketi u pacman repozitorijima."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:586
+msgid "High quality offline voices"
+msgstr "Visoke kvalitete offline glasovi"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:590
+msgid "Neural network voices — natural sounding"
+msgstr "Glasovi neuronske mreže — prirodno zvučeći"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:594
+msgid "Lightweight multi-language synthesizer"
+msgstr "Lagani višejezični sintetizator"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:598
+msgid "Neural TTS — high quality multilingual voices (82M)"
+msgstr "Neural TTS — visokokvalitetni višejezični glasovi (82M)"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:697
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:698
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Instaliraj {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:706
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:707
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Ukloni {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:716
+msgid "Installed"
+msgstr "Instalirano"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:735
+#, python-brace-format
+msgid "Remove {name}?"
+msgstr "Ukloniti {name}?"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:736
+msgid "The voice will no longer be available for reading. You can install it again later."
+msgstr "Glas više neće biti dostupan za čitanje. Kasnije ga možete ponovno instalirati."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:737
+msgid "Remove"
+msgstr "Ukloni"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:803
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "Preuzimanje {name}…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:812
+#, python-brace-format
+msgid "Downloading {name}… {done} of {total} KB"
+msgstr "Preuzimanje {name}… {done} od {total} KB"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:864
+msgid "Operation timed out"
+msgstr "Operacija je istekla"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:866
+msgid "pkexec or pacman not found"
+msgstr "pkexec ili pacman nije pronađen"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:891
+msgid "Download cancelled"
+msgstr "Preuzimanje otkazano"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:895
+msgid "Failed"
+msgstr "Neuspjeh"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:896
+msgid "Removal Failed"
+msgstr "Uklanjanje nije uspjelo"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:898
+msgid "Unknown error"
+msgstr "Nepoznata greška"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:915
+#, python-brace-format
+msgid "Play a sample of {name}"
+msgstr "Reproduciraj uzorak glasa {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:984
+msgid "Stop the sample"
+msgstr "Zaustavi uzorak"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1047
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1052
+msgid "The sample could not be played."
+msgstr "Uzorak nije moguće reproducirati."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1050
+#, python-brace-format
+msgid "The sample could not be played: {program} is not installed."
+msgstr "Uzorak nije moguće reproducirati: {program} nije instaliran."
+
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:60
 msgid "Welcome to BigLinux TTS"
 msgstr "Dobrodošli u BigLinux TTS"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:67
 msgid "Your text-to-speech assistant"
 msgstr "Vaš asistent za pretvaranje teksta u govor"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:77
 msgid "Multiple TTS Engines"
 msgstr "Više TTS motora"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:79
 msgid ""
 "RHVoice, espeak-ng, Piper and Kokoro\n"
 "with automatic voice discovery"
@@ -880,17 +1802,21 @@ msgstr ""
 "RHVoice, espeak-ng, Piper i Kokoro\n"
 "s automatskim otkrivanjem glasova"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:83
 msgid "Multilingual Support"
 msgstr "Višjezicna podrška"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:84
 msgid ""
 "Voices in dozens of languages\n"
 "including Portuguese (Brazil)"
 msgstr "Glasovi na desecima jezika, uključujući portugalski (Brazil)"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:88
 msgid "Global Shortcut"
 msgstr "Globalna prečica"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:89
 #, python-brace-format
 msgid ""
 "Press {key} to read selected text\n"
@@ -899,25 +1825,31 @@ msgstr ""
 "Pritisnite {key} za čitanje odabranog teksta\n"
 "iz bilo koje aplikacije"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:93
 msgid "Clipboard Reading"
 msgstr "Čitanje međuspremnika"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:94
 msgid ""
 "Paste or type text directly\n"
 "and listen instantly"
 msgstr "Zalijepite ili upišite tekst izravno i odmah slušajte"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:98
 msgid "Fine-Tune Speech"
 msgstr "Fino podešavanje govora"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:99
 msgid ""
 "Adjust speed, pitch and volume\n"
 "to your preference"
 msgstr "Podesite brzinu, visinu i glasnoću prema svojim željama."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:101
 msgid "Easy Installation"
 msgstr "Jednostavna instalacija"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:102
 msgid ""
 "Install new voices and engines\n"
 "directly from the interface"
@@ -925,9 +1857,11 @@ msgstr ""
 "Instalirajte nove glasove i motore\n"
 "izravno iz sučelja"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:106
 msgid "Neural Voices"
 msgstr "Neuralni glasovi"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:108
 msgid ""
 "Install Piper or Kokoro voices for natural,\n"
 "high-quality speech synthesis"
@@ -935,9 +1869,11 @@ msgstr ""
 "Instalirajte Piper ili Kokoro glasove za prirodnu,\n"
 "visokokvalitetnu sintezu govora"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:112
 msgid "Reading History"
 msgstr "Povijest čitanja"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:114
 msgid ""
 "Optionally save and replay previous\n"
 "readings when history is enabled"
@@ -945,300 +1881,77 @@ msgstr ""
 "Po želji spremite i ponovno reproducirajte prethodna\n"
 "čitanja kada je povijest omogućena"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:146
 #, python-brace-format
 msgid "Tip: Press {key} to read selected text from any application."
 msgstr "Savjet: pritisnite {key} za čitanje odabranog teksta iz bilo koje aplikacije."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:166
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:169
 msgid "Show dialog on startup"
 msgstr "Prikaži dijalog pri pokretanju"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:178
 msgid "Let's Start"
 msgstr "Započnimo"
 
-msgid "Unknown"
-msgstr "Nepoznato"
-
+#: usr/share/biglinux/tts-biglinux/utils/i18n.py:207
 #, python-brace-format
-msgid "Today, {time}"
-msgstr "Danas, {time}"
+msgid "{language} ({region})"
+msgstr "{language} ({region})"
 
+#: usr/share/biglinux/tts-biglinux/window.py:49
+msgid "Show settings"
+msgstr "Prikaži postavke"
+
+#: usr/share/biglinux/tts-biglinux/window.py:169
+#: usr/share/biglinux/tts-biglinux/window.py:170
+msgid "Back"
+msgstr "Natrag"
+
+#: usr/share/biglinux/tts-biglinux/window.py:178
+#: usr/share/biglinux/tts-biglinux/window.py:297
+msgid "Text narrator"
+msgstr "Čitač teksta"
+
+#: usr/share/biglinux/tts-biglinux/window.py:249
+msgid "The shortcut is not active — open Advanced options to fix it"
+msgstr "Prečac nije aktivan — otvorite Napredne opcije da ga popravite"
+
+#: usr/share/biglinux/tts-biglinux/window.py:250
 #, python-brace-format
-msgid "Yesterday, {time}"
-msgstr "Jučer, {time}"
-
-msgid "Select this reading"
-msgstr "Odaberi ovo čitanje"
-
-msgid "(text not kept)"
-msgstr "(tekst nije zadržan)"
-
-msgid "Show more"
-msgstr "Prikaži više"
-
-msgid "Copy text"
-msgstr "Kopiraj tekst"
-
-msgid "Read again with the current voice"
-msgstr "Ponovno pročitaj trenutnim glasom"
-
-msgid "More actions"
-msgstr "Više radnji"
-
-msgid "Reading stopped before the end"
-msgstr "Čitanje zaustavljeno prije kraja"
-
-msgid "The engine failed during this reading"
-msgstr "Motor nije uspio tijekom ovog čitanja"
-
-msgid "Audio not kept for this reading"
-msgstr "Zvuk ovog čitanja nije zadržan"
-
-#, python-brace-format
-msgid "{engine} reading, {when}"
-msgstr "Čitanje s {engine}, {when}"
-
-msgid "Save audio as…"
-msgstr "Spremi zvuk kao…"
-
-msgid "Open file location"
-msgstr "Otvorite lokaciju datoteke"
-
-msgid "Delete"
-msgstr "Izbriši"
-
-msgid "Show less"
-msgstr "Prikaži manje"
-
-msgid "Text copied"
-msgstr "Tekst kopiran"
-
-msgid "Save audio as"
-msgstr "Spremi zvuk kao"
-
-msgid "Audio saved"
-msgstr "Zvuk spremljen"
-
-msgid "Could not save the audio"
-msgstr "Nije moguće spremiti zvuk"
-
-msgid "Saving is off: new readings are not kept."
-msgstr "Spremanje je isključeno: nova čitanja se ne zadržavaju."
-
-msgid "Turn On"
-msgstr "Uključi"
-
-msgid "Search text, voice, engine or date…"
-msgstr "Pretraži tekst, glas, motor ili datum…"
-
-msgid "All dates"
-msgstr "Svi datumi"
-
-msgid "Today"
-msgstr "Danas"
-
-msgid "Yesterday"
-msgstr "Jučer"
-
-msgid "Last 7 days"
-msgstr "Zadnjih 7 dana"
-
-msgid "Filter by date"
-msgstr "Filtriraj po datumu"
-
-msgid "All engines"
-msgstr "Svi motori"
-
-msgid "Filter by engine"
-msgstr "Filtriraj po motoru"
-
-msgid "Newest first"
-msgstr "Najnovije prvo"
-
-msgid "Sort order"
-msgstr "Redoslijed"
-
-msgid "Show as grid"
-msgstr "Prikaži kao rešetku"
-
-msgid "Select readings"
-msgstr "Odaberi čitanja"
-
-msgid "Select All"
-msgstr "Odaberi sve"
-
-msgid "Deselect All"
-msgstr "Poništi sve"
-
-msgid "Save the selected readings to a folder"
-msgstr "Spremi odabrana čitanja u mapu"
-
-msgid "Save selected"
-msgstr "Spremi odabrano"
-
-msgid "Delete selected"
-msgstr "Izbriši odabrano"
-
-msgid "History entries"
-msgstr "Unosi povijesti"
-
-msgid "The history could not be read"
-msgstr "Povijest nije moguće pročitati"
-
-#, python-brace-format
-msgid "Check the permissions of the folder {folder}."
-msgstr "Provjerite dozvole mape {folder}."
-
-msgid "No readings found"
-msgstr "Nema pronađenih čitanja"
-
-msgid "Try other words or another date or engine."
-msgstr "Pokušajte s drugim riječima, drugim datumom ili motorom."
-
-msgid "Clear Filters"
-msgstr "Očisti filtre"
-
-msgid "No readings yet"
-msgstr "Još nema čitanja"
-
-#, python-brace-format
-msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
-msgstr "Sve što slušate pojavit će se ovdje, sa zvukom. Sprema se samo na ovom računalu, u {folder}."
-
-#, python-brace-format
-msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
-msgstr "Spremanje je isključeno. Uključite ga da biste zadržali ono što slušate, sa zvukom — samo na ovom računalu, u {folder}."
-
-msgid "Turn On History"
-msgstr "Uključi povijest"
-
-msgid "Oldest first"
-msgstr "Najstarije prvo"
-
-msgid "Show as list"
-msgstr "Prikaži kao popis"
-
-#, python-brace-format
-msgid "Selected: {count}"
-msgstr "Odabrano: {count}"
-
-msgid "Reading deleted"
-msgstr "Čitanje izbrisano"
-
-msgid "Undo"
-msgstr "Poništi"
-
-msgid "Delete the selected readings?"
-msgstr "Izbrisati odabrana čitanja?"
-
-#, python-brace-format
-msgid "Readings: {count}. Their audio and text files are moved to the Trash."
-msgstr "Čitanja: {count}. Njihove zvučne i tekstne datoteke premještaju se u smeće."
-
-#, python-brace-format
-msgid "Moved to the Trash: {count}"
-msgstr "Premješteno u smeće: {count}"
-
-msgid "Save the selected readings"
-msgstr "Spremi odabrana čitanja"
-
-#, python-brace-format
-msgid "Saved to {folder}: {count}"
-msgstr "Spremljeno u {folder}: {count}"
-
-msgid "No shortcut"
-msgstr "Nema prečaca"
-
-#, python-brace-format
-msgid "Shortcut: {keys}"
-msgstr "Prečac: {keys}"
-
-msgid "Piper engine"
-msgstr "Piper pogon"
-
-msgid "Voice Manager"
-msgstr "Upravitelj glasa"
-
-msgid "Search voices by name or language…"
-msgstr "Pretraži glasove po nazivu ili jeziku…"
-
-msgid "Loading available voices…"
-msgstr "Učitavanje dostupnih glasova…"
-
-msgid "No Voice Packages Found"
-msgstr "Nema pronađenih glasovnih paketa"
-
-msgid "Could not find any TTS voice packages from pacman repositories."
-msgstr "Nisu pronađeni TTS glasovni paketi u pacman repozitorijima."
-
-msgid "High quality offline voices"
-msgstr "Visoke kvalitete offline glasovi"
-
-msgid "Neural network voices — natural sounding"
-msgstr "Glasovi neuronske mreže — prirodno zvučeći"
-
-msgid "Lightweight multi-language synthesizer"
-msgstr "Lagani višejezični sintetizator"
-
-msgid "Neural TTS — high quality multilingual voices (82M)"
-msgstr "Neural TTS — visokokvalitetni višejezični glasovi (82M)"
-
-#, python-brace-format
-msgid "Install {name}"
-msgstr "Instaliraj {name}"
-
-#, python-brace-format
-msgid "Remove {name}"
-msgstr "Ukloni {name}"
-
-msgid "Installed"
-msgstr "Instalirano"
-
-#, python-brace-format
-msgid "Remove {name}?"
-msgstr "Ukloniti {name}?"
-
-msgid "The voice will no longer be available for reading. You can install it again later."
-msgstr "Glas više neće biti dostupan za čitanje. Kasnije ga možete ponovno instalirati."
-
-msgid "Remove"
-msgstr "Ukloni"
-
-#, python-brace-format
-msgid "Downloading {name}…"
-msgstr "Preuzimanje {name}…"
-
-#, python-brace-format
-msgid "Downloading {name}… {done} of {total} KB"
-msgstr "Preuzimanje {name}… {done} od {total} KB"
-
-msgid "Operation timed out"
-msgstr "Operacija je istekla"
-
-msgid "pkexec or pacman not found"
-msgstr "pkexec ili pacman nije pronađen"
-
-msgid "Download cancelled"
-msgstr "Preuzimanje otkazano"
-
-msgid "Failed"
-msgstr "Neuspjeh"
-
-msgid "Removal Failed"
-msgstr "Uklanjanje nije uspjelo"
-
-msgid "Unknown error"
-msgstr "Nepoznata greška"
-
-#, python-brace-format
-msgid "Play a sample of {name}"
-msgstr "Reproduciraj uzorak glasa {name}"
-
-msgid "Stop the sample"
-msgstr "Zaustavi uzorak"
-
-msgid "The sample could not be played."
-msgstr "Uzorak nije moguće reproducirati."
-
-#, python-brace-format
-msgid "The sample could not be played: {program} is not installed."
-msgstr "Uzorak nije moguće reproducirati: {program} nije instaliran."
+msgid "Select text and press {key} to read it aloud"
+msgstr "Odaberite tekst i pritisnite {key} da ga pročitate naglas"
+
+#: usr/share/biglinux/tts-biglinux/window.py:382
+msgid "Show tray icon"
+msgstr "Prikaži ikonu u traci sustava"
+
+#: usr/share/biglinux/tts-biglinux/window.py:383
+msgid "Restore Defaults…"
+msgstr "Vrati zadane postavke…"
+
+#: usr/share/biglinux/tts-biglinux/window.py:388
+msgid "Welcome"
+msgstr "Dobrodošli"
+
+#: usr/share/biglinux/tts-biglinux/window.py:389
+msgid "About BigLinux TTS"
+msgstr "O BigLinux TTS-u"
+
+#: usr/share/biglinux/tts-biglinux/window.py:400
+#: usr/share/biglinux/tts-biglinux/window.py:401
+msgid "Main menu"
+msgstr "Glavni izbornik"
+
+#: usr/share/biglinux/tts-biglinux/window.py:461
+msgid "Restore settings?"
+msgstr "Vratiti postavke?"
+
+#: usr/share/biglinux/tts-biglinux/window.py:462
+msgid "This will return all adjustments to their original defaults."
+msgstr "Ovo će vratiti sve prilagodbe na izvorne zadane vrijednosti."
+
+#: usr/share/biglinux/tts-biglinux/window.py:465
+msgid "Restore"
+msgstr "Vrati"
