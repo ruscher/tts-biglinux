@@ -1,6 +1,28 @@
 #!/bin/bash
 # BigLinux TTS — read (or stop reading) the selected text.
 # The command the global shortcut runs; it hands over to the running app.
+#
+# App already running: activate its "speak" action over D-Bus with gdbus
+# (glib2) — a few milliseconds, no Python or GTK start-up in this process.
+# Not running (or not answering): start it with --speak.
+
+APP_ID="br.com.biglinux.tts"
+if command -v gdbus >/dev/null 2>&1 &&
+    gdbus call --session --timeout 3 --dest "$APP_ID" \
+        --object-path "/${APP_ID//.//}" \
+        --method org.gtk.Actions.Activate speak '[]' '{}' >/dev/null 2>&1; then
+    exit 0
+fi
+
+# The app keeps running (tray icon) after this request. Descriptors inherited
+# from whoever ran us beyond stdin/stdout/stderr must not live on with it:
+# wlmaker before the CLOEXEC fix hands every program it starts the pipes of
+# all its other children, and a long-running holder keeps them from ever
+# closing in the compositor (it ran out of descriptors). 255: bash's script.
+for fd in /proc/$$/fd/*; do
+    n=${fd##*/}
+    [[ $n =~ ^[0-9]+$ ]] && ((n > 2 && n != 255)) && eval "exec $n>&-" 2>/dev/null
+done
 
 # Detect dev environment: if this script lives in a git repo, use its main.py
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

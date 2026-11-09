@@ -104,6 +104,17 @@ class TTSApplication(Adw.Application):
         # and no tray would otherwise let GApplication quit before speaking).
         self._speak_hold = False
 
+        # Desktop integration, as observed (not assumed): when the shortcut's
+        # command last reached the app, what the last capture found, and
+        # whether the tray icon is really shown. The Integration panel and
+        # --diagnose read these; listeners hear every change.
+        self.last_speak_request = 0.0  # time.time() of the last shortcut/--speak
+        self.last_capture = ""  # clipboard_service.describe() of the last capture
+        self.tray_state = "disabled"  # disabled | starting | visible | unavailable
+        self.tray_detail = ""
+        self._tray_restarts = 0
+        self._integration_listeners: list = []
+
         # Signals
         self.connect("activate", self._on_activate)
         self.connect("startup", self._on_startup)
@@ -188,13 +199,37 @@ class TTSApplication(Adw.Application):
         options = command_line.get_options_dict()
         if options.contains("speak"):
             logger.debug("--speak flag received, triggering tray speak")
-            if not self._speak_hold:
-                self.hold()
-                self._speak_hold = True
-            self._on_tray_speak()
+            self.speak_request()
         else:
             self.activate()
         return 0
+
+    def speak_request(self) -> None:
+        """The global shortcut's command arrived (``--speak`` or the ``speak``
+        action biglinux-tts-speak activates over D-Bus)."""
+        import time
+
+        if not self._speak_hold:
+            self.hold()
+            self._speak_hold = True
+        self.last_speak_request = time.time()
+        self._notify_integration()
+        self._on_tray_speak()
+
+    def add_integration_listener(self, callback) -> None:
+        """``callback()`` on the main thread when integration facts change."""
+        self._integration_listeners.append(callback)
+
+    def remove_integration_listener(self, callback) -> None:
+        if callback in self._integration_listeners:
+            self._integration_listeners.remove(callback)
+
+    def _notify_integration(self) -> None:
+        for cb in list(self._integration_listeners):
+            try:
+                cb()
+            except Exception as e:
+                logger.warning("Integration listener error: %s", e)
 
     def _on_signal(self) -> bool:
         logger.info("Termination signal: quitting")
@@ -275,10 +310,21 @@ class TTSApplication(Adw.Application):
         self._tray.on_activate = self._on_tray_speak
         self._tray.on_player = self._on_tray_player
         self._tray.on_exit = self._on_tray_lost
+        self._tray.on_ready = self._on_tray_ready
         self._tray.set_menu(self._build_tray_menu())
+        self._set_tray_state("starting")
         self._tray.register()
         # Keep app alive when all windows are closed
         self.hold()
+
+    def _set_tray_state(self, state: str, detail: str = "") -> None:
+        self.tray_state, self.tray_detail = state, detail
+        self._notify_integration()
+
+    def _on_tray_ready(self) -> None:
+        self._set_tray_state("visible")
+        # Reading already in progress (a cold Alt+V): show it at once.
+        self._refresh_tray_playback()
 
     _notif_dismiss_id: int = 0
     _notif_id: int = 0  # D-Bus notification ID
@@ -514,10 +560,11 @@ class TTSApplication(Adw.Application):
         """
         import threading
 
-        from services.clipboard_service import get_selected_text
+        from services import clipboard_service as cs
 
         tts = self.tts_service
         mode = self.settings.history.playback_mode  # interrupt|queue|simultaneous
+        clipboard_fallback = self.settings.shortcut.clipboard_fallback
 
         if mode == "interrupt" and tts.is_speaking:
             self._speech_queue.clear()
@@ -527,12 +574,23 @@ class TTSApplication(Adw.Application):
 
         def _no_text(reason: str) -> bool:
             self._speech_queue.clear()
+            self._notify_integration()
             if tts.is_speaking:
                 tts.stop()
-            elif reason in ("wl-clipboard not installed", "xsel or xclip not installed"):
+            elif reason in (cs.WAYLAND_TOOL_MISSING, cs.X11_TOOL_MISSING):
                 self._show_dbus_notification(
                     _("Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."),
                     expire_timeout=8000, summary=_("Could not read the text"), icon="dialog-warning",
+                )
+            elif reason == cs.PRIMARY_UNSUPPORTED:
+                self._show_dbus_notification(
+                    _("This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."),
+                    expire_timeout=8000, summary=_("Could not read the text"), icon="dialog-warning",
+                )
+            elif reason == cs.TIMEOUT:
+                self._show_dbus_notification(
+                    _("The program with the selected text did not answer. Try again."),
+                    expire_timeout=6000, summary=_("Could not read the text"), icon="dialog-warning",
                 )
             else:
                 self._show_dbus_notification(
@@ -543,11 +601,13 @@ class TTSApplication(Adw.Application):
             return False
 
         def _capture_and_speak() -> None:
-            result = get_selected_text()
-            logger.debug("Tray speak: captured %d chars (%s)", len(result.text), result.error or "ok")
+            result = cs.get_selected_text(clipboard_fallback=clipboard_fallback)
+            self.last_capture = cs.describe(result)  # length and source only
+            logger.debug("Tray speak: captured %s", self.last_capture)
             if not result.text:
                 GLib.idle_add(_no_text, result.error)
                 return
+            GLib.idle_add(self._notify_integration)
 
             raw_text = result.text
             logger.debug("Tray speak: raw text length=%d, mode=%s", len(raw_text), mode)
@@ -662,10 +722,19 @@ class TTSApplication(Adw.Application):
         """Sync the tray icon animation, tooltip and menu with playback state."""
         if self._tray is None:
             return
+        from config import TTSState
+
         tts = self._tts_service
         speaking = bool(tts and tts.is_speaking)
         paused = bool(tts and tts.is_paused)
-        label = (_("Paused") if paused else _("Playing…")) if speaking else ""
+        if not speaking:
+            label = ""
+        elif paused:
+            label = _("Paused")
+        elif tts.state == TTSState.LOADING:
+            label = _("Loading voice…")  # a neural model is still loading
+        else:
+            label = _("Playing…")
         settings = Gtk.Settings.get_default()
         animate = settings is None or settings.get_property("gtk-enable-animations")
         self._tray.set_speaking(speaking, label, paused=paused, animate=animate)
@@ -706,8 +775,10 @@ class TTSApplication(Adw.Application):
 
     def enable_tray(self) -> None:
         """Enable the system tray icon (called from settings toggle)."""
+        self._cancel_tray_restart()
         if self._tray is not None:
             return
+        self._tray_restarts = 0
         self._setup_tray_icon()
 
     def _on_tray_lost(self) -> bool:
@@ -718,21 +789,81 @@ class TTSApplication(Adw.Application):
         """
         if self._tray is None:
             return False
+        crashed, error = self._tray.crashed, self._tray.last_error
         self._tray.unregister()
         self._tray = None
+        # A crash gets a few restarts, further and further apart; "no tray
+        # host" or a missing PySide6 does not (it would only fail again).
+        # Reading never depends on the icon: the app keeps working meanwhile.
+        if crashed and self._tray_restarts < self._TRAY_MAX_RESTARTS and self.settings.shortcut.show_in_launcher:
+            delay = 2 * (3 ** self._tray_restarts)  # 2 s, 6 s, 18 s
+            self._tray_restarts += 1
+            logger.warning("Tray helper crashed (%s); restart %d in %d s", error, self._tray_restarts, delay)
+            self._set_tray_state("starting", error)
+            self._tray_restart_id = GLib.timeout_add_seconds(delay, self._restart_tray)
+            return False  # the hold stays: the icon is coming back
         self.release()
+        self._set_tray_state("unavailable", error)
+        if "No system tray" in error:
+            self._watch_tray_host()
         if self._window is not None and not self._window.get_visible():
             self._window.destroy()
             self._window = None
         return False
 
+    _TRAY_MAX_RESTARTS = 3
+    _tray_restart_id = 0
+    _tray_host_watch = 0
+    _tray_host_tries = 0
+
+    def _watch_tray_host(self) -> None:
+        """Bring the icon back when a tray host appears (the panel or the
+        Dock's tray started late, or came back after a crash). Event-driven:
+        D-Bus tells us when the watcher name gets an owner, no polling."""
+        if self._tray_host_watch:
+            return
+
+        def appeared(*_a) -> None:
+            Gio.bus_unwatch_name(self._tray_host_watch)
+            self._tray_host_watch = 0
+            # A watcher already there without a host would answer at once and
+            # loop (start, wait 15 s, give up): a few tries per run, no more.
+            self._tray_host_tries += 1
+            if self._tray_host_tries > self._TRAY_MAX_RESTARTS:
+                return
+            if self._tray is None and self.settings.shortcut.show_in_launcher:
+                logger.info("A tray host appeared: showing the icon")
+                self._tray_restarts = 0
+                self._setup_tray_icon()
+
+        self._tray_host_watch = Gio.bus_watch_name(
+            Gio.BusType.SESSION, "org.kde.StatusNotifierWatcher",
+            Gio.BusNameWatcherFlags.NONE, appeared, None,
+        )
+
+    def _restart_tray(self) -> bool:
+        self._tray_restart_id = 0
+        self.release()  # the hold kept for the restart; setup takes its own
+        if self._tray is None and self.settings.shortcut.show_in_launcher:
+            self._setup_tray_icon()
+        return GLib.SOURCE_REMOVE
+
+    def _cancel_tray_restart(self) -> None:
+        if self._tray_restart_id:
+            GLib.source_remove(self._tray_restart_id)
+            self._tray_restart_id = 0
+            self.release()
+
     def disable_tray(self) -> None:
         """Disable the system tray icon (called from settings toggle)."""
+        self._cancel_tray_restart()
         if self._tray is None:
+            self._set_tray_state("disabled")
             return
         self._tray.unregister()
         self._tray = None
         self.release()
+        self._set_tray_state("disabled")
 
     def _create_actions(self) -> None:
         """Create application-level actions."""
@@ -740,6 +871,13 @@ class TTSApplication(Adw.Application):
         about_action = Gio.SimpleAction.new("about", None)
         about_action.connect("activate", self._on_about)
         self.add_action(about_action)
+
+        # Read or stop the selection: what biglinux-tts-speak activates over
+        # D-Bus when the app already runs (no GTK start-up in the shortcut's
+        # own process).
+        speak_action = Gio.SimpleAction.new("speak", None)
+        speak_action.connect("activate", lambda *_a: self.speak_request())
+        self.add_action(speak_action)
 
         # Quit
         quit_action = Gio.SimpleAction.new("quit", None)
