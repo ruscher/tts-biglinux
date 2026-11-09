@@ -918,9 +918,18 @@ class TTSApplication(Adw.Application):
         # The built-in Troubleshooting page provides copy/save controls for
         # diagnostics that users can attach to an issue report.
         try:
-            from services.diagnostics import collect_diagnostics, format_diagnostics
+            from services.diagnostics import (
+                collect_diagnostics,
+                collect_integration,
+                format_diagnostics,
+                format_integration,
+            )
 
-            about.set_debug_info(format_diagnostics(collect_diagnostics(self.settings)))
+            about.set_debug_info(
+                format_diagnostics(collect_diagnostics(self.settings))
+                + "\n\n"
+                + format_integration(collect_integration(self.settings, self))
+            )
             about.set_debug_info_filename("biglinux-tts-diagnostic.txt")
         except Exception as e:
             logger.debug("Could not attach diagnostics: %s", e)
