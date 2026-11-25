@@ -445,30 +445,16 @@ GenericName={generic_name}
 
     @staticmethod
     def detect_desktop_environment() -> str:
-        """Detect current desktop environment from XDG_CURRENT_DESKTOP.
+        """Detect the desktop from the session variables (XDG_CURRENT_DESKTOP,
+        XDG_SESSION_DESKTOP, DESKTOP_SESSION).
 
-        Returns one of: 'kde', 'gnome', 'xfce', 'cinnamon', 'unknown'.
+        Returns one of: 'kde', 'gnome', 'xfce', 'cinnamon', 'wlmaker',
+        'windowmaker', 'unknown'. session_info.detect() also checks the
+        running compositor; this stays a pure read of the environment.
         """
-        xdg = os.environ.get("XDG_CURRENT_DESKTOP", "").lower()
-        if "kde" in xdg or "plasma" in xdg:
-            return "kde"
-        if "gnome" in xdg or "unity" in xdg:
-            return "gnome"
-        if "xfce" in xdg:
-            return "xfce"
-        if "cinnamon" in xdg or "x-cinnamon" in xdg:
-            return "cinnamon"
-        # Fallback: check DESKTOP_SESSION
-        session = os.environ.get("DESKTOP_SESSION", "").lower()
-        for key, val in [
-            ("plasma", "kde"), ("kde", "kde"),
-            ("gnome", "gnome"), ("ubuntu", "gnome"),
-            ("xfce", "xfce"), ("xubuntu", "xfce"),
-            ("cinnamon", "cinnamon"),
-        ]:
-            if key in session:
-                return val
-        return "unknown"
+        from services.session_info import desktop_from_env
+
+        return desktop_from_env(dict(os.environ))[0]
 
     @staticmethod
     def _exec_path_for_speak() -> str:
@@ -739,6 +725,12 @@ GenericName={generic_name}
             return cls.register_xfce_shortcut(accel, exec_path)
         elif de == "cinnamon":
             return cls.register_cinnamon_shortcut(accel, exec_path)
+        elif de in ("wlmaker", "windowmaker"):
+            # Their own files (bigwm_shortcuts), from shortcut_service.register.
+            from services import session_info
+            from services.shortcut_service import register_bigwm
+
+            return bool(register_bigwm(accel, session_info.detect()).registered)
         # Unknown desktop: writing GNOME's gsettings could "succeed" with no
         # daemon listening, and the app would promise a shortcut that never
         # fires. The user adds it in the desktop's own keyboard settings.

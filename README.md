@@ -8,7 +8,7 @@
 Text-to-speech for the Linux desktop, with local voices, a global shortcut and real playback controls.
 
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue" alt="License: GPL-3.0-or-later"></a>
-<img src="https://img.shields.io/badge/version-4.1.0-brightgreen" alt="Version 4.1.0">
+<img src="https://img.shields.io/badge/version-4.2.0-brightgreen" alt="Version 4.2.0">
 <img src="https://img.shields.io/badge/platform-Arch%20%7C%20Manjaro%20%7C%20BigLinux-1793d1" alt="Platform: Arch, Manjaro, BigLinux">
 <img src="https://img.shields.io/badge/GTK4-libadwaita%201.5%2B-4a86cf" alt="GTK4 and libadwaita 1.5+">
 <img src="https://img.shields.io/badge/Rust-1.85%2B-dea584" alt="Rust 1.85+">
@@ -199,7 +199,7 @@ Removing the package leaves your personal data in your home folder: settings, hi
 
 ### Dependencies
 
-Every required package comes from the official Arch/Manjaro repositories. This list matches `pkgbuild/PKGBUILD` (`epoch=1`, `pkgver=4.1.0`, `pkgrel=5`).
+Every required package comes from the official Arch/Manjaro repositories. This list matches `pkgbuild/PKGBUILD` (`epoch=1`, `pkgver=4.2.0`, `pkgrel=1`).
 
 <details open>
 <summary><b>Required (<code>depends</code>)</b></summary>
@@ -288,7 +288,11 @@ When pressed, it runs `biglinux-tts-speak`, which hands the request to the runni
 | GNOME (and Unity) | `gsettings`: a custom keybinding in `org.gnome.settings-daemon.plugins.media-keys` |
 | Cinnamon | `gsettings`: `org.cinnamon.desktop.keybindings` custom list |
 | Xfce | `xfconf-query`, channel `xfce4-keyboard-shortcuts` |
+| Big WindowMaker, X11 (Window Maker) | An item with `SHORTCUT` in the root menu, `~/GNUstep/Defaults/WMRootMenu`, for example `("Read or stop the selected text", SHORTCUT, "Mod1+v", EXEC, "/usr/bin/biglinux-tts-speak")`. Window Maker re-reads the file by itself. |
+| Big WindowMaker, Wayland (wlmaker) | An entry in `KeyBindings` of `~/.config/wlmaker/Config.plist`, for example `"Alt+V" = (ShellExecute, "/usr/bin/biglinux-tts-speak")`, applied by a configuration reload or at the next login. From X11 the entry is also written here, so a later Wayland login already has it. |
 | Any other desktop | The app does not claim a shortcut. Add one in your desktop's keyboard settings with the command **`biglinux-tts-speak`**. |
+
+On Big WindowMaker only the entry that runs `biglinux-tts-speak` is written or removed, and the rest of the file is kept byte for byte. A key already used by another entry is reported and nothing is written. The previous file is kept as `<file>.bak-biglinux-tts`, and a file that cannot be parsed is never touched.
 
 Registration runs in a background thread when the app starts. The card, Advanced options, the status bar and the tray tooltip update when the desktop answers.
 
@@ -318,6 +322,9 @@ Notifications show what is being read, and give a clear message when something f
 | `biglinux-tts-speak` | Same as `biglinux-tts --speak`; this is the command bound to the shortcut |
 | `biglinux-tts --debug` | Detailed logging on the terminal |
 | `biglinux-tts --version` | Print the version |
+| `biglinux-tts --diagnose` | Report the shortcut, text capture, tray icon, voices and audio, then exit |
+| `biglinux-tts --repair-shortcut` | Register the global shortcut again for this desktop, then exit |
+| `biglinux-tts --remove-shortcut` | Remove the shortcut this app added to Big WindowMaker, then exit |
 
 The app runs as a single instance (GApplication `br.com.biglinux.tts`). A second command is passed to the instance that is already running. After the last reading, the app stays alive for a few seconds, so a quick second <kbd>Alt</kbd>+<kbd>V</kbd> reuses it.
 
@@ -568,7 +575,8 @@ The History folder comes from GLib's XDG user directories, so it follows a local
    kglobalaccel loads every launcher in `~/.local/share/kglobalaccel/` at each login. Old copies there (`bigtts.desktop`, `tts-speak.desktop`, `br.com.biglinux.tts.desktop`) bring the stale components back. The app deletes them when it starts (only files whose `Exec` runs `biglinux-tts`) and drops the stale components from memory. Open the app once, or log out and back in.
 
 4. **GNOME, Cinnamon, Xfce:** look for the *BigLinux TTS* entry in the desktop's custom keyboard shortcuts.
-5. **Other desktops:** the app cannot register a shortcut there. Add one by hand in the keyboard settings with the command `biglinux-tts-speak`.
+5. **Big WindowMaker (X11 and Wayland):** run `biglinux-tts --diagnose`. If the shortcut is missing, run `biglinux-tts --repair-shortcut`. On X11 the item appears in `~/GNUstep/Defaults/WMRootMenu`. On Wayland it appears in `~/.config/wlmaker/Config.plist`, and it takes effect after the next login if wlmaker cannot reload its configuration. Releases before 4.2.0 did not register a shortcut on Big WindowMaker.
+6. **Other desktops:** the app cannot register a shortcut there. Add one by hand in the keyboard settings with the command `biglinux-tts-speak`.
 
 ### "No text selected" or nothing is read
 
@@ -589,7 +597,7 @@ A `pip install --user` package that puts a top-level `utils.py` (or `services`, 
 A repository with an older build can **downgrade** the package, for example a pamac update with downgrades allowed, or a `pacman -S` reinstall from a repository that still has an older `pkgrel`. Check the installed version and the log:
 
 ```bash
-pacman -Q tts-biglinux                 # 1:4.1.0-5 or newer expected
+pacman -Q tts-biglinux                 # 1:4.2.0-1 or newer expected
 grep downgraded /var/log/pacman.log | grep tts-biglinux
 ```
 
@@ -851,7 +859,7 @@ cd ..
 python3 scripts/benchmark_tts.py
 ```
 
-The suite has 355 Python tests and 4 Rust tests at 4.1.0-5. `tests/conftest.py` redirects the History folder, the Trash and `settings.json` into temporary folders for every test, so the suite **never touches your real history or settings**.
+The suite has 405 Python tests and 4 Rust tests at 4.2.0. `tests/conftest.py` redirects the History folder, the Trash and `settings.json` into temporary folders for every test, so the suite **never touches your real history or settings**.
 
 <details>
 <summary><b>What the tests cover</b></summary>
@@ -899,8 +907,8 @@ cd pkgbuild && makepkg -si
 
 ```text
 epoch=1          # releases before 4.1.0 used date versions (26.10.08-1606 > 4.1.0 for vercmp)
-pkgver=4.1.0     # = APP_VERSION in config.py = version in tts-engine/Cargo.toml
-pkgrel=5
+pkgver=4.2.0     # = APP_VERSION in config.py = version in tts-engine/Cargo.toml
+pkgrel=1
 ```
 
 The epoch is permanent and must never be removed. `tests/test_release.py` checks the epoch and the shared version in CI.
@@ -974,6 +982,7 @@ tts-biglinux/
 | Oct 2026 | **4.1** | **Release**: history for every engine, long texts streamed by espeak-ng too, text rules follow the voice's language, complete translations in 30 languages, official-repository dependencies only, `epoch=1` versioning, CI |
 | Oct 2026 | 4.1.0-4 | A `pip install --user` module can no longer break startup (regular packages, `python3 -s`) |
 | Nov 2026 | 4.1.0-5 | <kbd>Alt</kbd>+<kbd>V</kbd> works right after login (stale KDE launchers removed), unreadable settings never overwritten, bounded espeak-ng fallback, atomic audio export, dependencies match what the app runs |
+| Nov 2026 | **4.2.0** | Global shortcut on Big WindowMaker (Window Maker on X11 and wlmaker on Wayland). `--diagnose`, `--repair-shortcut` and `--remove-shortcut`. Desktop integration panel with a guided shortcut test. The selection is read from where it is, never from an old copied text |
 
 ---
 

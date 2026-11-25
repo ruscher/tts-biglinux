@@ -53,7 +53,7 @@ def app(tmp_path, monkeypatch):
 def _select(monkeypatch, *texts):
     queue = list(texts)
     monkeypatch.setattr(clipboard, "get_selected_text",
-                        lambda max_chars=0: clipboard.ClipboardResult(queue.pop(0), True, ""))
+                        lambda max_chars=0, **kw: clipboard.ClipboardResult(queue.pop(0), True, ""))
 
 
 def _texts(n):

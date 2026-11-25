@@ -14,637 +14,1353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "Piper engine"
-msgstr "Piper-mootor"
+#: usr/share/biglinux/tts-biglinux/application.py:76
+msgid "Read the selected text aloud"
+msgstr "Loe valitud tekst ette"
 
-msgid "Voice Manager"
-msgstr "Hääletusjuht"
+#: usr/share/biglinux/tts-biglinux/application.py:377
+msgid "Could not read the text."
+msgstr "Teksti ei õnnestunud lugeda."
 
-msgid "Search voices by name or language…"
-msgstr "Otsi hääli nime või keele järgi…"
+#: usr/share/biglinux/tts-biglinux/application.py:378
+#: usr/share/biglinux/tts-biglinux/application.py:583
+#: usr/share/biglinux/tts-biglinux/application.py:588
+#: usr/share/biglinux/tts-biglinux/application.py:593
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1785
+#: usr/share/biglinux/tts-biglinux/window.py:310
+msgid "Could not read the text"
+msgstr "Teksti ei õnnestunud lugeda"
 
-msgid "Loading available voices…"
-msgstr "Laadimine saadaval hääli…"
+#: usr/share/biglinux/tts-biglinux/application.py:389
+msgid "Reading text"
+msgstr "Teksti lugemine"
 
-msgid "Cancel"
-msgstr "Tühista"
+#: usr/share/biglinux/tts-biglinux/application.py:431
+#: usr/share/biglinux/tts-biglinux/application.py:456
+#: usr/share/biglinux/tts-biglinux/application.py:737
+msgid "Playing…"
+msgstr "Mängib…"
 
-msgid "No Voice Packages Found"
-msgstr "Häältpakette ei leitud"
+#: usr/share/biglinux/tts-biglinux/application.py:582
+msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
+msgstr "Paigalda wl-clipboard (Wayland) või xclip (X11), et valitud teksti saaks lugeda."
 
-msgid "Could not find any TTS voice packages from pacman repositories."
-msgstr "Pacman'i hoidlatest ei leitud ühtegi TTS häälepaketti."
+#: usr/share/biglinux/tts-biglinux/application.py:587
+msgid "This desktop does not share selected text with other programs. Copy the text and turn on “Read copied text” in the settings."
+msgstr ""
 
-msgid "High quality offline voices"
-msgstr "Kvaliteetsed offline hääled"
+#: usr/share/biglinux/tts-biglinux/application.py:592
+msgid "The program with the selected text did not answer. Try again."
+msgstr ""
 
-msgid "Neural network voices — natural sounding"
-msgstr "Neuraalvõrgu hääled — loomulikult kõlavad"
+#: usr/share/biglinux/tts-biglinux/application.py:597
+msgid "Select some text first, then press the shortcut."
+msgstr "Vali esmalt tekst ja vajuta siis kiirklahvi."
 
-msgid "Lightweight multi-language synthesizer"
-msgstr "Kerge mitmekeelne sünteesija"
+#: usr/share/biglinux/tts-biglinux/application.py:598
+msgid "No text selected"
+msgstr "Teksti pole valitud"
 
-msgid "Neural TTS — high quality multilingual voices (82M)"
-msgstr "Neuraalne TTS — kõrge kvaliteediga mitmekeelsed hääled (82M)"
+#: usr/share/biglinux/tts-biglinux/application.py:693
+msgid "Read text"
+msgstr "Lugege teksti"
 
-#, python-brace-format
-msgid "Install {name}"
-msgstr "Installige {name}"
-
-#, python-brace-format
-msgid "Remove {name}"
-msgstr "Eemalda {name}"
-
-msgid "Installed"
-msgstr "Paigaldatud"
-
-#, python-brace-format
-msgid "Remove {name}?"
-msgstr "Kas eemaldada {name}?"
-
-msgid "The voice will no longer be available for reading. You can install it again later."
-msgstr "Hääl pole enam lugemiseks saadaval. Saad selle hiljem uuesti paigaldada."
-
-msgid "Remove"
-msgstr "Eemalda"
-
-#, python-brace-format
-msgid "Downloading {name}…"
-msgstr "{name} allalaadimine…"
-
-#, python-brace-format
-msgid "Downloading {name}… {done} of {total} KB"
-msgstr "{name} allalaadimine… {done} / {total} kB"
-
-msgid "Operation timed out"
-msgstr "Toiming aeg lõppes."
-
-msgid "pkexec or pacman not found"
-msgstr "pkexec või pacman ei leitud"
-
-msgid "Download cancelled"
-msgstr "Allalaadimine katkestati"
-
-msgid "Failed"
-msgstr "Eba."
-
-msgid "Removal Failed"
-msgstr "Eemaldamine ebaõnnestus"
-
-msgid "Unknown error"
-msgstr "Tundmatu viga"
-
-msgid "OK"
-msgstr "OK"
-
-#, python-brace-format
-msgid "Play a sample of {name}"
-msgstr "Esita hääle {name} näidis"
-
-msgid "Stop the sample"
-msgstr "Peata näidis"
-
-msgid "The sample could not be played."
-msgstr "Näidist ei õnnestunud esitada."
-
-#, python-brace-format
-msgid "The sample could not be played: {program} is not installed."
-msgstr "Näidist ei õnnestunud esitada: {program} pole paigaldatud."
-
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:107
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:169
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:210
 msgid "Play"
 msgstr "Mängi"
 
-msgid "Stop"
-msgstr "Peata"
-
-msgid "Playback position"
-msgstr "Esitamise asukoht"
-
+#: usr/share/biglinux/tts-biglinux/application.py:699
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:196
 msgid "Pause"
 msgstr "Pausi"
 
-msgid "Unknown"
-msgstr "Tundmatu"
+#: usr/share/biglinux/tts-biglinux/application.py:704
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:115
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:116
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Stop"
+msgstr "Peata"
 
+#: usr/share/biglinux/tts-biglinux/application.py:709
+#: usr/share/biglinux/tts-biglinux/window.py:48
+#: usr/share/biglinux/tts-biglinux/window.py:148
+msgid "Settings"
+msgstr "Seaded"
+
+#: usr/share/biglinux/tts-biglinux/application.py:711
+#: usr/share/biglinux/tts-biglinux/window.py:390
+msgid "Quit"
+msgstr "Välju"
+
+#: usr/share/biglinux/tts-biglinux/application.py:733
+msgid "Paused"
+msgstr "Pausil"
+
+#: usr/share/biglinux/tts-biglinux/application.py:735
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1766
+#: usr/share/biglinux/tts-biglinux/window.py:306
+msgid "Loading voice…"
+msgstr "Hääle laadimine…"
+
+#: usr/share/biglinux/tts-biglinux/application.py:893
+msgid "BigLinux Team"
+msgstr "BigLinuxi meeskond"
+
+#: usr/share/biglinux/tts-biglinux/application.py:904
+msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
+msgstr "BigLinux TTS muudab valitud või sisestatud teksti kõneks kohalike häälte, globaalsete kiirklahvide ja täpsete taasesitusnuppudega."
+
+#: usr/share/biglinux/tts-biglinux/application.py:907
+msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
+msgstr "BigLinux TTS sai alguse veebipõhise tööriistana 2021. aastal ja arenes natiivseks GTK4 rakenduseks, millel on mitu kõnemootorit, häältehaldus ja Rustis kirjutatud helimootor."
+
+#: usr/share/biglinux/tts-biglinux/application.py:959
+msgid "Could not register the shortcut."
+msgstr "Kiirklahvi ei õnnestunud registreerida."
+
+#: usr/share/biglinux/tts-biglinux/application.py:985
 #, python-brace-format
-msgid "Today, {time}"
-msgstr "Täna, {time}"
+msgid "Select text and press {shortcut} to hear it"
+msgstr "Vali tekst ja vajuta {shortcut}, et seda kuulata"
 
+#: usr/share/biglinux/tts-biglinux/application.py:986
+msgid "Text-to-speech assistant"
+msgstr "Tekstist kõneks abiline"
+
+#: usr/share/biglinux/tts-biglinux/main.py:24
+msgid "BigLinux Text-to-Speech — Read selected text aloud"
+msgstr "BigLinux tekstist kõneks — loe valitud tekst ette"
+
+#: usr/share/biglinux/tts-biglinux/main.py:29
+msgid "Enable debug logging"
+msgstr "Luba silumislogi"
+
+#: usr/share/biglinux/tts-biglinux/main.py:40
+msgid "Show how the shortcut, text capture, tray icon, voices and audio are set up, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:45
+msgid "Register the global shortcut again on this desktop, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/main.py:50
+msgid "Remove the shortcut this app added to Big WindowMaker, then exit"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:331
+#: usr/share/biglinux/tts-biglinux/services/desktop_integration_service.py:403
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:335
+msgid "Read or stop the selected text"
+msgstr "Loe või peata valitud tekst"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:244
+msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
+msgstr "Kokoro pole paigaldatud. Paigalda pakett biglinux-kokoro-tts."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:246
+msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
+msgstr "Kokoro häälemudel puudub. Paigalda pakett biglinux-kokoro-tts uuesti."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:248
+msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
+msgstr "Kokoro hääli ei leitud. Hääle allalaadimiseks ava häältehaldur."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:252
+msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
+msgstr "See Kokoro hääl pole paigaldatud. Selle allalaadimiseks ava häältehaldur."
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:470
 #, python-brace-format
-msgid "Yesterday, {time}"
-msgstr "Eile, {time}"
+msgid "Unknown voice: {voice_id}"
+msgstr "Tundmatu hääl: {voice_id}"
 
-msgid "Select this reading"
-msgstr "Vali see ettelugemine"
-
-msgid "(text not kept)"
-msgstr "(teksti ei säilitatud)"
-
-msgid "Show more"
-msgstr "Näita rohkem"
-
-msgid "Copy text"
-msgstr "Kopeeri tekst"
-
-msgid "Read again with the current voice"
-msgstr "Loe uuesti praeguse häälega"
-
-msgid "More actions"
-msgstr "Rohkem toiminguid"
-
-msgid "Stopped"
-msgstr "Peatatud"
-
-msgid "Error"
-msgstr "Viga"
-
-msgid "Reading stopped before the end"
-msgstr "Ettelugemine peatati enne lõppu"
-
-msgid "The engine failed during this reading"
-msgstr "Mootor ebaõnnestus selle ettelugemise ajal"
-
-msgid "Audio not kept for this reading"
-msgstr "Selle ettelugemise heli ei säilitatud"
-
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:475
 #, python-brace-format
-msgid "{engine} reading, {when}"
-msgstr "{engine} ettelugemine, {when}"
+msgid "Invalid voice id: {voice_id}"
+msgstr "Vigane hääle ID: {voice_id}"
 
-msgid "Save audio as…"
-msgstr "Salvesta heli kui…"
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:496
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:508
+msgid "The voice file is larger than expected."
+msgstr "Häälefail on oodatust suurem."
 
-msgid "Open file location"
-msgstr "Ava asukoht"
-
-msgid "Delete"
-msgstr "Kustuta"
-
-msgid "Show less"
-msgstr "Näita vähem"
-
-msgid "Text copied"
-msgstr "Tekst kopeeritud"
-
-msgid "Save audio as"
-msgstr "Salvesta heli kui"
-
-msgid "Audio saved"
-msgstr "Heli salvestatud"
-
-msgid "Could not save the audio"
-msgstr "Heli salvestamine ebaõnnestus"
-
-msgid "History"
-msgstr "Ajalugu"
-
-msgid "Saving is off: new readings are not kept."
-msgstr "Salvestamine on väljas: uusi ettelugemisi ei säilitata."
-
-msgid "Turn On"
-msgstr "Lülita sisse"
-
-msgid "Search text, voice, engine or date…"
-msgstr "Otsi teksti, häält, mootorit või kuupäeva…"
-
-msgid "All dates"
-msgstr "Kõik kuupäevad"
-
-msgid "Today"
-msgstr "Täna"
-
-msgid "Yesterday"
-msgstr "Eile"
-
-msgid "Last 7 days"
-msgstr "Viimased 7 päeva"
-
-msgid "Filter by date"
-msgstr "Filtreeri kuupäeva järgi"
-
-msgid "All engines"
-msgstr "Kõik mootorid"
-
-msgid "Filter by engine"
-msgstr "Filtreeri mootori järgi"
-
-msgid "Newest first"
-msgstr "Uuemad eespool"
-
-msgid "Sort order"
-msgstr "Sortimisjärjestus"
-
-msgid "Show as grid"
-msgstr "Näita ruudustikuna"
-
-msgid "Select readings"
-msgstr "Vali ettelugemised"
-
-msgid "Select All"
-msgstr "Vali kõik"
-
-msgid "Deselect All"
-msgstr "Tühista kõik"
-
-msgid "Save the selected readings to a folder"
-msgstr "Salvesta valitud ettelugemised kausta"
-
-msgid "Save selected"
-msgstr "Salvesta valitud"
-
-msgid "Delete selected"
-msgstr "Kustuta valitud"
-
-msgid "History entries"
-msgstr "Ajaloo kirjed"
-
-msgid "The history could not be read"
-msgstr "Ajalugu ei õnnestunud lugeda"
-
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:518
 #, python-brace-format
-msgid "Check the permissions of the folder {folder}."
-msgstr "Kontrolli kausta {folder} õigusi."
+msgid "incomplete download ({received} of {total} bytes)"
+msgstr "mittetäielik allalaadimine ({received} / {total} baiti)"
 
-msgid "No readings found"
-msgstr "Ettelugemisi ei leitud"
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:523
+msgid "empty response"
+msgstr "tühi vastus"
 
-msgid "Try other words or another date or engine."
-msgstr "Proovi teisi sõnu, muud kuupäeva või muud mootorit."
-
-msgid "Clear Filters"
-msgstr "Tühjenda filtrid"
-
-msgid "No readings yet"
-msgstr "Ettelugemisi veel pole"
-
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:529
 #, python-brace-format
-msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
-msgstr "Kõik, mida kuulad, ilmub siia koos heliga. Seda hoitakse ainult selles arvutis, kaustas {folder}."
+msgid "Could not download the voice. Check your internet connection and try again. ({error})"
+msgstr "Häält ei õnnestunud alla laadida. Kontrolli internetiühendust ja proovi uuesti. ({error})"
 
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:536
 #, python-brace-format
-msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
-msgstr "Salvestamine on väljas. Lülita see sisse, et säilitada kõike, mida kuulad, koos heliga — ainult selles arvutis, kaustas {folder}."
+msgid "The downloaded voice file is damaged. Try again. ({error})"
+msgstr "Allalaaditud häälefail on vigane. Proovi uuesti. ({error})"
 
-msgid "Turn On History"
-msgstr "Lülita ajalugu sisse"
-
-msgid "Oldest first"
-msgstr "Vanemad eespool"
-
-msgid "Show as list"
-msgstr "Näita loendina"
-
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:547
 #, python-brace-format
-msgid "Selected: {count}"
-msgstr "Valitud: {count}"
+msgid "Not enough disk space to install the voice ({size} MB needed)."
+msgstr "Hääle paigaldamiseks pole piisavalt kettaruumi (vaja on {size} MB)."
 
-msgid "Reading deleted"
-msgstr "Ettelugemine kustutatud"
-
-msgid "Undo"
-msgstr "Võta tagasi"
-
-msgid "Delete the selected readings?"
-msgstr "Kas kustutada valitud ettelugemised?"
-
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:555
 #, python-brace-format
-msgid "Readings: {count}. Their audio and text files are moved to the Trash."
-msgstr "Ettelugemised: {count}. Nende heli- ja tekstifailid teisaldatakse prügikasti."
+msgid "Cannot create user voices directory: {error}"
+msgstr "Kasutaja häälte kausta ei saa luua: {error}"
 
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:561
 #, python-brace-format
-msgid "Moved to the Trash: {count}"
-msgstr "Teisaldatud prügikasti: {count}"
+msgid "Failed to add voice: {error}"
+msgstr "Hääle lisamine ebaõnnestus: {error}"
 
-msgid "Save the selected readings"
-msgstr "Salvesta valitud ettelugemised"
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:574
+msgid "Cannot remove base voice"
+msgstr "Põhihäält ei saa eemaldada"
 
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:577
+msgid "No user voices installed"
+msgstr "Kasutaja hääli pole paigaldatud"
+
+#: usr/share/biglinux/tts-biglinux/services/kokoro_voice_service.py:582
 #, python-brace-format
-msgid "Saved to {folder}: {count}"
-msgstr "Salvestatud kausta {folder}: {count}"
+msgid "Failed to remove voice: {error}"
+msgstr "Hääle eemaldamine ebaõnnestus: {error}"
 
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:177
+msgid "The installation was cancelled: the administrator password was not confirmed."
+msgstr "Paigaldamine katkestati: administraatori parooli ei kinnitatud."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:180
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:239
+#, python-brace-format
+msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
+msgstr "{packages} pole sinu tarkvarahoidlates saadaval. Uuenda süsteemi (sudo pacman -Syu) ja proovi uuesti."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:184
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:204
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:244
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:263
+msgid "Another program is installing or updating packages. Wait for it to finish and try again."
+msgstr "Mõni teine programm paigaldab või uuendab pakette. Oota, kuni see lõpetab, ja proovi uuesti."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:186
+msgid "The packages could not be downloaded. Check your internet connection and try again."
+msgstr "Pakette ei õnnestunud alla laadida. Kontrolli internetiühendust ja proovi uuesti."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:188
+#, python-brace-format
+msgid "{packages} conflicts with installed files or packages. See the details."
+msgstr "{packages} on vastuolus paigaldatud failide või pakettidega. Vaata üksikasju."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:190
+#, python-brace-format
+msgid "Not enough free disk space to install {packages}."
+msgstr "{packages} paigaldamiseks pole piisavalt vaba kettaruumi."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:192
+#, python-brace-format
+msgid "{packages} could not be installed. See the details."
+msgstr "{packages} paigaldamine ebaõnnestus. Vaata üksikasju."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:200
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:236
+msgid "Nothing to install."
+msgstr "Pole midagi paigaldada."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:213
+msgid "pkexec is not installed (package polkit)."
+msgstr "pkexec pole paigaldatud (pakett polkit)."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:215
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:218
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:255
+msgid "The installation took too long and was stopped."
+msgstr "Paigaldamine võttis liiga kaua aega ja peatati."
+
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:252
+#: usr/share/biglinux/tts-biglinux/services/package_installer.py:265
+#, python-brace-format
+msgid "{packages} could not be built from the AUR. See the details."
+msgstr "Paketti {packages} ei õnnestunud AUR-ist ehitada. Vaadake üksikasju."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:127
+msgid "This key combination is not valid."
+msgstr "See klahvikombinatsioon pole sobiv."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:134
+msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
+msgstr "Kasuta Ctrl-, Alt- või Super-klahvi koos mõne teise klahviga, et tavaline trükkimine ei häiruks."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:235
+msgid "This key combination is not supported by the desktop."
+msgstr "Töölaud ei toeta seda klahvikombinatsiooni."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:247
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:296
+#, python-brace-format
+msgid "{shortcut} is already used by: {names}. Choose another shortcut."
+msgstr "{shortcut} on juba kasutusel: {names}. Vali teine kiirklahv."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:266
+msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
+msgstr "Töölaud ei aktsepteerinud kiirklahvi. Kas KDE globaalsete kiirklahvide teenus töötab?"
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:272
+msgid "The desktop did not confirm the new shortcut."
+msgstr "Töölaud ei kinnitanud uut kiirklahvi."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:292
+#, python-brace-format
+msgid "{shortcut} is saved. It starts working after you log in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:303
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:307
+#, python-brace-format
+msgid "The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:311
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:383
+msgid "Could not save the shortcut. Nothing was changed."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:392
+msgid "The shortcut was saved, but the desktop could not confirm it yet."
+msgstr "Kiirklahv salvestati, kuid töölaud ei suutnud seda veel kinnitada."
+
+#: usr/share/biglinux/tts-biglinux/services/shortcut_service.py:404
+msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
+msgstr "Kiirklahvi ei õnnestunud sellel töölaual registreerida. Lisa see süsteemi klaviatuuriseadetes käsuga biglinux-tts-speak."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:138
+msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
+msgstr "Heli ei õnnestunud esitada. Kontrolli, et alsa-utils (aplay) oleks paigaldatud."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:505
+#, python-brace-format
+msgid "{engine} could not start. Check that it is installed."
+msgstr "{engine} ei käivitunud. Kontrolli, et see oleks paigaldatud."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:650
+msgid "RHVoice is not installed. Install the rhvoice package."
+msgstr "RHVoice pole paigaldatud. Paigalda pakett rhvoice."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:918
+msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
+msgstr "espeak-ng ei suutnud seda teksti lugeda. Kontrolli, et espeak-ng oleks paigaldatud."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:933
+msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
+msgstr "Valitud Piper-hääl pole paigaldatud. Vali häältehalduris mõni teine hääl."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:989
+msgid "Piper could not read this text. Try another voice."
+msgstr "Piper ei suutnud seda teksti lugeda. Proovi mõnda teist häält."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1180
+#, python-brace-format
+msgid "{engine} crashed while reading the text."
+msgstr "{engine} jooksis teksti lugemisel kokku."
+
+#: usr/share/biglinux/tts-biglinux/services/tts_service.py:1182
+#, python-brace-format
+msgid "{engine} stopped with an error and could not read the text."
+msgstr "{engine} peatus veaga ega suutnud teksti lugeda."
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:608
+msgid "Extra low quality"
+msgstr "Eriti madal kvaliteet"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:609
+msgid "Low quality"
+msgstr "Madal kvaliteet"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:610
+msgid "Medium quality"
+msgstr "Keskmine kvaliteet"
+
+#: usr/share/biglinux/tts-biglinux/services/voice_manager.py:611
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1192
+msgid "High quality"
+msgstr "Kõrge kvaliteet"
+
+#: usr/share/biglinux/tts-biglinux/ui/audio_player.py:134
+msgid "Playback position"
+msgstr "Esitamise asukoht"
+
+#: usr/share/biglinux/tts-biglinux/ui/components.py:311
+#: usr/share/biglinux/tts-biglinux/ui/components.py:314
 msgid "No shortcut"
 msgstr "Kiirklahv puudub"
 
+#: usr/share/biglinux/tts-biglinux/ui/components.py:326
 #, python-brace-format
 msgid "Shortcut: {keys}"
 msgstr "Kiirklahv: {keys}"
 
-msgid "BigLinux TTS"
-msgstr "BigLinux TTS"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:44
+msgid "Unknown"
+msgstr "Tundmatu"
 
-msgid "Advanced options"
-msgstr "Täpsemad valikud"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:60
+#, python-brace-format
+msgid "Today, {time}"
+msgstr "Täna, {time}"
 
-msgid "Shortcut, performance, behavior"
-msgstr "Kiirklahv, jõudlus, käitumine"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:62
+#, python-brace-format
+msgid "Yesterday, {time}"
+msgstr "Eile, {time}"
 
-msgid "Change shortcut"
-msgstr "Muuda kiirklahvi"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:135
+msgid "Select this reading"
+msgstr "Vali see ettelugemine"
 
-msgid "Try again"
-msgstr "Proovi uuesti"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:141
+msgid "(text not kept)"
+msgstr "(teksti ei säilitatud)"
 
-msgid "Open Voice Manager"
-msgstr "Ava häältehaldur"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:158
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show more"
+msgstr "Näita rohkem"
 
-msgid "Details"
-msgstr "Üksikasjad"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:169
+msgid "Copy text"
+msgstr "Kopeeri tekst"
 
-msgid "This is a test, welcome to BigLinux!"
-msgstr "See on test, tere tulemast BigLinuxi!"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:171
+msgid "Read again with the current voice"
+msgstr "Loe uuesti praeguse häälega"
 
-msgid "Type text to test…"
-msgstr "Sisestage tekst testimiseks…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:177
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:178
+msgid "More actions"
+msgstr "Rohkem toiminguid"
 
-msgid "Text to test the voice"
-msgstr "Tekst hääle testimiseks"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1791
+msgid "Stopped"
+msgstr "Peatatud"
 
-msgid "Test voice"
-msgstr "Testi häält"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:198
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1913
+msgid "Error"
+msgstr "Viga"
 
-msgid "Test the selected voice"
-msgstr "Testi valitud häält"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:202
+msgid "Reading stopped before the end"
+msgstr "Ettelugemine peatati enne lõppu"
 
-msgid "Voice settings"
-msgstr "Häälseaded"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:203
+msgid "The engine failed during this reading"
+msgstr "Mootor ebaõnnestus selle ettelugemise ajal"
 
-msgid "Choose voice and adjust speech parameters"
-msgstr "Valige hääl ja kohandage kõne parameetreid"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:219
+msgid "Audio not kept for this reading"
+msgstr "Selle ettelugemise heli ei säilitatud"
 
-msgid "RHVoice (Native)"
-msgstr "RHVoice (Kohalik)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:225
+#, python-brace-format
+msgid "{engine} reading, {when}"
+msgstr "{engine} ettelugemine, {when}"
 
-msgid "espeak-ng"
-msgstr "espeak-ng"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:256
+msgid "Save audio as…"
+msgstr "Salvesta heli kui…"
 
-msgid "Piper (Neural TTS)"
-msgstr "Piper (Neuraalne TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:257
+msgid "Open file location"
+msgstr "Ava asukoht"
 
-msgid "Kokoro (Neural TTS)"
-msgstr "Kokoro (Neuraalne TTS)"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:258
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:820
+msgid "Delete"
+msgstr "Kustuta"
 
-msgid "TTS Backend"
-msgstr "TTS-taustasüsteem"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:266
+msgid "Show less"
+msgstr "Näita vähem"
 
-msgid "Engine used for speech synthesis"
-msgstr "Kõnesünteesiks kasutatav mootor"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:271
+msgid "Text copied"
+msgstr "Tekst kopeeritud"
 
-msgid "Select TTS engine"
-msgstr "Valige TTS-mootor"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:279
+msgid "Save audio as"
+msgstr "Salvesta heli kui"
 
-msgid "Engine status"
-msgstr "Mootorite olek"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Audio saved"
+msgstr "Heli salvestatud"
 
-msgid "Checking installed engines…"
-msgstr "Paigaldatud mootorite kontrollimine…"
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:291
+msgid "Could not save the audio"
+msgstr "Heli salvestamine ebaõnnestus"
 
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:324
+#: usr/share/biglinux/tts-biglinux/window.py:288
+#: usr/share/biglinux/tts-biglinux/window.py:377
+msgid "History"
+msgstr "Ajalugu"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:350
+msgid "Saving is off: new readings are not kept."
+msgstr "Salvestamine on väljas: uusi ettelugemisi ei säilitata."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:351
+msgid "Turn On"
+msgstr "Lülita sisse"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:367
+msgid "Search text, voice, engine or date…"
+msgstr "Otsi teksti, häält, mootorit või kuupäeva…"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "All dates"
+msgstr "Kõik kuupäevad"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Today"
+msgstr "Täna"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Yesterday"
+msgstr "Eile"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:374
+msgid "Last 7 days"
+msgstr "Viimased 7 päeva"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:376
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:377
+msgid "Filter by date"
+msgstr "Filtreeri kuupäeva järgi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:381
+msgid "All engines"
+msgstr "Kõik mootorid"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:383
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:384
+msgid "Filter by engine"
+msgstr "Filtreeri mootori järgi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:391
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Newest first"
+msgstr "Uuemad eespool"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:392
+msgid "Sort order"
+msgstr "Sortimisjärjestus"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:397
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:398
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as grid"
+msgstr "Näita ruudustikuna"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:403
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:404
+msgid "Select readings"
+msgstr "Vali ettelugemised"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:416
+msgid "Select All"
+msgstr "Vali kõik"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:420
+msgid "Deselect All"
+msgstr "Tühista kõik"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:429
+msgid "Save the selected readings to a folder"
+msgstr "Salvesta valitud ettelugemised kausta"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:430
+msgid "Save selected"
+msgstr "Salvesta valitud"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:435
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:436
+msgid "Delete selected"
+msgstr "Kustuta valitud"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:445
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:457
+msgid "History entries"
+msgstr "Ajaloo kirjed"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:648
+msgid "The history could not be read"
+msgstr "Ajalugu ei õnnestunud lugeda"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:650
+#, python-brace-format
+msgid "Check the permissions of the folder {folder}."
+msgstr "Kontrolli kausta {folder} õigusi."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:657
+msgid "No readings found"
+msgstr "Ettelugemisi ei leitud"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:658
+msgid "Try other words or another date or engine."
+msgstr "Proovi teisi sõnu, muud kuupäeva või muud mootorit."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:659
+msgid "Clear Filters"
+msgstr "Tühjenda filtrid"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:663
+msgid "No readings yet"
+msgstr "Ettelugemisi veel pole"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:667
+#, python-brace-format
+msgid "Everything you listen to will appear here, with its audio. It is stored only on this computer, in {folder}."
+msgstr "Kõik, mida kuulad, ilmub siia koos heliga. Seda hoitakse ainult selles arvutis, kaustas {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:673
+#, python-brace-format
+msgid "Saving is off. Turn it on to keep what you listen to, with its audio — only on this computer, in {folder}."
+msgstr "Salvestamine on väljas. Lülita see sisse, et säilitada kõike, mida kuulad, koos heliga — ainult selles arvutis, kaustas {folder}."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:676
+msgid "Turn On History"
+msgstr "Lülita ajalugu sisse"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:723
+msgid "Oldest first"
+msgstr "Vanemad eespool"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:731
+msgid "Show as list"
+msgstr "Näita loendina"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:751
+#, python-brace-format
+msgid "Selected: {count}"
+msgstr "Valitud: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:781
+msgid "Reading deleted"
+msgstr "Ettelugemine kustutatud"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:782
+msgid "Undo"
+msgstr "Võta tagasi"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:816
+msgid "Delete the selected readings?"
+msgstr "Kas kustutada valitud ettelugemised?"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:817
+#, python-brace-format
+msgid "Readings: {count}. Their audio and text files are moved to the Trash."
+msgstr "Ettelugemised: {count}. Nende heli- ja tekstifailid teisaldatakse prügikasti."
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:819
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1483
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1540
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:498
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:760
+#: usr/share/biglinux/tts-biglinux/window.py:464
+msgid "Cancel"
+msgstr "Tühista"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:832
+#, python-brace-format
+msgid "Moved to the Trash: {count}"
+msgstr "Teisaldatud prügikasti: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:843
+msgid "Save the selected readings"
+msgstr "Salvesta valitud ettelugemised"
+
+#: usr/share/biglinux/tts-biglinux/ui/history_view.py:863
+#, python-brace-format
+msgid "Saved to {folder}: {count}"
+msgstr "Salvestatud kausta {folder}: {count}"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:43
+msgid "Desktop not recognized"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:51
+msgid "selection (Wayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:52
+msgid "selection of an X11 program (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:53
+msgid "selection (X11)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:54
+msgid "copied text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:64
+#, python-brace-format
+msgid "Last reading: {count} characters from the {source}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:66
+msgid "Last time nothing was selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:67
+msgid "Last time the text could not be read"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:79
+msgid "Desktop integration"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:80
+msgid "Check that the shortcut, the text capture and the tray icon work on this desktop."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:82
+msgid "Desktop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:86
+msgid "Global shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:88
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:423
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:434
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:668
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1896
 msgid "Checking…"
 msgstr "Kontrollimine…"
 
-msgid "Voice"
-msgstr "Hääl"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:89
+msgid "Fix integration"
+msgstr ""
 
-msgid "Loading voices..."
-msgstr "Häälte laadimine..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:97
+msgid "Selected text"
+msgstr ""
 
-msgid "Detecting installed voices..."
-msgstr "Paigaldatud häälte tuvastamine..."
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:103
+msgid "Read copied text"
+msgstr ""
 
-msgid "Select TTS voice"
-msgstr "Valige TTS-hääl"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:104
+msgid "When nothing is selected, read what was copied (Ctrl+C). Off: an old copied text is never read by mistake."
+msgstr ""
 
-msgid "Refresh voice list"
-msgstr "Voka loendi värskendamine"
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:107
+msgid "Read copied text when nothing is selected"
+msgstr ""
 
-msgid "Manage voices for current engine"
-msgstr "Haldage hääli praeguse mootori jaoks"
-
-msgid "Speed"
-msgstr "Kiirus"
-
-msgid "Speech rate"
-msgstr "Kõne kiirus"
-
-msgid "Slow"
-msgstr "Aeglane"
-
-msgid "Normal"
-msgstr "Tavaline"
-
-msgid "Fast"
-msgstr "Kiire"
-
-msgid "Speech speed"
-msgstr "Kõne kiirus"
-
-msgid "Pitch"
-msgstr "Helikõrgus"
-
-msgid "Voice tone"
-msgstr "Hääletoon"
-
-msgid "Low"
-msgstr "Madal"
-
-msgid "High"
-msgstr "Kõrge"
-
-msgid "Voice pitch"
-msgstr "Hääle kõrgus"
-
-msgid "Volume"
-msgstr "Helitugevus"
-
-msgid "Speech volume"
-msgstr "Kõne helitugevus"
-
-msgid "Mute"
-msgstr "Vaigista"
-
-msgid "Max"
-msgstr "Maks"
-
-msgid "Neutral"
-msgstr "Neutraalne"
-
-msgid "Happy"
-msgstr "Õnnelik"
-
-msgid "Calm"
-msgstr "Rahulik"
-
-msgid "Urgent"
-msgstr "Hädaolukord"
-
-msgid "Narrative"
-msgstr "Narratiiv"
-
-msgid "Expression style"
-msgstr "Väljimisstiil"
-
-msgid "Changes speed and intonation to match the mood"
-msgstr "Muudab kiirus ja intonatsiooni vastavusse meeleoluga."
-
-msgid "Select expression style"
-msgstr "Vali väljendi stiil"
-
-msgid "None (single voice)"
-msgstr "Puudub (üksik hääl)"
-
-msgid "Voice blend"
-msgstr "Hääle segu"
-
-msgid "Mix a second voice with the primary voice"
-msgstr "Sega hääl segatakse peamise häälega."
-
-msgid "Select blend voice"
-msgstr "Vali segahäält"
-
-msgid "Expand abbreviations"
-msgstr "Laienda lühendeid"
-
-msgid "Replace common abbreviations with full words"
-msgstr "Asenda tavalised lühendid täissõnadega"
-
-msgid "Expand text abbreviations"
-msgstr "Laienda teksti lühendeid"
-
-msgid "Read special characters"
-msgstr "Loe erimärke"
-
-msgid "Speak symbols like # @ % by name"
-msgstr "Ütle sümbolid nagu # @ % nimepidi"
-
-msgid "Read special characters aloud"
-msgstr "Loe erimärke ette"
-
-msgid "Remove formatting"
-msgstr "Eemalda vorming"
-
-msgid "Strip Markdown and HTML before reading"
-msgstr "Eemalda Markdown ja HTML enne lugemist"
-
-msgid "Remove text formatting"
-msgstr "Eemalda teksti vorming"
-
-msgid "Read URLs"
-msgstr "Loe URL-e"
-
-msgid "Read web addresses aloud instead of skipping them"
-msgstr "Loe veebiaadressid ette, mitte ära jäta neid vahele"
-
-msgid "Read URLs aloud"
-msgstr "Loe URL-e ette"
-
-msgid "Unlimited"
-msgstr "Piiramatu"
-
-msgid "1 000"
-msgstr "1 000"
-
-msgid "5 000"
-msgstr "5 000"
-
-msgid "10 000"
-msgstr "10 000"
-
-msgid "50 000"
-msgstr "50 000"
-
-msgid "100 000"
-msgstr "100 000"
-
-msgid "Character limit"
-msgstr "Tähemärkide piirang"
-
-msgid "Maximum number of characters to read at once"
-msgstr "Maksimaalne tähemärkide arv korraga lugemiseks"
-
-msgid "Maximum character limit"
-msgstr "Maksimaalne tähemärkide piirang"
-
-msgid "Keyboard shortcut"
-msgstr "Klaviatuuri otsetee"
-
-msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
-msgstr "Valige tekst kõikjal ja vajutage otseteed ettelugemiseks. Vajutage uuesti peatamiseks."
-
-msgid "Change"
-msgstr "Muuda"
-
-msgid "Change keyboard shortcut"
-msgstr "Muuda klaviatuuri kiirklahvi"
-
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:112
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:687
 msgid "Tray icon"
 msgstr "Teavituse ikoon"
 
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:118
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:234
+msgid "Test the shortcut"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:119
+msgid "Select a sample text, press the shortcut and listen"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:121
+msgid "Start test"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:163
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1837
+msgid "Checking the shortcut with the desktop…"
+msgstr "Kiirklahvi kontrollimine töölauaga…"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1833
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1839
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1869
+msgid "The shortcut is not active."
+msgstr "Kiirklahv pole aktiivne."
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:165
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Not active"
+msgstr "Pole aktiivne"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:167
+msgid "After login"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:169
+#, python-brace-format
+msgid "{keys} reads or stops the selected text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:170
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1845
+msgid "Active"
+msgstr "Aktiivne"
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:173
+#, python-brace-format
+msgid "last used at {time}"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:174
+msgid "Working"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:183
+msgid "This desktop does not share selected text. Turn on “Read copied text” below."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:185
+msgid "Read from the selection, also in X11 programs (XWayland)"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:187
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:189
+msgid "Read from the selection, no copying needed"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "Shown"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:195
+msgid "In the system tray; click it to read or stop"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Starting…"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:197
+msgid "Waiting for the system tray"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:199
+msgid "Unavailable"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:200
+msgid "No system tray on this desktop. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:202
+msgid "The tray icon could not be shown. Reading works without it."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Off"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:204
+msgid "Turn it on in the options above"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:247
+msgid "BigLinux TTS reads the text you select, with accents and numbers: 2026."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:248
+msgid "Sample text"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:256
+msgid "The sample text above is selected"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:257
+#, python-brace-format
+msgid "Press {keys} now"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:258
+msgid "BigLinux TTS captures the selection"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:259
+msgid "The text is read aloud"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:275
+msgid "I heard nothing"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:277
+msgid "I heard it"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:329
+msgid "Did you hear the sample text?"
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:332
+msgid "The text was not captured. Keep the sample text selected and try again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:340
+msgid "The shortcut did not reach BigLinux TTS. Use “Fix integration”; if the shortcut waits for a new login, log out and in again."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:349
+#, python-brace-format
+msgid "Everything works: select text anywhere and press {keys}."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/integration_panel.py:353
+msgid "The text was read, but no sound reached you. Check the volume and the audio output; “biglinux-tts --diagnose” in a terminal shows the details."
+msgstr ""
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:87
+msgid "BigLinux TTS"
+msgstr "BigLinux TTS"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:213
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:229
+msgid "Advanced options"
+msgstr "Täpsemad valikud"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:214
+msgid "Shortcut, performance, behavior"
+msgstr "Kiirklahv, jõudlus, käitumine"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:324
+msgid "Change shortcut"
+msgstr "Muuda kiirklahvi"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:336
+msgid "Try again"
+msgstr "Proovi uuesti"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:340
+msgid "Open Voice Manager"
+msgstr "Ava häältehaldur"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:344
+msgid "Details"
+msgstr "Üksikasjad"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:356
+msgid "This is a test, welcome to BigLinux!"
+msgstr "See on test, tere tulemast BigLinuxi!"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:357
+msgid "Type text to test…"
+msgstr "Sisestage tekst testimiseks…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:360
+msgid "Text to test the voice"
+msgstr "Tekst hääle testimiseks"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:365
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1815
+msgid "Test voice"
+msgstr "Testi häält"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:368
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1817
+msgid "Test the selected voice"
+msgstr "Testi valitud häält"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:383
+msgid "Voice settings"
+msgstr "Häälseaded"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:384
+msgid "Choose voice and adjust speech parameters"
+msgstr "Valige hääl ja kohandage kõne parameetreid"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:389
+msgid "RHVoice (Native)"
+msgstr "RHVoice (Kohalik)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:390
+msgid "espeak-ng"
+msgstr "espeak-ng"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:391
+msgid "Piper (Neural TTS)"
+msgstr "Piper (Neuraalne TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:392
+msgid "Kokoro (Neural TTS)"
+msgstr "Kokoro (Neuraalne TTS)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:408
+msgid "TTS Backend"
+msgstr "TTS-taustasüsteem"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:409
+msgid "Engine used for speech synthesis"
+msgstr "Kõnesünteesiks kasutatav mootor"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:413
+msgid "Select TTS engine"
+msgstr "Valige TTS-mootor"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:421
+msgid "Engine status"
+msgstr "Mootorite olek"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:422
+msgid "Checking installed engines…"
+msgstr "Paigaldatud mootorite kontrollimine…"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:442
+msgid "Voice"
+msgstr "Hääl"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:443
+msgid "Loading voices..."
+msgstr "Häälte laadimine..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:444
+msgid "Detecting installed voices..."
+msgstr "Paigaldatud häälte tuvastamine..."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:446
+msgid "Select TTS voice"
+msgstr "Valige TTS-hääl"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:452
+msgid "Refresh voice list"
+msgstr "Voka loendi värskendamine"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:460
+msgid "Manage voices for current engine"
+msgstr "Haldage hääli praeguse mootori jaoks"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:471
+msgid "Speed"
+msgstr "Kiirus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:472
+msgid "Speech rate"
+msgstr "Kõne kiirus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Slow"
+msgstr "Aeglane"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Normal"
+msgstr "Tavaline"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:479
+msgid "Fast"
+msgstr "Kiire"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:480
+msgid "Speech speed"
+msgstr "Kõne kiirus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:487
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Pitch"
+msgstr "Helikõrgus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:488
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1287
+msgid "Voice tone"
+msgstr "Hääletoon"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "Low"
+msgstr "Madal"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:495
+msgid "High"
+msgstr "Kõrge"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:496
+msgid "Voice pitch"
+msgstr "Hääle kõrgus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:504
+msgid "Volume"
+msgstr "Helitugevus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:505
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:513
+msgid "Speech volume"
+msgstr "Kõne helitugevus"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Mute"
+msgstr "Vaigista"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:512
+msgid "Max"
+msgstr "Maks"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:524
+msgid "Neutral"
+msgstr "Neutraalne"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:525
+msgid "Happy"
+msgstr "Õnnelik"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:526
+msgid "Calm"
+msgstr "Rahulik"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:527
+msgid "Urgent"
+msgstr "Hädaolukord"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:528
+msgid "Narrative"
+msgstr "Narratiiv"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:541
+msgid "Expression style"
+msgstr "Väljimisstiil"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:542
+msgid "Changes speed and intonation to match the mood"
+msgstr "Muudab kiirus ja intonatsiooni vastavusse meeleoluga."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:546
+msgid "Select expression style"
+msgstr "Vali väljendi stiil"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:554
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1041
+msgid "None (single voice)"
+msgstr "Puudub (üksik hääl)"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:557
+msgid "Voice blend"
+msgstr "Hääle segu"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:558
+msgid "Mix a second voice with the primary voice"
+msgstr "Sega hääl segatakse peamise häälega."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:562
+msgid "Select blend voice"
+msgstr "Vali segahäält"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:580
+msgid "Expand abbreviations"
+msgstr "Laienda lühendeid"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:581
+msgid "Replace common abbreviations with full words"
+msgstr "Asenda tavalised lühendid täissõnadega"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:584
+msgid "Expand text abbreviations"
+msgstr "Laienda teksti lühendeid"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:590
+msgid "Read special characters"
+msgstr "Loe erimärke"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:591
+msgid "Speak symbols like # @ % by name"
+msgstr "Ütle sümbolid nagu # @ % nimepidi"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:594
+msgid "Read special characters aloud"
+msgstr "Loe erimärke ette"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:600
+msgid "Remove formatting"
+msgstr "Eemalda vorming"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:601
+msgid "Strip Markdown and HTML before reading"
+msgstr "Eemalda Markdown ja HTML enne lugemist"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:604
+msgid "Remove text formatting"
+msgstr "Eemalda teksti vorming"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:610
+msgid "Read URLs"
+msgstr "Loe URL-e"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:611
+msgid "Read web addresses aloud instead of skipping them"
+msgstr "Loe veebiaadressid ette, mitte ära jäta neid vahele"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:614
+msgid "Read URLs aloud"
+msgstr "Loe URL-e ette"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:620
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:732
+msgid "Unlimited"
+msgstr "Piiramatu"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:621
+msgid "1 000"
+msgstr "1 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:622
+msgid "5 000"
+msgstr "5 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:623
+msgid "10 000"
+msgstr "10 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:624
+msgid "50 000"
+msgstr "50 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:625
+msgid "100 000"
+msgstr "100 000"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:637
+msgid "Character limit"
+msgstr "Tähemärkide piirang"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:638
+msgid "Maximum number of characters to read at once"
+msgstr "Maksimaalne tähemärkide arv korraga lugemiseks"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:642
+msgid "Maximum character limit"
+msgstr "Maksimaalne tähemärkide piirang"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:656
+msgid "Keyboard shortcut"
+msgstr "Klaviatuuri otsetee"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:659
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1841
+msgid "Select text anywhere and press the shortcut to read aloud. Press again to stop."
+msgstr "Valige tekst kõikjal ja vajutage otseteed ettelugemiseks. Vajutage uuesti peatamiseks."
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:671
+msgid "Change"
+msgstr "Muuda"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:674
+msgid "Change keyboard shortcut"
+msgstr "Muuda klaviatuuri kiirklahvi"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:688
 msgid "Fixes quick access and allows running in the background"
 msgstr "Parandab kiirele juurdepääsule ja võimaldab taustal töötamist."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:691
 msgid "Show system tray icon"
 msgstr "Kuva süsteemisalve ikoonist"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:701
 msgid "Save history"
 msgstr "Salvesta ajalugu"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:702
 #, python-brace-format
 msgid "Keep what you listen to, only on this computer, in {folder}"
 msgstr "Säilita, mida kuulad, ainult selles arvutis, kaustas {folder}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:707
 msgid "Save speech history"
 msgstr "Salvesta kõne ajalugu"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:713
 msgid "Keep the audio"
 msgstr "Säilita heli"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:714
 msgid "Listen to each reading again, with the same voice"
 msgstr "Kuula iga ettelugemist uuesti sama häälega"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:717
 msgid "Keep the audio of each reading"
 msgstr "Säilita iga ettelugemise heli"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:721
 msgid "Keep the text"
 msgstr "Säilita tekst"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:722
 msgid "Search, copy and read again what was read"
 msgstr "Otsi, kopeeri ja loe uuesti seda, mida loeti"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:725
 msgid "Keep the text of each reading"
 msgstr "Säilita iga ettelugemise tekst"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:730
 msgid "Keep at most"
 msgstr "Säilita kuni"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:731
 msgid "The oldest readings are deleted beyond this number"
 msgstr "Sellest arvust üle jäävad vanimad ettelugemised kustutatakse"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:741
 msgid "Audio playback mode"
 msgstr "Heli taasesitusrežiim"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:742
 msgid "Behavior when playing multiple audios or speech"
 msgstr "Käitumine mitme heli või kõne esitamisel"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Interrupt previous"
 msgstr "Katkesta eelmine"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Queue"
 msgstr "Järjekord"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:745
 msgid "Simultaneous"
 msgstr "Samaegne"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:756
 msgid "Media player"
 msgstr "Meediapleier"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:757
 msgid "Show a system mini-player (play/stop, time) while reading"
 msgstr "Näita lugemise ajal süsteemi minipleierit (esita/peata, aeg)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:760
 msgid "Show system media player"
 msgstr "Näita süsteemi meediapleierit"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:790
 msgid "Set new shortcut"
 msgstr "Määra uus otsetee"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:806
 msgid ""
 "<b>Hold modifier keys</b> (Alt, Ctrl, Shift, Super)\n"
 "and press a letter or key.\n"
@@ -656,247 +1372,429 @@ msgstr ""
 "\n"
 "<small>Vajutage Escape tühistamiseks</small>"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:825
 msgid "Press the new shortcut"
 msgstr "Vajutage uut otseteed"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:948
 msgid "Tray icon enabled"
 msgstr "Teavituse ikoon lubatud"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:951
 msgid "Tray icon disabled"
 msgstr "Teavituse ikoon keelatud"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:959
 msgid "History saving enabled"
 msgstr "Ajaloo salvestamine lubatud"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:960
 msgid "History saving disabled. Saved readings are kept."
 msgstr "Ajaloo salvestamine keelatud. Salvestatud ettelugemised säilivad."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1071
 msgid "Refreshing voices..."
 msgstr "Uuendatakse hääli..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1073
 msgid "Refreshing voice list…"
 msgstr "Häälte loendi värskendamine…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1117
 msgid "No voices found — install rhvoice or espeak-ng"
 msgstr "Hääli ei leitud — paigaldage rhvoice või espeak-ng"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1119
 msgid "No voices available"
 msgstr "Häält pole saadaval"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1169
 msgid "No voices available for this engine"
 msgstr "Selle mootori jaoks pole hääli saadaval"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1172
 #, python-brace-format
 msgid "Install {engine} voices first"
 msgstr "Paigaldage esmalt {engine} hääled"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1190
 msgid "Neural"
 msgstr "Neuraalne"
 
-msgid "High quality"
-msgstr "Kõrge kvaliteet"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1200
 #, python-brace-format
 msgid "Voices available: {count}"
 msgstr "Saadaolevaid hääli: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Expressiveness"
 msgstr "Väljendusrikkus"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1285
 msgid "Voice variation (not pitch)"
 msgstr "Hääle varieeruvus (mitte helikõrgus)"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1307
 msgid "Kokoro voices do not support this setting."
 msgstr "Kokoro hääled seda seadet ei toeta."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1312
 msgid "Kokoro voices only follow Mute. Use the system volume to change how loud they are."
 msgstr "Kokoro hääled järgivad ainult valikut „Vaigista“. Valjuse muutmiseks kasutage süsteemi helitugevust."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1370
 msgid "Searching for voices..."
 msgstr "Häälet otsimine..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1391
 msgid "Checking for Piper voices..."
 msgstr "Kontrollin Piperi hääli..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1399
 msgid "Checking for Kokoro voices..."
 msgstr "Kontrollin Kokoro hääli..."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1407
 #, python-brace-format
 msgid "No voices found for {engine} — install it first"
 msgstr "{engine} hääli ei leitud — paigaldage see esmalt"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1461
 msgid "Piper is not available"
 msgstr "Piper pole saadaval"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1462
 #, python-brace-format
 msgid "No Piper voice package was found in your repositories ({packages}). Update the system (sudo pacman -Syu) and try again."
 msgstr "Sinu tarkvarahoidlatest ei leitud ühtegi Piper-häälepaketti ({packages}). Uuenda süsteemi (sudo pacman -Syu) ja proovi uuesti."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1466
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1528
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1604
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:899
+msgid "OK"
+msgstr "OK"
+
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1477
 msgid "Piper provides natural neural voices. These packages will be installed:"
 msgstr "Piper pakub loomulikke neuraalseid hääli. Paigaldatakse järgmised paketid:"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1480
 msgid "Packages marked AUR are not in your repositories: they come from the Arch User Repository, are maintained by the community and are built on this computer, which takes longer."
 msgstr "AUR-iga märgitud pakette pole teie hoidlates: need pärinevad Arch User Repositoryst, neid haldab kogukond ja need ehitatakse selles arvutis, mis võtab kauem aega."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1481
 msgid "This requires administrator permissions."
 msgstr "Selleks on vaja administraatori õigusi."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1482
 msgid "Install Piper Neural TTS?"
 msgstr "Paigaldada Piper Neural TTS?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1484
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1541
 msgid "Install"
 msgstr "Paigalda"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1502
 msgid "Installing Piper TTS"
 msgstr "Piper TTS-i installimine"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1503
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1554
 msgid "Downloading and installing packages…"
 msgstr "Laadimine ja installimine…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1523
 msgid "Kokoro is not available"
 msgstr "Kokoro pole saadaval"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1524
 #, python-brace-format
 msgid "The {package} package was not found in your repositories, so Kokoro cannot be installed yet. Update the system (sudo pacman -Syu) and try again."
 msgstr "Paketti {package} ei leitud sinu tarkvarahoidlatest, seega ei saa Kokorot veel paigaldada. Uuenda süsteemi (sudo pacman -Syu) ja proovi uuesti."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1534
 msgid "Install Kokoro neural voices?"
 msgstr "Kas paigaldada Kokoro neuraalsed hääled?"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1535
 msgid "Kokoro offers natural neural voices in several languages, with expression styles and voice blending."
 msgstr "Kokoro pakub loomulikke neuraalseid hääli mitmes keeles koos väljendusstiilide ja häälte segamisega."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1536
 #, python-brace-format
 msgid "The {package} package{size} will be installed. This requires administrator permissions."
 msgstr "Paigaldatakse pakett {package}{size}. Selleks on vaja administraatori õigusi."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1553
 msgid "Installing Kokoro TTS"
 msgstr "Kokoro TTS installimine"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1582
 msgid "The installation failed."
 msgstr "Paigaldamine ebaõnnestus."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1609
 #, python-brace-format
 msgid "{engine} installed. Looking for voices…"
 msgstr "{engine} on paigaldatud. Häälte otsimine…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1620
 #, python-brace-format
 msgid "{engine} could not be installed"
 msgstr "{engine} paigaldamine ebaõnnestus"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1687
 msgid "Type some text to test"
 msgstr "Sisestage tekst testimiseks"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1701
 msgid "Volume is at zero — increasing to minimum for test"
 msgstr "Heli on null — tõstmine miinimumini testi jaoks"
 
-msgid "Loading voice…"
-msgstr "Hääle laadimine…"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1769
 #, python-brace-format
 msgid "Preparing {voice}. Speech starts in a moment."
 msgstr "{voice} ettevalmistamine. Kõne algab hetke pärast."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1770
 msgid "Preparing the voice. Speech starts in a moment."
 msgstr "Hääle ettevalmistamine. Kõne algab hetke pärast."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1776
+#: usr/share/biglinux/tts-biglinux/window.py:308
 msgid "Speaking…"
 msgstr "Rääkimine…"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1778
 #, python-brace-format
 msgid "Press {shortcut} again to stop."
 msgstr "Peatamiseks vajuta uuesti {shortcut}."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1779
 msgid "Use Stop to end the reading."
 msgstr "Lugemise lõpetamiseks kasuta nuppu Peata."
 
-msgid "Could not read the text"
-msgstr "Teksti ei õnnestunud lugeda"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1786
 msgid "The speech engine reported a problem."
 msgstr "Kõnemootor teatas probleemist."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1792
 msgid "Reading was stopped."
 msgstr "Lugemine peatati."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1796
 msgid "Ready to speak"
 msgstr "Valmis rääkima"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1797
 msgid "Select any text and use the shortcut to hear it."
 msgstr "Vali mis tahes tekst ja kasuta selle kuulamiseks kiirklahvi."
 
-msgid "The shortcut is not active."
-msgstr "Kiirklahv pole aktiivne."
-
-msgid "Checking the shortcut with the desktop…"
-msgstr "Kiirklahvi kontrollimine töölauaga…"
-
-msgid "Not active"
-msgstr "Pole aktiivne"
-
-msgid "Active"
-msgstr "Aktiivne"
-
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1858
 #, python-brace-format
 msgid "Shortcut changed to {keys}"
 msgstr "Otsetee muudetud: {keys}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1878
 msgid "Not installed. Install the rhvoice package and a voice."
 msgstr "Pole paigaldatud. Paigalda pakett rhvoice ja mõni hääl."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1879
 msgid "Not installed. Install the espeak-ng package."
 msgstr "Pole paigaldatud. Paigalda pakett espeak-ng."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1880
 msgid "Not installed. Install Piper from the TTS Backend list."
 msgstr "Pole paigaldatud. Paigalda Piper TTS-taustasüsteemi loendist."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1881
 msgid "Not installed. Install the biglinux-kokoro-tts package."
 msgstr "Pole paigaldatud. Paigalda pakett biglinux-kokoro-tts."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1882
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1898
 msgid "Not installed"
 msgstr "Pole paigaldatud"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1901
 msgid "No voices"
 msgstr "Hääli pole"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1902
 msgid "Installed, but no voice is available. Open the Voice Manager."
 msgstr "Paigaldatud, kuid ükski hääl pole saadaval. Ava häältehaldur."
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1905
 msgid "Ready"
 msgstr "Valmis"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1906
 #, python-brace-format
 msgid "Voices installed: {count}"
 msgstr "Paigaldatud hääli: {count}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1909
 msgid "Loading"
 msgstr "Laadimine"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1911
 msgid "Speaking"
 msgstr "Rääkimine"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1922
 #, python-brace-format
 msgid "{engine}: {state}"
 msgstr "{engine}: {state}"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1927
 msgid "Technical details"
 msgstr "Tehnilised üksikasjad"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1929
 msgid "Close"
 msgstr "Sulge"
 
+#: usr/share/biglinux/tts-biglinux/ui/main_view.py:1964
 msgid "Settings restored to defaults"
 msgstr "Seaded taastatud vaikeseadetele"
 
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:350
+msgid "Piper engine"
+msgstr "Piper-mootor"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:414
+msgid "Voice Manager"
+msgstr "Hääletusjuht"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:435
+msgid "Search voices by name or language…"
+msgstr "Otsi hääli nime või keele järgi…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:467
+msgid "Loading available voices…"
+msgstr "Laadimine saadaval hääli…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:538
+msgid "No Voice Packages Found"
+msgstr "Häältpakette ei leitud"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:540
+msgid "Could not find any TTS voice packages from pacman repositories."
+msgstr "Pacman'i hoidlatest ei leitud ühtegi TTS häälepaketti."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:586
+msgid "High quality offline voices"
+msgstr "Kvaliteetsed offline hääled"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:590
+msgid "Neural network voices — natural sounding"
+msgstr "Neuraalvõrgu hääled — loomulikult kõlavad"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:594
+msgid "Lightweight multi-language synthesizer"
+msgstr "Kerge mitmekeelne sünteesija"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:598
+msgid "Neural TTS — high quality multilingual voices (82M)"
+msgstr "Neuraalne TTS — kõrge kvaliteediga mitmekeelsed hääled (82M)"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:697
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:698
+#, python-brace-format
+msgid "Install {name}"
+msgstr "Installige {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:706
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:707
+#, python-brace-format
+msgid "Remove {name}"
+msgstr "Eemalda {name}"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:716
+msgid "Installed"
+msgstr "Paigaldatud"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:735
+#, python-brace-format
+msgid "Remove {name}?"
+msgstr "Kas eemaldada {name}?"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:736
+msgid "The voice will no longer be available for reading. You can install it again later."
+msgstr "Hääl pole enam lugemiseks saadaval. Saad selle hiljem uuesti paigaldada."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:737
+msgid "Remove"
+msgstr "Eemalda"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:803
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "{name} allalaadimine…"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:812
+#, python-brace-format
+msgid "Downloading {name}… {done} of {total} KB"
+msgstr "{name} allalaadimine… {done} / {total} kB"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:864
+msgid "Operation timed out"
+msgstr "Toiming aeg lõppes."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:866
+msgid "pkexec or pacman not found"
+msgstr "pkexec või pacman ei leitud"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:891
+msgid "Download cancelled"
+msgstr "Allalaadimine katkestati"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:895
+msgid "Failed"
+msgstr "Eba."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:896
+msgid "Removal Failed"
+msgstr "Eemaldamine ebaõnnestus"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:898
+msgid "Unknown error"
+msgstr "Tundmatu viga"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:915
+#, python-brace-format
+msgid "Play a sample of {name}"
+msgstr "Esita hääle {name} näidis"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:984
+msgid "Stop the sample"
+msgstr "Peata näidis"
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1047
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1052
+msgid "The sample could not be played."
+msgstr "Näidist ei õnnestunud esitada."
+
+#: usr/share/biglinux/tts-biglinux/ui/voice_manager_dialog.py:1050
+#, python-brace-format
+msgid "The sample could not be played: {program} is not installed."
+msgstr "Näidist ei õnnestunud esitada: {program} pole paigaldatud."
+
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:60
 msgid "Welcome to BigLinux TTS"
 msgstr "Tere tulemast BigLinux TTS-i"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:67
 msgid "Your text-to-speech assistant"
 msgstr "Teie tekstist kõneks assistent"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:77
 msgid "Multiple TTS Engines"
 msgstr "Mitmed TTS mootorid"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:79
 msgid ""
 "RHVoice, espeak-ng, Piper and Kokoro\n"
 "with automatic voice discovery"
@@ -904,17 +1802,21 @@ msgstr ""
 "RHVoice, espeak-ng, Piper ja Kokoro\n"
 "automaatse häälte tuvastusega"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:83
 msgid "Multilingual Support"
 msgstr "Mitmekeelne tugi"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:84
 msgid ""
 "Voices in dozens of languages\n"
 "including Portuguese (Brazil)"
 msgstr "Hääled kümnetes keeltes, sealhulgas portugali (Brasiilia)"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:88
 msgid "Global Shortcut"
 msgstr "Globaalne otsetee"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:89
 #, python-brace-format
 msgid ""
 "Press {key} to read selected text\n"
@@ -923,33 +1825,41 @@ msgstr ""
 "Vajuta {key}, et lugeda valitud teksti\n"
 "mis tahes rakendusest"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:93
 msgid "Clipboard Reading"
 msgstr "Klipi lugemine"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:94
 msgid ""
 "Paste or type text directly\n"
 "and listen instantly"
 msgstr "Kleebi või tippige tekst otse ja kuulake kohe."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:98
 msgid "Fine-Tune Speech"
 msgstr "Peenhäälestus kõne"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:99
 msgid ""
 "Adjust speed, pitch and volume\n"
 "to your preference"
 msgstr "Kohanda kiirus, helikõrgus ja helitugevus vastavalt oma eelistustele."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:101
 msgid "Easy Installation"
 msgstr "Lihtne paigaldamine"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:102
 msgid ""
 "Install new voices and engines\n"
 "directly from the interface"
 msgstr "Installige uusi hääli ja mootoreid otse liidese kaudu"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:106
 msgid "Neural Voices"
 msgstr "Neuraalsed hääled"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:108
 msgid ""
 "Install Piper or Kokoro voices for natural,\n"
 "high-quality speech synthesis"
@@ -957,9 +1867,11 @@ msgstr ""
 "Paigalda Piperi või Kokoro hääled loomuliku\n"
 "ja kvaliteetse kõnesünteesi jaoks"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:112
 msgid "Reading History"
 msgstr "Lugemise ajalugu"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:114
 msgid ""
 "Optionally save and replay previous\n"
 "readings when history is enabled"
@@ -967,276 +1879,77 @@ msgstr ""
 "Soovi korral salvesta ja esita varasemaid\n"
 "lugemisi, kui ajalugu on lubatud"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:146
 #, python-brace-format
 msgid "Tip: Press {key} to read selected text from any application."
 msgstr "Nõuanne: vajuta {key}, et lugeda valitud teksti mis tahes rakendusest."
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:166
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:169
 msgid "Show dialog on startup"
 msgstr "Näita dialoogi käivitamisel"
 
+#: usr/share/biglinux/tts-biglinux/ui/welcome_dialog.py:178
 msgid "Let's Start"
 msgstr "Alustame"
 
-msgid "The installation was cancelled: the administrator password was not confirmed."
-msgstr "Paigaldamine katkestati: administraatori parooli ei kinnitatud."
-
+#: usr/share/biglinux/tts-biglinux/utils/i18n.py:207
 #, python-brace-format
-msgid "{packages} is not available in your repositories. Update the system (sudo pacman -Syu) and try again."
-msgstr "{packages} pole sinu tarkvarahoidlates saadaval. Uuenda süsteemi (sudo pacman -Syu) ja proovi uuesti."
+msgid "{language} ({region})"
+msgstr "{language} ({region})"
 
-msgid "Another program is installing or updating packages. Wait for it to finish and try again."
-msgstr "Mõni teine programm paigaldab või uuendab pakette. Oota, kuni see lõpetab, ja proovi uuesti."
-
-msgid "The packages could not be downloaded. Check your internet connection and try again."
-msgstr "Pakette ei õnnestunud alla laadida. Kontrolli internetiühendust ja proovi uuesti."
-
-#, python-brace-format
-msgid "{packages} conflicts with installed files or packages. See the details."
-msgstr "{packages} on vastuolus paigaldatud failide või pakettidega. Vaata üksikasju."
-
-#, python-brace-format
-msgid "Not enough free disk space to install {packages}."
-msgstr "{packages} paigaldamiseks pole piisavalt vaba kettaruumi."
-
-#, python-brace-format
-msgid "{packages} could not be installed. See the details."
-msgstr "{packages} paigaldamine ebaõnnestus. Vaata üksikasju."
-
-msgid "Nothing to install."
-msgstr "Pole midagi paigaldada."
-
-msgid "pkexec is not installed (package polkit)."
-msgstr "pkexec pole paigaldatud (pakett polkit)."
-
-msgid "The installation took too long and was stopped."
-msgstr "Paigaldamine võttis liiga kaua aega ja peatati."
-
-#, python-brace-format
-msgid "{packages} could not be built from the AUR. See the details."
-msgstr "Paketti {packages} ei õnnestunud AUR-ist ehitada. Vaadake üksikasju."
-
-msgid "This key combination is not valid."
-msgstr "See klahvikombinatsioon pole sobiv."
-
-msgid "Use Ctrl, Alt or Super together with a key, so normal typing is not affected."
-msgstr "Kasuta Ctrl-, Alt- või Super-klahvi koos mõne teise klahviga, et tavaline trükkimine ei häiruks."
-
-msgid "This key combination is not supported by the desktop."
-msgstr "Töölaud ei toeta seda klahvikombinatsiooni."
-
-#, python-brace-format
-msgid "{shortcut} is already used by: {names}. Choose another shortcut."
-msgstr "{shortcut} on juba kasutusel: {names}. Vali teine kiirklahv."
-
-msgid "The desktop did not accept the shortcut. Is the KDE global shortcuts service running?"
-msgstr "Töölaud ei aktsepteerinud kiirklahvi. Kas KDE globaalsete kiirklahvide teenus töötab?"
-
-msgid "The desktop did not confirm the new shortcut."
-msgstr "Töölaud ei kinnitanud uut kiirklahvi."
-
-msgid "The shortcut was saved, but the desktop could not confirm it yet."
-msgstr "Kiirklahv salvestati, kuid töölaud ei suutnud seda veel kinnitada."
-
-msgid "Could not register the shortcut on this desktop. Add it in the system keyboard settings with the command biglinux-tts-speak."
-msgstr "Kiirklahvi ei õnnestunud sellel töölaual registreerida. Lisa see süsteemi klaviatuuriseadetes käsuga biglinux-tts-speak."
-
-msgid "Extra low quality"
-msgstr "Eriti madal kvaliteet"
-
-msgid "Low quality"
-msgstr "Madal kvaliteet"
-
-msgid "Medium quality"
-msgstr "Keskmine kvaliteet"
-
-msgid "Kokoro is not installed. Install the biglinux-kokoro-tts package."
-msgstr "Kokoro pole paigaldatud. Paigalda pakett biglinux-kokoro-tts."
-
-msgid "The Kokoro voice model is missing. Reinstall the biglinux-kokoro-tts package."
-msgstr "Kokoro häälemudel puudub. Paigalda pakett biglinux-kokoro-tts uuesti."
-
-msgid "No Kokoro voices were found. Open the Voice Manager to download a voice."
-msgstr "Kokoro hääli ei leitud. Hääle allalaadimiseks ava häältehaldur."
-
-msgid "This Kokoro voice is not installed. Open the Voice Manager to download it."
-msgstr "See Kokoro hääl pole paigaldatud. Selle allalaadimiseks ava häältehaldur."
-
-#, python-brace-format
-msgid "Unknown voice: {voice_id}"
-msgstr "Tundmatu hääl: {voice_id}"
-
-#, python-brace-format
-msgid "Invalid voice id: {voice_id}"
-msgstr "Vigane hääle ID: {voice_id}"
-
-msgid "The voice file is larger than expected."
-msgstr "Häälefail on oodatust suurem."
-
-#, python-brace-format
-msgid "incomplete download ({received} of {total} bytes)"
-msgstr "mittetäielik allalaadimine ({received} / {total} baiti)"
-
-msgid "empty response"
-msgstr "tühi vastus"
-
-#, python-brace-format
-msgid "Could not download the voice. Check your internet connection and try again. ({error})"
-msgstr "Häält ei õnnestunud alla laadida. Kontrolli internetiühendust ja proovi uuesti. ({error})"
-
-#, python-brace-format
-msgid "The downloaded voice file is damaged. Try again. ({error})"
-msgstr "Allalaaditud häälefail on vigane. Proovi uuesti. ({error})"
-
-#, python-brace-format
-msgid "Not enough disk space to install the voice ({size} MB needed)."
-msgstr "Hääle paigaldamiseks pole piisavalt kettaruumi (vaja on {size} MB)."
-
-#, python-brace-format
-msgid "Cannot create user voices directory: {error}"
-msgstr "Kasutaja häälte kausta ei saa luua: {error}"
-
-#, python-brace-format
-msgid "Failed to add voice: {error}"
-msgstr "Hääle lisamine ebaõnnestus: {error}"
-
-msgid "Cannot remove base voice"
-msgstr "Põhihäält ei saa eemaldada"
-
-msgid "No user voices installed"
-msgstr "Kasutaja hääli pole paigaldatud"
-
-#, python-brace-format
-msgid "Failed to remove voice: {error}"
-msgstr "Hääle eemaldamine ebaõnnestus: {error}"
-
-msgid "Read or stop the selected text"
-msgstr "Loe või peata valitud tekst"
-
-msgid "Could not play audio. Check that alsa-utils (aplay) is installed."
-msgstr "Heli ei õnnestunud esitada. Kontrolli, et alsa-utils (aplay) oleks paigaldatud."
-
-#, python-brace-format
-msgid "{engine} could not start. Check that it is installed."
-msgstr "{engine} ei käivitunud. Kontrolli, et see oleks paigaldatud."
-
-msgid "RHVoice is not installed. Install the rhvoice package."
-msgstr "RHVoice pole paigaldatud. Paigalda pakett rhvoice."
-
-msgid "espeak-ng could not read this text. Check that espeak-ng is installed."
-msgstr "espeak-ng ei suutnud seda teksti lugeda. Kontrolli, et espeak-ng oleks paigaldatud."
-
-msgid "The selected Piper voice is not installed. Choose another voice in the Voice Manager."
-msgstr "Valitud Piper-hääl pole paigaldatud. Vali häältehalduris mõni teine hääl."
-
-msgid "Piper could not read this text. Try another voice."
-msgstr "Piper ei suutnud seda teksti lugeda. Proovi mõnda teist häält."
-
-#, python-brace-format
-msgid "{engine} crashed while reading the text."
-msgstr "{engine} jooksis teksti lugemisel kokku."
-
-#, python-brace-format
-msgid "{engine} stopped with an error and could not read the text."
-msgstr "{engine} peatus veaga ega suutnud teksti lugeda."
-
-msgid "Read the selected text aloud"
-msgstr "Loe valitud tekst ette"
-
-msgid "Could not read the text."
-msgstr "Teksti ei õnnestunud lugeda."
-
-msgid "Reading text"
-msgstr "Teksti lugemine"
-
-msgid "Playing…"
-msgstr "Mängib…"
-
-msgid "Install wl-clipboard (Wayland) or xclip (X11) so selected text can be read."
-msgstr "Paigalda wl-clipboard (Wayland) või xclip (X11), et valitud teksti saaks lugeda."
-
-msgid "Select some text first, then press the shortcut."
-msgstr "Vali esmalt tekst ja vajuta siis kiirklahvi."
-
-msgid "No text selected"
-msgstr "Teksti pole valitud"
-
-msgid "Read text"
-msgstr "Lugege teksti"
-
-msgid "Settings"
-msgstr "Seaded"
-
-msgid "Quit"
-msgstr "Välju"
-
-msgid "Paused"
-msgstr "Pausil"
-
-msgid "BigLinux Team"
-msgstr "BigLinuxi meeskond"
-
-msgid "BigLinux TTS turns selected or typed text into speech with local voices, global shortcuts and precise playback controls."
-msgstr "BigLinux TTS muudab valitud või sisestatud teksti kõneks kohalike häälte, globaalsete kiirklahvide ja täpsete taasesitusnuppudega."
-
-msgid "BigLinux TTS began as a web-based tool in 2021 and evolved into a native GTK4 application with multiple speech engines, voice management and a Rust audio engine."
-msgstr "BigLinux TTS sai alguse veebipõhise tööriistana 2021. aastal ja arenes natiivseks GTK4 rakenduseks, millel on mitu kõnemootorit, häältehaldus ja Rustis kirjutatud helimootor."
-
-msgid "Could not register the shortcut."
-msgstr "Kiirklahvi ei õnnestunud registreerida."
-
-#, python-brace-format
-msgid "Select text and press {shortcut} to hear it"
-msgstr "Vali tekst ja vajuta {shortcut}, et seda kuulata"
-
-msgid "Text-to-speech assistant"
-msgstr "Tekstist kõneks abiline"
-
+#: usr/share/biglinux/tts-biglinux/window.py:49
 msgid "Show settings"
 msgstr "Näita seadeid"
 
+#: usr/share/biglinux/tts-biglinux/window.py:169
+#: usr/share/biglinux/tts-biglinux/window.py:170
 msgid "Back"
 msgstr "Tagasi"
 
+#: usr/share/biglinux/tts-biglinux/window.py:178
+#: usr/share/biglinux/tts-biglinux/window.py:297
 msgid "Text narrator"
 msgstr "Teksti ettelugeja"
 
+#: usr/share/biglinux/tts-biglinux/window.py:249
 msgid "The shortcut is not active — open Advanced options to fix it"
 msgstr "Kiirklahv pole aktiivne — ava parandamiseks Täpsemad valikud"
 
+#: usr/share/biglinux/tts-biglinux/window.py:250
 #, python-brace-format
 msgid "Select text and press {key} to read it aloud"
 msgstr "Vali tekst ja vajuta {key}, et see ette lugeda"
 
+#: usr/share/biglinux/tts-biglinux/window.py:382
 msgid "Show tray icon"
 msgstr "Näita salveikooni"
 
+#: usr/share/biglinux/tts-biglinux/window.py:383
 msgid "Restore Defaults…"
 msgstr "Taasta vaikeväärtused…"
 
+#: usr/share/biglinux/tts-biglinux/window.py:388
 msgid "Welcome"
 msgstr "Tere tulemast"
 
+#: usr/share/biglinux/tts-biglinux/window.py:389
 msgid "About BigLinux TTS"
 msgstr "BigLinux TTS teave"
 
+#: usr/share/biglinux/tts-biglinux/window.py:400
+#: usr/share/biglinux/tts-biglinux/window.py:401
 msgid "Main menu"
 msgstr "Peamenüü"
 
+#: usr/share/biglinux/tts-biglinux/window.py:461
 msgid "Restore settings?"
 msgstr "Taastada seaded?"
 
+#: usr/share/biglinux/tts-biglinux/window.py:462
 msgid "This will return all adjustments to their original defaults."
 msgstr "See taastab kõik kohandused algsete vaikeseadeteni."
 
+#: usr/share/biglinux/tts-biglinux/window.py:465
 msgid "Restore"
 msgstr "Taasta"
-
-msgid "BigLinux Text-to-Speech — Read selected text aloud"
-msgstr "BigLinux tekstist kõneks — loe valitud tekst ette"
-
-msgid "Enable debug logging"
-msgstr "Luba silumislogi"
-
-#, python-brace-format
-msgid "{language} ({region})"
-msgstr "{language} ({region})"

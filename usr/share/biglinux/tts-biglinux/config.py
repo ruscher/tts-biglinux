@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 APP_ID = "br.com.biglinux.tts"
 APP_NAME = "BigLinux TTS"
-APP_VERSION = "4.1.0"
+APP_VERSION = "4.2.0"
 
 # Settings schema version, stored in settings.json: bump it (and migrate in
 # _deserialize_settings) when the meaning of a stored value changes.
@@ -146,6 +146,9 @@ class ShortcutConfig:
 
     keybinding: str = "<Alt>v"
     show_in_launcher: bool = True  # Tray enabled by default
+    # Read the clipboard (Ctrl+C) when nothing is selected. Off: an old copied
+    # text must not be read as if it were the current selection.
+    clipboard_fallback: bool = False
 
 
 @dataclass
@@ -326,6 +329,7 @@ def _deserialize_settings(data: dict) -> AppSettings:
         settings.shortcut = ShortcutConfig(
             keybinding=_safe_str(sc, "keybinding", "<Alt>v"),
             show_in_launcher=_safe_bool(sc, "show_in_launcher", True),
+            clipboard_fallback=_safe_bool(sc, "clipboard_fallback", False),
         )
 
     if _section("window"):

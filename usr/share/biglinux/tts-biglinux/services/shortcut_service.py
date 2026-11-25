@@ -10,7 +10,9 @@ KDE Plasma is driven through KGlobalAccel's D-Bus API: ``setForeignShortcut``
 assigns the key to the ``biglinux-tts-speak.desktop`` service launcher and
 kglobalacceld persists it to ``kglobalshortcutsrc`` itself; ``allShortcutInfos``
 reads back the key that is really active and ``getGlobalShortcutsByKey`` finds
-other actions that already use it. Other desktops use their own mechanisms in
+other actions that already use it. Big WindowMaker (wlmaker on Wayland, Window
+Maker on X11) gets the shortcut in the files its own shortcuts live in (see
+bigwm_shortcuts). Other desktops use their own mechanisms in
 DesktopIntegrationService.
 """
 
@@ -52,8 +54,15 @@ class ShortcutStatus:
 
     accel: str = ""
     registered: bool | None = None  # None: not checked yet / unknown desktop
-    message: str = ""  # translated explanation when not registered
+    message: str = ""  # translated explanation when not registered (or pending)
     conflicts: list[str] = field(default_factory=list)  # other actions on the key
+    # Saved where the desktop reads it, but the running session applies it
+    # only after logging in again (registered stays True).
+    pending: bool = False
+    desktop: str = ""  # session_info desktop id it was registered for
+    mechanism: str = ""  # where it lives, for diagnostics ("wlmaker KeyBindings: …")
+    command: str = "biglinux-tts-speak"  # what the shortcut runs
+    notes: list[str] = field(default_factory=list)  # e.g. the other Big WindowMaker session
 
 
 def _parse(accel: str) -> tuple[int, object]:
@@ -265,16 +274,113 @@ def register_kde(accel: str) -> ShortcutStatus:
     return status
 
 
+# ── Big WindowMaker (wlmaker / Window Maker) ─────────────────────────
+
+
+def _bigwm_status(accel: str, res, desktop: str, command: str = "biglinux-tts-speak") -> ShortcutStatus:
+    """ShortcutStatus for a bigwm_shortcuts.WMResult of the current session."""
+    from services import bigwm_shortcuts as bw
+
+    where = "wlmaker KeyBindings" if res.backend == "wlmaker" else "Window Maker root menu (WMRootMenu)"
+    status = ShortcutStatus(accel=accel, desktop=desktop, mechanism=f"{where}: {res.path}", command=command)
+    keys = display_text(accel)
+    if res.state == bw.REGISTERED:
+        status.registered = True
+    elif res.state == bw.PENDING:
+        status.registered = True
+        status.pending = True
+        status.message = _("{shortcut} is saved. It starts working after you log in again.").format(shortcut=keys)
+    elif res.state == bw.CONFLICT:
+        status.registered = False
+        status.conflicts = list(res.conflicts)
+        status.message = _("{shortcut} is already used by: {names}. Choose another shortcut.").format(
+            shortcut=keys, names=", ".join(res.conflicts)
+        )
+    elif res.state == bw.MANUAL:
+        status.registered = False
+        if res.backend == "wlmaker":
+            line = f'"{res.key or bw.to_wlmaker_key(accel)}" = (ShellExecute, "{status.command}");'
+            status.message = _("The shortcut could not be added automatically. Add this line to KeyBindings in {file}: {line}").format(
+                file=res.path, line=line)
+        else:
+            item = f'("BigLinux TTS", SHORTCUT, "{res.key or bw.to_wmaker_key(accel)}", EXEC, \"{command}\")'
+            status.message = _("The shortcut could not be added automatically. Add this item to the root menu in {file}: {line}").format(
+                file=res.path, line=item)
+    else:
+        status.registered = False
+        status.message = _("Could not save the shortcut. Nothing was changed.")
+    return status
+
+
+def register_bigwm(accel: str, session) -> ShortcutStatus:
+    """Big WindowMaker: the current session's mechanism (and, from X11, the
+    Wayland one too).
+
+    From the X11 session the binding also goes to wlmaker's Config.plist
+    (nothing watches it), so a later Wayland login already has it. From the
+    Wayland session WMRootMenu is NOT touched: big-wm-wprefs-sync watches
+    ~/GNUstep/Defaults and, on any change there, regenerates wlmaker's whole
+    RootMenu.plist from the Window Maker menu — a change to the user's
+    Wayland menu that registering a shortcut must not cause. The X11 session
+    gets the shortcut the first time BigLinux TTS runs there.
+
+    Only the current session's result decides the status; the other one is
+    reported in ``notes``.
+    """
+    import shutil
+
+    from services import bigwm_shortcuts as bw
+    from services.desktop_integration_service import DesktopIntegrationService
+
+    label = _("Read or stop the selected text")
+    command = DesktopIntegrationService._exec_path_for_speak()
+    if session.desktop == "wlmaker":
+        pid = session.compositor_pid if session.compositor == "wlmaker" else None
+        main = bw.set_wlmaker(accel, compositor_pid=pid, command=command)
+        other = None
+    else:
+        main = bw.set_wmaker(accel, label, wmaker_running=session.compositor == "wmaker", command=command)
+        other = (bw.set_wlmaker(accel, command=command)
+                 if shutil.which("wlmaker") and bw.wlmaker_config_path().is_file() else None)
+    status = _bigwm_status(accel, main, session.desktop, command)
+    if other is not None:
+        name = "Window Maker (X11)" if other.backend == "windowmaker" else "wlmaker (Wayland)"
+        status.notes.append(f"{name}: {other.state}" + (f" ({other.detail})" if other.detail else ""))
+    return status
+
+
+def unregister_bigwm() -> list:
+    """Remove our shortcut from both Big WindowMaker sessions' files
+    (an explicit request: big-wm-wprefs-sync may then refresh the Wayland
+    root menu, as after any change to the Window Maker menu)."""
+    from services import bigwm_shortcuts as bw
+    from services import session_info
+
+    session = session_info.detect()
+    pid = session.compositor_pid if session.compositor == "wlmaker" else None
+    return [bw.set_wlmaker(None, compositor_pid=pid), bw.set_wmaker(None)]
+
+
 def register(accel: str) -> ShortcutStatus:
     """Register ``accel`` on the current desktop and report the outcome.
 
     Blocking: call from a worker thread.
     """
+    from services import session_info
     from services.desktop_integration_service import DesktopIntegrationService
 
     problem = validate(accel)
     if problem:
         return ShortcutStatus(accel=accel, registered=False, message=problem)
+
+    session = session_info.detect()
+    if session.is_big_windowmaker:
+        try:
+            return register_bigwm(accel, session)
+        except Exception as e:
+            logger.warning("Big WindowMaker shortcut registration failed: %s", e)
+            return ShortcutStatus(accel=accel, registered=False, desktop=session.desktop,
+                                  message=_("Could not save the shortcut. Nothing was changed."))
 
     de = DesktopIntegrationService.detect_desktop_environment()
     if de == "kde":

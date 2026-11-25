@@ -193,7 +193,9 @@ def test_xfce_already_right_still_drops_old_bindings(monkeypatch):
 # ── selection capture on X11 ────────────────────────────────────────
 
 
-def test_x11_falls_back_to_the_clipboard(monkeypatch):
+def test_x11_reads_the_clipboard_only_when_asked(monkeypatch):
+    """Nothing selected: an old copied text is not read unless the user
+    turned on "Read copied text"; then the clipboard is the fallback."""
     seen = []
 
     def capture(args, max_chars):
@@ -203,8 +205,11 @@ def test_x11_falls_back_to_the_clipboard(monkeypatch):
     monkeypatch.setattr(clipboard_service, "_run_capture", capture)
     monkeypatch.setattr(clipboard_service.shutil, "which", lambda n: n == "xsel")
 
-    clipboard_service._get_text_x11(100)
+    r = clipboard_service._get_text_x11(100)
+    assert ["xsel", "--clipboard", "-o"] not in seen
+    assert r.error == clipboard_service.NO_SELECTION
 
+    clipboard_service._get_text_x11(100, clipboard_fallback=True)
     assert ["xsel", "--clipboard", "-o"] in seen
 
 

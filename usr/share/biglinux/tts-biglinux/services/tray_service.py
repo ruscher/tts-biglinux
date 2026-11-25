@@ -381,6 +381,21 @@ class TrayIcon:
         self.on_player: Callable[[str], None] | None = None
         # on_exit() runs when the helper ends on its own (crash, no tray host)
         self.on_exit: Callable[[], None] | None = None
+        # on_ready() runs when a tray host really shows the icon
+        self.on_ready: Callable[[], None] | None = None
+        self.last_error = ""  # the helper's last error message (untranslated)
+
+    @property
+    def returncode(self) -> int | None:
+        """Exit status of the helper (None while it runs or never ran)."""
+        return self._proc.poll() if self._proc else None
+
+    @property
+    def crashed(self) -> bool:
+        """Ended by a crash (signal or exception) — not by "no tray host", a
+        missing PySide6 or a quit: the only case a restart can help."""
+        code = self.returncode
+        return code is not None and (code < 0 or (code == 1 and self.last_error.startswith("Tray crashed")))
 
     def set_menu(self, items: list[MenuItem]) -> None:
         """Set the context menu items."""
@@ -547,8 +562,11 @@ class TrayIcon:
                 elif event == "ready":
                     logger.info("Tray icon is visible")
                     self._send_menu()
+                    if self.on_ready:
+                        self.on_ready()
                 elif event == "error":
-                    logger.error("Tray helper error: %s", msg.get("message"))
+                    self.last_error = str(msg.get("message", ""))
+                    logger.error("Tray helper error: %s", self.last_error)
                 elif event == "debug":
                     logger.debug("Tray helper: %s", msg.get('message'))
         except Exception as e:
